@@ -11,7 +11,7 @@
   - [跨域问题](cors.md)
 
 - 进阶
-  - [封装组件](componentsn.md)
+  - [封装组件](components.md)
   - [图表](chart.md)
   - [图标](icon.md)
   - [Mock 和联调](mock-api.md)
@@ -25,3 +25,5 @@
 
 - [更新日志](https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
 - [常见问题](faq.md)
+
+- [捐赠](donate.md)
