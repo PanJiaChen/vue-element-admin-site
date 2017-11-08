@@ -1,3 +1,11 @@
+## [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+
+[![vue](https://img.shields.io/badge/vue-2.4.2-brightgreen.svg ':no-zoom')](https://github.com/vuejs/vue)
+[![element-ui](https://img.shields.io/badge/element--ui-1.4.2-brightgreen.svg ':no-zoom')](https://github.com/ElemeFE/element)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin/releases)
+[![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin)
+
 ## 介绍
 
 vue-element-admin 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发，模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  本项目还在持续不断迭代中，逐步沉淀和总结出更多设计模式和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
