@@ -11,6 +11,7 @@
   - [跨域问题](cors.md)
 
 - 进阶
+  - [路由懒加载](lazy-loading.md)
   - [封装组件](components.md)
   - [图表](chart.md)
   - [图标](icon.md)
