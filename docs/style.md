@@ -101,3 +101,22 @@ module.exports = {
 ```
 
 如需要自动将mixin 注入到全局 ，可以使用[sass-resources-loader](https://github.com/shakacode/sass-resources-loader)
+
+
+## 父组件改变子组件样式
+当你子组件使用了 `scoped` 但在父组件又想修改子组件的样式可以 通过 `>>>` 来实现：
+
+```css
+<style scoped>
+.a >>> .b { /* ... */ }
+</style>
+```
+
+将会编译成
+
+```css
+.a[data-v-f3f3eg9] .b { /* ... */ }
+```
+如果你使用了一些预处理的东西，如 `sass` 你可以通过 `/deep/` 来代替 `>>>` 实现想要的效果。
+
+[官方文档](https://vue-loader.vuejs.org/en/features/scoped-css.html)
