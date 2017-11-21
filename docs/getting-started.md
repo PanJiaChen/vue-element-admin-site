@@ -133,3 +133,7 @@ npm install --registry=https://registry.npm.taobao.org
 本文档参考了 [ANT DESIGN PRO](https://pro.ant.design/)
 
 文档生成通过 [docsify](https://github.com/QingWei-Li/docsify)
+
+### 捐赠
+如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
+[Donate](donate.md)
