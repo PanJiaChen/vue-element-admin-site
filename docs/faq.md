@@ -42,6 +42,11 @@ https://github.com/vuejs/vue-loader/issues/481
 
 https://github.com/vuejs/vue-cli/issues/112
 
+##  @ 或者如为什么他的项目可以`src/xxx/` 这样写，而我的却报路径错误？
+这种情况很有可能人家在配置了 webpack 的 alias
+
+`@` 是 webpack 的 [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) 不懂得请自行研究。
+
 ## can't not find 'xxModule' - 找不到某些依赖或者模块
 这种情况一般报错信息可以看到是哪个包抛出的信息.
 一般卸载这个模块,安装重新安装下即可.

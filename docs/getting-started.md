@@ -8,53 +8,58 @@
 
 ## 介绍
 
-vue-element-admin 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发，模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  本项目还在持续不断迭代中，逐步沉淀和总结出更多设计模式和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
+vue-element-admin 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发，模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template).
 
-我们基于上述目标提供了以下的典型模板，并构建了一套基于 React 的中后台管理控制台的脚手架，它可以帮助你快速搭建企业级中后台产品原型。接下来的文档将具体介绍如何开始使用这个脚手架。
+本项目还在持续不断迭代中，逐步沉淀和总结出更多功能和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
+## 功能
 ```
+- 登录/注销
+- 权限验证
+- 多环境发布
+- 动态侧边栏（支持多级路由）
+- 动态面包屑
+- Screenfull全屏
+- 国际化多语言
+- 多种动态换肤
+- 富文本编辑器
+- 快捷导航(标签页)
+- Markdown编辑器
+- JSON编辑器
+- 列表拖拽
+- Svg 图标
 - Dashboard
-  - 分析页
-  - 监控页
-  - 工作台
-- 表单页
-  - 基础表单页
-  - 分步表单页
-  - 高级表单页
-- 列表页
-  - 查询表格
-  - 标准列表
-  - 卡片列表
-  - 搜索列表（项目/应用/文章）
-- 详情页
-  - 基础详情页
-  - 高级详情页
-- 结果
-  - 成功页
-  - 失败页
-- 异常
-  - 403 无权限
-  - 404 找不到
-  - 500 服务器出错
-- 帐户
-  - 登录
-  - 注册
-  - 注册成功
+- 本地mock数据
+- Echarts 图表
+- Clipboard(剪贴复制)
+- 401，404错误页面
+- 错误日志
+- 导出excel
+- 导出zip
+- 前端可视化excel
+- Table example
+- 动态table example
+- 拖拽table example
+- 内联编辑table example
+- Form example
+- 二步登录
+- SplitPane
+- Dropzone
+- Sticky
+- CountTo
+- Markdown2html
 ```
 
 ## 前序准备
 
 你的本地环境需要安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)。我们的技术栈基于 [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 和 [element-ui](https://github.com/ElemeFE/element)，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
-写了一个系列的教程配套文章，如何从零构建后一个完整的后台项目，简介大家想看完文章再来实践项目
+写了一个系列的教程配套文章，如何从零构建后一个完整的后台项目，建议大家先看完这些文章再来实践项目
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
  - [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
  - [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
  - [手摸手，带你用vue撸后台 系列四(vueAdmin 一个极简的后台基础模板)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
  - [手摸手，带你封装一个vue component](https://segmentfault.com/a/1190000009090836)
-
-
-
 
 
 
@@ -107,14 +112,20 @@ npm install
 npm run dev
 ```
 
-?> 建议不要用直接使用cnpm 安装有各种诡异的 bug，可以通过重新指定registry 来解决npm速度慢的问题
+?> 强烈建议不要用直接使用cnpm 安装有各种诡异的 bug，可以通过重新指定registry 来解决npm速度慢的问题
 
 ```bash
 npm install --registry=https://registry.npm.taobao.org
 ```
 
-启动完成后会自动打开浏览器访问 http://localhost:9527
+启动完成后会自动打开浏览器访问 http://localhost:9527， 你看到下面的页面就代表成功了。
 
+![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
+
+接下来你可以修改代码进行业务开发了，我们内建了典型业务模板、常用业务组件、模拟数据、HMR 实时预览、状态管理、国际化、全局路由等等各种实用的功能辅助开发，你可以继续阅读和探索左侧的其他文档。
+
+建议：我们基于上述目标提供了以下的典型模板，并构建了一套基于 vue+element+webpack+axios 的中后台管理控制台的脚手架，它可以帮助你快速搭建企业级中后台产品原型， [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template).
+你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上开发，要什么就去 `vue-element-admin` 那里复制过来。
 
 
 
