@@ -1,7 +1,5 @@
 ![logo](https://wpimg.wallstcn.com/98d033e6-8da0-49b5-afe6-f491f4cd3348.png ':no-zoom')
 
-# vue-element-admin <small>3.0.0</small>
-
 > A magical vue admin.
 
 - Typical templates for enterprise applications

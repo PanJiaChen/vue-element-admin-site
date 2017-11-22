@@ -13,6 +13,7 @@ vue-element-admin 集合了国际化i18n。
 
 ### 异步lang
 有一些某些特定页面才需要的 lang，比如 `@/views/i18n` 页面
+
 ```js
 import local from './local'
 

@@ -18,12 +18,13 @@
   - [图表](chart.md)
   - [图标](icon.md)
   - [更换主题](theme.md)
-  - [测试](test.md ":disabled")
-  - [错误处理](error.md)
+  <!-- - [错误处理](error.md) -->
   - [国际化](i18n.md )
+  - [测试](test.md ":disabled")
 
 - 组件
   - [富文本](rich-editor)
+  - [复制黏贴](clipboard)
 
 - [更新日志](https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
 - [常见问题](faq.md)
