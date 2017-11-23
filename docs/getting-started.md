@@ -134,6 +134,11 @@ npm install --registry=https://registry.npm.taobao.org
 
 文档生成通过 [docsify](https://github.com/QingWei-Li/docsify)
 
+### Contribution
+本文档代码项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
+
+有任何修改和建议都可以该项目 pr 和 issue
+
 ### 捐赠
 如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
 [Donate](donate.md)

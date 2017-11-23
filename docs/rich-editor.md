@@ -14,3 +14,17 @@
 
 
 当然你也可以选择一些付费的富文本编辑器，作者自己公司里面有一个项目就使用了 [froala-editor](https://www.froala.com/wysiwyg-editor) 这款编辑器。不管是美观和易用性都是不错的，公司买的是专业版，一年也就 `$349` ，价格也是很合理的，但其实省去的程序员开发陈本可能远不止这个价钱。
+
+
+## Tinymce
+这里来简单讲一下在自己项目中使用 `Tinymce` 的方法。
+
+> 由于目前使用 npm 安装 `Tinymce` 方法比较负责复杂而且还有一些问题(日后可能会采用该模式)。:space_invader:
+
+目前采用全局引用的方式。代码地址：`static/tinymce` static目录下的文件不会被打包, 在 index.html 中引入。
+
+**使用**
+由于富文本不适合双向数据流，所以只会 watch 传入富文本的内容一次变化，只会就不会再监听了，如果之后还有改变富文本内容的需求。
+可以通过 `this.refs.xxx.setContent()` 来设置
+
+源码也很简单，有任何别的需求都可以在 `@/components/Tinymce/index.vue` 中自行修改。
