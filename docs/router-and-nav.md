@@ -120,3 +120,18 @@ ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<route
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
 > 组件地址 `@/components/Breadcrumb`
+
+
+## 侧边栏滚动问题
+之前版本的滚动都是用css来做处理的
+```css
+overflow-y:scroll;
+
+::-webkit-scrollbar {display:none}
+
+```
+
+首先这样写会有兼容性问题，在火狐或者其它低版本游览器中都会比较不美观。其次在侧边栏收起的情况下，受限于 `element-ui`的 `menu` 组件的实现方式，不能使用该方式来处理。
+
+所以现版本中使用了 js 来处理侧边栏滚动问题。封装了 滚动组件 `ScrollPane`，代码地址 `@/components/ScrollPane`
+
