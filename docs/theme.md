@@ -37,19 +37,17 @@ element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的
 
 在 `build/webpack.dev.conf.js `中 获取 `package.json` 所有 `dependencies` 版本号
 
-```
-var dependencies = require('../package.json').dependencies
+```js
+export function getVersion(name) {
+  import('../../package').then(p => {
+    return p.dependencies[name]
+  })
+}
+
+import { getVersion } from '@/utils/index.js'
+const version = getVersion('element-ui')
 ```
 
-之后通过 `webpack.DefinePlugin` 插件将该变量注入到全局中。
-
-```
-new webpack.DefinePlugin({
-  'process.env': config.dev.env,
-  'DEPENDENCIES': JSON.stringify(dependencies)
-})
-```
-**同理 设置`build/webpack.prod.conf.js` 文件**
 之后在项目中引入 ThemePicker 组件即可
 ```
 import ThemePicker from '@/components/ThemePicker'
