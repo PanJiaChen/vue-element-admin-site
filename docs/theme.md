@@ -1,7 +1,7 @@
+# 更换主题
 
 本项目基于 element-ui 默认视觉风格搭建了，适合大多数中后台项目。如果对视觉风格有额外的要求，推荐使用以下的方式进行定制。
 
-## 主题定制
 本项目 ui 基于 element-ui 默认视觉风格，所以有定制主题的需求只需按照[官方自定义主题指导](http://element-cn.eleme.io/#/zh-CN/component/custom-theme)生成并引入即可。
 
 
@@ -19,6 +19,8 @@ element-ui 的通用样式变量可能无法满足所有定制需求，你可以
 ```
 
 一些全局的 element-ui 样式修改可以在 `src/styles/element-ui.scss` 中进行设置。
+
+<br/>
 
 ## 动态换肤
 
@@ -57,6 +59,9 @@ import ThemePicker from '@/components/ThemePicker'
   - 无需准备多套主题，可以自由动态换肤
 - 缺点
   - 自定义不够，只支持基础颜色的切换
+
+<br/>
+<br/>
 
 ### 多套主题换肤
 本方法就是最常见的换肤方式，本地存放多套主题，两者有不同的命名空间，如写两套主题，一套叫 day-theme ，一套叫 night-theme，night-theme 主题都在一个.night-theme的命名空间下，我们动态的在 body 上 add .night-theme ; remove .night-theme。

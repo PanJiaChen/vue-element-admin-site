@@ -1,3 +1,5 @@
+# 图表
+
 管理后台图表也是常见得需求。这里图表就只推荐ECharts，功能齐全，社区demo也丰富 [gallery](http://gallery.echartsjs.com/explore.html)。
 
 我还是那个观点，大部分插件建议大家还是自己用 vue 来封装就好了，真的很简单。ECharts 支持 webpack 引入，图省事可以将 ECharts 整个引入 `var echarts = require('echarts')` 不过 ECharts 还是不小的，我们大部分情况只是用到很少一部分功能，我平时习惯于按需引入的。

@@ -10,9 +10,9 @@
   - [新增页面](new-page.md)
   - [引入外部模块](import.md)
   - [构建和发布](deploy.md)
-  - [跨域问题](cors.md)
 
 - 进阶
+  - [跨域问题](cors.md)
   - [路由懒加载](lazy-loading.md)
   - [封装组件](components.md)
   - [图表](chart.md)

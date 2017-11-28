@@ -1,4 +1,4 @@
-## clipboard
+# clipboard
 这里的复制黏贴使用了 [clipboard](https://github.com/zenorocha/clipboard.js)
 
 本项目提供了两种使用方式
@@ -18,6 +18,9 @@ methods: {
 ```
 
 首先引入封装好的 `clipboard` ,设置 `click` function。 `clip()` 函数第一个参数为复制的内如，第二个参数为 `event` 事件。两个参数均为必填项。
+
+<br/>
+<br/>
 
 ## 指令使用
 
