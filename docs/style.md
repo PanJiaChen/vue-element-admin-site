@@ -22,6 +22,10 @@
 }
 ```
 
+只有加上 `<style scoped>` 这样css就只会作用在当前组件内了。详细文档见 [vue-loader](https://vue-loader.vuejs.org/zh-cn/features/scoped-css.html)
+
+<br/>
+
 ## 目录结构
 vue-element-admin 所有全局样式都在 `src/styles` 目录下设置
 
@@ -35,7 +39,8 @@ vue-element-admin 所有全局样式都在 `src/styles` 目录下设置
 │   └── variables.scss           # 全局变量
 ```
 
-常见的工作流程是，全局样式都写在 `src/styles` 目录下，每个页面自己的样式都写在自己相对于的 `.vue` 文件之中
+常见的工作流程是，全局样式都写在 `src/styles` 目录下，每个页面自己对应的样式都写在自己的 `.vue` 文件之中
+
 ```css
 <style>
 /* global styles */
@@ -57,6 +62,7 @@ vue-element-admin 所有全局样式都在 `src/styles` 目录下设置
   }
 }
 ```
+?> 当然也可以使用深度作用选择器 下文会介绍
 
 
 ## autoprefixer
@@ -105,7 +111,7 @@ module.exports = {
 如需要自动将mixin 注入到全局 ，可以使用[sass-resources-loader](https://github.com/shakacode/sass-resources-loader)
 
 
-## 父组件改变子组件样式
+## 父组件改变子组件样式 深度选择器
 当你子组件使用了 `scoped` 但在父组件又想修改子组件的样式可以 通过 `>>>` 来实现：
 
 ```css

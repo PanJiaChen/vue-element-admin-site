@@ -1,11 +1,13 @@
 # 快捷导航(标签栏导航)
 
-本功能是响应大家需求后期加上的，其实楼主在公司项目或者平时是不太使用该功能的。以前那些后台框架往往会包含此功能，由于以前的后台项目大部分都是多页面的形式，所以标签栏导航功能还是具有一定意义的基本，大部分都是基于iframe的方式实现的。
+本功能是响应大家需求，后期加上的，其实楼主在公司项目或者平时是不太使用该功能的。以前那些传统后台框架往往会包含此功能，由于以前的后台项目大部分都是多页面的形式，所以标签栏导航功能还是具有一定意义的基本，大部分都是基于iframe的方式实现的。
 
 但随着时代的发展，现在的后台项目几乎都是 spa(single page web application 单页面开发)，再使用以前的方案来实现标签导航显然是不合适的。
 
 所以目前的方案大致为：
-我们主要运用了 `keep-alive` 和 `router-view` 的结合。 代码: `@/layout/components/AppMain.vue `
+我们主要运用了 `keep-alive` 和 `router-view` 的结合。
+
+代码: `@/layout/components/AppMain.vue `
 
 ```html
 <keep-alive :include="cachedViews">
@@ -20,9 +22,10 @@
 - visitedViews : 用户访问过的页面 就是标签栏导航显示的一个个 tag 数组集合
 - cachedViews : 实际 keep-alive 的路由。可以在配置路由的时候通过 `meta.noCache` 来设置是否需要缓存这个路由 默认都缓存。[配置文档](router-and-nav)
 
-## 主要事项
-由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-aliv`e 的 `[include](https://cn.vuejs.org/v2/api/#keep-alive)` 默认是优先匹配组件的 **name** ，所以在编写路由和路由对应的 view 的时候一定要确保 两者的name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切不要可某些组件重复 不然会递归引用最后内存溢出)
-DEMO:
+## 注意事项
+由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-alive` 的 [include](https://cn.vuejs.org/v2/api/#keep-alive) 默认是优先匹配组件的 **name** ，所以在编写路由和路由对应的 view 的时候一定要确保 两者的name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切不要可某些组件重复 不然会递归引用最后内存溢出)
+
+**DEMO:**
 ```js
 //router 路由声明
 {
@@ -34,7 +37,7 @@ DEMO:
 ```
 
 ```js
-//view  form/create
+//路由对应的view  form/create
 export default {
   name: 'createForm'
 }

@@ -5,12 +5,12 @@
 ## vue-element-admin 和 vueAdmin-template 有什么区别？
 
 vue-element-admin 是一个后台的集成方案，它囊括了很多的功能和组件，并不适合作为基础模板来进行二次开发。
-vueAdmin-template 则是一个后台的基础模板脚手架，适合在它的基础上进行开发。
+vueAdmin-template 则是一个后台的基础模板脚手架，适合在它的基础上进行二次开发。
 
 <br/>
 
 ## 首先有任何报错，最简单的方法是报错信息复制到游览器里面搜索一下！
-[google点我](http://lmgtfy.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
+[google 点我](http://lmgtfy.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
 
 [百度点我](http://www.baidu-x.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
 

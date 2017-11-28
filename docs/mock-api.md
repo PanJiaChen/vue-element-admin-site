@@ -11,7 +11,7 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 它是一个纯前端可视化，并且能快速生成 模拟数据 的持久化服务。非常的简单易用还能结合 `swagger` ，不管团队还是个人项目都值得一试。
 
 ## mockjs
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 由于是一个纯前端个人项目,所以所以的数据都是用[mockjs](https://github.com/nuysoft/Mock) 生成的,它的原理是:拦截了所有的请求并代理到本地模拟数据，所以 network 中没有任何的请求发出。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 由于是一个纯前端个人项目，所以所以的数据都是用[mockjs](https://github.com/nuysoft/Mock) 生成的，它的原理是:拦截了所有的请求并代理到本地模拟数据，所以 network 中没有发出任何的请求发出。
 
 如需改造本项目，去除mockjs也很简单。
 

@@ -4,17 +4,17 @@
   - [路由和菜单](router-and-nav.md)
   - [权限验证](permission.md)
   - [快捷导航(标签导航)](tags-view.md)
+  - [新增页面](new-page.md)
   - [样式](style.md)
   - [Mock 和联调](mock-api.md)
   - [和服务端进行交互](server.md)
-  - [新增页面](new-page.md)
   - [引入外部模块](import.md)
   - [构建和发布](deploy.md)
 
 - 进阶
   - [跨域问题](cors.md)
   - [路由懒加载](lazy-loading.md)
-  - [封装组件](components.md)
+  <!-- - [封装组件](components.md) -->
   - [图表](chart.md)
   - [图标](icon.md)
   - [更换主题](theme.md)

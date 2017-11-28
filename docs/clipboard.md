@@ -5,7 +5,7 @@
 
 ## 直接使用
 ```html
-<el-button type="primary" icon="document" @click='handleCopy(inputData,$event)'>copy</el-button>
+<el-button @click='handleCopy(inputData,$event)'>copy</el-button>
 ```
 ```js
 import clip from '@/utils/clipboard' // use clipboard directly
@@ -17,12 +17,14 @@ methods: {
 }
 ```
 
-首先引入封装好的 `clipboard` ,设置 `click` function。 `clip()` 函数第一个参数为复制的内如，第二个参数为 `event` 事件。两个参数均为必填项。
+首先引入封装好的 `clipboard` ,设置 `click` function。
+
+`clip()` 函数第一个参数为复制的内如，第二个参数为 `event` 事件。两个参数均为必填项。
 
 <br/>
 <br/>
 
-## 指令使用
+## 指令形式使用
 
 本项目同时也封装了一个通过 `directives` 的方式来使用 `clipboard`。
 

@@ -1,9 +1,6 @@
 # 更换主题
 
-本项目基于 element-ui 默认视觉风格搭建了，适合大多数中后台项目。如果对视觉风格有额外的要求，推荐使用以下的方式进行定制。
-
-本项目 ui 基于 element-ui 默认视觉风格，所以有定制主题的需求只需按照[官方自定义主题指导](http://element-cn.eleme.io/#/zh-CN/component/custom-theme)生成并引入即可。
-
+本项目基于 element-ui 默认视觉风格搭建了。如果对视觉风格有额外的要求可以按照[官方自定义主题指导](http://element-cn.eleme.io/#/zh-CN/component/custom-theme)。
 
 ## 样式覆盖
 
@@ -27,7 +24,8 @@ element-ui 的通用样式变量可能无法满足所有定制需求，你可以
 本项目提供了两种动态换肤的功能，各有利弊，请结合个人需求自行选择。
 
 ### element-ui 官方文档页面 换肤方式
-element-ui 升级为2.0之后官方文档的右上角提供了动态换肤的功能，本项目也提供了改功能，代码地址：`src/components/ThemePicker`。
+element-ui 升级为2.0之后官方文档的右上角提供了动态换肤的功能，本项目也提供了改功能。
+代码地址：`src/components/ThemePicker`
 
 简单说明一下它的原理：
 element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的颜色都是基于几个基础颜色[变量](https://github.com/PanJiaChen/custom-element-theme/blob/master/element-variables.scss)来设置的，所以就不难实现动态换肤了，只要找到那几个颜色变量修改它就可以了。
@@ -36,8 +34,6 @@ element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的
 **使用**
 
 ?> PS：这里需要获取 element-ui 的版本号，从而锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。
-
-在 `build/webpack.dev.conf.js `中 获取 `package.json` 所有 `dependencies` 版本号
 
 ```js
 export function getVersion(name) {

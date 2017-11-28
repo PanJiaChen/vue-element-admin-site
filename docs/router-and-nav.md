@@ -15,11 +15,13 @@ meta : {
   role: ['admin','editor']   设置该路由进入的权限，支持多个权限叠加
   title: 'title'             设置该路由在侧边栏和面包屑中展示的名字
   icon: 'svg-name'           设置该路由的图标
-  noCache: true              如果设置为true ,则不会被 <keep-alive> 缓存(默认 true)
+  noCache: true              如果设置为true ,则不会被 <keep-alive> 缓存(默认 false)
 }
 ```
 
-示例：
+<br/>
+
+**示例：**
 ```js
 {
   path: '/permission',
@@ -45,11 +47,13 @@ meta : {
 
 这里的路由分为两种，`constantRouterMap` 和 `asyncRouterMap`。
 
- **constantRouterMap** 代表那些不需要动态权限的路由，如登录页，404，通用页面。
+ **constantRouterMap** 代表那些不需要动态判断权限的路由，如登录页，404，等通用页面。
 
  **asyncRouterMap** 代表那些需求动态判断权限并通过 `addRouters` 动态添加的页面。具体的会在 [权限判断](https://panjiachen.github.io/vue-element-admin-site/#/permission) 页面介绍。
 
 > 这里所有的组件使用自定义方法 `_import ` 引入，具体介绍见[路由懒加载](https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading)
+
+> 如果你想了解更多关于 browserHistory 和 hashHistory，请参看 [构建和发布](deploy)。
 
 其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
 
@@ -67,7 +71,7 @@ meta : {
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于一个时，自动会生成嵌套的模式。如：
+在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如：
 ```js
 {
   path: '/icon',
@@ -117,7 +121,7 @@ ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<route
 
 
 ## 面包屑
-本项目中也封装了一个面包屑导航，它也是通过 `watch $route` 动态生成的。它和 menu 也一样，也可以通过之前那些配置项控制一些路由在面包屑中的展现。大家也可以结合自己的业务需求增改这些自定义属性。
+本项目中也封装了一个面包屑导航，它也是通过 `watch $route` 变化动态生成的。它和 menu 也一样，也可以通过之前那些配置项控制一些路由在面包屑中的展现。大家也可以结合自己的业务需求增改这些自定义属性。
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
@@ -135,5 +139,7 @@ overflow-y:scroll;
 
 首先这样写会有兼容性问题，在火狐或者其它低版本游览器中都会比较不美观。其次在侧边栏收起的情况下，受限于 `element-ui`的 `menu` 组件的实现方式，不能使用该方式来处理。
 
-所以现版本中使用了 js 来处理侧边栏滚动问题。封装了 滚动组件 `ScrollPane`，代码地址 `@/components/ScrollPane`
+所以现版本中使用了 js 来处理侧边栏滚动问题。封装了 滚动组件 `ScrollPane`。
+
+代码地址 `@/components/ScrollPane`
 
