@@ -37,9 +37,8 @@ element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的
 
 ```js
 export function getVersion(name) {
-  import('../../package').then(p => {
-    return p.dependencies[name]
-  })
+  const p = require('../../package')
+  return p.dependencies[name]
 }
 
 import { getVersion } from '@/utils/index.js'
