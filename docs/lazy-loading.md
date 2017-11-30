@@ -9,14 +9,14 @@ const Foo = () => import('./Foo.vue')
 ### 区分开发与生产环境
 当你的项目页面越来越多之后，在开发环境之中使用 `lazy-loading` 会变得不太合适，每次更改代码触发热更新都会变得非常的慢。所以建议只在生成环境之中使用路由懒加载功能。
 
-生产环境：
+开发环境：
 ```js
 module.exports = file => require('@/views/' + file + '.vue').default // vue-loader at least v13.0.0+
 
 ```
-?> 这里注意一下改写法只支持 `vue-loader at least v13.0.0+`，理由 [vue-element-admin/issues/231](https://github.com/PanJiaChen/vue-element-admin/issues/231)
+?> 这里注意一下该写法只支持 `vue-loader at least v13.0.0+`，理由 [vue-element-admin/issues/231](https://github.com/PanJiaChen/vue-element-admin/issues/231)
 
-开发环境：
+生产环境：
 ```js
 module.exports = file => () => import('@/views/' + file + '.vue')
 ```
