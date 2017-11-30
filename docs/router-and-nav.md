@@ -57,6 +57,8 @@ meta : {
 
 其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
 
+**注意事项：**如果这里有一个需要非常注意的地方就是404页面一定要最后加载，如果放在 constantRouterMap 一同声明了404，后面的所以页面都会被拦截到404，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+
 ## 侧边栏
 
 本项目侧边栏主要基于 `element-ui` 的 `el-menu` 改造。
