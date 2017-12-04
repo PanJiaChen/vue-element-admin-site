@@ -24,7 +24,7 @@
 
 - 组件
   - [富文本](rich-editor)
-  - [复制黏贴](clipboard)
+  - [复制粘贴](clipboard)
 
 - [更新日志](https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
 - [常见问题](faq.md)
