@@ -36,13 +36,22 @@ element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的
 ?> PS：这里需要获取 element-ui 的版本号，从而锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。
 
 ```js
-export function getVersion(name) {
-  const p = require('../../package')
-  return p.dependencies[name]
-}
+const version = require('element-ui/package.json').version
 
-import { getVersion } from '@/utils/index.js'
-const version = getVersion('element-ui')
+const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`
+this.getCSSString(url, chalkHandler, 'chalk')
+
+getCSSString(url, callback, variable) {
+  const xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      this[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, '')
+      callback()
+    }
+  }
+  xhr.open('GET', url)
+  xhr.send()
+}
 ```
 
 之后在项目中引入 ThemePicker 组件即可
