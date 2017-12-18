@@ -51,3 +51,9 @@
 这样每次保存的时候就可以根据根目录下.eslintrc.js你配置的eslint规则来检查和做一些简单的fix。这里提供了一份我平时的eslint规则[地址][2]，都简单写上了注释。每个人和团队都有自己的代码规范，统一就好了，去打造一份属于自己的eslint 规则上传到npm吧，如饿了么团队的 [config](https://www.npmjs.com/package/eslint-config-elemefe)，vue的 [config](https://github.com/vuejs/eslint-config-vue)。
 
 [vscode 插件和配置推荐](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
+
+
+## 自动修复
+```bash
+pm run lint -- --fix
+```
