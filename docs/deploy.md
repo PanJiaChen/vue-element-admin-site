@@ -91,3 +91,24 @@ location / {
 ```
 
 ?> 更多配置请查看 [vue-router 文档](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+
+## apache
+1. 需要修改`router/index.js`中`new Router` 配置，加一个`base: '/vue/'`, 它指定应用的基路径，该应用是服务于`localhost/vue`路径下，所以必须加`base`配置，否则应用会展示404页面
+2. 需要修改`config/index.js`中build下的`assetsPublicPath: '/vue/'`，如果用相对路径，chunk文件会报错找不到。
+3. 修改`httpd.conf`文件，开启rewrite_module功能。
+- `LoadModule rewrite_module libexec/apache2/mod_rewrite.so`，去掉前面的#。
+- 然后找到` AllowOverride None`的那行，把它改成`AllowOverride All`，来使`.htaccess`文件生效。
+4. 在apache 的`www/vue` 目录下新建`.htaccess`文件, 需要修改`RewriteRule` 为`/vue/index.html`, 否则刷新页面服务端会直接报404错误。
+
+.htaccess文件内容
+```
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /vue/index.html [L]
+</IfModule>
+```
+相关[issue](https://github.com/PanJiaChen/vue-element-admin/issues/370)
