@@ -16,6 +16,16 @@
   .sidebar-nav a:hover{
     color: #42b983!important;
   }
+  nav.app-nav{
+    margin-right: 100px;
+  }
+  nav.app-nav ul{
+    cursor: pointer;
+  }
+  nav.app-nav li ul {
+    min-width: 100px;
+    overflow-y: auto;
+  }
 </style>
 <body>
   <div id="app"></div>
@@ -26,10 +36,23 @@
     maxLevel: 10,
     auto2top: true,
     coverpage: true,
+    loadNavbar: true,
     // autoHeader: true,
     homepage: 'getting-started.md',
     name: 'vue-element-admin',
-    repo: 'https://github.com/PanJiaChen/vue-element-admin'
+    repo: 'https://github.com/PanJiaChen/vue-element-admin',
+    search: {
+      noData: {
+        '/zh-cn/': '没有结果!',
+        '/': 'No results!'
+      },
+      paths: 'auto',
+      placeholder: {
+
+        '/zh-cn/': '搜索',
+        '/': 'Search'
+      }
+    }
   }
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
