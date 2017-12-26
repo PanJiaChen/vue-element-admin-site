@@ -16,7 +16,7 @@ Base template recommends using it: [vueAdmin-template](https://github.com/PanJia
 
 This project is still in continuous iteration, gradually precipitating and summarizing more functions and corresponding implementation code,and summarizing the best practices in the admin product template / component / business scenario. This project also looks forward to your participation and. [Feedback](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
-## 功能
+## Feature
 ```
 - Login / Logout
 - Permission authentication
@@ -54,11 +54,11 @@ This project is still in continuous iteration, gradually precipitating and summa
 - Markdown to html
 ```
 
-## 前序准备
+## Preparation
 
-你的本地环境需要安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)。我们的技术栈基于 [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 和 [element-ui](https://github.com/ElemeFE/element)，提前了解和学习这些知识会对使用本项目有很大的帮助。
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 和 [element-ui](https://github.com/ElemeFE/element), It would be helpful if you have pre-existing knowledge on those.
 
-同时配套一个系列的教程文章，如何从零构建后一个完整的后台项目，建议大家先看完这些文章再来实践本项目
+At the same time supporting a series of tutorial articles, how to build a complete background project from scratch, suggest that you read these articles and then come to practice this project. But there's no English version yet.
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
  - [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
  - [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
@@ -66,85 +66,78 @@ This project is still in continuous iteration, gradually precipitating and summa
  - [手摸手，带你封装一个vue component](https://segmentfault.com/a/1190000009090836)
  - [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
 
-## 目录结构
+## Project Structure
 
-本项目已经为你生成了一个完整的开发框架，提供了涵盖中后台开发的各类功能和坑位，下面是整个项目的目录结构。
+This project has built the following templates, and have built a scaffold based on Vue, which should help you prototyping production-ready admin interfaces. It covers almost everything you need.
 
 ```bash
-├── build                      // 构建相关  
-├── config                     // 配置相关
-├── src                        // 源代码
-│   ├── api                    // 所有请求
-│   ├── assets                 // 主题 字体等静态资源
-│   ├── components             // 全局公用组件
-│   ├── directive              // 全局指令
-│   ├── filtres                // 全局 filter
-│   ├── icons                  // 项目所有 svg icons
-│   ├── lang                   // 国际化 language
-│   ├── mock                   // 项目mock 模拟数据
-│   ├── router                 // 路由
-│   ├── store                  // 全局 store管理
-│   ├── styles                 // 全局样式
-│   ├── utils                  // 全局公用方法
-│   ├── vendor                 // 公用vendor
-│   ├── views                   // view
-│   ├── App.vue                // 入口页面
-│   ├── main.js                // 入口 加载组件 初始化等
-│   └── permission.js          // 权限管理
-├── static                     // 第三方不打包资源
-│   └── Tinymce                // 富文本
-├── .babelrc                   // babel-loader 配置
-├── eslintrc.js                // eslint 配置项
-├── .gitignore                 // git 忽略项
-├── favicon.ico                // favicon图标
-├── index.html                 // html模板
+├── build                      // webpack config files
+├── config                     // main project config
+├── src                        // main source code
+│   ├── api                    // api service
+│   ├── assets                 // module assets like fonts,images (processed by webpack)
+│   ├── components             // global components
+│   ├── directive              // global directive
+│   ├── filtres                // global filter
+│   ├── icons                  // svg icons
+│   ├── lang                   // i18nlanguage
+│   ├── mock                   // mock data
+│   ├── router                 // router
+│   ├── store                  // store
+│   ├── styles                 // global css
+│   ├── utils                  // global utils
+│   ├── vendor                 // vendor
+│   ├── views                  // views
+│   ├── App.vue                // main app component
+│   ├── main.js                // app entry file
+│   └── permission.js          // permission authentication
+├── static                     // pure static assets (directly copied)
+│   └── Tinymce                // rich text editor
+├── .babelrc                   // babel config
+├── eslintrc.js                // eslint config
+├── .gitignore                 // sensible defaults for gitignore
+├── favicon.ico                // favicon ico
+├── index.html                 // index.html template
 └── package.json               // package.json
-
 ```
 
-## 安装
+## Quickstart
 
 ```bash
-# 克隆项目
+# clone the projice
 git clone https://github.com/PanJiaChen/vue-element-admin.git
 
-# 安装依赖
+# install dependency
 npm install
 
-# 本地开发 启动项目
+# developmen
 npm run dev
 ```
 
-?> 强烈建议不要用直接使用 cnpm 安装有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题
-
-```bash
-npm install --registry=https://registry.npm.taobao.org
-```
-
-启动完成后会自动打开浏览器访问 http://localhost:9527， 你看到下面的页面就代表成功了。
+This will automatically open http://localhost:9527. If you see the following page then you have succeeded.
 
 ![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
-接下来你可以修改代码进行业务开发了，我们内建了典型业务模板、常用业务组件、模拟数据、HMR 实时预览、状态管理、国际化、全局路由等等各种实用的功能辅助开发，你可以继续阅读和探索左侧的其他文档。
+We have built-in models, standard components, mock data, hot module reloading, state management, i18n, global router, etc. You can continue exploring other documents for more details on those topics.
 
 <br/>
 
-**建议：**  你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上开发，要什么就去 `vue-element-admin` 那里复制过来。
+**Suggestion：** You can use 'vue-element-admin' as a toolbox or as an integration solution repository, It is recommended to do secondary development on the basis of `vueAdmin-template`, if you need any additional feature, you can copy from `vue-element-admin`.
 
- - 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
- - 模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
- - 桌面端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
+ - Toolbox: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+ - Basis template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
+ - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
 ### Contribution
-本文档代码项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
+The repository of documentation is [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
 
-有任何修改和建议都可以该项目 pr 和 issue
+?> There may be some spelling or translation errors in the course of writing this document. It is welcome to point out by issue or pr.
 
-### 捐赠
-如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
+### Donate
+If you find this project useful, you can buy author a glass of juice  :heart:
 [Donate](donate.md)
 
-### 鸣谢
-本文档参考了 [ANT DESIGN PRO](https://pro.ant.design/)
+### Acknowledgment
+This documentation is referenced [ANT DESIGN PRO](https://pro.ant.design/)
 
-文档生成通过 [docsify](https://github.com/QingWei-Li/docsify)
+Documentation generation via [docsify](https://github.com/QingWei-Li/docsify)
