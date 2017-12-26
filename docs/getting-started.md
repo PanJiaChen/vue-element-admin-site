@@ -7,50 +7,51 @@
 [![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin/releases)
 [![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin)
 
-## 介绍
+## Introduction
 
-vue-element-admin 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发。
+vue-element-admin is an enterprise front end integration solution, which is not suitable for secondary development as a base template.
 
-模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
 
-本项目还在持续不断迭代中，逐步沉淀和总结出更多功能和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
+Base template recommends using it: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
+
+This project is still in continuous iteration, gradually precipitating and summarizing more functions and corresponding implementation code,and summarizing the best practices in the admin product template / component / business scenario. This project also looks forward to your participation and. [Feedback](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
 ## 功能
 ```
-- 登录/注销
-- 权限验证
-- 多环境发布
-- 动态侧边栏（支持多级路由）
-- 动态面包屑
-- 国际化多语言
-- 多种动态换肤
-- 快捷导航(标签页)
-- 富文本编辑器
-- Markdown编辑器
-- JSON编辑器
-- Screenfull全屏
-- 列表拖拽
-- Svg Sprite 图标
+- Login / Logout
+- Permission authentication
+- Multi-environment build
+- Dynamic sidebar (supports multi-level routing)
+- Dynamic breadcrumb
+- I18n
+- Customizable theme
+- Tags-view(Tab page Support right-click operation)
+- Rich text editor
+- Markdown editor
+- JSON editor
+- Screenfull
+- Drag and drop list
+- Svg Sprite
 - Dashboard
-- 本地mock数据
-- Echarts 图表
-- Clipboard(剪贴复制)
-- 401/404错误页面
-- 错误日志
-- 导出excel
-- 导出zip
-- 前端可视化excel
+- Mock data
+- Echarts
+- Clipboard
+- 401/404 error page
+- Error log
+- Export excel
+- Export zip
+- Front-end visualization excel
 - Table example
-- 动态table example
-- 拖拽table example
-- 内联编辑table example
+- Dynamictable example
+- Drag and drop table example
+- Inline edit table example
 - Form example
-- 二步登录
+- Two-step login
 - SplitPane
 - Dropzone
 - Sticky
 - CountTo
-- Markdown2html
+- Markdown to html
 ```
 
 ## 前序准备

@@ -13,7 +13,7 @@ vue-element-admin 是一个企业级中后台前端的集成方案，不适合�
 
 模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
 
-本项目还在持续不断迭代中，逐步沉淀和总结出更多功能和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
+本项目还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
 ## 功能
 ```
