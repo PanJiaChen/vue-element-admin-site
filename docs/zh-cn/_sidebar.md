@@ -29,5 +29,4 @@
 
 - [更新日志](zh-cn/https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
 - [常见问题](zh-cn/faq.md)
-
 - [捐赠](zh-cn/donate.md)

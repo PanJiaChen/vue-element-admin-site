@@ -12,7 +12,7 @@ _navbar.md- 入门
   - [Build & Deploy](deploy.md)
 
 - 进阶
-  - [跨域问题](cors.md)
+  - [Cors](cors.md)
   - [ESlint](eslint.md)
   - [路由懒加载](lazy-loading.md)
   <!-- - [封装组件](components.md) -->
@@ -27,7 +27,6 @@ _navbar.md- 入门
   - [富文本](rich-editor)
   - [复制粘贴](clipboard)
 
-- [更新日志](https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
-- [常见问题](faq.md)
-
-- [捐赠](donate.md)
+- [Changelog](zh-cn/https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
+- [Q&A](zh-cn/faq.md)
+- [Donate](donate.md)

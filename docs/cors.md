@@ -1,15 +1,20 @@
-# 跨域问题
+# Cors
 
-楼主 vue 群里的小伙伴们问的最多的问题还是关于跨域的，其实跨域问题真的不是一个很难解决的问题。这里我来简单总结一下我推荐的几种跨域解决方案。
+The most question I am asked is still about cross-domain issues. In fact, the cross-domain issue is really not a very difficult one to solve. Here I will briefly summarize several cross-domain solutions I recommend.
 
-我最推荐的也是我司常用的方式就是 `cors` 全称为 Cross Origin Resource Sharing（跨域资源共享）。这玩意对应前端来说和平时发请求写法上没有任何区别，工作量基本都在后端这里。每一次请求浏览器必须先以 OPTIONS 请求方式发送一个预请求，从而获知服务器端对跨源请求所支持 HTTP 方法。在确认服务器允许该跨源请求的情况下，以实际的 HTTP 请求方法发送那个真正的请求。推荐的原因是只要第一次配好了，之后不管有多少接口和项目复用就可以了，一劳永逸的解决了跨域问题，而且不管是开发环境还是测试环境都能方便的使用。
+The most recommended way is also commonly used by our company is `cors`, full name is `Cross Origin Resource Sharing`.This solution does not make any difference to the front-end write request as usual.The workload is basically on the back-end. For each request, the browser must first send a pre-request as OPTIONS, to know the server-side HTTP method supported for cross-source requests. After confirming that the server allows the cross-source request, then send the real request with the actual HTTP request method.
 
-但总有后端觉得麻烦不想这么搞。那前端也是有解决方案的，在 dev 开发模式下可以下使用 webpack 的 `proxy` 使用也是很方便的看一下 [文档](https://doc.webpack-china.org/configuration/dev-server/#devserver-proxy) 就会使用了，楼主一些个人项目使用的该方法。但这种方法在生产环境是不适用的。在生产环境中需要使用 nginx 反向代理。不管是 proxy 和 nginx 的原理都是一样的，通过搭建一个中转服务器来转发请求规避跨域的问题。
+The reason for the recommendation is: once the first match, and then no matter how many interfaces and project reuse will be OK, once and for all to solve the cross-domain problem,and regardless of the development environment or production environment can be easily used.
 
-| 开发环境 | 生产环境   |
+But there are always trouble back-end development do not want to do this.That pure front-end is also has solutions.
+
+In dev environment, you can use webpack `proxy`, it is also very easy to use。 It's recommended that you look at the [document](https://doc.webpack-china.org/configuration/dev-server/#devserver-proxy) and we're not going to discuss it here. Some of the author's personal projects use this method
+
+But this method can not used in the production environment. In production environment, you need to use nginx reverse proxy. Whether `proxy` or `nginx`, the principle is the same. Solve the cross-domain issues by building a transit server to forward requests.
+
+| development | production   |
 | :--------:   | -----  |
 |    cors    |  cors  |
 |    proxy    |  nginx  |
 
-这里我只推荐这两种方式跨域，其它的跨域方式都很多，但真心主流的也就这两种方式。
-
+Here I only recommend these two ways cross-domain, the other cross-domain ways are many, but the only real mainstream is `cors` and `nginx`.
