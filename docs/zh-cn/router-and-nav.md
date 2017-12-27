@@ -57,7 +57,7 @@ meta : {
 
 其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
 
-**注意事项：**如果这里有一个需要非常注意的地方就是404页面一定要最后加载，如果放在 constantRouterMap 一同声明了404，后面的所以页面都会被拦截到404，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+?> **注意事项：**如果这里有一个需要非常注意的地方就是404页面一定要最后加载，如果放在 constantRouterMap 一同声明了404，后面的所以页面都会被拦截到404，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 
 ## 侧边栏
 
@@ -65,16 +65,17 @@ meta : {
 
 前面也介绍了，侧边栏是通过读取路由并结合权限判断而动态生成的，而且还需要支持路由无限嵌套，所以这里还使用到了递归组件。
 
-> 代码地址 `@/views/layout/components/Sidebar`
+> 代码地址: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout/components/Sidebar)
 
-这里同时也改造了 `element-ui` 默认侧边栏不少的样式，所有的css都可以在 `@/styles/sidebar.scss` 中找到，可以根据自己的需求进行修改。
+这里同时也改造了 `element-ui` 默认侧边栏不少的样式，所有的css都可以在 [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) 中找到，可以根据自己的需求进行修改。
 
 ?> 这里需要注意一下，一般侧边栏有两种形式，即有 `submenu` 和 直接 `el-menu-item`。 一个嵌套子菜单，一个则是直接一个链接。如下图：
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如：
+?> 在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如：
 ```js
+// no submenu, because children.length===1
 {
   path: '/icon',
   component: Layout,
@@ -82,9 +83,11 @@ meta : {
     path: 'index',
     component: _import('svg-icons/index'),
     name: 'icons',
-    meta: { title: 'icons', icon: 'icon', noCache: true }
+    meta: { title: 'icons', icon: 'icon' }
   }]
 },
+
+// has submenu, because children.length>=1
 {
   path: '/components',
   component: Layout,
@@ -105,7 +108,7 @@ meta : {
 
 ![](https://wpimg.wallstcn.com/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
 
-尤大本来也说要增加一个方法来强刷 view，但后来他又改变了心意/(ㄒoㄒ)/~~。但需要就摆在这里，我们该怎么办呢？他说了不改变current URL 就不会触发任何东西，那我可不可以强行触发东西你？上有政策， 下有对策我们变着花来hack。方法也很简单，通过不断改变 url的 query 来触发view的变化。我们监听侧边栏每个 link 的 click 事件，每次点击都给 router push 一个不一样的query 来确保会重新刷新 view。
+尤大本来也说要增加一个方法来强刷 view，但后来他又改变了心意/(ㄒoㄒ)/~~。但需求就摆在这里，我们该怎么办呢？他说了不改变current URL 就不会触发任何东西，那我可不可以强行触发你的hook呢？上有政策， 下有对策我们变着花来hack。方法也很简单，通过不断改变 url的 query 来触发view的变化。我们监听侧边栏每个 link 的 click 事件，每次点击都给 router push 一个不一样的query 来确保会重新刷新 view。
 
 ```js
 clickLink(path) {
@@ -127,7 +130,7 @@ ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<route
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
-> 组件地址 `@/components/Breadcrumb`
+> 组件地址: [@/components/Breadcrumb](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Breadcrumb/index.vue)
 
 
 ## 侧边栏滚动问题
@@ -143,5 +146,6 @@ overflow-y:scroll;
 
 所以现版本中使用了 js 来处理侧边栏滚动问题。封装了 滚动组件 `ScrollPane`。
 
-代码地址 `@/components/ScrollPane`
+> 代码地址: [@/components/ScrollPane](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ScrollPane/index.vue)
+
 
