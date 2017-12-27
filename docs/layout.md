@@ -1,5 +1,5 @@
 # Layout
-To learn about a management System, we must first understand its basic layout.
+To learn about a management system, we must first understand its basic layout.
 
 Layout is the outermost structure for a project, ususaly consists of navigation, sidebar, breadcrumb and content.
 

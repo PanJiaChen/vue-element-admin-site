@@ -1,27 +1,42 @@
-# 路由和菜单
+# Router and Nav
 
-路由和菜单是组织起一个后台应用的关键骨架。
+Router and Nav are the key skeleton for organizing a management system.
 
-本项目侧边栏和路由是绑定在一起的，所以你只有在 `@/router/index.js` 下面配置对应的路由，侧边栏就能动态的生成了。大大减轻了手动编辑侧边栏的工作量。当然这样就需要在配置路由的时候遵循很多的约定。
+This project router and nav are bound together, sso you only have to configure the route under `@/router/index.js` and the sidebar nav can be generated dynamically.This greatly reduces the workload of manually editing the sidebar nav. Of course, so you need to follow many conventions in configuring the route.
 
-## 配置项
-首先我们了解一些本项目配置路由时提供了哪些配置项。
+## Config
+First let us know what configuration items are provided config route.
 
 ```js
-hidden: true                  当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面(默认 false)
-redirect: noredirect          当设置 noredirect 的时候该路由不会在面包屑导航中出现
-name:'router-name'            设定路由的名字，一定要填写不然 使用 <keep-alive> 时会出现各种问题
+// if set to true, lt will not appear in sidebar nav. e.g. login or 401 page (Default: false)
+hidden: true
+
+// if set to noredirect, lt will not appear in breadcrumb
+redirect: noredirect
+
+// set router name. It must be setted，in order to avoid problems with <keep-alive>.
+name:'router-name'
+
 meta : {
-  role: ['admin','editor']   设置该路由进入的权限，支持多个权限叠加
-  title: 'title'             设置该路由在侧边栏和面包屑中展示的名字
-  icon: 'svg-name'           设置该路由的图标
-  noCache: true              如果设置为true ,则不会被 <keep-alive> 缓存(默认 false)
+  // required roles to navigate to this route. Support multiple permissions overlay.
+  // Note that one match is enough to pass the check.
+  role: ['admin','editor'] // if not set means it doesn't need any permission.
+
+  // the title of the route to show in various components (e.g. sidebar, breadcrumbs).
+  title: 'title'
+
+  // icon class for the route link.
+  icon: 'svg-name'
+
+  // when set true, the route will not be cached by <keep-alive>. Default false
+  noCache: true
 }
 ```
+?> **Note:** Every route record (the term use because of VueRouter documentation) MUST have the name property in order to avoid problems with <keep-alive>.
 
 <br/>
 
-**示例：**
+**Example：**
 ```js
 {
   path: '/permission',
@@ -43,38 +58,40 @@ meta : {
 }
 ```
 
-## 路由
+## Router
 
-这里的路由分为两种，`constantRouterMap` 和 `asyncRouterMap`。
+There are two types of routes here , `constantRouterMap` and `asyncRouterMap`.
 
- **constantRouterMap** 代表那些不需要动态判断权限的路由，如登录页，404，等通用页面。
+ **constantRouterMap: ** represents routes that do not require dynamic access, such as login page, 404, and so on.
 
- **asyncRouterMap** 代表那些需求动态判断权限并通过 `addRouters` 动态添加的页面。具体的会在 [权限判断](https://panjiachen.github.io/vue-element-admin-site/#/permission) 页面介绍。
+ **asyncRouterMap: ** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission judgment page](https://panjiachen.github.io/vue-element-admin-site/#/permission).
 
-> 这里所有的组件使用自定义方法 `_import ` 引入，具体介绍见[路由懒加载](https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading)
+> 这里所有的组件使用自定义方法 `_import ` 引入，具体介绍见[路由懒加载](https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading) #for perf
 
-> 如果你想了解更多关于 browserHistory 和 hashHistory，请参看 [构建和发布](deploy)。
+> If you want to know more about browserHistory and hashHistory, please refer to [Build & Deploy](deploy).
 
-其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
+The other configurations are no different from the [vue-router](https://router.vuejs.org/en/) official, so check the documentation for yourself.
 
-**注意事项：**如果这里有一个需要非常注意的地方就是404页面一定要最后加载，如果放在 constantRouterMap 一同声明了404，后面的所以页面都会被拦截到404，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+?> **Note: ** There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem:  [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 
-## 侧边栏
+## Sidebar
 
-本项目侧边栏主要基于 `element-ui` 的 `el-menu` 改造。
+The project sidebar is mainly based on the `el-menu` element-ui`.
 
-前面也介绍了，侧边栏是通过读取路由并结合权限判断而动态生成的，而且还需要支持路由无限嵌套，所以这里还使用到了递归组件。
+Also introduced in the front, the sidebar is generated dynamically by reading the route and combined with the authority to judge, but also need to support the infinite nesting of routes, so here is also used to the recursive components.
 
-> 代码地址 `@/views/layout/components/Sidebar`
+> Corresponding code: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout/components/Sidebar)
 
-这里同时也改造了 `element-ui` 默认侧边栏不少的样式，所有的css都可以在 `@/styles/sidebar.scss` 中找到，可以根据自己的需求进行修改。
+This also modify many default sidebar styles of `element-ui`. All css can be found in [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) and can be modified to suit your needs.
 
-?> 这里需要注意一下，一般侧边栏有两种形式，即有 `submenu` 和 直接 `el-menu-item`。 一个嵌套子菜单，一个则是直接一个链接。如下图：
+?> Here need to pay attention, The general sidebar has two forms, `submenu` and` el-menu-item`.  One is a nested submenu, the other is a direct link. As shown below:
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如：
+?> It has been determined in `Sidebar` that when you declare more than `one` route under the `children` , it automatically becomes nested mode. Such as:
+
 ```js
+// no submenu, because children.length===1
 {
   path: '/icon',
   component: Layout,
@@ -82,9 +99,11 @@ meta : {
     path: 'index',
     component: _import('svg-icons/index'),
     name: 'icons',
-    meta: { title: 'icons', icon: 'icon', noCache: true }
+    meta: { title: 'icons', icon: 'icon'}
   }]
 },
+
+// has submenu, because children.length>=1
 {
   path: '/components',
   component: Layout,
@@ -100,48 +119,48 @@ meta : {
 }
 ```
 
-### 点击侧边栏 刷新当前路由
-在用 spa(单页面应用) 这种开发模式的之前，用户每次点击侧边栏都会重新请求这个页面，用户渐渐养成了点击侧边栏当前路由来刷新 view 的习惯。但现在 spa 就不一样了，用户点击当前高亮的路由并不会刷新 view，因为 vue-router 会拦截你的路由，它判断你的url并没有任何变化，所以它不会触发任何钩子或者是view的变化。[issue](https://github.com/vuejs/vue-router/issues/296) 地址，社区也对该问题展开了激烈讨论。
+### Click the sidebar to refresh the current route
+Before using the development model of spa(single page application), each time the user clicks the sidebar will request this page again, the user gradually developed the habit of clicking the current route in the sidebar to refresh the view. But now the spa is not the same, the user clicks the currently highlighted route and does not refresh the view, because the vue-router will intercept your routing, it determines your url does not change, so it will not trigger any hook or view changes.[Related issue](https://github.com/vuejs/vue-router/issues/296), the community has also heated discussions on the issue.
 
 ![](https://wpimg.wallstcn.com/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
 
-尤大本来也说要增加一个方法来强刷 view，但后来他又改变了心意/(ㄒoㄒ)/~~。但需要就摆在这里，我们该怎么办呢？他说了不改变current URL 就不会触发任何东西，那我可不可以强行触发东西你？上有政策， 下有对策我们变着花来hack。方法也很简单，通过不断改变 url的 query 来触发view的变化。我们监听侧边栏每个 link 的 click 事件，每次点击都给 router push 一个不一样的query 来确保会重新刷新 view。
+`yyx990803`also said that he wanted to add a way to brighten the view, but later he changed his mind again/(ㄒoㄒ)/~~ But demand is here, what should we do? He said it would not trigger anything without changing the current URL, so can I force the trigger? The hack is simple. By changing the url query to trigger the view changes。We listen to each link's click event on the sidebar, each click will push a different query for the router to ensure that the view is refreshed.
 
 ```js
 clickLink(path) {
   this.$router.push({
     path,
     query: {
-      t: +new Date() //保证每次点击路由的query项都是不一样的，确保会重新刷新view
+      //Ensure that each click, query is not the same, to ensure that refresh the view
+      t: +new Date()
     }
   })
 }
 ```
+?> ps: Don't forget to add a unique 'key' to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
 
-ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<router-view :key="$route.path"></router-view>`，
-但这也有一个弊端就是 url 后面有一个很难看的 `query` 后缀如 `xxx.com/article/list?t=1496832345025`
+But there's also a drawback the ugly 'query' suffix behind url, such as `xxx.com/article/list?t=1496832345025`
 
 
-## 面包屑
-本项目中也封装了一个面包屑导航，它也是通过 `watch $route` 变化动态生成的。它和 menu 也一样，也可以通过之前那些配置项控制一些路由在面包屑中的展现。大家也可以结合自己的业务需求增改这些自定义属性。
+## Breadcrumb
+
+This project also packages a breadcrumb navigation, which is also dynamically generated by the watch $ route change. It is the same with the menu, you can also config it in the routing. You can also add some custom attributes to your business needs in route.meta attr.
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
-> 组件地址 `@/components/Breadcrumb`
+> Corresponding code: [@/components/Breadcrumb](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Breadcrumb/index.vue)
 
 
-## 侧边栏滚动问题
-之前版本的滚动都是用css来做处理的
+## Sidebar scroll problem
+Previous versions of scroll were handled with css
 ```css
 overflow-y:scroll;
 
 ::-webkit-scrollbar {display:none}
 
 ```
+But hack by css has some problems, in Firefox or other lower versions of the browser will be less beautiful.
+Second, in the case of sidebar collapses, limited to `menu` of` element-ui`, can not be handled in this way.
 
-首先这样写会有兼容性问题，在火狐或者其它低版本游览器中都会比较不美观。其次在侧边栏收起的情况下，受限于 `element-ui`的 `menu` 组件的实现方式，不能使用该方式来处理。
-
-所以现版本中使用了 js 来处理侧边栏滚动问题。封装了 滚动组件 `ScrollPane`。
-
-代码地址 `@/components/ScrollPane`
-
+So now use js to deal with sidebar scrolling problem. Write a scroll component `ScrollPane`.
+> Corresponding code: [@/components/ScrollPane](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ScrollPane/index.vue)
