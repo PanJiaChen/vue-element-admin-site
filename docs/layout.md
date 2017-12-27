@@ -1,15 +1,18 @@
-# 布局
-了解一个后台项目，先要了解它的基础布局。页面整体布局是一个产品最外层的框架结构，往往会包含导航、侧边栏、面包屑以及内容等。
+# Layout
+To learn about a management System, we must first understand its basic layout.
 
-## Layout
+Layout is the outermost structure for a project, ususaly consists of navigation, sidebar, breadcrumb and content.
+
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 
-> 对应代码目录: `@/views/layout`
+> Corresponding code:  [@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout :blank)
 
-?> `@` 是 webpack 的 [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) 不懂得请自行研究
+?> `@` is webpack [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) If you don't understand, please study yourself.
 
-`vue-element-admin`中大部分页面都是基于这个`layout`的，除了个别页面如 `login` , `404`, `401` 等页面没有使用该`layout`。
+Most pages in `vue-element-admin` are based on this `layout`, except for pages such as` login`, `404`,` 401` and others that are not used by the `layout`.
+
+It's also easy if you want to have many different `layout` in a project, as long as you select a different` layout` component on the first level route.
 
 ```js
 //no layout
@@ -17,11 +20,15 @@
   path: '/401',
   component: _import('errorPage/401')
 }
+
 //has layout
 {
   path: '/documentation',
+  //you can choose different layout components
   component: Layout,
-  children: [{ //这里就是对应的app-main
+
+  //the route that starts here will be shown in app-main as shown above
+  children: [{
     path: 'index',
     component: _import('documentation/index'),
     name: 'documentation'
@@ -29,42 +36,58 @@
 }
 ```
 
-这里使用了 vue-router [路由嵌套](https://router.vuejs.org/zh-cn/essentials/nested-routes.html), 所以一般情况下，你增加修改页面只会影响主题区域的 `app-main`这个主题区域， 其它如侧边栏或者导航栏都不会发生变化。
+It's used vue-router [Nested Routes](https://router.vuejs.org/en/essentials/nested-routes.html), So you add or modify the page will only affect ​​the `app-main`, the other as the sidebar or navigation bar will not change.
 
-当然你也可以一个项目里面使用多个不同的 `layout`，只要在你想作用的路由父级引用它就可以了。
+Of course, you can also use multiple `layout` in a project, just refer to it in the route parent you want to work with.
 
 
 ## app-main
 
-> 对应代码目录: `@/views/layout/components/AppMain`
+> Corresponding code: [@/views/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)
 
-这里在 `app-main` 外部包了一层 `keep-alive` 主要是为了缓存 `<router-view>`的，配合页面的 `tabs-view` 标签导航使用，如不需要可自行[去除](tags-view)。
+Here's wrap ` app-main` in a `<keep-alive>` element, mainly for caching `<router-view>`, which works with the `tabs-view` tab navigation on the page, if not needed [remove it](tags-view)。
 
 ### router-view
-different router the same component vue。真实的业务场景中，这种情况很多。比如
+different router the same component vue. In real business scenarios, this is a lot. Such as
 
 ![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
-我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
+If you have two pages, such as creating and editing pages using the same component. By default, the created or mounted hook of vue is not triggered when the two pages are switched. Officials say you can do this by watching the changes in $ route, but in fact it's really annoying.Later It turns out that you can simply add a unique key in the `router-view`, to ensure that the routing switch will re-render the trigger hook. This is much simpler.
 
 ```js
 <router-view :key="key"></router-view>
 
 computed: {
   key() {
+    // or :key="$route.path" just need a unique key
     return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()
   }
  }
 ```
 
-**或者** 可以像本项目中 `editForm` 和 `createForm` 声明两个不同的 view 但引入同一个component。
+<br/>
+
+?> **Or** You can declare two different router view like `editForm` and `createForm` in this project but import the same component.
 
 ```html
- <article-detail :is-edit='false'></article-detail> //create
- <article-detail :is-edit='true'></article-detail> //edit
+//create.vue
+<template>
+  <article-detail :is-edit='false'></article-detail> //create
+</template>
+<script>
+  import ArticleDetail from './components/ArticleDetail'
+</script>
+
+//edit.vue
+<template>
+   <article-detail :is-edit='true'></article-detail> //edit
+</template>
+<script>
+  import ArticleDetail from './components/ArticleDetail'
+</script>
 ```
 
-代码: `@/views/form`
+> Corresponding code: [@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
 
-## 移动端
-`element-ui` 官方对自己的定位是桌面端后台框架，所以本项目也不会适配移动端，有需求请自行修改。
+## mobile
+'element-ui' the official positioning is a desktop backstage framework, so this project will not be suitable for mobile, if you need to modify it by youself.
