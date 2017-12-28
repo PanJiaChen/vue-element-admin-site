@@ -22,26 +22,48 @@
   nav.app-nav{
     margin-right: 100px;
   }
-  nav.app-nav ul{
-    cursor: pointer;
-  }
-  nav.app-nav li ul {
-    min-width: 100px;
-    overflow-y: auto;
+  nav.app-nav .emoji{
+    vertical-align: -5px;
+    margin-right:5px;
   }
 </style>
+
 <body>
+    <nav>
+      <a href="#/" data-translation='en'>
+        <img class="emoji" src="https://assets-cdn.github.com/images/icons/emoji/uk.png" alt="uk"> EN
+      </a>
+      <a href="#/zh-cn/" data-translation='zh-cn'>
+        <img class="emoji" src="https://assets-cdn.github.com/images/icons/emoji/cn.png" alt="cn"> 中文
+      </a>
+    </nav>
   <div id="app"></div>
 </body>
 <script>
   window.$docsify = {
+      plugins: [
+      function(hook, vm) {
+        hook.ready(function() {
+          document.getElementsByClassName('app-nav')[0].addEventListener('click',function(e){
+            if(e.target.attributes['data-translation']){
+              e.preventDefault()
+              var hash=window.location.hash
+              if(hash.indexOf('zh-cn')>=0){
+                var targetPath=hash.split('/zh-cn/')[1]
+              }else{
+                var targetPath='#/zh-cn/'+hash.split('#/')[1]
+              }
+              window.location.hash=targetPath
+            }
+          })
+        })
+      }
+    ],
     loadSidebar: true,
     maxLevel: 10,
     auto2top: true,
     coverpage: true,
-    loadNavbar: true,
-    // autoHeader: true,
-    homepage: 'getting-started.md',
+    // homepage: 'getting-started.md',
     name: 'vue-element-admin',
     repo: 'https://github.com/PanJiaChen/vue-element-admin',
     search: {
@@ -62,13 +84,6 @@
 <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
 <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8111190712859981",
-    enable_page_level_ads: true
-  });
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109340118-1"></script>
 <script>

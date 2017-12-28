@@ -1,5 +1,5 @@
 _navbar.md- 入门
-  - [Getting Started](getting-started.md)
+  - [Getting Started](README.md)
   - [Layout](layout.md)
   - [Router and Nav](router-and-nav.md)
   - [Permission](permission.md)
