@@ -30,10 +30,10 @@
 
 <body>
     <nav>
-      <a href="#/" data-translation='en'>
+      <a href="#/" data-translation="en">
         <img class="emoji" src="https://assets-cdn.github.com/images/icons/emoji/uk.png" alt="uk"> EN
       </a>
-      <a href="#/zh-cn/" data-translation='zh-cn'>
+      <a href="#/zh-cn/" data-translation="zh-cn">
         <img class="emoji" src="https://assets-cdn.github.com/images/icons/emoji/cn.png" alt="cn"> 中文
       </a>
     </nav>
@@ -41,21 +41,21 @@
 </body>
 <script>
   window.$docsify = {
-      plugins: [
+    plugins: [
       function(hook, vm) {
-        hook.ready(function() {
-          document.getElementsByClassName('app-nav')[0].addEventListener('click',function(e){
-            if(e.target.attributes['data-translation']){
-              e.preventDefault()
-              var hash=window.location.hash
-              if(hash.indexOf('zh-cn')>=0){
-                var targetPath=hash.split('/zh-cn/')[1]
-              }else{
-                var targetPath='#/zh-cn/'+hash.split('#/')[1]
-              }
-              window.location.hash=targetPath
-            }
-          })
+        hook.doneEach(function() {
+          var hash=window.location.hash
+          var enLink=document.querySelectorAll('[data-translation="en"]')[0]
+          var zhLink=document.querySelectorAll('[data-translation="zh-cn"]')[0]
+          if(hash.indexOf('zh-cn')>=0){
+            var targetPath=hash.split('/zh-cn/')[1]
+            zhLink.className='active'
+          }else{
+            var targetPath=hash.split('#/')[1]
+            enLink.className='active'
+          }
+          enLink.href='#/'+targetPath
+          zhLink.href='#/zh-cn/'+targetPath
         })
       }
     ],
