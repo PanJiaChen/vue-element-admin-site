@@ -1,5 +1,5 @@
 - 入门
-  - [开始使用](zh-cn/Readme.md)
+  - [开始使用](zh-cn/README.md)
   - [布局](zh-cn/layout.md)
   - [路由和菜单](zh-cn/router-and-nav.md)
   - [权限验证](zh-cn/permission.md)

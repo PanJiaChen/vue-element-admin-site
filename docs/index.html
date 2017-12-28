@@ -56,6 +56,12 @@
           }
           enLink.href='#/'+targetPath
           zhLink.href='#/zh-cn/'+targetPath
+          console.log(targetPath)
+          if(!targetPath|| targetPath==='?id=vue-element-admin'){
+            var li=document.querySelectorAll('.sidebar-nav ul li ul li')
+            console.log(li[0])
+            li[0].className='active'
+          }
         })
       }
     ],

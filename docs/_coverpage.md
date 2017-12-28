@@ -7,6 +7,6 @@
 - Lots of awesome features
 
 [GitHub](https://github.com/PanJiaChen/vue-element-admin ":target=_blank")
-[Get Started](?id=vue-element-admin)
+[Get Started](README.md)
 
 <!-- ![color](#00b887) -->

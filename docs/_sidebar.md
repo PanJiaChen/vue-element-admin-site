@@ -1,4 +1,4 @@
-_navbar.md- 入门
+- 入门
   - [Getting Started](README.md)
   - [Layout](layout.md)
   - [Router and Nav](router-and-nav.md)
