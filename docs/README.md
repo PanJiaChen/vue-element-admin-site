@@ -9,14 +9,14 @@
 
 ## Introduction
 
-vue-element-admin is an enterprise front end integration solution, which is not suitable for secondary development as a base template.
+vue-element-admin is a admin interfaces integration solution, which is not suitable for secondary development as a base template.
 
 
 Base template recommends using it: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
 
 This project is still in continuous iteration, gradually precipitating and summarizing more functions and corresponding implementation code,and summarizing the best practices in the admin product template / component / business scenario. This project also looks forward to your participation and. [Feedback](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
-## Feature
+## Features
 ```
 - Login / Logout
 - Permission authentication
@@ -56,7 +56,7 @@ This project is still in continuous iteration, gradually precipitating and summa
 
 ## Preparation
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 和 [element-ui](https://github.com/ElemeFE/element), It would be helpful if you have pre-existing knowledge on those.
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) and [element-ui](https://github.com/ElemeFE/element), It would be helpful if you have pre-existing knowledge on those.
 
 At the same time supporting a series of tutorial articles, how to build a complete background project from scratch, suggest that you read these articles and then come to practice this project. But there's no English version yet.
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
@@ -101,7 +101,7 @@ This project has built the following templates, and have built a scaffold based 
 └── package.json               // package.json
 ```
 
-## Quickstart
+## Getting started
 
 ```bash
 # clone the projice
@@ -110,7 +110,7 @@ git clone https://github.com/PanJiaChen/vue-element-admin.git
 # install dependency
 npm install
 
-# developmen
+# develop
 npm run dev
 ```
 

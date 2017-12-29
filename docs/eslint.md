@@ -48,5 +48,5 @@ Everyone and the team have their own code specification, unification is good, to
 
 ## auto fix
 ```bash
-pm run lint -- --fix
+npm run lint -- --fix
 ```
