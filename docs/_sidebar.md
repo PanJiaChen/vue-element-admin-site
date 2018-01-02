@@ -1,4 +1,4 @@
-- 入门
+- Basic
   - [Getting Started](README.md)
   - [Layout](layout.md)
   - [Router and Nav](router-and-nav.md)
@@ -11,7 +11,7 @@
   - [Import Module](import.md)
   - [Build & Deploy](deploy.md)
 
-- 进阶
+- Advanced
   - [Cors](cors.md)
   - [ESlint](eslint.md)
   - [路由懒加载](lazy-loading.md)
@@ -23,8 +23,8 @@
   - [错误处理](error.md)
   - [测试](test.md ":disabled")
 
-- 组件
-  - [富文本](rich-editor)
+- Components
+  - [Rich text editor](rich-editor)
   - [复制粘贴](clipboard)
 
 - [Changelog](zh-cn/https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
