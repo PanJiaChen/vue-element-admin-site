@@ -25,7 +25,7 @@
 
 - Components
   - [Rich text editor](rich-editor)
-  - [复制粘贴](clipboard)
+  - [Clipboard](clipboard)
 
 - [Changelog](zh-cn/https://github.com/PanJiaChen/vue-element-admin/releases ":ignore")
 - [Q&A](zh-cn/faq.md)

@@ -1,29 +1,29 @@
-# 常见问题
+# Common problem
 
-?> 提问之前，请先查阅下面的常见问题。
+?> Please refer to the following FAQ before asking questions.
 
-## vue-element-admin 和 vueAdmin-template 有什么区别？
+## What is the difference between vue-element-admin and vueAdmin-template?
 
-vue-element-admin 是一个后台的集成方案，它囊括了很多的功能和组件，并不适合作为基础模板来进行二次开发。
-vueAdmin-template 则是一个后台的基础模板脚手架，适合在它的基础上进行二次开发。
+vue-element-admin: is a back-end integration program, it contains a lot of features and components, is not suitable as a basic template for secondary development.
 
-<br/>
-
-## 首先有任何报错，最简单的方法是报错信息复制到游览器里面搜索一下！
-[google 点我](http://lmgtfy.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
-
-[百度点我](http://www.baidu-x.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
+vueAdmin-template: is a basic admin scaffolding, suitable for secondary development.
 
 <br/>
 
-## vendor过大问题?
-建议使用gzip，使用之后体积会只有原先1/3左右。还可以使用懒加载或者Code Splitting 建议参考[这篇文章](https://zhuanlan.zhihu.com/p/26710831)。打出来的 app.js 过大，查看一下是不是Uglify配置不正确或者sourceMap没弄对。
-优化相关请看该[文章](https://zhuanlan.zhihu.com/p/27710902)
+## First of all there is any error, the easiest way is to copy the error message to the browser search!!!
+[google](http://lmgtfy.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
+
+[baidu](http://www.baidu-x.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
 
 <br/>
 
-## 我的 url 里怎么有 # 号？要如何去掉？
-请参考文档 [前端路由与服务端的结合](deploy.md?id=前端路由与服务端的结合) 主要由于 `browserHistory` 和 `hashHistory` 。
+## Vendor too big problem?
+It is recommended to use gzip, after using the volume will be only the original 1/3 or so. You can also use lazy loading or Code Splitting. If the app.js is to big, Check if Uglify is configured incorrectly or sourceMap is not correct.
+
+<br/>
+
+## How do I have a # in my url? How to get rid?
+see vue-router `browserHistory` 和 `hashHistory`.
 
 <br/>
 
