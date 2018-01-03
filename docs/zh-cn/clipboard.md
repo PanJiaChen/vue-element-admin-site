@@ -1,4 +1,4 @@
-# clipboard
+# Clipboard
 这里的复制粘贴使用了 [clipboard](https://github.com/zenorocha/clipboard.js)
 
 本项目提供了两种使用方式

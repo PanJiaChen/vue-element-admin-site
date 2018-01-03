@@ -1,14 +1,14 @@
-# clipboard
-这里的复制粘贴使用了 [clipboard](https://github.com/zenorocha/clipboard.js)
+# Clipboard
+Here's the copy and paste based on [clipboard](https://github.com/zenorocha/clipboard.js)
 
-本项目提供了两种使用方式
+This project provides two ways to use.
 
-## 直接使用
+## Use directly
 ```html
 <el-button @click='handleCopy(inputData,$event)'>copy</el-button>
 ```
 ```js
-import clip from '@/utils/clipboard' // use clipboard directly
+import clip from '@/utils/clipboard.js' // use clipboard directly
 
 methods: {
   handleCopy(text, event) {
@@ -17,19 +17,23 @@ methods: {
 }
 ```
 
-首先引入封装好的 `clipboard` ,设置 `click` function。
+First of all, import `clipboard.js` and  set `click` function.
 
-`clip()` 函数第一个参数为复制的内容，第二个参数为 `event` 事件。两个参数均为必填项。
+`clip()` The first parameter is the contents of the copy, the second parameter is the event event. Both parameters are required.
 
 <br/>
 <br/>
 
-## 指令形式使用
+## v-directive
 
-本项目同时也封装了一个通过 `directives` 的方式来使用 `clipboard`。
+This project also encapsulates a `v-clipboard`.
 
 ```html
- <el-button v-clipboard:copy='inputData' v-clipboard:success='clipboardSuccess'>copy</el-button>
+ <el-button
+   v-clipboard:copy='inputData'
+   v-clipboard:success='clipboardSuccess'>
+   copy
+</el-button>
 ```
 ```js
 import clipboard from '@/directive/clipboard/index.js' // use clipboard by v-directive
@@ -40,11 +44,13 @@ directives: {
 methods: {
   clipboardSuccess() {
     this.$message({
-      message: '复制成功',
+      message: 'Copy successfully',
       type: 'success',
       duration: 1500
     })
   }
 }
 ```
-`v-clipboard:copy` 为复制的内容，`v-clipboard:success` 为成功之后的回调。
+`v-clipboard:copy`: the copy of the content.
+
+`v-clipboard:success`: success callback function.
