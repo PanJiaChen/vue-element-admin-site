@@ -14,7 +14,7 @@ Enter the project of `.eslintrc.js`, find `indent`,and then set it to `4` 。The
 If you really don't want to use ESLint,you just find [config/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.base.conf.js).
 And then set `useEslint: true` to `useEslint: false` .
 
-## vscode 配置 ESLint
+## Configure ESLint in vscode
 
 Sharp tools make good work! Personally recommend eslint+vscode to write VUE, there is definitely a very cool
 ![eslintGif.gif](https://wpimg.wallstcn.com/e94a76df-6dc0-4c15-9785-28b553a163e9.png)

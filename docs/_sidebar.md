@@ -19,7 +19,7 @@
   - [图表](chart.md)
   - [图标](icon.md)
   - [更换主题](theme.md)
-  - [国际化](i18n.md )
+  - [I18n](i18n.md )
   - [错误处理](error.md)
   - [测试](test.md ":disabled")
 
