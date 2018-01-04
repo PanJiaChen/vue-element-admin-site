@@ -23,7 +23,7 @@
 - cachedViews : 实际 keep-alive 的路由。可以在配置路由的时候通过 `meta.noCache` 来设置是否需要缓存这个路由 默认都缓存。[配置文档](router-and-nav)
 
 ## 注意事项
-由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-alive` 的 [include](https://cn.vuejs.org/v2/api/#keep-alive) 默认是优先匹配组件的 **name** ，所以在编写路由和路由对应的 view 的时候一定要确保 两者的name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切不要可某些组件重复 不然会递归引用最后内存溢出)
+由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-alive` 的 [include](https://cn.vuejs.org/v2/api/#keep-alive) 默认是优先匹配组件的 **name** ，所以在编写路由router和路由对应的 view component 的时候一定要确保 两者的name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切记不要可某些组件的命名重复了 不然会递归引用最后内存溢出等问题)
 
 **DEMO:**
 ```js
