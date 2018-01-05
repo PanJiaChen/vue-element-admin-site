@@ -12,7 +12,7 @@ hidden: true                  当设置 true 的时候该路由不会再侧边�
 redirect: noredirect          当设置 noredirect 的时候该路由不会在面包屑导航中出现
 name:'router-name'            设定路由的名字，一定要填写不然 使用 <keep-alive> 时会出现各种问题
 meta : {
-  role: ['admin','editor']   设置该路由进入的权限，支持多个权限叠加
+  roles: ['admin','editor']   设置该路由进入的权限，支持多个权限叠加
   title: 'title'             设置该路由在侧边栏和面包屑中展示的名字
   icon: 'svg-name'           设置该路由的图标
   noCache: true              如果设置为true ,则不会被 <keep-alive> 缓存(默认 false)
@@ -28,7 +28,7 @@ meta : {
   component: Layout,
   redirect: '/permission/index',
   hidden: true,
-  meta: { role: ['admin'] },
+  meta: { roles: ['admin','edior'] }, // you can set roles in root nav
   children: [{
     path: 'index',
     component: _import('permission/index'),
@@ -36,7 +36,7 @@ meta : {
     meta: {
       title: 'permission',
       icon: 'lock',
-      role: ['admin'],
+      role: ['admin','editor'], // or you can only set roles in sub nav
       noCache: true
     }
   }]

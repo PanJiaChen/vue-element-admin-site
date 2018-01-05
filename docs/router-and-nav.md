@@ -20,7 +20,7 @@ name:'router-name'
 meta : {
   // required roles to navigate to this route. Support multiple permissions overlay.
   // Note that one match is enough to pass the check.
-  role: ['admin','editor'] // if not set means it doesn't need any permission.
+  roles: ['admin','editor'] // if not set means it doesn't need any permission.
 
   // the title of the route to show in various components (e.g. sidebar, breadcrumbs).
   title: 'title'
@@ -43,7 +43,7 @@ meta : {
   component: Layout,
   redirect: '/permission/index',
   hidden: true,
-  meta: { role: ['admin'] },
+  meta: { roles: ['admin','ediotr'] }, // you can set roles in root nav
   children: [{
     path: 'index',
     component: _import('permission/index'),
@@ -51,7 +51,7 @@ meta : {
     meta: {
       title: 'permission',
       icon: 'lock',
-      role: ['admin'],
+      roles: ['admin','ediotr'], // or you can only set roles in sub nav
       noCache: true
     }
   }]
