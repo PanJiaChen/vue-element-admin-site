@@ -11,6 +11,11 @@ First let us know what configuration items are provided config route.
 // if set to true, lt will not appear in sidebar nav. e.g. login or 401 page (Default: false)
 hidden: true
 
+//if set true, will always show the root menu, whatever its child routes length
+//if not set alwaysShow, only more than one route under the children will become nested mode
+//otherwise not show the root menu, set the child route to root menu
+alwaysShow: true
+
 // if set to noredirect, lt will not appear in breadcrumb
 redirect: noredirect
 
@@ -43,6 +48,7 @@ meta : {
   component: Layout,
   redirect: '/permission/index',
   hidden: true,
+  alwaysShow: true,
   meta: { roles: ['admin','ediotr'] }, // you can set roles in root nav
   children: [{
     path: 'index',
