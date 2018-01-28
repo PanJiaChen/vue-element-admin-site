@@ -78,7 +78,7 @@ This project has built the following templates, and have built a scaffold based 
 │   ├── assets                 // module assets like fonts,images (processed by webpack)
 │   ├── components             // global components
 │   ├── directive              // global directive
-│   ├── filtres                // global filter
+│   ├── filters                // global filter
 │   ├── icons                  // svg icons
 │   ├── lang                   // i18nlanguage
 │   ├── mock                   // mock data
