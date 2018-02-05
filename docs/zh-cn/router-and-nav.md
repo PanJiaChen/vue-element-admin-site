@@ -82,7 +82,7 @@ meta : {
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-?> 在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如：
+?> 在 `Sidebar` 中已经做了判断，当你一个路由下面的 `children` 声明的路由大于1个时，自动会变成嵌套的模式。如果子路由正好等于一个就会默认将子路由作为根路由显示在侧边栏中，若不想这样，可以通过设置在根路由中设置`alwaysShow: true`来取消这一特性。如：
 ```js
 // no submenu, because children.length===1
 {
