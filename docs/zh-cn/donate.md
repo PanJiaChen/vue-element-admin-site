@@ -5,3 +5,4 @@
 
 ## Paypal Me
 [Paypal Me](https://www.paypal.me/panfree23)
+[Buy me a coffee](https://www.buymeacoffee.com/Pan)
