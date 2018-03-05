@@ -3,6 +3,7 @@
 ![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
 
 
-## Paypal Me
-[Paypal Me](https://www.paypal.me/panfree23)
+## Or
+[Paypal](https://www.paypal.me/panfree23)
+
 [Buy me a coffee](https://www.buymeacoffee.com/Pan)
