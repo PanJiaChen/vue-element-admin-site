@@ -22,7 +22,6 @@ npm run build:sit
     'process.env': require('../config/xxx.env')
   })
 ```
-```
 
 你只要在你的代码中直接使用即可访问你配置的环境变量，如：
 ```js
