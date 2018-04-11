@@ -15,5 +15,7 @@ docsify serve docs
 
 open http://localhost:3000
 
+> Generator by [docsify](https://github.com/QingWei-Li/docsify)
+
 
 
