@@ -30,7 +30,8 @@ Of course, you can also choose some paid rich text editor, the author's own comp
 ## Tinymce
 Here to briefly talk about the use of Tinymce in you own projects.
 
-The current method of using the global reference. Code in: `static/tinymce` (The files in the static directory will not be build by webpack), import in index.html.
+The current method of using the global reference. Code in: `static/tinymce` (The files in the static directory will not be build by webpack), import in index.html .And make sure it's in the order before your `app.js`!
+
 
 > The current use of the npm installation 'Tinymce' method is more complex and has some problems (which may be used in the future). :space_invader:
 

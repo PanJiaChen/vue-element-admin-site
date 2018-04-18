@@ -30,7 +30,8 @@
 ## Tinymce
 这里来简单讲一下在自己项目中使用 `Tinymce` 的方法。
 
-目前采用全局引用的方式。代码地址：`static/tinymce` (static目录下的文件不会被打包), 在 index.html 中引入。
+目前采用全局引用的方式。代码地址：`static/tinymce` (static目录下的文件不会被打包), 在 index.html 中引入。并确保它的引入顺序在你的`app.js`之前！
+
 
 > 由于目前使用 npm 安装 `Tinymce` 方法比较负责复杂而且还有一些问题(日后可能会采用该模式)且会大大增加编译的时间所以暂时不准备采用。:space_invader:
 
