@@ -54,7 +54,7 @@ export default {
 <br/>
 
 ## 在 vue 中优雅的使用第三方库
-在 Vuejs 项目中使用 JavaScript 库的一个优雅方式是讲其代理到 Vue 的原型对象上去. 按照这种方式, 我们引入 Moment 库:
+在 Vuejs 项目中使用 JavaScript 库的一个优雅方式是将其代理到 Vue 的原型对象上去. 按照这种方式, 我们引入 Moment 库:
 
 **main.js**
 
