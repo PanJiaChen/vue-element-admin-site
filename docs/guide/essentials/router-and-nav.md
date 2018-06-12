@@ -37,11 +37,12 @@ meta : {
   noCache: true
 }
 ```
-?> **Note:** Every route record (the term use because of VueRouter documentation) MUST have the name property in order to avoid problems with <keep-alive>.
+ **Note:** Every route record (the term use because of VueRouter documentation) MUST have the name property in order to avoid problems with `<keep-alive>`.
 
 <br/>
 
 **Example：**
+
 ```js
 {
   path: '/permission',
@@ -62,9 +63,9 @@ meta : {
     }
   }]
 }
-```
+``` -->
 
-## Router
+<!-- ## Router
 
 There are two types of routes here , `constantRouterMap` and `asyncRouterMap`.
 
@@ -78,7 +79,7 @@ There are two types of routes here , `constantRouterMap` and `asyncRouterMap`.
 
 The other configurations are no different from the [vue-router](https://router.vuejs.org/en/) official, so check the documentation for yourself.
 
-?> **Note: ** There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem:  [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+ **Note: ** There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem:  [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 
 ## Sidebar
 
@@ -143,7 +144,7 @@ clickLink(path) {
   })
 }
 ```
-?> ps: Don't forget to add a unique 'key' to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
+ ps: Don't forget to add a unique 'key' to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
 
 But there's also a drawback the ugly 'query' suffix behind url, such as `xxx.com/article/list?t=1496832345025`
 

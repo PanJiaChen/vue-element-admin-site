@@ -6,7 +6,7 @@ Layout is the outermost structure for a project, ususaly consists of navigation,
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 
-> Corresponding code:  [@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout :blank)
+<!-- > Corresponding code:  [@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout :blank)
 
 ?> `@` is webpack [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) If you don't understand, please study yourself.
 
@@ -90,4 +90,4 @@ computed: {
 > Corresponding code: [@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
 
 ## mobile
-'element-ui' the official positioning is a desktop backstage framework, so this project will not be suitable for mobile, if you need to modify it by youself.
+'element-ui' the official positioning is a desktop backstage framework, so this project will not be suitable for mobile, if you need to modify it by youself. -->
