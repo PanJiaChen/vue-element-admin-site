@@ -25,12 +25,12 @@ module.exports = {
             link: "/guide/"
           },
           {
-            text: "Config Reference",
-            link: "/config/"
+            text: "Component",
+            link: "/component/"
           },
           {
-            text: "Default Theme Config",
-            link: "/default-theme-config/"
+            text: "Donate",
+            link: "/donate/"
           }
         ],
         sidebar: [
@@ -57,8 +57,8 @@ module.exports = {
             link: "/zh/guide/"
           },
           {
-            text: "配置",
-            link: "/zh/config/"
+            text: "捐赠",
+            link: "/zh/donate/"
           },
           {
             text: "默认主题",
@@ -66,7 +66,6 @@ module.exports = {
           }
         ],
         sidebar: [
-          "/zh/",
           {
             title: "基础",
             collapsable: false,
@@ -83,11 +82,11 @@ module.exports = {
   },
   locales: {
     "/": {
-      lang: "English",
+      lang: "en-US",
       description: "A magical vue admin"
     },
     "/zh/": {
-      lang: "简体中文",
+      lang: "zh-CN",
       description: "A magical vue admin"
     }
   },

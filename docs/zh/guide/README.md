@@ -1,8 +1,9 @@
 ---
 pageClass: getting-started
 ---
+# 介绍
 
-## [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+
 
 [![vue](https://img.shields.io/badge/vue-2.5.9-brightgreen.svg)](https://github.com/vuejs/vue)
 [![element-ui](https://img.shields.io/badge/element--ui-2.0.5-brightgreen.svg)](https://github.com/ElemeFE/element)
@@ -11,15 +12,15 @@ pageClass: getting-started
 [![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg)](https://github.com/PanJiaChen/vue-element-admin/releases)
 [![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
 
-## 介绍
 
-vue-element-admin 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发。
+ [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是一个企业级中后台前端的集成方案，不适合当基础模板来进行二次开发。
 
 模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
 
 本项目还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
 ## 功能
+
 ```
 - 登录/注销
 - 权限验证
@@ -117,12 +118,17 @@ npm install
 # 本地开发 启动项目
 npm run dev
 ```
+<br/>
 
-?> 强烈建议不要用直接使用 cnpm 安装有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题
+::: tip
+强烈建议不要用直接使用 cnpm 安装有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题
+:::
 
 ```bash
 npm install --registry=https://registry.npm.taobao.org
 ```
+
+<br/>
 
 启动完成后会自动打开浏览器访问 http://localhost:9527， 你看到下面的页面就代表成功了。
 
@@ -132,17 +138,20 @@ npm install --registry=https://registry.npm.taobao.org
 
 <br/>
 
-**建议：**  你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上开发，要什么就去 `vue-element-admin` 那里复制过来。
+::: tip 建议
+你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上开发，要什么就去 `vue-element-admin` 那里复制过来。
+:::
+
 
  - 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
  - 模板建议使用: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
  - 桌面端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
-### Contribution
+## Contribution
 本文档代码项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
 
 有任何修改和建议都可以该项目 pr 和 issue
 
-### 捐赠
+## 捐赠
 如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
 [Donate](donate.md)
