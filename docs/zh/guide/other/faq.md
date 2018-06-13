@@ -1,7 +1,4 @@
 # 常见问题
-<script>
-window.location='https://vuepress.vuejs.org/zh/guide/using-vue.html'
-</script>
 
 ::: tip
 提问之前，请先查阅下面的常见问题。

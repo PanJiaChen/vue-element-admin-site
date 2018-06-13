@@ -3,10 +3,13 @@ module.exports = {
   description: "A magical vue admin",
   base: "/vue-element-admin-site/",
   head: [
-    ["link", {
-      rel: "icon",
-      href: "/favicon.ico"
-    }]
+    [
+      "link",
+      {
+        rel: "icon",
+        href: "/favicon.ico"
+      }
+    ]
   ],
   themeConfig: {
     repo: "PanJiaChen/awesome-bookmarks",
@@ -22,20 +25,22 @@ module.exports = {
         label: "English",
         selectText: "Languages",
         editLinkText: "Edit this page on GitHub",
-        nav: [{
+        nav: [
+          {
             text: "Guide",
             link: "/guide/"
           },
           {
             text: "Component",
-            items: [{
-                text: 'Rich Text Editor',
-                link: '/component/rich-editor.md'
+            items: [
+              {
+                text: "Rich Text Editor",
+                link: "/component/rich-editor.md"
               },
               {
-                text: 'Clipboard',
-                link: '/component/clipboard.md'
-              },
+                text: "Clipboard",
+                link: "/component/clipboard.md"
+              }
             ]
           },
           {
@@ -44,7 +49,8 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/guide/': [{
+          "/guide/": [
+            {
               title: "Essentials",
               collapsable: false,
               children: genEssentialsSidebar()
@@ -55,40 +61,42 @@ module.exports = {
               children: genAdvancedSidebar()
             }
           ],
-          '/component/': [
-            '/component/rich-editor.md',
-            '/component/clipboard.md'
+          "/component/": [
+            "/component/rich-editor.md",
+            "/component/clipboard.md"
           ]
-
         }
       },
       "/zh/": {
         label: "简体中文",
         selectText: "选择语言",
         editLinkText: "在 GitHub 上编辑此页",
-        nav: [{
+        nav: [
+          {
             text: "指南",
             link: "/zh/guide/"
           },
           {
             text: "组件",
-            items: [{
-                text: '富文本',
-                link: '/zh/component/rich-editor.md'
+            items: [
+              {
+                text: "富文本",
+                link: "/zh/component/rich-editor.md"
               },
               {
-                text: '复制粘贴',
-                link: '/zh/component/clipboard.md'
-              },
+                text: "复制粘贴",
+                link: "/zh/component/clipboard.md"
+              }
             ]
           },
           {
             text: "捐赠",
             link: "/zh/donate/"
-          },
+          }
         ],
         sidebar: {
-          '/zh/guide/': [{
+          "/zh/guide/": [
+            {
               title: "基础",
               collapsable: false,
               children: genEssentialsSidebar("/zh")
@@ -102,15 +110,16 @@ module.exports = {
               title: "其它",
               collapsable: false,
               children: [
-                '/zh/guide/other/faq.md',
-                '/zh/guide/other/release-notes.md'
+                "/zh/guide/other/faq.md",
+                "/zh/guide/other/gitter.md",
+                "/zh/guide/other/release-notes.md",
+                "/zh/guide/other/blog.md"
               ]
-            },
-
+            }
           ],
-          '/zh/component/': [
-            '/zh/component/rich-editor.md',
-            '/zh/component/clipboard.md'
+          "/zh/component/": [
+            "/zh/component/rich-editor.md",
+            "/zh/component/clipboard.md"
           ]
         }
       }
