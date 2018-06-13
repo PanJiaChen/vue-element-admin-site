@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Rich text editor
 
 Rich text editor is a core part of management system, but at the same time is a place with lots of problems. In the process of selecting rich texts, I also walked a lot of detours. The common rich text editors in the market are basically used, and the finally chose [Tinymce](https://github.com/tinymce/tinymce).

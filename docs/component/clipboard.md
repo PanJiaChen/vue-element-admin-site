@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Clipboard
 Here's the copy and paste based on [clipboard](https://github.com/zenorocha/clipboard.js)
 

@@ -2,12 +2,16 @@ module.exports = {
   title: "vue-element-admin",
   description: "A magical vue admin",
   base: "/vue-element-admin-site/",
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [
+    ["link", {
+      rel: "icon",
+      href: "/favicon.ico"
+    }]
+  ],
   themeConfig: {
     repo: "PanJiaChen/awesome-bookmarks",
-    editLinks: true,
     docsDir: "docs",
-    editLinkText: "在 GitHub 上编辑此页",
+    editLinks: true,
     sidebarDepth: 3,
     algolia: {
       apiKey: "ffce0083d0830de5f562c045a481410b",
@@ -18,65 +22,97 @@ module.exports = {
         label: "English",
         selectText: "Languages",
         editLinkText: "Edit this page on GitHub",
-        lastUpdated: "Last Updated",
-        nav: [
-          {
+        nav: [{
             text: "Guide",
             link: "/guide/"
           },
           {
             text: "Component",
-            link: "/component/"
+            items: [{
+                text: 'Rich Text Editor',
+                link: '/component/rich-editor.md'
+              },
+              {
+                text: 'Clipboard',
+                link: '/component/clipboard.md'
+              },
+            ]
           },
           {
             text: "Donate",
             link: "/donate/"
           }
         ],
-        sidebar: [
-          {
-            title: "Essentials",
-            collapsable: false,
-            children: genEssentialsSidebar()
-          },
-          {
-            title: "Advanced",
-            collapsable: false,
-            children: genAdvancedSidebar()
-          }
-        ]
+        sidebar: {
+          '/guide/': [{
+              title: "Essentials",
+              collapsable: false,
+              children: genEssentialsSidebar()
+            },
+            {
+              title: "Advanced",
+              collapsable: false,
+              children: genAdvancedSidebar()
+            }
+          ],
+          '/component/': [
+            '/component/rich-editor.md',
+            '/component/clipboard.md'
+          ]
+
+        }
       },
       "/zh/": {
         label: "简体中文",
         selectText: "选择语言",
         editLinkText: "在 GitHub 上编辑此页",
-        lastUpdated: "上次更新",
-        nav: [
-          {
+        nav: [{
             text: "指南",
             link: "/zh/guide/"
+          },
+          {
+            text: "组件",
+            items: [{
+                text: '富文本',
+                link: '/zh/component/rich-editor.md'
+              },
+              {
+                text: '复制粘贴',
+                link: '/zh/component/clipboard.md'
+              },
+            ]
           },
           {
             text: "捐赠",
             link: "/zh/donate/"
           },
-          {
-            text: "默认主题",
-            link: "/zh/default-theme-config/"
-          }
         ],
-        sidebar: [
-          {
-            title: "基础",
-            collapsable: false,
-            children: genEssentialsSidebar("/zh")
-          },
-          {
-            title: "进阶",
-            collapsable: false,
-            children: genAdvancedSidebar("/zh")
-          }
-        ]
+        sidebar: {
+          '/zh/guide/': [{
+              title: "基础",
+              collapsable: false,
+              children: genEssentialsSidebar("/zh")
+            },
+            {
+              title: "进阶",
+              collapsable: false,
+              children: genAdvancedSidebar("/zh")
+            },
+            {
+              title: "其它",
+              collapsable: false,
+              children: [
+                '/zh/guide/other/faq.md',
+                '/zh/guide/other/release-notes.md'
+              ]
+            },
+
+          ],
+          '/zh/component/': [
+            '/zh/component/rich-editor.md',
+            '/zh/component/clipboard.md'
+          ]
+        }
       }
     }
   },
