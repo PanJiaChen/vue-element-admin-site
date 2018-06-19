@@ -5,12 +5,17 @@ title: a
 actionText: Get Started →
 actionLink: /guide/
 features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+- title: Feature-rich
+  details: Typical templates for enterprise applications and various components
+- title: Best Practice
+  details: Reasonable framework choice, good engineering practice
+- title: Up-to-date Dev Stack
+  details: Development using front-end advanced technology
+- title: Permission Validation
+  details: Dynamic loading of route and rendering sidebar based on permissions
+- title: Globalization
+  details: Built-in industry universal international solution
+- title: Theming
+  details: Supports multiple dynamic skin methods
 footer: MIT Licensed | Copyright © 2017-PanJiaChen
 ---
-

@@ -2,24 +2,24 @@
 pageClass: getting-started
 ---
 
-# Getting Started
-<!-- # [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) -->
+# Introduction
 
-[![vue](https://img.shields.io/badge/vue-2.5.9-brightgreen.svg ':no-zoom')](https://github.com/vuejs/vue)
-[![element-ui](https://img.shields.io/badge/element--ui-2.0.5-brightgreen.svg ':no-zoom')](https://github.com/ElemeFE/element)
+[![vue](https://img.shields.io/badge/vue-2.5.10-brightgreen.svg)](https://github.com/vuejs/vue)
+[![element-ui](https://img.shields.io/badge/element--ui-2.3.2-brightgreen.svg)](https://github.com/ElemeFE/element)
 [![Build Status](https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master)](https://travis-ci.org/PanJiaChen/vue-element-admin)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin/releases)
-[![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars ':no-zoom')](https://github.com/PanJiaChen/vue-element-admin)
-
-## Introduction
-
-vue-element-admin is a admin interfaces integration solution, which is not suitable for secondary development as a base template.
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg)](https://github.com/PanJiaChen/vue-element-admin/releases)
+[![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
 
 
-Base template recommends using it: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a front-end management background integration solution based on Vue 2.0 that uses the Element component library. It uses the latest front-end technology stack, provides a typical business model, and provides various components that can help you quickly build enterprise-level back-office product prototypes.
 
-This project is still in continuous iteration, gradually precipitating and summarizing more functions and corresponding implementation code,and summarizing the best practices in the admin product template / component / business scenario. This project also looks forward to your participation and. [Feedback](https://github.com/PanJiaChen/vue-element-admin/issues)。
+:::tip
+The project is positioned as a background integration solution and is not suitable for secondary development as a basic template.
+ - Integrated solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+ - Basic template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
+ - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
+:::
 
 ## Features
 ```
