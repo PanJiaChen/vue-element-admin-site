@@ -1,21 +1,21 @@
 # vue-element-admin-site
 The documentation source of [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
-url:https://panjiachen.github.io/vue-element-admin-site
+[Online](https://panjiachen.github.io/vue-element-admin-site)
 
 ## Development
 
 ```bash
-npm i docsify-cli -g
+# clone the project
+git clone git@github.com:PanJiaChen/vue-element-admin-site.git
 
-cd the project
+# install dependency
+npm install
 
-docsify serve docs
+# develop
+npm run dev
 ```
 
-open http://localhost:3000
+open http://localhost:8080/vue-element-admin-site/
 
-> Generator by [docsify](https://github.com/QingWei-Li/docsify)
-
-
-
+> Generator by [vue-press](https://github.com/vuejs/vuepress)
