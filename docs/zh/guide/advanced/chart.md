@@ -2,15 +2,18 @@
 
 管理后台图表也是常见得需求。这里图表就只推荐ECharts，功能齐全，社区demo也丰富 [gallery](http://gallery.echartsjs.com/explore.html)。
 
-我还是那个观点，大部分插件建议大家还是自己用 vue 来封装就好了，真的很简单。ECharts 支持 webpack 引入，图省事可以将 ECharts 整个引入 `var echarts = require('echarts')` 不过 ECharts 还是不小的，我们大部分情况只是用到很少一部分功能，我平时习惯于按需引入的。
+我还是那个观点，大部分插件建议大家还是自己用 vue 来封装就好了，真的很简单。ECharts 支持 webpack 引入，图省事可以将 ECharts 整个引入 `var echarts = require('echarts')` 不过 ECharts 还是不小的，如果只使用它小部分功能或者图表类型的话建议按需引入。
 ```js
-// 引入 ECharts 主模块
+// 按需引入 引入 ECharts 主模块
 var echarts = require('echarts/lib/echarts');
 // 引入柱状图
 require('echarts/lib/chart/bar');
 // 引入提示框和标题组件
 require('echarts/lib/component/tooltip');
 require('echarts/lib/component/title');
+
+//全部引入
+var echarts = require('echarts');
 ```
 [webpack 中使用ECharts文档](http://echarts.baidu.com/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)
 
@@ -69,10 +72,12 @@ watch: {
 ```
 其实都差不多，还是要结合自己业务来封装。后面就和平时使用 ECharts 没有什么区别了。题外话 ECharts 的可配置项真心多，大家使用的时候可能要花一点时间了解它的 api 的。知乎有个问题：百度还有什么比较良心的产品？答案：ECharts，可见 ECharts 的强大与好用。
 
-## Demo:
+## Demo
 ![](https://wpimg.wallstcn.com/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
 
-?> 具体实例可参照 `@/views/dashboard/admin/components/` 文件下几个 chart 文件
+::: tip
+具体实例可参照 `@/views/dashboard/admin/components/` 文件下几个 chart 文件
+:::
 
 ## 其它
 当然社区里的其它图表如 [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js) 等封装方法都是大同小异差不多的，这里就不再展开了。

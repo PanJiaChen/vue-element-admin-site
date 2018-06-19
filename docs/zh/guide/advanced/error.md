@@ -9,6 +9,10 @@
 { path: '*', redirect: '/404' }
 ```
 
+::: warning
+**注意事项** 如果这里有一个需要非常注意的地方就是 `404` 页面一定要最后加载，如果放在 constantRouterMap 一同声明了 `404` ，后面的所以页面都会被拦截到`404` ，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+:::
+
 **401**
 
 在`@/permission.js`做了权限控制，所有没有权限进入该路由的用户都会被重定向到 `401`页面。
@@ -63,7 +67,7 @@ service.interceptors.response.use(
 )
 ```
 
-因为所以请求返回的是`promise`，所以你也可以自行`catch` 错误，做相对应的提示。
+因为所有请求返回的是`promise`，所以你也可以对每一个请求通过`catch` 错误，从而进行单独的处理。
 ```js
 getInfo().then((res)=>{
 
@@ -77,4 +81,11 @@ getInfo().then((res)=>{
 ![](https://wpimg.wallstcn.com/b037f47c-1f7b-487f-bb05-32e7300767d2.png)
 
 当然还有很多不能被`eslint`检查出来的错误，vue 也提供了全局错误处理钩子[errorHandler](https://vuejs.org/v2/api/#errorHandler)，所以本项目也做了相对应的错误收集。
-![](https://wpimg.wallstcn.com/360e4842-4db5-42d0-b078-f9a84a825546.gif)。
+![](https://wpimg.wallstcn.com/360e4842-4db5-42d0-b078-f9a84a825546.gif)
+
+
+::: tip
+监听错误：[@/errorLog.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/errorLog.js)
+
+错误展示组件：[@/components/ErrorLog](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ErrorLog/index.vue)
+:::

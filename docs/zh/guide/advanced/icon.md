@@ -32,6 +32,10 @@
 
 你可以改变父级的`color`或者直接改变`fill`的颜色即可。
 
+:::tip
+如果你遇到图标颜色不对，可以参照本[issue](https://github.com/PanJiaChen/vue-element-admin/issues/330)进行修改
+:::
+
 ## 详细文章
 更多详细内容 可阅读该文: [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
 
