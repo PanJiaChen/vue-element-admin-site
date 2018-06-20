@@ -21,47 +21,77 @@ The project is positioned as a background integration solution and is not suitab
  - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 :::
 
+<br/>
+
 ## Features
+
 ```
 - Login / Logout
-- Permission authentication
+
+- Permission Authentication
+  - Page permission
+  - Directive permission
+  - Two-step login
+
 - Multi-environment build
-- Dynamic sidebar (supports multi-level routing)
-- Dynamic breadcrumb
-- I18n
-- Customizable theme
-- Tags-view(Tab page Support right-click operation)
-- Rich text editor
-- Markdown editor
-- JSON editor
-- Screenfull
-- Drag and drop list
-- Svg Sprite
+  - dev sit stage prod
+
+- Global Features
+  - I18n
+  - Multiple dynamic themes
+  - Dynamic sidebar (supports multi-level routing)
+  - Dynamic breadcrumb
+  - Tags-view(Tab page Support right-click operation)
+  - Svg Sprite
+  - Mock data
+  - Screenfull
+  - Responsive Sidebar
+
+- Editor
+  - Rich Text Editor
+  - Markdown Editor
+  - JSON Editor
+
+- Excel
+  - Export Excel
+  - Export zip
+  - Upload Excel
+  - Visualization Excel
+
+- Table
+  - Dynamic Table
+  - Drag And Drop Table
+  - Tree Table
+  - Inline Edit Table
+
+- Error Page
+  - 401
+  - 404
+
+- Components
+  - Avatar Upload
+  - Back To Top
+  - Drag Dialog
+  - Drag Kanban
+  - Drag List
+  - SplitPane
+  - Dropzone
+  - Sticky
+  - CountTo
+
+- Advanced Example
+- Error Log
 - Dashboard
-- Mock data
+- Guide Page
 - Echarts
 - Clipboard
-- 401/404 error page
-- Error log
-- Export excel
-- Export zip
-- Front-end visualization excel
-- Table example
-- Dynamictable example
-- Drag and drop table example
-- Inline edit table example
-- Form example
-- Two-step login
-- SplitPane
-- Dropzone
-- Sticky
-- CountTo
 - Markdown to html
 ```
+<br/>
 
 ## Preparation
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) and [element-ui](https://github.com/ElemeFE/element), It would be helpful if you have pre-existing knowledge on those.
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 、 [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element). Understanding and learning this knowledge in advance will greatly help the use of this project.
 
 At the same time supporting a series of tutorial articles, how to build a complete background project from scratch, suggest that you read these articles and then come to practice this project. But there's no English version yet.
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
@@ -70,6 +100,14 @@ At the same time supporting a series of tutorial articles, how to build a comple
  - [手摸手，带你用vue撸后台 系列四(vueAdmin 一个极简的后台基础模板)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
  - [手摸手，带你封装一个vue component](https://segmentfault.com/a/1190000009090836)
  - [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
+
+::: tip
+ **This project does not support low-level browsers (such as ie). If you need to, please add polyfills yourself.**
+
+ **Note: This project uses element-ui@2.3.0+ version, so the minimum compatibility with vue@2.5.0+**
+ :::
+
+
 
 ## Project Structure
 
@@ -99,14 +137,14 @@ This project has built the following templates, and have built a scaffold based 
 ├── static                     // pure static assets (directly copied)
 │   └── Tinymce                // rich text editor
 ├── .babelrc                   // babel config
-├── eslintrc.js                // eslint config
+├── .eslintrc.js               // eslint config
 ├── .gitignore                 // sensible defaults for gitignore
 ├── favicon.ico                // favicon ico
 ├── index.html                 // index.html template
 └── package.json               // package.json
 ```
 
-## Getting started
+## Getting Started
 
 ```bash
 # clone the projice
@@ -118,8 +156,11 @@ npm install
 # develop
 npm run dev
 ```
+<br/>
 
-This will automatically open http://localhost:9527. If you see the following page then you have succeeded.
+This will automatically open http://localhost:9527.
+
+If you see the following page then you have succeeded.
 
 ![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
@@ -127,17 +168,16 @@ We have built-in models, standard components, mock data, hot module reloading, s
 
 <br/>
 
-**Suggestion：** You can use 'vue-element-admin' as a toolbox or as an integration solution repository, It is recommended to do secondary development on the basis of `vueAdmin-template`, if you need any additional feature, you can copy from `vue-element-admin`.
+::: tip
+**Suggestion：** You can use `vue-element-admin` as a toolbox or as an integration solution repository, It is recommended to do secondary development on the basis of `vueAdmin-template`, if you need any additional feature, you can copy from `vue-element-admin`.
+:::
 
- - Toolbox: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
- - Basis template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
- - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
-### Contribution
+## Contribution
 The repository of documentation is [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
 
-?> There may be some spelling or translation errors in the course of writing this document. It is welcome to point out by issue or pr.
+There may be some spelling or translation errors in the course of writing this document. It is welcome to point out by issue or pr.
 
-### Donate
+## Donate
 If you find this project useful, you can buy author a glass of juice  :heart:
-[Donate](donate.md)
+[Donate](/donate/)
