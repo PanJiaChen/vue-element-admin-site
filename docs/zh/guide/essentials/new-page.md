@@ -17,8 +17,9 @@
   }
 }
 ```
-
-?> 仅仅这样不会有任何效果的，它只是创建了一个基于`layout`的一级路由，你还需要在它下面的 `children` 中添加路由。
+::: tip
+仅仅这样不会有任何效果的，它只是创建了一个基于`layout`的一级路由，你还需要在它下面的 `children` 中添加子路由。
+:::
 
 ```js
 {
@@ -46,7 +47,10 @@
 
 <br/>
 
-?> 由于 `children` 下面只声明了一个路由所以不会有展开箭头，如果`children`下面的路由个数大于1就会有展开箭头如：
+::: tip
+由于 `children` 下面只声明了一个路由所以不会有展开箭头，如果`children`下面的路由个数大于1就会有展开箭头，如下面所示。
+如果你想忽视这个自动判断可以使用 `alwaysShow: true`，这样它就会忽略之前定义的规则，一直显示根路由。详情见[路由和侧边栏](/zh/guide/essentials/router-and-nav.html#路由和侧边栏)
+:::
 
 ```js
 {
@@ -72,10 +76,10 @@
 <br/>
 <br/>
 
-## 多级目录
-如果你的路由是多级目录，如本项目 [@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/example) 那样， 有三级路由嵌套的情况下，不要忘记还要手动在二级目录的根文件下添加一个 `<router-view>`。
+## 多级目录(嵌套路由)
+如果你的路由是多级目录，如本项目 [@/views/nested](hhttps://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested/bar) 那样， 有三级路由嵌套的情况下，不要忘记还要手动在二级目录的根文件下添加一个 `<router-view>`。
 
- 如：[@/views/example/table/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/example/table/index.vue)，有多少级路由嵌套就需要多少个`<router-view>`。
+ 如：[@/views/nested/bar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/bar/index.vue)，原则上有多少级路由嵌套就需要多少个`<router-view>`。
 
 ![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
 

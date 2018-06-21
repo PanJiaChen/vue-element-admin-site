@@ -27,14 +27,14 @@ Vue.component('countTo', countTo)
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
-</template
+</template>
 ```
 
 ###  局部注册
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
-</template
+</template>
 
 <script>
 import countTo from 'vue-count-to';

@@ -12,8 +12,14 @@ npm run build:prod
 npm run build:sit
 ```
 
-### 环境变量
-所有测试环境或者正式环境变量的配置都在 `build/config` 目录之下
+构建打包成功之后，会在根目录生成 `dist` 文件夹，里面就是构建打包好的文件，通常是 `***.js` 、`***.css`、`index.html` 等静态文件。
+
+如果需要自定义构建，比如指定 `dist` 目录等，则需要通过 [config](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js) 进行配置。
+
+<br>
+
+## 环境变量
+所有测试环境或者正式环境变量的配置都在 [@/build/config](https://github.com/PanJiaChen/vue-element-admin/tree/master/config) 目录之下
 
 它们都会通过 `webpack.DefinePlugin` 插件注入到全局
 
@@ -23,13 +29,15 @@ npm run build:sit
   })
 ```
 
-你只要在你的代码中直接使用即可访问你配置的环境变量，如：
+你可以在你的代码中直接使用即可访问你配置的环境变量，如：
 ```js
-const baseURL = process.env.BASE_API, // 这样即可获取配置在 build/config api 的 base_url 了
+// 这样即可获取配置在 build/config api 的 base_url 了
+const baseURL = process.env.BASE_API,
 ```
 
+<br>
 
-### 分析构建文件体积
+## 分析构建文件体积
 
 如果你的构建文件很大，你可以通过 `webpack-bundle-analyzer` 命令构建并分析依赖模块的体积分布，从而优化你的代码。
 
@@ -43,18 +51,25 @@ npm run build:prod --report
 
 具体的优化可以参考 [Webpack 大法之 Code Splitting](https://zhuanlan.zhihu.com/p/26710831)
 
-?> 强烈建议开启 gizp ，使用之后普遍体积只有原先1/3左右。打出来的 app.js 过大，查看一下是不是Uglify配置不正确或者sourceMap没弄对。 优化相关请看该 [Webpack Freestyle 之 Long Term Cache](https://zhuanlan.zhihu.com/p/27710902)
+::: tip
+强烈建议开启 gizp ，使用之后普遍体积只有原先1/3左右。打出来的 app.js 过大，查看一下是不是Uglify配置不正确或者sourceMap没弄对。 优化相关请看该 [Webpack Freestyle 之 Long Term Cache](https://zhuanlan.zhihu.com/p/27710902)
+:::
+
+<br>
 
 ## 发布
 
 对于发布来讲，只需要将最终生成的静态文件，也就是通常情况下 `dist` 文件夹的静态文件发布到你的 cdn 或者静态服务器即可，需要注意的是其中的 `index.html` 通常会是你后台服务的入口页面，在确定了 js 和 css 的静态之后可能需要改变页面的引入路径。
-?> 部署是可能会发现资源路径不对 ,只需修改 `config/index.js` 文件资源路径即可。
+
+::: tip
+部署是可能会发现资源路径不对 ,只需修改 `config/index.js` 文件资源路径即可。
+:::
 
 ```js
 assetsPublicPath: './'   //请根据自己路径来配置更改
 ```
 
-### 前端路由与服务端的结合
+## 前端路由与服务端的结合
 
 vue-element-admin 中，前端路由使用的是 `vue-router`，所以你可以选择两种方式：`browserHistory` 和 `hashHistory`。
 
@@ -89,10 +104,11 @@ location / {
   try_files $uri $uri/ /index.html;
 }
 ```
+::: tip
+ 更多配置请查看 [vue-router 文档](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+:::
 
-?> 更多配置请查看 [vue-router 文档](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
-
-## apache
+## Apache
 1. 需要修改`router/index.js`中`new Router` 配置，加一个`base: '/vue/'`, 它指定应用的基路径，该应用是服务于`localhost/vue`路径下，所以必须加`base`配置，否则应用会展示404页面
 2. 需要修改`config/index.js`中build下的`assetsPublicPath: '/vue/'`，如果用相对路径，chunk文件会报错找不到。
 3. 修改`httpd.conf`文件，开启rewrite_module功能。

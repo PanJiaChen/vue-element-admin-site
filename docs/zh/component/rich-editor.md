@@ -42,11 +42,22 @@
 
 可以通过 `this.refs.xxx.setContent()` 手动来设置。
 
-源码也很简单，有任何别的需求都可以在 [@/components/Tinymce/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce/index.vue) 中自行修改。
+源码也很简单，有任何别的需求都可以在 [@/components/Tinymce](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce) 中自行修改。
 
 ```html
 <tinymce :height="300" v-model="content" id='tinymce'></tinymce>
  ```
+
+目前提供了如下几个属性，有需求可自行添加，或者提issue。
+
+| Property | Description                 | Type   | Default                                  |
+|:--------:|:---------------------------:|:------:|:----------------------------------------:|
+| id       | Component unique identifier | String | Default to help you generate a unique id |
+| value    | Rich text content           | String | Only monitor changes once                |
+| toolbar  | Rich text toolbar           | Array  | []                                       |
+| menubar  | Rich text menubar           | String | 'file edit insert view format table'     |
+| height   | Rich text height            | Number | 360                                      |
+
 
 ## tinymce-vue
 tinymce 官方也在之前发布了vue版本的[tinymce-vue](https://github.com/tinymce/tinymce-vue)，帮你封装好了很多东西，但同时也相对的减少了灵活性，有兴趣的可以自行研究一下。

@@ -84,6 +84,10 @@ module.exports = {
                 link: "/zh/component/rich-editor.md"
               },
               {
+                text: "Svg Icon 图标",
+                link: "/zh/component/svg-icon.md"
+              },
+              {
                 text: "复制粘贴",
                 link: "/zh/component/clipboard.md"
               }
@@ -119,6 +123,7 @@ module.exports = {
           ],
           "/zh/component/": [
             "/zh/component/rich-editor.md",
+            "/zh/component/svg-icon.md",
             "/zh/component/clipboard.md"
           ]
         }
