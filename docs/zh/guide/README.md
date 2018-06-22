@@ -185,7 +185,7 @@ npm install --registry=https://registry.npm.taobao.org
 
 有任何修改和建议都可以该项目 pr 和 issue
 
- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
 ## 捐赠
 如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:

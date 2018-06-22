@@ -1,33 +1,35 @@
 # Layout
-To learn about a management system, we must first understand its basic layout.
 
-Layout is the outermost structure for a project, ususaly consists of navigation, sidebar, breadcrumb and content.
+The overall layout of the page is the outermost frame structure of a product and often includes navigation, sidebars, breadcrumbs, and content. To understand a background project, first understand its basic layout.
+
 
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
+::: tip Code
+[@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout)
+:::
 
-<!-- > Corresponding code:  [@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout :blank)
+`@` is webpack's [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) don't understand please study it yourself.
 
-?> `@` is webpack [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) If you don't understand, please study yourself.
+<br>
 
-Most pages in `vue-element-admin` are based on this `layout`, except for pages such as` login`, `404`,` 401` and others that are not used by the `layout`.
-
-It's also easy if you want to have many different `layout` in a project, as long as you select a different` layout` component on the first level route.
+Most of the pages in `vue-element-admin` are based on this `layout`, except that individual pages such as: `login` , `404`,  `401` , etc., do not use this layout. It is also easy if you want to have multiple layouts in a project, as long as you choose different layout components in the first-level routing.
 
 ```js
-//no layout
+//No layout
 {
   path: '/401',
   component: _import('errorPage/401')
 }
 
-//has layout
+//Has layout
 {
   path: '/documentation',
-  //you can choose different layout components
+
+  // You can choose different layout components
   component: Layout,
 
-  //the route that starts here will be shown in app-main as shown above
+  // Here the route is displayed in app-main
   children: [{
     path: 'index',
     component: _import('documentation/index'),
@@ -36,41 +38,60 @@ It's also easy if you want to have many different `layout` in a project, as long
 }
 ```
 
-It's used vue-router [Nested Routes](https://router.vuejs.org/en/essentials/nested-routes.html), So you add or modify the page will only affect ​​the `app-main`, the other as the sidebar or navigation bar will not change.
+This uses vue-router [routing nesting](https://router.vuejs.org/guide/essentials/nested-routes.html), so in general, adding or modifying a page will only affect the main body of app-main. Other content in the layout, such as: the sidebar or navigation bar will not change with your main page.
 
-Of course, you can also use multiple `layout` in a project, just refer to it in the route parent you want to work with.
+```
+/foo                                  /bar
++------------------+                  +-----------------+
+| layout           |                  | layout          |
+| +--------------+ |                  | +-------------+ |
+| | foo.vue      | |  +------------>  | | bar.vue     ||
+| |              | |                  | |             | |
+| +--------------+ |                  | +-------------+ |
++------------------+                  +-----------------+
+```
 
+当然你也可以一个项目里面使用多个不同的 `layout`，只要在你想作用的路由父级上引用它就可以了。
+
+<br>
 
 ## app-main
+::: tip Code
+[@/views/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)
+:::
 
-> Corresponding code: [@/views/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)
+Here is a layer of `keep-alive` outside the `app-main` is mainly to cache `<router-view>`, with the `tabs-view` tab navigation of the page, if you do not need to [remove](tags-view.md) it.
 
-Here's wrap ` app-main` in a `<keep-alive>` element, mainly for caching `<router-view>`, which works with the `tabs-view` tab navigation on the page, if not needed [remove it](tags-view)。
+The `transition` defines the switching animation between pages, you can modify the transition animation according to your own needs.
 
-### router-view
-different router the same component vue. In real business scenarios, this is a lot. Such as
+<br>
+
+## router-view
+**Different router the same component vue。** In a real work, there are many situations. such as:
 
 ![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
-If you have two pages, such as creating and editing pages using the same component. By default, the created or mounted hook of vue is not triggered when the two pages are switched. Officials say you can do this by watching the changes in $ route, but in fact it's really annoying.Later It turns out that you can simply add a unique key in the `router-view`, to ensure that the routing switch will re-render the trigger hook. This is much simpler.
+The same component is used to create pages and edit pages. By default, when these two pages are switched, it will not trigger the created or mounted hooks of vue. Officials say that you can do this through the change of watch $route. To tell the truth it's still very troublesome. Later I discovered that I could simply add a unique key to the router-view to ensure that the routing hooks are re-rendered when the route is switched. This is much simpler.
+
 
 ```js
 <router-view :key="key"></router-view>
 
 computed: {
   key() {
-    // or :key="$route.path" just need a unique key
+    // Or :key="route.fullPath" Just make sure the key is the unique
     return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()
   }
  }
 ```
+::: tip
+**Or** You can declare two different views like the `editForm` and `createForm` in this project but introduce the same component.
 
-<br/>
-
-?> **Or** You can declare two different router view like `editForm` and `createForm` in this project but import the same component.
+Code：[@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
+:::
 
 ```html
-//create.vue
+<!-- create.vue -->
 <template>
   <article-detail :is-edit='false'></article-detail> //create
 </template>
@@ -78,7 +99,7 @@ computed: {
   import ArticleDetail from './components/ArticleDetail'
 </script>
 
-//edit.vue
+<!-- edit.vue -->
 <template>
    <article-detail :is-edit='true'></article-detail> //edit
 </template>
@@ -87,7 +108,11 @@ computed: {
 </script>
 ```
 
-> Corresponding code: [@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
+>
 
 ## mobile
-'element-ui' the official positioning is a desktop backstage framework, so this project will not be suitable for mobile, if you need to modify it by youself. -->
+
+The `element-ui` official position is the desktop-side framework, and for the management of such a complex project in the background, it is impossible to meet the desktop-side and mobile-side interactions through simple adaptation. Therefore, the interaction between the two ends must be different. Make a mobile version of the background, it is recommended to re-do a system.
+
+So, this project will not adapt to the mobile terminal. It just does a simple response and you can modify it yourself.
+

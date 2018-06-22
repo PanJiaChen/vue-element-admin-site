@@ -2,42 +2,46 @@
 
 Router and Nav are the key skeleton for organizing a management system.
 
-This project router and nav are bound together, sso you only have to configure the route under `@/router/index.js` and the sidebar nav can be generated dynamically.This greatly reduces the workload of manually editing the sidebar nav. Of course, so you need to follow many conventions in configuring the route.
+This project router and nav are bound together, so you only have to configure the route under `@/router/index.js` and the sidebar nav will be dynamically generated automatically. This greatly reduces the workload of manually editing the sidebar nav. Of course, so you need to follow many conventions in configuring the route.
 
 ## Config
 First let us know what configuration items are provided config route.
 
 ```js
-// if set to true, lt will not appear in sidebar nav. e.g. login or 401 page (Default: false)
+// if set to true, lt will not appear in sidebar nav.
+// e.g. login or 401 page or as some editing pages /edit/1 (Default: false)
 hidden: true
 
-//if set true, will always show the root menu, whatever its child routes length
-//if not set alwaysShow, only more than one route under the children will become nested mode
-//otherwise not show the root menu, set the child route to root menu
-alwaysShow: true
-
-// if set to noredirect, lt will not appear in breadcrumb
+// this route cannot be clicked in breadcrumb navigation when noredirect is set
 redirect: noredirect
+
+// when you route a children below the declaration of more than one route,
+// it will automatically become a nested mode - such as the component page
+// when there is only one, the child route will be displayed as the root route
+// if you want to display your root route
+// regardless of the number of children declarations under the route
+// you can set alwaysShow: true
+// so that it will ignore the previously defined rules and always show the root route
+alwaysShow: true
 
 // set router name. It must be setted，in order to avoid problems with <keep-alive>.
 name:'router-name'
 
 meta : {
-  // required roles to navigate to this route. Support multiple permissions overlay.
-  // Note that one match is enough to pass the check.
-  roles: ['admin','editor'] // if not set means it doesn't need any permission.
+  // required roles to navigate to this route. Support multiple permissions stacking.
+  // if not set means it doesn't need any permission.
+  roles: ['admin','editor']
 
   // the title of the route to show in various components (e.g. sidebar, breadcrumbs).
   title: 'title'
 
-  // icon class for the route link.
+  // svg icon class
   icon: 'svg-name'
 
   // when set true, the route will not be cached by <keep-alive>. Default false
   noCache: true
 }
 ```
- **Note:** Every route record (the term use because of VueRouter documentation) MUST have the name property in order to avoid problems with `<keep-alive>`.
 
 <br/>
 
@@ -63,39 +67,45 @@ meta : {
     }
   }]
 }
-``` -->
+```
 
-<!-- ## Router
+## Router
 
 There are two types of routes here , `constantRouterMap` and `asyncRouterMap`.
 
- **constantRouterMap: ** represents routes that do not require dynamic access, such as login page, 404, and so on.
+ **constantRouterMap:** represents routes that do not require dynamic access, such as login page, 404,  general page, and so on.
 
- **asyncRouterMap: ** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission judgment page](https://panjiachen.github.io/vue-element-admin-site/#/permission).
+ **asyncRouterMap:** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission](permission.md).
 
-> 这里所有的组件使用自定义方法 `_import ` 引入，具体介绍见[路由懒加载](https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading) #for perf
+::: tip
+All routing pages here use the `router lazy loading`, as described in [document](/guide/advanced/lazy-loading.md)
 
-> If you want to know more about browserHistory and hashHistory, please refer to [Build & Deploy](deploy).
+If you want to know more about browserHistory and hashHistory, please refer to [Build & Deploy](deploy.md).
+:::
 
 The other configurations are no different from the [vue-router](https://router.vuejs.org/en/) official, so check the documentation for yourself.
 
- **Note: ** There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem:  [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+::: warning
+There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem:  [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+ :::
 
 ## Sidebar
 
-The project sidebar is mainly based on the `el-menu` element-ui`.
+The project sidebar is mainly based on the `el-menu` of element-ui.
 
-Also introduced in the front, the sidebar is generated dynamically by reading the route and combined with the authority to judge, but also need to support the infinite nesting of routes, so here is also used to the recursive components.
+Also introduced in the front, the sidebar is generated dynamically by reading the route and combined with the permission judge, but also need to support the infinite nesting of routes, so here is also used to the recursive components.
 
-> Corresponding code: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout/components/Sidebar)
+
+> Code: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout/components/Sidebar)
 
 This also modify many default sidebar styles of `element-ui`. All css can be found in [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) and can be modified to suit your needs.
 
-?> Here need to pay attention, The general sidebar has two forms, `submenu` and` el-menu-item`.  One is a nested submenu, the other is a direct link. As shown below:
+**Here need to pay attention**. The general sidebar has two forms, `submenu` and` el-menu-item`.  One is a nested submenu, the other is a direct link. As shown below:
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-?> It has been determined in `Sidebar` that when you declare more than `one` route under the `children` , it automatically becomes nested mode. Such as:
+The sidebar has already helped you to make a judgment. When you route a children below the declaration of more than >1 routes, it will automatically become a nested mode. If the sub-route is exactly equal to one, the sub-route is displayed as a root route in the sidebar by default. If you do not want to, you can disable this feature by setting `alwaysShow: true` in the root route. Such as:
+
 
 ```js
 // no submenu, because children.length===1
@@ -104,7 +114,7 @@ This also modify many default sidebar styles of `element-ui`. All css can be fou
   component: Layout,
   children: [{
     path: 'index',
-    component: _import('svg-icons/index'),
+    component: ()=>import('svg-icons/index'),
     name: 'icons',
     meta: { title: 'icons', icon: 'icon'}
   }]
@@ -120,8 +130,8 @@ This also modify many default sidebar styles of `element-ui`. All css can be fou
     icon: 'component'
   },
   children: [
-    { path: 'tinymce', component: _import('components-demo/tinymce'), name: 'tinymce-demo', meta: { title: 'tinymce' }},
-    { path: 'markdown', component: _import('components-demo/markdown'), name: 'markdown-demo', meta: { title: 'markdown' }},
+    { path: 'tinymce', component: ()=>import('components-demo/tinymce'), name: 'tinymce-demo', meta: { title: 'tinymce' }},
+    { path: 'markdown', component: ()=>import('components-demo/markdown'), name: 'markdown-demo', meta: { title: 'markdown' }},
   ]
 }
 ```
@@ -138,20 +148,24 @@ clickLink(path) {
   this.$router.push({
     path,
     query: {
-      //Ensure that each click, query is not the same, to ensure that refresh the view
+      //Ensure that each click, query is not the same
+      //to ensure that refresh the view
       t: +new Date()
     }
   })
 }
 ```
- ps: Don't forget to add a unique 'key' to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
+ ps: Don't forget to add a unique `key` to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
 
-But there's also a drawback the ugly 'query' suffix behind url, such as `xxx.com/article/list?t=1496832345025`
+But there's also a drawback the ugly `query` suffix behind url, such as `xxx.com/article/list?t=1496832345025`
 
+You can know from the previous issue that there are many other options. In my company project, the solution adopted is to determine whether the currently clicked menu route is consistent with the current route. However, when it is consistent, it will jump to a dedicated Redirect page, which will redirect the route to Go to the page, this will have a refresh effect.
+
+<br>
 
 ## Breadcrumb
 
-This project also packages a breadcrumb navigation, which is also dynamically generated by the watch $ route change. It is the same with the menu, you can also config it in the routing. You can also add some custom attributes to your business needs in route.meta attr.
+This project also packages a breadcrumb navigation, which is also dynamically generated by the watch $route change. It is the same with the menu, you can also config it in the routing. You can also add some custom attributes to your business needs in route.meta attr.
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
@@ -169,5 +183,8 @@ overflow-y:scroll;
 But hack by css has some problems, in Firefox or other lower versions of the browser will be less beautiful.
 Second, in the case of sidebar collapses, limited to `menu` of` element-ui`, can not be handled in this way.
 
-So now use js to deal with sidebar scrolling problem. Write a scroll component `ScrollPane`.
-> Corresponding code: [@/components/ScrollPane](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ScrollPane/index.vue)
+So the current version uses `el-scrollbar` to handle the sidebar scrolling problem.
+
+::: tip Code
+[@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
+:::

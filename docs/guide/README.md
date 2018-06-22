@@ -87,13 +87,14 @@ The project is positioned as a background integration solution and is not suitab
 - Clipboard
 - Markdown to html
 ```
+
 <br/>
 
 ## Preparation
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 、 [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element). Understanding and learning this knowledge in advance will greatly help the use of this project.
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 、[axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element). Understanding and learning this knowledge in advance will greatly help the use of this project.
 
-At the same time supporting a series of tutorial articles, how to build a complete background project from scratch, suggest that you read these articles and then come to practice this project. But there's no English version yet.
+At the same time supporting a series of tutorial articles, how to build a complete background project from zero, suggest that you read these articles and then come to practice this project. But there's no English version yet.
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
  - [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
  - [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
@@ -174,10 +175,12 @@ We have built-in models, standard components, mock data, hot module reloading, s
 
 
 ## Contribution
-The repository of documentation is [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
+The repository of documentation is [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site) based on [vuepress](https://github.com/vuejs/vuepress) development.
 
-There may be some spelling or translation errors in the course of writing this document. It is welcome to point out by issue or pr.
+There may be some spelling or translation errors in the course of writing this document. It is welcome to point out by issue or pr. After all, English is not my mother tongue.
+
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is also continuing to iterate, summarize and summarize more features, and summarize the best practices of product templates/components/business scenarios in the middle and back office. This project is also very much looking forward to your participation and [feedback](https://github.com/PanJiaChen/vue-element-admin/issues).
 
 ## Donate
-If you find this project useful, you can buy author a glass of juice  :heart:
+If you think this project is useful, you can buy a glass of juice for the author  :heart:
 [Donate](/donate/)
