@@ -56,7 +56,7 @@ export default {
 其实 keep-alive [源码](https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)不复杂，但逻辑还是蛮绕的，之前尤大自己修复一个bug的时候也不小心搞错了，连发两个版本来修复，所以如果没有标签导航栏需求的用户，建议移除此功能。
 
 首先找到 `@/layout/components/AppMain.vue` 然后移除 `keep-alive`
-```js
+```html
 <template>
   <section class="app-main" style="min-height: 100%">
     <transition name="fade-transform" mode="out-in">

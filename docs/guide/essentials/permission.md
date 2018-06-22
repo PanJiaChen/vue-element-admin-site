@@ -1,32 +1,80 @@
-# 权限验证
+# Permission
 
-在 [手摸手，带你用vue撸后台 系列二(登录权限篇)](https://segmentfault.com/a/1190000009506097) 这章中其实已经详细介绍过了。
+It has been introduced in detail in this article--[手摸手，带你用vue撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac).
 
-该项目中权限的实现方式是：通过获取当前用户的权限去比对路由表，生成当前用户具的权限可访问的路由表，通过router.addRoutes动态挂载到router上。
-但其实很多公司的业务逻辑可能不是这样的，举一个例子来说，很多公司的需求是每个页面的权限是动态配置的，不像本项目中是写死预设的。但其实原理是相同的。如这个例子，你可以在后台通过一个tree控件或者其它展现形式给每一个页面动态配置权限，之后将这份路由表存储到后端。当用户登录后根据roles，后端返回一个相应的路由表或者前端去请求之前存储的路由表动态生成可访问页面，之后就是router.addRoutes动态挂载到router上，你会发现原来是相同的，万变不离其宗。
+The implementation of this project's permission is: compare the routing table by obtaining the current user's permission, and generate the routing table accessible by the current user with the permission, and dynamically mount it to `router` through `router.addRoutes`.
 
-ps:不排除之后本项目会增加权限控制面板支持真正的动态配置权限。
-
-## 逻辑修改
-现在路由层面权限的控制代码都在 `@/permission.js` 中，如果想修改逻辑，直接在适当的判断逻辑中 `next()` 释放钩子即可。
+But in fact, the business logic of many companies may not be the case. For example, the requirement of many companies is that the permissions of each page are dynamically configured, unlike the default settings in this project. But in fact the principle is the same. For example, you can dynamically configure permissions for each page through a tree control or other presentation, and then store this routing table to the back end. When the user logs in to get `roles`, the front end requests the accessible routing table to the backend according to `roles`, so that the accessible pages are dynamically generated. After that, the router.addRoutes is dynamically mounted to the router. You will find the same. , never change their case.
 
 
-**Example：**
+Just one more step to map the back-end return routing table with the local components. [issue](https://github.com/PanJiaChen/vue-element-admin/issues/293)
+
 ```js
-{
-  path: '/permission',
-  component: Layout,
-  redirect: '/permission/index',
-  meta: { roles: ['admin','ediotr'] }, // you can set roles in root nav
-  children: [{
-    path: 'index',
-    component: _import('permission/index'),
-    name: 'permission',
-    meta: {
-      title: 'permission',
-      icon: 'lock',
-      roles: ['admin','ediotr'], // or you can only set roles in sub nav
-    }
-  }]
+const map={
+ login:require('login/index').default // sync
+ login:()=>import('login/index')      // async
 }
+// The map on which you have a server is similar with
+const serviceMap=[
+ { path: '/login', component: 'login', hidden: true }
+]
+// After traversing this map, dynamically generate asyncRouterMap
+And replace component with map[component]
+```
+
+Ps: Do not rule out this project will increase the permissions control panel to support true dynamic configuration permissions.
+
+## Logical modification
+
+The control code of the routing level right now is in `@/permission.js`. If you want to change the logic, you can release the hook `next()` directly in the appropriate judgment logic.
+
+## Permission directive
+
+Write a permission directive, and can easily and quickly implement button-level permission judgment. [v-permission](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/directive/permission)
+
+**Use**
+
+```html
+<template>
+  <!-- Admin can see this -->
+  <el-tag v-permission="['admin']">admin</el-tag>
+
+  <!-- Editor can see this -->
+  <el-tag v-permission="['editor']">editor</el-tag>
+
+  <!-- Editor can see this -->
+  <el-tag v-permission="['admin','editor']">Both admin or editor can see this</el-tag>
+</template>
+
+<script>
+// Of course you can also register it for the sake of convenience.
+import permission from '@/directive/permission/index.js'
+export default{
+  directives: { permission }
+}
+</script>
+```
+
+**Limitations**
+
+In some cases it is not suitable to use v-permission, such as element Tab component  which can only be achieved by manually setting the v-if.
+
+You can use the global permission judgment function. The usage is similar to the instruction `v-permission`.
+
+```html
+<template>
+  <el-tab-pane v-if="checkPermission(['admin'])" label="Admin">Admin can see this</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">Editor can see this</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['admin','editor'])" label="Admin-OR-Editor">Both admin or editor can see this</el-tab-pane>
+</template>
+
+<script>
+import checkPermission from '@/utils/permission'
+
+export default{
+   methods: {
+    checkPermission
+   }
+}
+</script>
 ```
