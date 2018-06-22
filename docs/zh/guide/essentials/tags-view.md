@@ -5,7 +5,7 @@
 但随着时代的发展，现在的后台项目几乎都是 spa(single page web application 单页面开发)，再使用以前的方案来实现标签导航显然是不合适的。
 
 所以目前的方案大致为：
-我们主要运用了 `keep-alive` 和 `router-view` 的结合。
+运用 `keep-alive` 和 `router-view` 的结合。
 
 代码: `@/layout/components/AppMain.vue `
 
@@ -15,22 +15,22 @@
 </keep-alive>
 ```
 
-顶部标签栏导航实际作用相当于nav的另一种展现形式，其实说白了都是一个个router-link。然后我们在来监听路由 `$route` 的变化，来判断当前页面是否需要缓冲或者已被缓存。
+顶部标签栏导航实际作用相当于 nav 的另一种展现形式，其实说白了都是一个个router-link，点击跳转到相应的页面。然后我们在来监听路由 `$route` 的变化，来判断当前页面是否需要重新加载或者已被缓存。
 
 ## visitedViews && cachedViews
 目前 tags-view 维护了两个数组。
 - visitedViews : 用户访问过的页面 就是标签栏导航显示的一个个 tag 数组集合
-- cachedViews : 实际 keep-alive 的路由。可以在配置路由的时候通过 `meta.noCache` 来设置是否需要缓存这个路由 默认都缓存。[配置文档](router-and-nav)
+- cachedViews : 实际 keep-alive 的路由。可以在配置路由的时候通过 `meta.noCache` 来设置是否需要缓存这个路由 默认都缓存。[配置文档](router-and-nav.md)
 
 ## 注意事项
-由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-alive` 的 [include](https://cn.vuejs.org/v2/api/#keep-alive) 默认是优先匹配组件的 **name** ，所以在编写路由router和路由对应的 view component 的时候一定要确保 两者的name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切记不要可某些组件的命名重复了 不然会递归引用最后内存溢出等问题)
+由于目前 `keep-alive` 和 `router-view` 是强耦合的，而且查看文档和源码不难发现 `keep-alive` 的 [include](https://cn.vuejs.org/v2/api/#keep-alive) 默认是优先匹配组件的 **name** ，所以在编写路由 router 和路由对应的 view component 的时候一定要确保 两者的 name 是完全一致的。(切记 name 命名时候尽量保证唯一性 切记不要可某些组件的命名重复了，不然会递归引用最后内存溢出等问题)
 
 **DEMO:**
 ```js
 //router 路由声明
 {
   path: 'create-form',
-  component: _import('form/create'),
+  component: ()=>import('@/views/form/create'),
   name: 'createForm',
   meta: { title: 'createForm', icon: 'table' }
 }
@@ -59,7 +59,7 @@ export default {
 ```js
 <template>
   <section class="app-main" style="min-height: 100%">
-    <transition name="fade" mode="out-in">
+    <transition name="fade-transform" mode="out-in">
       <router-view></router-view>
     </transition>
   </section>

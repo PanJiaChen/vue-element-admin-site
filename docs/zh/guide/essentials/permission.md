@@ -1,6 +1,6 @@
 # 权限验证
 
-在 [手摸手，带你用vue撸后台 系列二(登录权限篇)](https://segmentfault.com/a/1190000009506097) 这篇文章中其实已经详细介绍过了。
+在 [手摸手，带你用vue撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac) 这篇文章中其实已经详细介绍过了。
 
 该项目中权限的实现方式是：通过获取当前用户的权限去比对路由表，生成当前用户具的权限可访问的路由表，通过 `router.addRoutes` 动态挂载到 `router` 上。
 
@@ -26,22 +26,53 @@ ps:不排除之后本项目会增加权限控制面板支持真正的动态配�
 ## 逻辑修改
 现在路由层面权限的控制代码都在 `@/permission.js` 中，如果想修改逻辑，直接在适当的判断逻辑中 `next()` 释放钩子即可。
 
-**Example：**
-```js
-{
-  path: '/permission',
-  component: Layout,
-  redirect: '/permission/index',
-  meta: { roles: ['admin','ediotr'] }, // you can set roles in root nav
-  children: [{
-    path: 'index',
-    component: _import('permission/index'),
-    name: 'permission',
-    meta: {
-      title: 'permission',
-      icon: 'lock',
-      roles: ['admin','ediotr'], // or you can only set roles in sub nav
-    }
-  }]
+## 指令权限
+
+封装了一个指令权限，能简单快速的实现按钮级别的权限判断。 [v-permission](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/directive/permission)
+
+**使用**
+
+```html
+<template>
+  <!-- Admin can see this -->
+  <el-tag v-permission="['admin']">admin</el-tag>
+
+  <!-- Editor can see this -->
+  <el-tag v-permission="['editor']">editor</el-tag>
+
+  <!-- Editor can see this -->
+  <el-tag v-permission="['admin','editor']">Both admin or editor can see this</el-tag>
+</template>
+
+<script>
+// 当然你也可以为了方便使用，将它注册到全局
+import permission from '@/directive/permission/index.js' // 权限判断指令
+export default{
+  directives: { permission }
 }
+</script>
+```
+
+**局限**
+
+In some cases it is not suitable to use v-permission, such as element Tab component  which can only be achieved by manually setting the v-if.
+
+可以使用全局权限判断函数，用户和指令 `v-permission` 类似。
+
+```html
+<template>
+  <el-tab-pane v-if="checkPermission(['admin'])" label="Admin">Admin can see this</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">Editor can see this</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['admin','editor'])" label="Admin-OR-Editor">Both admin or editor can see this</el-tab-pane>
+</template>
+
+<script>
+import checkPermission from '@/utils/permission' // 权限判断函数
+
+export default{
+   methods: {
+    checkPermission
+   }
+}
+</script>
 ```
