@@ -21,11 +21,13 @@
 
 下载完成之后将下载好的 .svg 文件放入 `@/icons/svg` 文件夹下之后就会自动导入。
 
-**使用方式**
+## 使用方式
 
 ```js
 <svg-icon icon-class="password" /> //icon-class 为 icon 的名字
 ```
+
+[组件介绍](/zh/component/svg-icon.md)
 
 ## 改变颜色
 `svg-icon` 默认会读取其父级的 color `fill: currentColor;`

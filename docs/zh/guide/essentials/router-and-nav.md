@@ -9,15 +9,15 @@
 
 ```js
 //当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
-hidden: true //(默认 false)
+hidden: true // (默认 false)
 
 //当设置 noredirect 的时候该路由在面包屑导航中不可被点击
 redirect: noredirect
 
-//当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式 //如 组件页面
-//只有一个时，会将那个子路由当做根路由显示在侧边栏 //如引导页面
+//当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
+//只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
 //若你想不管路由下面的 children 声明的个数都显示你的根路由
-//你可以 设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
+//你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
 alwaysShow: true
 
 name:'router-name'            //设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
@@ -36,19 +36,19 @@ meta : {
 {
   path: '/permission',
   component: Layout,
-  redirect: '/permission/index',
-  hidden: true,
-  alwaysShow: true,
+  redirect: '/permission/index', //重定向地址，在面包屑中点击会重定向去的地址
+  hidden: true, // 不在侧边栏线上
+  alwaysShow: true, //一直显示根路由
   meta: { roles: ['admin','edior'] }, //你可以在根路由设置权限，这样它下面所以的子路由都继承了这个权限
   children: [{
     path: 'index',
-    component: ()=>('permission/index'),
+    component: ()=>import('permission/index'),
     name: 'permission',
     meta: {
       title: 'permission',
-      icon: 'lock',
+      icon: 'lock', //图标
       role: ['admin','editor'], //或者你可以给每一个子路由设置自己的权限
-      noCache: true
+      noCache: true // 不会被 <keep-alive> 缓存
     }
   }]
 }
@@ -64,18 +64,18 @@ meta : {
 
  **asyncRouterMap：** 代表那些需求动态判断权限并通过 `addRouters` 动态添加的页面。
 
- 具体的会在 [权限判断](https://panjiachen.github.io/vue-element-admin-site/#/permission) 页面介绍。
+ 具体的会在 [权限验证](permission.md) 页面介绍。
 
 ::: tip
-这里所有的路由页面都使用 `路由懒加载` ，具体介绍见[文档](/zh/guide/advanced/lazy-loading.html)
+这里所有的路由页面都使用 `路由懒加载` 了 ，具体介绍见[文档](/zh/guide/advanced/lazy-loading.html)
 
 如果你想了解更多关于 browserHistory 和 hashHistory，请参看 [构建和发布](/zh/guide/essentials/deploy.html)。
 :::
 
 其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
 
-::: warning
-**注意事项** 如果这里有一个需要非常注意的地方就是 `404` 页面一定要最后加载，如果放在 constantRouterMap 一同声明了 `404` ，后面的所以页面都会被拦截到`404` ，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+::: warning 注意事项
+如果这里有一个需要非常注意的地方就是 `404` 页面一定要最后加载，如果放在 constantRouterMap 一同声明了 `404` ，后面的所以页面都会被拦截到`404` ，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 :::
 
 <br>
@@ -98,7 +98,7 @@ meta : {
 
 在 `Sidebar` 中已经帮你做了判断，当你一个路由下面的 `children` 声明的路由大于>1个时，自动会变成嵌套的模式。如果子路由正好等于一个就会默认将子路由作为根路由显示在侧边栏中，若不想这样，可以通过设置在根路由中设置`alwaysShow: true`来取消这一特性。如：
 ```js
-// no submenu, because children.length===1
+// No submenu, because children.length===1
 {
   path: '/icon',
   component: Layout,
@@ -110,7 +110,7 @@ meta : {
   }]
 },
 
-// has submenu, because children.length>=1
+// Has submenu, because children.length>=1
 {
   path: '/components',
   component: Layout,
@@ -120,8 +120,8 @@ meta : {
     icon: 'component'
   },
   children: [
-    { path: 'tinymce', component: ()=>('components-demo/tinymce'), name: 'tinymce-demo', meta: { title: 'tinymce' }},
-    { path: 'markdown', component: ()=>('components-demo/markdown'), name: 'markdown-demo', meta: { title: 'markdown' }},
+    { path: 'tinymce', component: ()=>import('components-demo/tinymce'), name: 'tinymce-demo', meta: { title: 'tinymce' }},
+    { path: 'markdown', component: ()=>import('components-demo/markdown'), name: 'markdown-demo', meta: { title: 'markdown' }},
   ]
 }
 ```

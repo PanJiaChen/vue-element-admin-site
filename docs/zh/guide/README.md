@@ -156,7 +156,7 @@ npm run dev
 <br/>
 
 ::: tip
-强烈建议不要用直接使用 cnpm 安装，会有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题。若还是不行，可使用 [yarn](https://github.com/yarnpkg/yarn)替代 `npm`。
+强烈建议不要用直接使用 cnpm 安装，会有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题。若还是不行，可使用 [yarn](https://github.com/yarnpkg/yarn) 替代 `npm`。
 
 Windows 用户若安装不成功，很大概率是`node-sass`安装失败，[解决方案](https://github.com/PanJiaChen/vue-element-admin/issues/24)。
 :::
@@ -171,17 +171,17 @@ npm install --registry=https://registry.npm.taobao.org
 
 ![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
-接下来你可以修改代码进行业务开发了，我们内建了典型业务模板、常用业务组件、模拟数据、HMR 实时预览、状态管理、国际化、全局路由等等各种实用的功能辅助开发，你可以继续阅读和探索左侧的其他文档。
+接下来你可以修改代码进行业务开发了，我们内建了典型业务模板、常用业务组件、模拟数据、HMR 实时预览、状态管理、国际化、全局路由等等各种实用的功能来辅助开发，你可以继续阅读和探索左侧的其他文档。
 
 <br/>
 
 ::: tip 建议
-你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
+你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上进行二次开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
 :::
 
 
 ## Contribution
-本文档代码项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site)
+本文档项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site) 基于 [vuepress](https://github.com/vuejs/vuepress)开发。
 
 有任何修改和建议都可以该项目 pr 和 issue
 

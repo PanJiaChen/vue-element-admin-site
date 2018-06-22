@@ -159,8 +159,8 @@ function genEssentialsSidebar(type = "") {
     "/guide/essentials/tags-view.md",
     "/guide/essentials/new-page.md",
     "/guide/essentials/style.md",
-    "/guide/essentials/mock-api.md",
     "/guide/essentials/server.md",
+    "/guide/essentials/mock-api.md",
     "/guide/essentials/import.md",
     "/guide/essentials/deploy.md"
   ];
