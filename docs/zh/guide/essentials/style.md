@@ -5,6 +5,7 @@
 在样式开发过程中，有两个问题比较突出：
 
 - 全局污染 —— CSS 文件中的选择器是全局生效的，不同文件中的同名选择器，根据 build 后生成文件中的先后顺序，后面的样式会将前面的覆盖；
+
 - 选择器复杂 —— 为了避免上面的问题，我们在编写样式的时候不得不小心翼翼，类名里会带上限制范围的标示，变得越来越长，多人开发时还很容易导致命名风格混乱，一个元素上使用的选择器个数也可能越来越多，最终导致难以维护。
 
 
@@ -40,6 +41,7 @@ vue-element-admin 所有全局样式都在 `@/src/styles` 目录下设置
 │   ├── element-ui.scss          # 全局自定义 element-ui 样式
 │   ├── index.scss               # 全局通用样式
 │   ├── mixin.scss               # 全局mixin
+│   ├── sidebar.scss             # sidebar css
 │   ├── transition.scss          # vue transition 动画
 │   └── variables.scss           # 全局变量
 ```
@@ -59,6 +61,7 @@ vue-element-admin 所有全局样式都在 `@/src/styles` 目录下设置
 <br>
 
 ## 自定义 element-ui 样式
+
 现在我们来说说怎么覆盖element-ui样式。由于element-ui的样式我们是在全局引入的，所以你想在某个页面里面覆盖它的样式就不能加 scoped，但你又想只覆盖这个页面的element样式，你就可在它的父级加一个class，用命名空间来解决问题。
 
 ```css

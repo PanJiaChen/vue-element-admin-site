@@ -34,7 +34,7 @@
   children: [
     {
       path: 'export-excel',
-      component: _import('excel/exportExcel'),
+      component: ()=>import('excel/exportExcel'),
       name: 'exportExcel',
       meta: { title: 'exportExcel' }
     }
@@ -63,9 +63,9 @@
     icon: 'excel'
   },
   children: [
-    { path: 'export-excel', component: _import('excel/exportExcel'), name: 'exportExcel', meta: { title: 'exportExcel' }},
-    { path: 'export-selected-excel', component: _import('excel/selectExcel'), name: 'selectExcel', meta: { title: 'selectExcel' }},
-    { path: 'upload-excel', component: _import('excel/uploadExcel'), name: 'uploadExcel', meta: { title: 'uploadExcel' }}
+    { path: 'export-excel', component: ()=>import('excel/exportExcel'), name: 'exportExcel', meta: { title: 'exportExcel' }},
+    { path: 'export-selected-excel', component: ()=>import('excel/selectExcel'), name: 'selectExcel', meta: { title: 'selectExcel' }},
+    { path: 'upload-excel', component: ()=>import('excel/uploadExcel'), name: 'uploadExcel', meta: { title: 'uploadExcel' }}
   ]
 }
 ```
@@ -98,7 +98,10 @@
 
 
 ## 新增组件
-个人写 vue 项目的习惯，在全局的 `@/components` 只会写一些全局的组件，如富文本，各种搜索组件，封装的日期组件等等，能被公用的组件。每个页面或者模块特定的业务组件则会写在当前 views 下面。如：`@/views/artivle/components/xxx.vue`。这样拆分大大减轻了维护成本。**请记住拆分组件最大的好处不是公用而是可维护性！**
+
+个人写 vue 项目的习惯，在全局的 `@/components` 只会写一些全局的组件，如富文本，各种搜索组件，封装的日期组件等等，能被公用的组件。每个页面或者模块特定的业务组件则会写在当前 views 下面。如：`@/views/artivle/components/xxx.vue`。这样拆分大大减轻了维护成本。
+
+**请记住拆分组件最大的好处不是公用而是可维护性！**
 
 ## 新增样式
 
@@ -116,5 +119,4 @@
   xxx
 }
 </style>
-
 ```

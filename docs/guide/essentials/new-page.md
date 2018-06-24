@@ -2,9 +2,10 @@
 
 If you are familiar with the `vue-router` then it will be very simple.
 
-First add the routing to the `@/router/index.js`.
+First add the route to the `@/router/index.js`.
 
 **Such as: add an excel page**
+
 ```js
 {
   path: '/excel',
@@ -18,7 +19,9 @@ First add the routing to the `@/router/index.js`.
 }
 ```
 
-?> It just creates a blank route based on 'layout', and you also need to add a route to the 'children' below it.
+::: tip
+It just creates a blank route based on 'layout', and you also need to add a route to the 'children' below it.
+:::
 
 ```js
 {
@@ -33,7 +36,7 @@ First add the routing to the `@/router/index.js`.
   children: [
     {
       path: 'export-excel',
-      component: _import('excel/exportExcel'),
+      component: ()=>import('excel/exportExcel'),
       name: 'exportExcel',
       meta: { title: 'exportExcel' }
     }
@@ -46,7 +49,12 @@ First add the routing to the `@/router/index.js`.
 
 <br/>
 
-?> Since there is only one route declared under `children`, there will be no expansion arrow, and if the length of  `children` is more than 1, there will be an expansion arrow such as:
+:::tip
+Since `children` only declares one route below, there will be no expansion arrow. If the number of routes under `children` is greater than 1, there will be an expansion arrow, as shown below.
+
+If you want to ignore this automatic decision, you can use `alwaysShow: true`, so that it will ignore the previously defined rule and display the root route. See the [Router and Nav](router-and-nav.md) for details.
+
+:::
 
 ```js
 {
@@ -59,9 +67,9 @@ First add the routing to the `@/router/index.js`.
     icon: 'excel'
   },
   children: [
-    { path: 'export-excel', component: _import('excel/exportExcel'), name: 'exportExcel', meta: { title: 'exportExcel' }},
-    { path: 'export-selected-excel', component: _import('excel/selectExcel'), name: 'selectExcel', meta: { title: 'selectExcel' }},
-    { path: 'upload-excel', component: _import('excel/uploadExcel'), name: 'uploadExcel', meta: { title: 'uploadExcel' }}
+    { path: 'export-excel', component:()=>import('excel/exportExcel'), name: 'exportExcel', meta: { title: 'exportExcel' }},
+    { path: 'export-selected-excel', component:()=>import('excel/selectExcel'), name: 'selectExcel', meta: { title: 'selectExcel' }},
+    { path: 'upload-excel', component:()=>import('excel/uploadExcel'), name: 'uploadExcel', meta: { title: 'uploadExcel' }}
   ]
 }
 ```
@@ -72,12 +80,12 @@ First add the routing to the `@/router/index.js`.
 <br/>
 
 ## Nested Routes
-If you have a nested Route, such as [@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/example),
+If you have a nested Route, such as [@/views/nested](hhttps://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested/bar),
 Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
 
- Such as: [@/views/example/table/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/example/table/index.vue).
+ Such as: [@/views/nested/bar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/bar/index.vue).
 
- **Note: ** As many `<router-view>` as the level of routes nested.
+ **Note:** As many `<router-view>` as the level of routes nested.
 
 ![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
 
@@ -96,3 +104,28 @@ Suggestion if a component or utils function only used in this view, just create 
 ## Create Api
 
 Finally, under the [@/api](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/api) folder, create the corresponding api service for this module.
+
+## Create Component
+
+Personally write vue project habits, the global `@/components` will only write some global components, such as rich text, various search components, packaged date components, etc. can be shared components. Each page or module-specific business component is written under the current views. Such as: `@/views/artivle/components/xxx.vue`. This split greatly reduces maintenance costs.
+
+**Remember that the biggest benefit of splitting components is not shared code but maintainability! **
+
+## Create Style
+
+The page's style and components are the same. The global `@/style` writes a global common style. The style of each page is written under the current `views`. Please remember to add `scoped` or namespace to avoid Causes global style pollution.
+
+
+```css
+<style>
+/* global styles */
+</style>
+
+<style scoped>
+/* local styles */
+.xxx-container{
+  /* name scoped */
+  xxx
+}
+</style>
+```

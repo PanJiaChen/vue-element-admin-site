@@ -2,14 +2,14 @@
 
 ## CSS Modules
 
-In the code of style development, two problems stand out:
+In the code of stylIn the style development process, there are two issues are more prominent:
 
 - Global pollution —— The selector in the CSS file is global. The same name selector in different files, according to the order in the build generation file, the styles generated later will overwrite the previous ones.
 
 - Selector complex —— In order to avoid the above problems, we have to be careful when writing styles, the name of the class will be marked with a range of restrictions, multi-person development is also very easy to lead to the chaos of the naming style. The classnames getting longer and longer. Eventually, it's hard to maintain.
 
 
-Fortunately vue provides us with [scoped](https://vue-loader.vuejs.org/en/features/scoped-css.html) can easily solve the above problem. As the name suggests, it adds a scoped concept to css.
+Fortunately vue provides us with [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles) can easily solve the above problem. As the name suggests, it adds a scoped concept to css.
 
 ```css
  /* Compile before */
@@ -23,7 +23,11 @@ Fortunately vue provides us with [scoped](https://vue-loader.vuejs.org/en/featur
 }
 ```
 
-If you add `<style scoped>` the css will only effect in the current component。For detailed documentation, see [vue-loader](https://vue-loader.vuejs.org/en/features/scoped-css.html)
+If you add `<style scoped>` the css will only effect in the current component。For detailed documentation, see [vue-loader](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles)
+
+::: tip
+With scoped, the parent component's styles will not leak into child components. However, a child component's root node will be affected by both the parent's scoped CSS and the child's scoped CSS. This is by design so that the parent can style the child root element for layout purposes.
+:::
 
 <br/>
 
@@ -36,7 +40,7 @@ vue-element-admin All global styles are set in the `@/src/styles` directory.
 │   ├── element-ui.scss          # global custom element-ui style
 │   ├── index.scss               # global common style
 │   ├── mixin.scss               # global sass mixin
-│   ├── sidebar.scss               # sidebar css
+│   ├── sidebar.scss             # sidebar css
 │   ├── transition.scss          # vue transition snimation
 │   └── variables.scss           # global variables
 ```
@@ -63,7 +67,7 @@ Now let's talk about how to override the element-ui style. Because element-ui st
   }
 }
 ```
-?> Of course, you can also use the deep selectors as described below.
+**Of course, you can also use the deep selectors as described below.**
 
 ## Deep Selectors
 **Parent component changes child component style.**
@@ -82,6 +86,12 @@ Will be compiled into
 .a[data-v-f3f3eg9] .b { /* ... */ }
 ```
 Some pre-processors, such as SASS, may not be able to parse >>> properly. In those cases you can use the /deep/ combinator instead - it's an alias for >>> and works exactly the same.
+
+```css
+.xxx-container >>> .el-button{
+  xxxx
+}
+```
 
 [Official document](https://vue-loader.vuejs.org/en/features/scoped-css.html)
 

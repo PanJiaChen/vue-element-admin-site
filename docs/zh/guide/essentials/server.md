@@ -20,7 +20,7 @@ api/
   ...
 ```
 
-<br>
+## request.js
 
 其中，`@/src/utils/request.js` 是基于 [axios](https://github.com/axios/axios) 的封装，便于统一处理 POST，GET 等请求参数，请求头，以及错误提示信息等。具体可以参看 [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)。
 它封装了全局 `request拦截器`、`respone拦截器`、`统一的错误处理`、`统一做了超时处理`、`baseURL设置等`。
@@ -57,7 +57,6 @@ export default {
   }
 }
 ```
-
 
 ## 从 mock 直接切换到服务端请求
 见[ Mock 和联调](mock-api.md)
