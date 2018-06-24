@@ -1,6 +1,6 @@
 # 图标
 
-如果你没有在本项目 [Icon](http://ant.design/components/icon-cn/) 中找到需要的图标，可以到 [iconfont.cn](http://iconfont.cn/) 上选择并生成自己的业务图标库，再进行使用。
+如果你没有在本项目 [Icon](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/icons/svg) 中找到需要的图标，可以到 [iconfont.cn](http://iconfont.cn/) 上选择并生成自己的业务图标库，再进行使用。或者其它 svg 图标网站，下载 svg 并放到文件夹之中就可以了。
 
 
 ## 生成图标库代码
@@ -13,7 +13,7 @@
 
 <br />
 
-?> 现在本项目支持和推荐单独导出 svg 的引入使用方式。下载方式如下图：
+**现在本项目支持和推荐单独导出 svg 的引入使用方式。下载方式如下图：**
 
 <img width="600" src="https://wpimg.wallstcn.com/1f8b1e56-cfd9-4ef7-a0aa-dfb0c2883aa3.gif" />
 

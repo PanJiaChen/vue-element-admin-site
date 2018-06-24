@@ -59,6 +59,14 @@ module.exports = {
               title: "Advanced",
               collapsable: false,
               children: genAdvancedSidebar()
+            },
+            {
+              title: "Other",
+              collapsable: false,
+              children: [
+                "/guide/other/gitter.md",
+                "/guide/other/release-notes.md"
+              ]
             }
           ],
           "/component/": [

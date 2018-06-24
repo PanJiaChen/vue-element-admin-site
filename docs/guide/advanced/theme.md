@@ -1,39 +1,43 @@
-# 更换主题
+# Theme
 
-本项目基于 element-ui 默认视觉风格搭建了。如果对视觉风格有额外的要求可以按照[官方自定义主题指导](http://element-cn.eleme.io/#/zh-CN/component/custom-theme)。
+This project is based on the element-ui default visual style. If you have additional requirements for visual style, you can follow the official custom theme [guide](http://element.eleme.io/#/en-US/component/custom-theme). The method is implemented by covering style variables.
 
-## 样式覆盖
+## Style override
 
-element-ui 的通用样式变量可能无法满足所有定制需求，你可以覆盖默认的组件样式。
-由于element-ui的样式我们是在全局引入的，所以你想在某个view里面覆盖它的样式就不能加scoped，但你又想只覆盖这个页面的element样式，你就可在它的父级加一个class，以用命名空间来解决问题。
+The generic style variables for element-ui may not satisfy all custom requirements, and you can do this by overriding the default component style.Since the element-ui style is introduced globally, you can't add scoped if you want to override its style in a `view`, but if you want to override only the element style of the page, you can use it. Add a class to the parent to use the namespace to solve the problem.
 
-```
-.aritle-page{ //你的命名空间
-  .el-tag { //element-ui 元素
+Or use [Deep Selectors](https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors)。
+
+
+```css
+/* Your namespace */
+.aritle-page{
+  /* element-ui tag */
+  .el-tag {
     margin-right: 0px;
   }
 }
 ```
 
-一些全局的 element-ui 样式修改可以在 `src/styles/element-ui.scss` 中进行设置。
+Some global element-ui style modifications can be set in [@/src/styles/element-ui.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-ui.scss).
 
 <br/>
 
-## 动态换肤
+## Dynamic theme
 
-本项目提供了两种动态换肤的功能，各有利弊，请结合个人需求自行选择。
+This project provides two kinds of dynamic skinning functions, each has its own advantages and disadvantages. Please choose according to your own needs.
 
-### element-ui 官方文档页面 换肤方式
-element-ui 升级为2.0之后官方文档的右上角提供了动态换肤的功能，本项目也提供了改功能。
-代码地址：`src/components/ThemePicker`
+### Element-ui official method
 
-简单说明一下它的原理：
-element-ui 2.0版本之后所有的样式都是基于 SCSS 编写的，所有的颜色都是基于几个基础颜色[变量](https://github.com/PanJiaChen/custom-element-theme/blob/master/element-variables.scss)来设置的，所以就不难实现动态换肤了，只要找到那几个颜色变量修改它就可以了。
-首先我们需要拿到通过 `package.json` 拿到 element-ui 的版本号，根据该版本号去请求相应的样式。拿到样式之后将样色，通过正则匹配和替换，将颜色变量替换成你需要的，之后动态添加 `style` 标签来覆盖原有的css样式。
+After the element-ui is upgraded to 2.0, the dynamic peel function is provided in the upper right corner of the official document. This project also provides a change function.
 
-**使用**
+Code: [@/src/components/ThemePicker](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ThemePicker/index.vue)。
 
-?> PS：这里需要获取 element-ui 的版本号，从而锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。
+**Briefly explain its principle:** All styles after element-ui version 2.0 are based on SCSS, all colors are set based on a few basic color [variables](https://github.com/PanJiaChen/custom-element-theme/blob/master/element-variables.scss), so it is not difficult to achieve dynamic skinning, as long as find a few color variables to modify it. First, we need to get the version number of element-ui through `package.json` and request the corresponding style according to the version number. After you get the style, you will change the color, replace it with the color variable you want, and then dynamically add the `style` tag to override the original CSS style.
+
+::: tip
+It is necessary to obtain the version of element-ui to lock the version so as to avoid the impact of non-compatible updates when the Element is upgraded in the future.
+:::
 
 ```js
 const version = require('element-ui/package.json').version
@@ -54,52 +58,53 @@ getCSSString(url, callback, variable) {
 }
 ```
 
-之后在项目中引入 ThemePicker 组件即可
-```
+**How to use**
+
+Import the ThemePicker component to your project
+
+```js
 import ThemePicker from '@/components/ThemePicker'
 ```
 
-- 优点
-  - 无需准备多套主题，可以自由动态换肤
-- 缺点
-  - 自定义不够，只支持基础颜色的切换
+- Advantage
+  - No need to prepare multiple sets of themes, free dynamic theme
+- Shortcomings
+  - Not enough customization, only support switching of basic colors
 
 <br/>
 <br/>
 
-### 多套主题换肤
-本方法就是最常见的换肤方式，本地存放多套主题，两者有不同的命名空间，如写两套主题，一套叫 day-theme ，一套叫 night-theme，night-theme 主题都在一个.night-theme的命名空间下，我们动态的在 body 上 add .night-theme ; remove .night-theme。
+### Multiple sets of theme
 
-#### 使用
-> 我们这里基于官方的主题生成库 [element-theme](https://github.com/ElementUI/element-theme) 进行了相应的改造。
+This method is the most common way of theme, storing multiple sets of themes locally, both with different namespaces, such as writing two sets of themes, a set called `day-theme`, a set called `night-theme`, and `night-theme. ` Themes are all under a `.night-theme` namespace, and we dynamically add `.night-theme` on body; remove `.night-theme`.
 
-首先我们下载 [custom-element-theme](https://github.com/PanJiaChen/custom-element-theme) 项目
+#### How to use
 
-```shell
+> We have made corresponding changes here based on the official theme generation library [element-theme](https://github.com/ElementUI/element-theme).
+
+First download [custom-element-theme](https://github.com/PanJiaChen/custom-element-theme)
+
+```bash
 git@github.com:PanJiaChen/custom-element-theme.git
 ```
 
-之后全局安装主题生成工具
-```shell
+Globally installed theme generation tool
+
+```bash
 npm i element-theme -g
 
 ```
-进入项目目录 安装相关依赖
 
-```shell
+Enter the project directory Install dependencies
+
+```bash
 npm install
-
 ```
 
-首先执行 `et -i` 生成 `element-variables.scss` 存放样式变量的文件，然后进入 `element-variables.scss` 文件 修改你自己需要的变量，修改完成之后执行 `et` ， 编译主题，最后执行`gulp` 生成命名空间。所有生成文件在 `dist` 目录下，你只需复制文件下所有内容到 `vue-element-admin` 项目中 `src/assets/custom-theme` 进行覆盖替换就行
+First execute `et -i` to generate `element-variables.scss` file that stores style variables, then enter `element-variables.scss` file to modify your own variables, execute `et` after modification, compile subject, and finally Execute `gulp` to generate a namespace. All generated files are in the `dist` directory. You just copy all the contents of the file to `src/assets/custom-theme` in the `vue-element-admin` project.
 
-?> PS：如果需要修改打包生成样式命名空间的名字 只要修改该[变量](https://github.com/PanJiaChen/custom-element-theme/blob/master/gulpfile.js#L6)即可
-
+::: tip
+If you need to modify the name of the package generation style namespace, just modify the [variable](https://github.com/PanJiaChen/custom-element-theme/blob/master/gulpfile.js#L6).
+:::
 
 ![](https://wpimg.wallstcn.com/0726b472-90f4-4fe9-a665-26fb8f9795c3.gif)
-
-
-
-
-[更多动态换肤文章](https://segmentfault.com/a/1190000009762198#articleHeader2)
-

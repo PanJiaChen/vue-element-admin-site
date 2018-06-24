@@ -1,22 +1,27 @@
-# 图表
+# Chart
 
-管理后台图表也是常见得需求。这里图表就只推荐ECharts，功能齐全，社区demo也丰富 [gallery](http://gallery.echartsjs.com/explore.html)。
+Managing background charts is also a common requirement. The chart here only recommends ECharts, full-featured, community demo is also rich [gallery](http://gallery.echartsjs.com/explore.html)。
 
-我还是那个观点，大部分插件建议大家还是自己用 vue 来封装就好了，真的很简单。ECharts 支持 webpack 引入，图省事可以将 ECharts 整个引入 `var echarts = require('echarts')` 不过 ECharts 还是不小的，我们大部分情况只是用到很少一部分功能，我平时习惯于按需引入的。
+I still have that point of view. Most plug-ins recommend that use vue for packaging by youself. It's really simple. ECharts supports the import of webpack, you can import the whole ECharts `var echarts = require ('echarts') ` However, ECharts is not small, if you use only a small part of the features or chart type, then recommend on-demand import.
+
+
 ```js
-// 引入 ECharts 主模块
+// Import on demand -- import ECharts main module
 var echarts = require('echarts/lib/echarts');
-// 引入柱状图
+// Import bar
 require('echarts/lib/chart/bar');
-// 引入提示框和标题组件
+// Import tooltop&title
 require('echarts/lib/component/tooltip');
 require('echarts/lib/component/title');
+
+// Import all ECharts module
+var echarts = require('echarts');
 ```
-[webpack 中使用ECharts文档](http://echarts.baidu.com/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)
+[Use ECharts with webpack](https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Use%20ECharts%20with%20webpack)
 
-[ECharts 按需引入模块文档](https://github.com/ecomfe/echarts/blob/master/index.js)
+[Include ECharts charts and components on demand](https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Use%20ECharts%20with%20webpack)
 
-接下来我们就要在 vue 中声明初始化 ECharts 了。因为 ECharts 初始化必须绑定 dom，所以我们只能在 vue 的 mounted 生命周期里进行初始化。
+Next we will declare the initialization of ECharts in vue. Because ECharts initialization must be bound to dom, we can only initialize it during vue's mounted lifetime.
 
 ```js
 mounted() {
@@ -47,10 +52,10 @@ methods: {
 }
 ```
 
-就这样简单，ECharts就配置完成了，这时候你想说我的data是远程获取的，或者说我动态改变 ECharts 的配置该怎么办呢？我们可以通过 watch 来触发 setOptions 方法
+It's that simple, ECharts is configured, at this point you want to say that my data is obtained remotely, or how do I dynamically change the configuration of ECharts? We can trigger the setOptions method with watch
 
 ```js
-//第一种 watch options变化 利用vue的深度 watcher，options一有变化就重新setOption
+// The first watch options change Using the depth of vue watcher, options are re-setOption
 watch: {
   options: {
     handler(options) {
@@ -59,20 +64,22 @@ watch: {
     deep: true
   },
 }
-//第二种 只watch 数据的变化 只有数据变化时触发ECharts
+// The second only watch data changes trigger ECharts only when the data changes
 watch: {
   seriesData(val) {
     this.setOptions({series:val})
   }
 }
-
 ```
-其实都差不多，还是要结合自己业务来封装。后面就和平时使用 ECharts 没有什么区别了。题外话 ECharts 的可配置项真心多，大家使用的时候可能要花一点时间了解它的 api 的。知乎有个问题：百度还有什么比较良心的产品？答案：ECharts，可见 ECharts 的强大与好用。
+In fact, they are all similar, or they must be combined with their own business. There is no difference between using ECharts in peacetime.
 
-## Demo:
+## Demo
 ![](https://wpimg.wallstcn.com/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
 
-?> 具体实例可参照 `@/views/dashboard/admin/components/` 文件下几个 chart 文件
+::: tip Code
+`@/views/dashboard/admin/components`
+:::
 
-## 其它
-当然社区里的其它图表如 [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js) 等封装方法都是大同小异差不多的，这里就不再展开了。
+## Ohters
+
+Of course there are many other libraries in the community, such as [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js). The packaging methods are almost the same, and they are no longer here.
