@@ -18,4 +18,4 @@ npm run dev
 
 open http://localhost:8080/vue-element-admin-site/
 
-> Generator by [vue-press](https://github.com/vuejs/vuepress)
+> Generator by [vuepress](https://github.com/vuejs/vuepress)

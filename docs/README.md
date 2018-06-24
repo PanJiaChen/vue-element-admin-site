@@ -17,5 +17,5 @@ features:
   details: Built-in industry universal international solution
 - title: Theming
   details: Supports multiple dynamic skin methods
-footer: MIT Licensed | Copyright © 2017-PanJiaChen
+footer: MIT Licensed | Copyright © 2017-present PanJiaChen
 ---
