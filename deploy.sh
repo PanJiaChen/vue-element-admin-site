@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
-# abort on errors
+# 确保脚本抛出遇到的错误
 set -e
 
-# build
-npm run docs:build
+# 生成静态文件
+npm run build
 
-# navigate into the build output directory
+# 进入生成的文件夹
 cd docs/.vuepress/dist
 
 #创建.nojekyll 防止Github Pages build错误
@@ -16,10 +16,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f "https://${access_token}@github.com/PanJiaChen/vue-element-admin-site.git" master:gh-pages
 
 cd -
