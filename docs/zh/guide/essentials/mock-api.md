@@ -11,7 +11,7 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 它是一个纯前端可视化，并且能快速生成模拟数据的持久化服务。非常的简单易用还能结合 `swagger`，支持跨域 ，不管团队还是个人项目都值得一试。
 
 ## Mockjs
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 由于是一个纯前端个人项目，所以所以的数据都是用    [mockjs](https://github.com/nuysoft/Mock) 生成的，它的原理是:拦截了所有的请求并代理到本地模拟数据，所以 network 中没有发出任何的请求发出。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 由于是一个纯前端个人项目，所有的数据都是用 [mockjs](https://github.com/nuysoft/Mock) 本地生成模拟出来的，它的原理是:拦截了所有的请求并代理到本地模拟数据，所以 network 中没有发出任何的请求。
 
 如需改造本项目，去除mockjs也很简单。
 
@@ -29,12 +29,12 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 比如：
 
 ```
-https://api-dev/login  //本地请求
+https://api-dev/login   // 本地请求
 
-https://api-prod/login //线上请求
+https://api-prod/login  // 线上请求
 ```
 
-我们可以通过之后介绍的[环境变量](/zh/guide/essentials/deploy.html#环境变量)来做到不同环境下，请求不同的api地址。
+我们可以通过之后会介绍的[环境变量](/zh/guide/essentials/deploy.html#环境变量)来做到不同环境下，请求不同的api地址。
 
 ```js
 //dev.env.js
@@ -50,7 +50,7 @@ module.exports = {
 }
 ```
 
-之后更具环境变量创建`axios`实例，让它具有不同的` baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+之后根据环境变量创建`axios`实例，让它具有不同的` baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
 
 ```js
 // create an axios instance
@@ -64,7 +64,7 @@ const service = axios.create({
 
 - **Mock.js 的切换**
 
-当我们本地使用 `Mock.js`模拟本地数据，线上使用真实环境api方法与上面的例子是差不多的。我们主要判断是线上环境的时候，不引入mock数据就可以了。
+当我们本地使用 `Mock.js` 模拟本地数据，线上使用真实环境api方法。这与上面的easy-mock的方法是差不多的。我们主要是判断：是线上环境的时候，不引入mock数据就可以了，只有在本地引入 `Mock.js`。
 
 ```js
 //main.js

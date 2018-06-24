@@ -31,7 +31,7 @@ npm run build:sit
 
 你可以在你的代码中直接使用即可访问你配置的环境变量，如：
 ```js
-// 这样即可获取配置在 build/config api 的 base_url 了
+// 这样即可获取配置在 @/build/config api 的 base_url 了
 const baseURL = process.env.BASE_API,
 ```
 

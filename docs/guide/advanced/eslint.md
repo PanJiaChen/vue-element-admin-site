@@ -46,7 +46,7 @@ Everyone and the team have their own code specification, unification is good, to
 
 [vscode plugin and configuration recommendations](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
-## auto fix
+## Auto fix
 ```bash
 npm run lint -- --fix
 ```

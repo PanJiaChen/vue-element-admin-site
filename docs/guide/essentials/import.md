@@ -4,7 +4,7 @@ In addition to the element-ui components and the business components built into 
 
 Here to import [vue-count-to](https://github.com/PanJiaChen/vue-countTo) as an example to introduce.
 
-## Intall dependence
+## Install dependence
 
 Enter the following command in the terminal to complete the installation:
 
@@ -29,14 +29,14 @@ Vue.component('countTo', countTo)
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
-</template
+</template>
 ```
 
 ###  Local Registration
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
-</template
+</template>
 
 <script>
 import countTo from 'vue-count-to';
