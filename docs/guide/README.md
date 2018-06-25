@@ -12,12 +12,12 @@ pageClass: getting-started
 [![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
 
 
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a front-end management background integration solution based on Vue 2.0 that uses the Element component library. It uses the latest front-end technology stack, provides a typical business model, and provides various components that can help you quickly build enterprise-level back-office product prototypes.
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a front-end management background integration solution based on Vue 2.0 that uses the Element UI component library. It uses the latest front-end technology stack, provides a typical business model, and provides various components that can help you quickly build enterprise-level back-office product prototypes.
 
 :::tip
 The project is positioned as a background integration solution and is not suitable for secondary development as a basic template.
- - Integrated solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
- - Basic template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
+ - Integrated Solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+ - Basic Template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
  - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 :::
 
@@ -92,7 +92,7 @@ The project is positioned as a background integration solution and is not suitab
 
 ## Preparation
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 、[axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element). Understanding and learning this knowledge in advance will greatly help the use of this project.
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally. The project is based on [ES2015+](http://es6.ruanyifeng.com/), [vue](https://cn.vuejs.org/index.html), [vuex](https://vuex.vuejs.org/zh-cn/), [vue-router](https://router.vuejs.org/zh-cn/), [axios](https://github.com/axios/axios) and [element-ui](https://github.com/ElemeFE/element). Understanding and learning this knowledge in advance will greatly help the use of this project.
 
 At the same time supporting a series of tutorial articles, how to build a complete background project from zero, suggest that you read these articles and then come to practice this project. But there's no English version yet.
  - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)

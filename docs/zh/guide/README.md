@@ -11,7 +11,7 @@ pageClass: getting-started
 [![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg)](https://github.com/PanJiaChen/vue-element-admin/releases)
 [![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
 
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于Vue2.0，配合使用Element 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于Vue2.0，配合使用Element UI 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
 
 :::tip 建议
 本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。

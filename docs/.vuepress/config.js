@@ -12,7 +12,8 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    repo: "PanJiaChen/awesome-bookmarks",
+    repo: "PanJiaChen/vue-element-admin",
+    docsRepo: "PanJiaChen/vue-element-admin-site",
     docsDir: "docs",
     editLinks: true,
     sidebarDepth: 3,
@@ -102,6 +103,27 @@ module.exports = {
             ]
           },
           {
+            text: "其它",
+            items: [
+              {
+                text: "Gitter讨论组",
+                link: "https://gitter.im/vue-element-admin/discuss"
+              },
+              {
+                text: "作者Blog",
+                link: "https://jianshiapp.com/circles/1209"
+              },
+              {
+                text: "更新记录",
+                link: "https://github.com/PanJiaChen/vue-element-admin/releases"
+              },
+              {
+                text: "常见问题",
+                link: "/zh/guide/other/faq.md"
+              }
+            ]
+          },
+          {
             text: "捐赠",
             link: "/zh/donate/"
           }
@@ -122,10 +144,10 @@ module.exports = {
               title: "其它",
               collapsable: false,
               children: [
-                "/zh/guide/other/faq.md",
                 "/zh/guide/other/gitter.md",
                 "/zh/guide/other/release-notes.md",
-                "/zh/guide/other/blog.md"
+                "/zh/guide/other/blog.md",
+                "/zh/guide/other/faq.md"
               ]
             }
           ],
