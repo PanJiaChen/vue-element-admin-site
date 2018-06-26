@@ -120,6 +120,11 @@ module.exports = {
               {
                 text: "常见问题",
                 link: "/zh/guide/other/faq.md"
+              },
+              {
+                text: "QQ群",
+                link:
+                  "https://github.com/PanJiaChen/vue-element-admin/issues/602"
               }
             ]
           },
