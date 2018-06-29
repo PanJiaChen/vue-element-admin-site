@@ -19,3 +19,17 @@ features:
   details: Supports multiple dynamic skin methods
 footer: MIT Licensed | Copyright © 2017-present PanJiaChen
 ---
+
+
+## Getting Started
+
+``` bash
+# clone the projice
+git clone https://github.com/PanJiaChen/vue-element-admin.git
+
+# install dependency
+npm install
+
+# develop
+npm run dev
+```
