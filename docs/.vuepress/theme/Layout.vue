@@ -30,8 +30,9 @@ export default {
   },
   methods: {
     addFundScript() {
+      if(this.$isServer) return
       const codefundId = 'c010d89c-46a8-4e3a-abf0-86b8a02874e4'
-      const script = document.createElement('script')
+      const script = window.document.createElement('script')
       script.src = 'https://codesponsor.io/scripts/' + codefundId + '/embed.js'
       document.body.appendChild(script)
     }
