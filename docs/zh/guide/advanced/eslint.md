@@ -45,6 +45,27 @@
 [vscode 插件和配置推荐](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
 
+## webpack
+
+你还可以通过配置 `eslint-loader` 让你有不符合 `eslint`的时候在命令行或者界面里提示你有什么错误。
+```js
+{
+ test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: [resolve('src'), resolve('test')],
+  options: {
+    formatter: require('eslint-friendly-formatter'),
+    emitWarning: !config.dev.showEslintErrorsInOverlay
+  }
+}
+```
+
+:::tip
+[showEslintErrorsInOverlay](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js) 这个变量可以控制错误提示是否需要在浏览器界面中提示。
+:::
+
+
 ## 自动修复
 ```bash
 npm run lint -- --fix

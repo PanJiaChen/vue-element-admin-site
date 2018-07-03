@@ -209,6 +209,7 @@ function genAdvancedSidebar(type = "") {
   const mapArr = [
     "/guide/advanced/cors.md",
     "/guide/advanced/eslint.md",
+    "/guide/advanced/git-hook.md",
     "/guide/advanced/lazy-loading.md",
     "/guide/advanced/chart.md",
     "/guide/advanced/icon.md",
