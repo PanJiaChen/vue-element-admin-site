@@ -46,6 +46,29 @@ Everyone and the team have their own code specification, unification is good, to
 
 [vscode plugin and configuration recommendations](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
+## webpack
+
+You can also configure `eslint-loader` to let you know if you have any errors in the command line or interface when you don't match `eslint` config.
+
+
+```js
+{
+ test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: [resolve('src'), resolve('test')],
+  options: {
+    formatter: require('eslint-friendly-formatter'),
+    emitWarning: !config.dev.showEslintErrorsInOverlay
+  }
+}
+```
+
+:::tip
+[showEslintErrorsInOverlay](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js) This variable can control whether the error prompt needs to be prompted in the browser interface.
+
+:::
+
 ## Auto fix
 ```bash
 npm run lint -- --fix
