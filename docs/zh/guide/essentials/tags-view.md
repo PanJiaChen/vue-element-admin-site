@@ -50,7 +50,7 @@ export default {
 - 不使用 keep-alive 的 include 功能 ，直接是用 keep-alive 缓存所有组件，这样子是支持前面所说的业务情况的。
 前往[@/layout/components/AppMain.vueAppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)文件下，移除`include`相关代码即可。当然直接使用keep-alive 也是有弊端的，他并不能动态的删除缓存，你最多只能帮它设置一个最大缓存实例的个数limit。[相关issue](https://github.com/vuejs/vue/issues/6509)
 
-- 使用localstorage 等游览器缓存方案，自己进行缓存处理
+- 使用localstorage 等浏览器缓存方案，自己进行缓存处理
 
 ## 移除
 其实 keep-alive [源码](https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)不复杂，但逻辑还是蛮绕的，之前尤大自己修复一个bug的时候也不小心搞错了，连发两个版本来修复，所以如果没有标签导航栏需求的用户，建议移除此功能。
