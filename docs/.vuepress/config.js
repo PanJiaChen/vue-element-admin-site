@@ -11,7 +11,6 @@ module.exports = {
       }
     ]
   ],
-  serviceWorker: true,
   themeConfig: {
     repo: "PanJiaChen/vue-element-admin",
     docsRepo: "PanJiaChen/vue-element-admin-site",
