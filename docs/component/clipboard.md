@@ -3,14 +3,17 @@ sidebarDepth: 3
 ---
 
 # Clipboard
+
 Here's the copy and paste based on [clipboard](https://github.com/zenorocha/clipboard.js)
 
 This project provides two ways to use.
 
 ## Use directly
+
 ```html
 <el-button @click='handleCopy(inputData,$event)'>copy</el-button>
 ```
+
 ```js
 import clip from '@/utils/clipboard.js' // use clipboard directly
 
@@ -21,7 +24,7 @@ methods: {
 }
 ```
 
-First of all, import `clipboard.js` and  set `click` function.
+First of all, import `clipboard.js` and set `click` function.
 
 `clip()` The first parameter is the contents of the copy, the second parameter is the event event. Both parameters are required.
 
@@ -39,6 +42,7 @@ This project also encapsulates a `v-clipboard`.
    copy
 </el-button>
 ```
+
 ```js
 import clipboard from '@/directive/clipboard/index.js' // use clipboard by v-directive
 
@@ -55,6 +59,7 @@ methods: {
   }
 }
 ```
+
 `v-clipboard:copy`: the copy of the content.
 
 `v-clipboard:success`: success callback function.
