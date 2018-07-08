@@ -1,12 +1,15 @@
 # Clipboard
+
 这里的复制粘贴使用了 [clipboard](https://github.com/zenorocha/clipboard.js)
 
 本项目提供了两种使用方式
 
 ## 直接使用
+
 ```html
 <el-button @click='handleCopy(inputData,$event)'>copy</el-button>
 ```
+
 ```js
 import clip from '@/utils/clipboard' // use clipboard directly
 
@@ -31,6 +34,7 @@ methods: {
 ```html
  <el-button v-clipboard:copy='inputData' v-clipboard:success='clipboardSuccess'>copy</el-button>
 ```
+
 ```js
 import clipboard from '@/directive/clipboard/index.js' // use clipboard by v-directive
 
@@ -47,4 +51,5 @@ methods: {
   }
 }
 ```
+
 `v-clipboard:copy` 为复制的内容，`v-clipboard:success` 为成功之后的回调。

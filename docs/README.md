@@ -20,10 +20,9 @@ features:
 footer: MIT Licensed | Copyright © 2017-present PanJiaChen
 ---
 
-
 ## Getting Started
 
-``` bash
+```bash
 # clone the projice
 git clone https://github.com/PanJiaChen/vue-element-admin.git
 

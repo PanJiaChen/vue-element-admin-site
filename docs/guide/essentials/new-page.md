@@ -43,6 +43,7 @@ It just creates a blank route based on 'layout', and you also need to add a rout
   ]
 }
 ```
+
 **This sidebar will appear the menu-item**
 
 ![](https://wpimg.wallstcn.com/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
@@ -73,6 +74,7 @@ If you want to ignore this automatic decision, you can use `alwaysShow: true`, s
   ]
 }
 ```
+
 ![](https://wpimg.wallstcn.com/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
 
 **The sidebar will appear the `submenu`.**
@@ -80,18 +82,20 @@ If you want to ignore this automatic decision, you can use `alwaysShow: true`, s
 <br/>
 
 ## Nested Routes
+
 If you have a nested Route, such as [@/views/nested](hhttps://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested/bar),
 Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
 
- Such as: [@/views/nested/bar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/bar/index.vue).
+Such as: [@/views/nested/bar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/bar/index.vue).
 
- **Note:** As many `<router-view>` as the level of routes nested.
+**Note:** As many `<router-view>` as the level of routes nested.
 
 ![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
 ## Create View
+
 After adding the route, create a view under the `@/views`. As usual, a router correspond
 a view.
 
@@ -114,7 +118,6 @@ Personally write vue project habits, the global `@/components` will only write s
 ## Create Style
 
 The page's style and components are the same. The global `@/style` writes a global common style. The style of each page is written under the current `views`. Please remember to add `scoped` or namespace to avoid Causes global style pollution.
-
 
 ```css
 <style>

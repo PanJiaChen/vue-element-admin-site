@@ -2,7 +2,6 @@
 
 If you do not find the desired icon in the [Icon](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/icons/svg) of this project, you can select and generate your own business icon library on [iconfont.cn](http://iconfont.cn/)and use it again. Or other svg icon website, download svg and put it in this folder.
 
-
 ## Generate icon library code
 
 First, search for and find the icon you need, and collect it into your shopping cart. In the shopping cart, you can add the selected icon to the project (if not, create a new one), and the subsequent generated resources/code are It is based on the dimension of the project.
@@ -29,7 +28,6 @@ After the download is complete, the downloaded .svg file is automatically import
 
 [Component](/component/svg-icon.md)
 
-
 ## Change color
 
 `svg-icon` reads its parent's color `fill: currentColor;' by default.
@@ -41,6 +39,5 @@ If you encounter an incorrect icon color, you can refer to this[issue](https://g
 :::
 
 ## Detailed articles
+
 [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
-
-

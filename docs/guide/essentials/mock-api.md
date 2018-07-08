@@ -2,27 +2,29 @@
 
 Mock data is an integral part of the front-end development, the key link to separate the front and back-end development. By pre-agreed with the server-side interface, analog request data and even logic, can make the front-end development independent, will not be blocked by the development of the server.
 
-
 ## Swagger
+
 In my company project, the data is usually simulated by the backend using [swagger](https://swagger.io/).
 `swagger`it is a REST APIs document generation tool that can cross-platform automatically generated from code comments, open source, support most of the language, the community is good. In short, it is very good and strongly recommended.
 
 [Online Demo](http://petstore.swagger.io/?_ga=2.222649619.983598878.1509960455-2044209180.1509960455#/pet/addPet)
 
 ## Easy-mock
+
 [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template) uses [easy-mock](https://easy-mock.com/login) to simulate the data.
 It is a pure front-end visualization, and can quickly generate simulation data persistence services. It's very easy to use and can be combined with `swagger`, suporrt cors. It's worth a try for both the team and the individual project.
 
 [Online Demo](https://easy-mock.com/)
 
 ## Mockjs
+
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a purely front-end personal project, so all the data is generated locally by [mockjs](https://github.com/nuysoft/Mock). Its principle is: intercept all requests and proxy to local simulation data, so no network sends any request.
 
 If you need to remove it is easy.
 
 All mock data is in the `@/src/mock` directory. It will only intercept the url you declared in `@/src/mock/index.js`.
 
-**Remove:** Just remove `import '/Mock'` from` @/src/main.js` and delete the `@/src/mock` folder.
+**Remove:** Just remove `import '/Mock'` from`@/src/main.js` and delete the `@/src/mock` folder.
 
 <br>
 
@@ -48,7 +50,7 @@ We can use the [environment variables](/guide/essentials/deploy.html#environment
 module.exports = {
   // Inject the base path of thie local
   BASE_API: '"https://api-dev"'
-}
+};
 ```
 
 ```js
@@ -56,7 +58,7 @@ module.exports = {
 module.exports = {
   // Inject the base path of thie production
   BASE_API: '"https://api-prod"'
-}
+};
 ```
 
 Then create an `axios` instance based on the environment variable to have a different `baseURL`.
@@ -67,11 +69,10 @@ Then create an `axios` instance based on the environment variable to have a diff
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
   timeout: 5000 // request timeout
-})
+});
 ```
 
 In this way we can automatically switched local and online apis based on environment variables.
-
 
 - **Mock.js**
 
@@ -79,8 +80,9 @@ When we use `Mock.js` to simulate data locally, the real-world api method is use
 
 ```js
 //main.js
-if (process.env.NODE_ENV === 'development') {
-  require('./mock') // simulation data
+if (process.env.NODE_ENV === "development") {
+  require("./mock"); // simulation data
 }
 ```
+
 Mock data is only import in the local environment.

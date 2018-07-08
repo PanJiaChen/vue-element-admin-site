@@ -7,7 +7,7 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "precommit": "lint-staged",
-    "lint": "prettier --write"
+    "lint": "prettier --write 'docs/**/*.md'"
   },
   "lint-staged": {
     "*.{js,json,css,md.vue}": [

@@ -17,14 +17,15 @@ After the build package is successful, the `dist` folder will be generated in th
 If you need a custom build, such as specifying the dist directory, you need to configure it through [config](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js).
 
 ### Environmental variables
+
 All test or production environment variables are configured under the `@/build/config` directory.
 
 They all inject into the global context via the `webpack.DefinePlugin` plug-ins.
 
 ```js
- new webpack.DefinePlugin({
-    'process.env': require('../config/xxx.env')
-  })
+new webpack.DefinePlugin({
+  "process.env": require("../config/xxx.env")
+});
 ```
 
 You can simply get your configuration environment variables directly using your code such as:
@@ -33,7 +34,6 @@ You can simply get your configuration environment variables directly using your 
 // So you can get the base_url configured in @/build/config
 const baseURL = process.env.BASE_API,
 ```
-
 
 ### Analyze the build file size
 
@@ -61,25 +61,25 @@ In deployment may find that the resource path is wrong, just modify the `@/confi
 
 ```js
 // changes configure depending on your own path
-assetsPublicPath: './'
+assetsPublicPath: "./";
 ```
 
 ### Router & Server
 
-In vue-element-admin, the front-end routing uses `vue-router`, so you have two options:` browserHistory` and `hashHistory`.
+In vue-element-admin, the front-end routing uses `vue-router`, so you have two options:`browserHistory` and `hashHistory`.
 
 Simply speaking, the difference between them is the deal with routing. `hashHistory` is processed by the path following `#`, front-end routing management through [HTML 5 History](https://developer.mozilla.org/en-US/docs/Web/API/History_API), and `browserHistory` is similar to our usual page access path, and with not `#`, but must through the server's configuration.
 
-This project uses `hashHistory` by default, so if you have` # `in your url and you want to get rid of it, you need to switch to` browserHistory`.
+This project uses `hashHistory` by default, so if you have`#`in your url and you want to get rid of it, you need to switch to`browserHistory`.
 
 Modify `src/router/index.js` mode。
 
 ```js
 export default new Router({
   // mode: 'history' // Need backend support
-})
+});
 ```
 
 ::: tip
- Detail see [vue-router document](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+Detail see [vue-router document](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
 :::

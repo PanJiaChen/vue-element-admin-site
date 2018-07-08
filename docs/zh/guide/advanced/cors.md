@@ -8,9 +8,9 @@
 
 在 dev 开发模式下可以下使用 webpack 的 `proxy` 使用也是很方便的看一下 [文档](https://doc.webpack-china.org/configuration/dev-server/#devserver-proxy) 就会使用了，楼主一些个人项目使用的该方法。但这种方法在生产环境是不适用的。在生产环境中需要使用 nginx 反向代理。不管是 proxy 和 nginx 的原理都是一样的，通过搭建一个中转服务器来转发请求规避跨域的问题。
 
-| 开发环境 | 生产环境   |
-| :--------:   | -----  |
-|    cors    |  cors  |
-|    proxy    |  nginx  |
+| 开发环境 | 生产环境 |
+| :------: | -------- |
+|   cors   | cors     |
+|  proxy   | nginx    |
 
 这里我只推荐这两种方式跨域，其它的跨域方式都很多但都不推荐，真心主流的也就这两种方式。

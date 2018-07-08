@@ -1,11 +1,10 @@
 # Permission
 
-It has been introduced in detail in this article--[手摸手，带你用vue撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac).
+It has been introduced in detail in this article--[手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac).
 
 The implementation of this project's permission is: compare the routing table by obtaining the current user's permission, and generate the routing table accessible by the current user with the permission, and dynamically mount it to `router` through `router.addRoutes`.
 
 But in fact, the business logic of many companies may not be the case. For example, the requirement of many companies is that the permissions of each page are dynamically configured, unlike the default settings in this project. But in fact the principle is the same. For example, you can dynamically configure permissions for each page through a tree control or other presentation, and then store this routing table to the back end. When the user logs in to get `roles`, the front end requests the accessible routing table to the backend according to `roles`, so that the accessible pages are dynamically generated. After that, the router.addRoutes is dynamically mounted to the router. You will find the same. , never change their case.
-
 
 Just one more step to map the back-end return routing table with the local components. [issue](https://github.com/PanJiaChen/vue-element-admin/issues/293)
 
@@ -57,7 +56,7 @@ export default{
 
 **Limitations**
 
-In some cases it is not suitable to use v-permission, such as element Tab component  which can only be achieved by manually setting the v-if.
+In some cases it is not suitable to use v-permission, such as element Tab component which can only be achieved by manually setting the v-if.
 
 You can use the global permission judgment function. The usage is similar to the instruction `v-permission`.
 

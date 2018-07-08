@@ -12,6 +12,7 @@
 ```
 
 ## 改变颜色
+
 `svg-icon` 默认会读取其父级的 color `fill: currentColor;`
 
 你可以改变父级的`color`或者直接改变`fill`的颜色即可。
@@ -21,4 +22,5 @@
 :::
 
 ## 详细文章
+
 更多详细内容 可阅读该文: [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)

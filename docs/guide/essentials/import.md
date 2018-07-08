@@ -23,16 +23,18 @@ $ npm install vue-count-to --save
 **main.js**
 
 ```js
-import countTo from 'vue-count-to'
-Vue.component('countTo', countTo)
+import countTo from "vue-count-to";
+Vue.component("countTo", countTo);
 ```
+
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
 </template>
 ```
 
-###  Local Registration
+### Local Registration
+
 ```html
 <template>
   <countTo :startVal='startVal' :endVal='endVal' :duration='3000'></countTo>
@@ -51,6 +53,7 @@ export default {
 }
 </script>
 ```
+
 ![](https://wpimg.wallstcn.com/8b95fac0-6691-4ad6-ba6c-e5d84527da06.gif)
 
 <br/>

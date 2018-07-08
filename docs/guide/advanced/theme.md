@@ -8,10 +8,9 @@ The generic style variables for element-ui may not satisfy all custom requiremen
 
 Or use [Deep Selectors](https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors)。
 
-
 ```css
 /* Your namespace */
-.aritle-page{
+.aritle-page {
   /* element-ui tag */
   .el-tag {
     margin-right: 0px;
@@ -63,7 +62,7 @@ getCSSString(url, callback, variable) {
 Import the ThemePicker component to your project
 
 ```js
-import ThemePicker from '@/components/ThemePicker'
+import ThemePicker from "@/components/ThemePicker";
 ```
 
 - Advantage
@@ -76,7 +75,7 @@ import ThemePicker from '@/components/ThemePicker'
 
 ### Multiple sets of theme
 
-This method is the most common way of theme, storing multiple sets of themes locally, both with different namespaces, such as writing two sets of themes, a set called `day-theme`, a set called `night-theme`, and `night-theme. ` Themes are all under a `.night-theme` namespace, and we dynamically add `.night-theme` on body; remove `.night-theme`.
+This method is the most common way of theme, storing multiple sets of themes locally, both with different namespaces, such as writing two sets of themes, a set called `day-theme`, a set called `night-theme`, and `night-theme.` Themes are all under a `.night-theme` namespace, and we dynamically add `.night-theme` on body; remove `.night-theme`.
 
 #### How to use
 
@@ -92,7 +91,6 @@ Globally installed theme generation tool
 
 ```bash
 npm i element-theme -g
-
 ```
 
 Enter the project directory Install dependencies

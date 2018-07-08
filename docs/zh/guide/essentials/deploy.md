@@ -19,17 +19,19 @@ npm run build:sit
 <br>
 
 ## 环境变量
+
 所有测试环境或者正式环境变量的配置都在 [@/build/config](https://github.com/PanJiaChen/vue-element-admin/tree/master/config) 目录之下
 
 它们都会通过 `webpack.DefinePlugin` 插件注入到全局
 
 ```js
- new webpack.DefinePlugin({
-    'process.env': require('../config/xxx.env')
-  })
+new webpack.DefinePlugin({
+  "process.env": require("../config/xxx.env")
+});
 ```
 
 你可以在你的代码中直接使用即可访问你配置的环境变量，如：
+
 ```js
 // 这样即可获取配置在 @/build/config api 的 base_url 了
 const baseURL = process.env.BASE_API,
@@ -52,7 +54,7 @@ npm run build:prod --report
 具体的优化可以参考 [Webpack 大法之 Code Splitting](https://zhuanlan.zhihu.com/p/26710831)
 
 ::: tip
-强烈建议开启 gizp ，使用之后普遍体积只有原先1/3左右。打出来的 app.js 过大，查看一下是不是Uglify配置不正确或者sourceMap没弄对。 优化相关请看该 [Webpack Freestyle 之 Long Term Cache](https://zhuanlan.zhihu.com/p/27710902)
+强烈建议开启 gizp ，使用之后普遍体积只有原先 1/3 左右。打出来的 app.js 过大，查看一下是不是 Uglify 配置不正确或者 sourceMap 没弄对。 优化相关请看该 [Webpack Freestyle 之 Long Term Cache](https://zhuanlan.zhihu.com/p/27710902)
 :::
 
 <br>
@@ -66,7 +68,7 @@ npm run build:prod --report
 :::
 
 ```js
-assetsPublicPath: './'   //请根据自己路径来配置更改
+assetsPublicPath: "./"; //请根据自己路径来配置更改
 ```
 
 ## 前端路由与服务端的结合
@@ -77,10 +79,11 @@ vue-element-admin 中，前端路由使用的是 `vue-router`，所以你可以�
 
 本项目默认使用的是 `hashHistory` ，所以如果你的 url 里有 `#`，想去掉的话，需要切换为 `browserHistory`。
 修改 `src/router/index.js` 中的 mode 即可
+
 ```js
 export default new Router({
   // mode: 'history', //后端支持可开
-})
+});
 ```
 
 如果你使用的是静态站点，那么使用 `browserHistory` 可能会无法访问你的应用，因为假设你访问 `http://localhost:9527/dashboard`，那么其实你的静态服务器并没有能够映射的文件，而使用 `hashHistory` 则不会有这个问题，因为它的页面路径是以 `#` 开始的，所有访问都在前端完成，如：`http://localhost:9527/#/dashboard/`。
@@ -88,6 +91,7 @@ export default new Router({
 不过如果你有对应的后台服务器，那么我们推荐采用 `browserHistory`，只需要在服务端做一个映射，比如：
 
 Apache
+
 ```bash
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -98,25 +102,32 @@ Apache
   RewriteRule . /index.html [L]
 </IfModule>
 ```
+
 nginx
+
 ```bash
 location / {
   try_files $uri $uri/ /index.html;
 }
 ```
+
 ::: tip
- 更多配置请查看 [vue-router 文档](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+更多配置请查看 [vue-router 文档](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
 :::
 
 ## Apache
-1. 需要修改`router/index.js`中`new Router` 配置，加一个`base: '/vue/'`, 它指定应用的基路径，该应用是服务于`localhost/vue`路径下，所以必须加`base`配置，否则应用会展示404页面
-2. 需要修改`config/index.js`中build下的`assetsPublicPath: '/vue/'`，如果用相对路径，chunk文件会报错找不到。
-3. 修改`httpd.conf`文件，开启rewrite_module功能。
-- `LoadModule rewrite_module libexec/apache2/mod_rewrite.so`，去掉前面的#。
-- 然后找到` AllowOverride None`的那行，把它改成`AllowOverride All`，来使`.htaccess`文件生效。
-4. 在apache 的`www/vue` 目录下新建`.htaccess`文件, 需要修改`RewriteRule` 为`/vue/index.html`, 否则刷新页面服务端会直接报404错误。
 
-.htaccess文件内容
+1.  需要修改`router/index.js`中`new Router` 配置，加一个`base: '/vue/'`, 它指定应用的基路径，该应用是服务于`localhost/vue`路径下，所以必须加`base`配置，否则应用会展示 404 页面
+2.  需要修改`config/index.js`中 build 下的`assetsPublicPath: '/vue/'`，如果用相对路径，chunk 文件会报错找不到。
+3.  修改`httpd.conf`文件，开启 rewrite_module 功能。
+
+- `LoadModule rewrite_module libexec/apache2/mod_rewrite.so`，去掉前面的#。
+- 然后找到`AllowOverride None`的那行，把它改成`AllowOverride All`，来使`.htaccess`文件生效。
+
+4.  在 apache 的`www/vue` 目录下新建`.htaccess`文件, 需要修改`RewriteRule` 为`/vue/index.html`, 否则刷新页面服务端会直接报 404 错误。
+
+.htaccess 文件内容
+
 ```
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -127,4 +138,5 @@ location / {
   RewriteRule . /vue/index.html [L]
 </IfModule>
 ```
+
 相关[issue](https://github.com/PanJiaChen/vue-element-admin/issues/370)

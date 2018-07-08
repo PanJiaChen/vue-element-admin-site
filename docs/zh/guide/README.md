@@ -11,14 +11,15 @@ pageClass: getting-started
 [![GitHub release](https://img.shields.io/github/release/PanJiaChen/vue-element-admin.svg)](https://github.com/PanJiaChen/vue-element-admin/releases)
 [![GitHub stars](https://img.shields.io/github/stars/PanJiaChen/vue-element-admin.svg?style=social&label=Stars)](https://github.com/PanJiaChen/vue-element-admin)
 
-[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于Vue2.0，配合使用Element UI 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
+[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于 Vue2.0，配合使用 Element UI 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
 
 :::tip 建议
 本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。
- - 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
- - 基础模板: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
- - 桌面终端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-:::
+
+- 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+- 基础模板: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
+- 桌面终端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
+  :::
 
 <br/>
 
@@ -86,6 +87,7 @@ pageClass: getting-started
 - Clipboard(剪贴复制)
 - Markdown2html
 ```
+
 <br/>
 
 ## 前序准备
@@ -93,24 +95,24 @@ pageClass: getting-started
 你需要在本地安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)。本项目技术栈基于 [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) 、[axios](https://github.com/axios/axios) 和 [element-ui](https://github.com/ElemeFE/element)，所有的请求数据都使用[Mock.js](https://github.com/nuysoft/Mock)模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
 同时配套一个系列的教程文章，如何从零构建后一个完整的管理后台项目，建议大家先看完这些文章再来实践本项目。
- - [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
- - [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
- - [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
- - [手摸手，带你用vue撸后台 系列四(vueAdmin 一个极简的后台基础模板)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
- - [手摸手，带你封装一个vue component](https://segmentfault.com/a/1190000009090836)
- - [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
 
- **本项目不支持低版本浏览器(如ie)，有需求请自行添加polyfill [详情](https://github.com/PanJiaChen/vue-element-admin/wiki#babel-polyfill)**
+- [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+- [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
+- [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
+- [手摸手，带你用 vue 撸后台 系列四(vueAdmin 一个极简的后台基础模板)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
+- [手摸手，带你封装一个 vue component](https://segmentfault.com/a/1190000009090836)
+- [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
+
+**本项目不支持低版本浏览器(如 ie)，有需求请自行添加 polyfill [详情](https://github.com/PanJiaChen/vue-element-admin/wiki#babel-polyfill)**
 
 **注意：该项目使用 element-ui@2.3.0+ 版本，所以最低兼容 vue@2.5.0+**
-
 
 ## 目录结构
 
 本项目已经为你生成了一个完整的开发框架，提供了涵盖中后台开发的各类功能和坑位，下面是整个项目的目录结构。
 
 ```bash
-├── build                      // 构建相关  
+├── build                      // 构建相关
 ├── config                     // 配置相关
 ├── src                        // 源代码
 │   ├── api                    // 所有请求
@@ -153,6 +155,7 @@ npm install
 # 本地开发 启动项目
 npm run dev
 ```
+
 <br/>
 
 ::: tip
@@ -179,8 +182,8 @@ npm install --registry=https://registry.npm.taobao.org
 你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上进行二次开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
 :::
 
-
 ## Contribution
+
 本文档项目地址 [vue-element-admin-site](https://github.com/PanJiaChen/vue-element-admin-site) 基于 [vuepress](https://github.com/vuejs/vuepress)开发。
 
 有任何修改和建议都可以该项目 pr 和 issue
@@ -188,5 +191,6 @@ npm install --registry=https://registry.npm.taobao.org
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 还在持续迭代中，逐步沉淀和总结出更多功能和相应的实现代码，总结中后台产品模板/组件/业务场景的最佳实践。本项目也十分期待你的参与和[反馈](https://github.com/PanJiaChen/vue-element-admin/issues)。
 
 ## 捐赠
+
 如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :heart:
 [Donate](/zh/donate/)

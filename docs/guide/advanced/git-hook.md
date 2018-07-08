@@ -2,9 +2,7 @@
 
 Programmers with basic engineering literacy will focus on coding specifications, and Code Linting (Lint) is an important means of ensuring code specification consistency.
 
-
 What are the benefits of using Lint? In my opinion, it has at least the following three points:
-
 
 - Fewer bugs
 - With higher development efficiency, Lint can easily find low-level, obvious errors.
@@ -18,10 +16,10 @@ But there is a problem with this. Our `CI` (continuous integration) often doesn'
 
 Common process: write the code locally, submit, start running lint, find the failure to pass, modify the code locally, submit again, wait for the result of CI, and repeat the previous operation if there are any problems.
 
-
 ## husky
+
 The most effective solution is to put the `Lint` check locally. The common practice is to use
- [husky](https://github.com/typicode/husky) or [pre-commit](https://github.com/observing/pre-commit) do `Lint` before committing locally. Here we use `husky`.
+[husky](https://github.com/typicode/husky) or [pre-commit](https://github.com/observing/pre-commit) do `Lint` before committing locally. Here we use `husky`.
 
 ```bash
 npm install husky -D -S
@@ -65,7 +63,6 @@ Then, modify the package.json configuration:
     ]
   }
 ```
-
 
 As configured above, Verify that the code you submitted matches the `eslint`( [ESlint](eslint.md) ) rule of your local configuration, before your local `commmit`. If it is met, the submission is successful. If it doesn't match, it will automatically execute `eslint --fix` to try to help you fix it automatically. If the repair is successful, it will help you to submit the repaired code. If it fails, it will prompt you have an error, and you will be able to submit the code after you fix it.
 

@@ -2,21 +2,21 @@
 
 Managing background charts is also a common requirement. The chart here only recommends ECharts, full-featured, community demo is also rich [gallery](http://gallery.echartsjs.com/explore.html)。
 
-I still have that point of view. Most plug-ins recommend that use vue for packaging by youself. It's really simple. ECharts supports the import of webpack, you can import the whole ECharts `var echarts = require ('echarts') ` However, ECharts is not small, if you use only a small part of the features or chart type, then recommend on-demand import.
-
+I still have that point of view. Most plug-ins recommend that use vue for packaging by youself. It's really simple. ECharts supports the import of webpack, you can import the whole ECharts `var echarts = require ('echarts')` However, ECharts is not small, if you use only a small part of the features or chart type, then recommend on-demand import.
 
 ```js
 // Import on demand -- import ECharts main module
-var echarts = require('echarts/lib/echarts');
+var echarts = require("echarts/lib/echarts");
 // Import bar
-require('echarts/lib/chart/bar');
+require("echarts/lib/chart/bar");
 // Import tooltop&title
-require('echarts/lib/component/tooltip');
-require('echarts/lib/component/title');
+require("echarts/lib/component/tooltip");
+require("echarts/lib/component/title");
 
 // Import all ECharts module
-var echarts = require('echarts');
+var echarts = require("echarts");
 ```
+
 [Use ECharts with webpack](https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Use%20ECharts%20with%20webpack)
 
 [Include ECharts charts and components on demand](https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Use%20ECharts%20with%20webpack)
@@ -71,9 +71,11 @@ watch: {
   }
 }
 ```
+
 In fact, they are all similar, or they must be combined with their own business. There is no difference between using ECharts in peacetime.
 
 ## Demo
+
 ![](https://wpimg.wallstcn.com/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
 
 ::: tip Code

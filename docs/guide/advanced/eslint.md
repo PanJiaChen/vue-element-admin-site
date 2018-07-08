@@ -3,6 +3,7 @@
 Whether it's a multi-person collaboration or personal projects, code specifications are important. It can not only largely avoids basic syntax errors, but also ensures the readability of the code.
 
 ## Config
+
 All configuration files are in [.eslintrc.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/.eslintrc.js).
 The basic eslint rules of this project is based on the official eslint rules of vue [eslint-config-vue](https://github.com/vuejs/eslint-config-vue) but made minor changes. You can customize your configuration according to your needs.
 
@@ -11,6 +12,7 @@ Such as: my personal or project team is accustomed to using two spaces, but you 
 Enter the project of `.eslintrc.js`, find `indent`,and then set it to `4` 。There are a variety of configuration information, see details [ESLint Documention](https://eslint.org/docs/rules/)。
 
 ## Cancel ESLint
+
 If you really don't want to use ESLint,you just find [config/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.base.conf.js).
 And then set `useEslint: true` to `useEslint: false` .
 
@@ -26,10 +28,9 @@ Every time you save your code, vscode will be able to mark red areas that do not
 First install the eslint plugin
 ![eslint1.png](https://wpimg.wallstcn.com/72f126cb-09eb-4b27-b02e-65e79eb76220.png)
 
-
 After we have installed ESLint, we back to VSCode to set up . Go to `Code` > `Preferences` > `Settings` and add the following configuration.
-```
 
+```
     "files.autoSave":"off",
     "eslint.validate": [
        "javascript",
@@ -40,16 +41,15 @@ After we have installed ESLint, we back to VSCode to set up . Go to `Code` > `Pr
      "eslint.options": {
         "plugins": ["html"]
      }
-
 ```
-Everyone and the team have their own code specification, unification is good, to create their own eslint rules and upload it to the npm will be fun. Such as ElemeFE [config](https://www.npmjs.com/package/eslint-config-elemefe) or Vue official  [config](https://github.com/vuejs/eslint-config-vue).
+
+Everyone and the team have their own code specification, unification is good, to create their own eslint rules and upload it to the npm will be fun. Such as ElemeFE [config](https://www.npmjs.com/package/eslint-config-elemefe) or Vue official [config](https://github.com/vuejs/eslint-config-vue).
 
 [vscode plugin and configuration recommendations](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
 ## webpack
 
 You can also configure `eslint-loader` to let you know if you have any errors in the command line or interface when you don't match `eslint` config.
-
 
 ```js
 {
@@ -70,6 +70,7 @@ You can also configure `eslint-loader` to let you know if you have any errors in
 :::
 
 ## Auto fix
+
 ```bash
 npm run lint -- --fix
 ```

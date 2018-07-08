@@ -12,9 +12,9 @@ In dev environment, you can use webpack `proxy`, it is also very easy to use。 
 
 But this method can not used in the production environment. In production environment, you need to use nginx reverse proxy. Whether `proxy` or `nginx`, the principle is the same. Solve the cross-domain issues by building a transit server to forward requests.
 
-| development | production   |
-| :--------:   | -----  |
-|    cors    |  cors  |
-|    proxy    |  nginx  |
+| development | production |
+| :---------: | ---------- |
+|    cors     | cors       |
+|    proxy    | nginx      |
 
 Here I only recommend these two ways cross-domain, the other cross-domain ways are many, but the only real mainstream is `cors` and `nginx`.

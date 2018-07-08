@@ -2,7 +2,6 @@
 
 如果你没有在本项目 [Icon](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/icons/svg) 中找到需要的图标，可以到 [iconfont.cn](http://iconfont.cn/) 上选择并生成自己的业务图标库，再进行使用。或者其它 svg 图标网站，下载 svg 并放到文件夹之中就可以了。
 
-
 ## 生成图标库代码
 
 首先，搜索并找到你需要的图标，将它采集到你的购物车里，在购物车里，你可以将选中的图标添加到项目中（没有的话，新建一个），后续生成的资源/代码都是以项目为维度的。
@@ -30,6 +29,7 @@
 [组件介绍](/zh/component/svg-icon.md)
 
 ## 改变颜色
+
 `svg-icon` 默认会读取其父级的 color `fill: currentColor;`
 
 你可以改变父级的`color`或者直接改变`fill`的颜色即可。
@@ -39,6 +39,5 @@
 :::
 
 ## 详细文章
+
 更多详细内容 可阅读该文: [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
-
-

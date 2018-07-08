@@ -1,7 +1,9 @@
 # 布局
+
 页面整体布局是一个产品最外层的框架结构，往往会包含导航、侧边栏、面包屑以及内容等。想要了解一个后台项目，先要了解它的基础布局。
 
 ## Layout
+
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 ::: tip 对应代码
@@ -55,6 +57,7 @@
 <br>
 
 ## app-main
+
 ::: tip 对应代码
 [@/views/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)
 :::
@@ -66,11 +69,12 @@
 <br>
 
 ## router-view
+
 **Different router the same component vue。** 真实的业务场景中，这种情况很多。比如
 
 ![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
-我创建和编辑的页面使用的是同一个component，默认情况下当这两个页面切换时并不会触发 vue 的 created 或者 mounted 钩子，官方说你可以通过watch $route 的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view 上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
+我创建和编辑的页面使用的是同一个 component，默认情况下当这两个页面切换时并不会触发 vue 的 created 或者 mounted 钩子，官方说你可以通过 watch $route 的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view 上加上一个唯一的 key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
 
 ```js
 <router-view :key="key"></router-view>
@@ -82,8 +86,9 @@ computed: {
   }
  }
 ```
+
 ::: tip
-**或者** 可以像本项目中 `editForm` 和 `createForm` 声明两个不同的 view 但引入同一个component。
+**或者** 可以像本项目中 `editForm` 和 `createForm` 声明两个不同的 view 但引入同一个 component。
 
 示例代码：[@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
 :::
@@ -109,6 +114,7 @@ computed: {
 >
 
 ## 移动端
+
 `element-ui` 官方对自己的定位是桌面端后台框架，而且对于管理后台这种重交互的项目来说是不能通过简单的适配来满足桌面端和移动端两端不同的交互，所以真要做移动版后台，建议重新做一套系统。
 
 所以本项目也不会适配移动端，只是做了一点简单的响应式配置，有需求请自行修改。
