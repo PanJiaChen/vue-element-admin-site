@@ -34,7 +34,7 @@ export default {
       const codefundId = "c010d89c-46a8-4e3a-abf0-86b8a02874e4";
       const script = window.document.createElement("script");
       script.onerror = this.loadError;
-      script.src = "https://codesponsor.io/scripts/" + codefundId + "/embed.js";
+      script.src = "https://codefund.io/scripts/" + codefundId + "/embed.js";
       document.body.appendChild(script);
     },
     loadError(oError) {
@@ -49,6 +49,6 @@ export default {
   display: inline !important;
 }
 .load-success {
-  min-height: 146px;
+  min-height: 130px;
 }
 </style>
