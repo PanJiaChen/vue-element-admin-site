@@ -39,7 +39,7 @@ export function fetchList(query) {
   })
 }
 
-// views/articleList
+// views/example/list
 import { fetchList } from '@/api/article'
 export default {
   data() {
