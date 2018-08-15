@@ -47,8 +47,8 @@ Make sure the name of both is exactly the same. (Keep in mind that the naming of
 ```js
 //The corresponding view of the route. such as: form/create
 export default {
-  name: "createForm"
-};
+  name: 'createForm'
+}
 ```
 
 Make sure that the two names are the same. Remember not to write duplicates or mistakes. By default, if you do not write name, it will not be cached.

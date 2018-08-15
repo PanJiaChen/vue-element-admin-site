@@ -62,7 +62,7 @@ getCSSString(url, callback, variable) {
 Import the ThemePicker component to your project
 
 ```js
-import ThemePicker from "@/components/ThemePicker";
+import ThemePicker from '@/components/ThemePicker'
 ```
 
 - Advantage

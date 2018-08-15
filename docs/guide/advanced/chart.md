@@ -6,15 +6,15 @@ I still have that point of view. Most plug-ins recommend that use vue for packag
 
 ```js
 // Import on demand -- import ECharts main module
-var echarts = require("echarts/lib/echarts");
+var echarts = require('echarts/lib/echarts')
 // Import bar
-require("echarts/lib/chart/bar");
+require('echarts/lib/chart/bar')
 // Import tooltop&title
-require("echarts/lib/component/tooltip");
-require("echarts/lib/component/title");
+require('echarts/lib/component/tooltip')
+require('echarts/lib/component/title')
 
 // Import all ECharts module
-var echarts = require("echarts");
+var echarts = require('echarts')
 ```
 
 [Use ECharts with webpack](https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Use%20ECharts%20with%20webpack)

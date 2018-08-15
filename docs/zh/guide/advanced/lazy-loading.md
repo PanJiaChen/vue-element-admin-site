@@ -5,7 +5,7 @@
 结合 Vue 的[异步组件](https://cn.vuejs.org/v2/guide/components.html#异步组件)和 Webpack 的[代码分割功能](https://doc.webpack-china.org/guides/code-splitting)，轻松实现路由组件的懒加载。如：
 
 ```js
-const Foo = () => import("./Foo.vue");
+const Foo = () => import('./Foo.vue')
 ```
 
 <br>
@@ -19,7 +19,7 @@ const Foo = () => import("./Foo.vue");
 **开发环境：**
 
 ```js
-module.exports = file => require("@/views/" + file + ".vue").default; // vue-loader at least v13.0.0+
+module.exports = file => require('@/views/' + file + '.vue').default // vue-loader at least v13.0.0+
 ```
 
 **这里注意一下该写法只支持 `vue-loader at least v13.0.0+`理由 [vue-element-admin/issues/231](https://github.com/PanJiaChen/vue-element-admin/issues/231)**
@@ -27,7 +27,7 @@ module.exports = file => require("@/views/" + file + ".vue").default; // vue-loa
 **生产环境：**
 
 ```js
-module.exports = file => () => import("@/views/" + file + ".vue");
+module.exports = file => () => import('@/views/' + file + '.vue')
 ```
 
 ## 淘汰原因

@@ -43,8 +43,8 @@
 ```js
 //路由对应的view  form/create
 export default {
-  name: "createForm"
-};
+  name: 'createForm'
+}
 ```
 
 一定要保证两着的名字相同，切记写重或者写错。默认如果不写 name 就不会被缓存，详情见[issue](https://github.com/vuejs/vue/issues/6938#issuecomment-345728620)。

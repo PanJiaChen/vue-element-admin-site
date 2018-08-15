@@ -5,7 +5,7 @@ When you package an application, the Javascript package becomes very large, affe
 Combining Vue's [async component feature](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components) and webpack's [code splitting feature](https://webpack.js.org/guides/code-splitting/), it's trivially easy to lazy-load route components.
 
 ```js
-const Foo = () => import("./Foo.vue");
+const Foo = () => import('./Foo.vue')
 ```
 
 <br>
@@ -22,7 +22,7 @@ When you have more and more pages in your project, using `lazy-loading` in the d
 
 ```js
 // vue-loader at least v13.0.0+
-module.exports = file => require("@/views/" + file + ".vue").default;
+module.exports = file => require('@/views/' + file + '.vue').default
 ```
 
 **Note here that this method only supports `vue-loader at least v13.0.0+`**[vue-element-admin/issues/231](https://github.com/PanJiaChen/vue-element-admin/issues/231)
@@ -30,7 +30,7 @@ module.exports = file => require("@/views/" + file + ".vue").default;
 Production：
 
 ```js
-module.exports = file => () => import("@/views/" + file + ".vue");
+module.exports = file => () => import('@/views/' + file + '.vue')
 ```
 
 ## Elimination reason

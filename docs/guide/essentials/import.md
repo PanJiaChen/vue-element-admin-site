@@ -23,8 +23,8 @@ $ npm install vue-count-to --save
 **main.js**
 
 ```js
-import countTo from "vue-count-to";
-Vue.component("countTo", countTo);
+import countTo from 'vue-count-to'
+Vue.component('countTo', countTo)
 ```
 
 ```html

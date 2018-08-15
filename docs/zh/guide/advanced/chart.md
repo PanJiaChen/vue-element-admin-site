@@ -6,15 +6,15 @@
 
 ```js
 // 按需引入 引入 ECharts 主模块
-var echarts = require("echarts/lib/echarts");
+var echarts = require('echarts/lib/echarts')
 // 引入柱状图
-require("echarts/lib/chart/bar");
+require('echarts/lib/chart/bar')
 // 引入提示框和标题组件
-require("echarts/lib/component/tooltip");
-require("echarts/lib/component/title");
+require('echarts/lib/component/tooltip')
+require('echarts/lib/component/title')
 
 //全部引入
-var echarts = require("echarts");
+var echarts = require('echarts')
 ```
 
 [webpack 中使用 ECharts 文档](http://echarts.baidu.com/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)

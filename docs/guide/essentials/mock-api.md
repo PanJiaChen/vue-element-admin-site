@@ -50,7 +50,7 @@ We can use the [environment variables](/guide/essentials/deploy.html#environment
 module.exports = {
   // Inject the base path of thie local
   BASE_API: '"https://api-dev"'
-};
+}
 ```
 
 ```js
@@ -58,7 +58,7 @@ module.exports = {
 module.exports = {
   // Inject the base path of thie production
   BASE_API: '"https://api-prod"'
-};
+}
 ```
 
 Then create an `axios` instance based on the environment variable to have a different `baseURL`.
@@ -69,7 +69,7 @@ Then create an `axios` instance based on the environment variable to have a diff
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
   timeout: 5000 // request timeout
-});
+})
 ```
 
 In this way we can automatically switched local and online apis based on environment variables.
@@ -80,8 +80,8 @@ When we use `Mock.js` to simulate data locally, the real-world api method is use
 
 ```js
 //main.js
-if (process.env.NODE_ENV === "development") {
-  require("./mock"); // simulation data
+if (process.env.NODE_ENV === 'development') {
+  require('./mock') // simulation data
 }
 ```
 

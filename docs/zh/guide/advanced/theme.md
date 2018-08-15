@@ -62,7 +62,7 @@ getCSSString(url, callback, variable) {
 在项目中引入 ThemePicker 组件即可
 
 ```js
-import ThemePicker from "@/components/ThemePicker";
+import ThemePicker from '@/components/ThemePicker'
 ```
 
 - 优点

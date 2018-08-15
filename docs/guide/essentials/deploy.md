@@ -24,8 +24,8 @@ They all inject into the global context via the `webpack.DefinePlugin` plug-ins.
 
 ```js
 new webpack.DefinePlugin({
-  "process.env": require("../config/xxx.env")
-});
+  'process.env': require('../config/xxx.env')
+})
 ```
 
 You can simply get your configuration environment variables directly using your code such as:
@@ -61,7 +61,7 @@ In deployment may find that the resource path is wrong, just modify the `@/confi
 
 ```js
 // changes configure depending on your own path
-assetsPublicPath: "./";
+assetsPublicPath: './'
 ```
 
 ### Router & Server
@@ -77,7 +77,7 @@ Modify `src/router/index.js` mode。
 ```js
 export default new Router({
   // mode: 'history' // Need backend support
-});
+})
 ```
 
 ::: tip

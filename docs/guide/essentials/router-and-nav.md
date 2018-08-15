@@ -11,10 +11,10 @@ First let us know what configuration items are provided config route.
 ```js
 // if set to true, lt will not appear in sidebar nav.
 // e.g. login or 401 page or as some editing pages /edit/1 (Default: false)
-hidden: true;
+hidden: true
 
 // this route cannot be clicked in breadcrumb navigation when noredirect is set
-redirect: noredirect;
+redirect: noredirect
 
 // when you route a children below the declaration of more than one route,
 // it will automatically become a nested mode - such as the component page
@@ -23,24 +23,24 @@ redirect: noredirect;
 // regardless of the number of children declarations under the route
 // you can set alwaysShow: true
 // so that it will ignore the previously defined rules and always show the root route
-alwaysShow: true;
+alwaysShow: true
 
 // set router name. It must be setted，in order to avoid problems with <keep-alive>.
-name: "router-name";
+name: 'router-name'
 
 meta: {
   // required roles to navigate to this route. Support multiple permissions stacking.
   // if not set means it doesn't need any permission.
-  roles: ["admin", "editor"];
+  roles: ['admin', 'editor']
 
   // the title of the route to show in various components (e.g. sidebar, breadcrumbs).
-  title: "title";
+  title: 'title'
 
   // svg icon class
-  icon: "svg-name";
+  icon: 'svg-name'
 
   // when set true, the route will not be cached by <keep-alive>. Default false
-  noCache: true;
+  noCache: true
 }
 ```
 

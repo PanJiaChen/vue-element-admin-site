@@ -44,14 +44,14 @@ https://api-prod/login  // 线上请求
 //dev.env.js
 module.exports = {
   BASE_API: '"https://api-dev"' //注入本地api的根路径
-};
+}
 ```
 
 ```js
 //prod.env.js
 module.exports = {
   BASE_API: '"https://api-prod"' //注入线上api的根路径
-};
+}
 ```
 
 之后根据环境变量创建`axios`实例，让它具有不同的`baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
@@ -61,7 +61,7 @@ module.exports = {
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
   timeout: 5000 // request timeout
-});
+})
 ```
 
 这样我们就做到了自动根据环境变量切换本地和线上 api。
@@ -72,8 +72,8 @@ const service = axios.create({
 
 ```js
 //main.js
-if (process.env.NODE_ENV === "development") {
-  require("./mock"); // simulation data
+if (process.env.NODE_ENV === 'development') {
+  require('./mock') // simulation data
 }
 ```
 

@@ -32,45 +32,45 @@ service.interceptors.response.use(
     /**
      * The code is non-20000 error-free
      */
-    const res = response.data;
+    const res = response.data
     if (res.code !== 20000) {
       Message({
         message: res.data,
-        type: "error",
+        type: 'error',
         duration: 5 * 1000
-      });
+      })
 
       // 50008: illegal token; 50012: other client logged in; 50014: Token expired;
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
         MessageBox.confirm(
-          "你已被登出，可以取消继续留在该页面，或者重新登录",
-          "确定登出",
+          '你已被登出，可以取消继续留在该页面，或者重新登录',
+          '确定登出',
           {
-            confirmButtonText: "重新登录",
-            cancelButtonText: "取消",
-            type: "warning"
+            confirmButtonText: '重新登录',
+            cancelButtonText: '取消',
+            type: 'warning'
           }
         ).then(() => {
-          store.dispatch("FedLogOut").then(() => {
-            location.reload(); // 为了重新实例化vue-router对象 避免bug
-          });
-        });
+          store.dispatch('FedLogOut').then(() => {
+            location.reload() // 为了重新实例化vue-router对象 避免bug
+          })
+        })
       }
-      return Promise.reject("error");
+      return Promise.reject('error')
     } else {
-      return response.data;
+      return response.data
     }
   },
   error => {
-    console.log("err" + error); // for debug
+    console.log('err' + error) // for debug
     Message({
       message: error.message,
-      type: "error",
+      type: 'error',
       duration: 5 * 1000
-    });
-    return Promise.reject(error);
+    })
+    return Promise.reject(error)
   }
-);
+)
 ```
 
 Since all requests return a `promise`, you can also pass a `catch` error for each request, which allows for separate processing.
@@ -79,8 +79,8 @@ Since all requests return a `promise`, you can also pass a `catch` error for eac
 getInfo()
   .then(res => {})
   .catch(err => {
-    xxxx;
-  });
+    xxxx
+  })
 ```
 
 ## Coding
