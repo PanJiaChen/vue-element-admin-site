@@ -9,39 +9,49 @@
 </template>
 
 <script>
-import Layout from "@default-theme/Layout.vue";
+import Layout from '@default-theme/Layout.vue'
 
 export default {
   components: { Layout },
   data() {
     return {
       loadSuccess: true
-    };
+    }
   },
   watch: {
-    "$route.path": {
+    '$route.path': {
       handler: function(val, oldVal) {
-        const path = val;
-        if (path === "/zh/" || path === "/") return;
-        this.addFundScript();
+        const path = val
+        if (path === '/zh/' || path === '/') return
+        this.addFundScript()
       },
       immediate: true
     }
   },
   methods: {
     addFundScript() {
-      if (this.$isServer) return;
-      const codefundId = "c010d89c-46a8-4e3a-abf0-86b8a02874e4";
-      const script = window.document.createElement("script");
-      script.onerror = this.loadError;
-      script.src = "https://codefund.io/scripts/" + codefundId + "/embed.js";
-      document.body.appendChild(script);
+      if (this.$isServer) return
+      const codefundId = this.isGitee()
+        ? 'c0e8a6c2-6717-402f-aea7-bfdcaaaf2329'
+        : 'c010d89c-46a8-4e3a-abf0-86b8a02874e4'
+      const script = window.document.createElement('script')
+      script.onerror = this.loadError
+      script.src = 'https://codefund.io/scripts/' + codefundId + '/embed.js'
+      document.body.appendChild(script)
     },
+    isGitee() {
+      const origin = window.location.origin
+      if (origin.includes('gitee.io')) {
+        return true
+      }
+      return false
+    },
+
     loadError(oError) {
-      this.loadSuccess = false;
+      this.loadSuccess = false
     }
   }
-};
+}
 </script>
 
 <style>
