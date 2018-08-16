@@ -11,7 +11,7 @@ In my company project, the data is usually simulated by the backend using [swagg
 
 ## Easy-mock
 
-[vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template) uses [easy-mock](https://easy-mock.com/login) to simulate the data.
+[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) uses [easy-mock](https://easy-mock.com/login) to simulate the data.
 It is a pure front-end visualization, and can quickly generate simulation data persistence services. It's very easy to use and can be combined with `swagger`, suporrt cors. It's worth a try for both the team and the individual project.
 
 [Online Demo](https://easy-mock.com/)

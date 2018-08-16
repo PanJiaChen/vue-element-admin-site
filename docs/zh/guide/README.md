@@ -17,7 +17,7 @@ pageClass: getting-started
 本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。
 
 - 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-- 基础模板: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
+- 基础模板: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 - 桌面终端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
   :::
 
@@ -179,7 +179,7 @@ npm install --registry=https://registry.npm.taobao.org
 <br/>
 
 ::: tip 建议
-你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vueAdmin-template` 的基础上进行二次开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
+你可以把 `vue-element-admin`当做工具箱或者集成方案仓库，在 `vue-admin-template` 的基础上进行二次开发，想要什么功能或者组件就去 `vue-element-admin` 那里复制过来。
 :::
 
 ## Contribution

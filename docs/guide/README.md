@@ -17,7 +17,7 @@ pageClass: getting-started
 The project is positioned as a background integration solution and is not suitable for secondary development as a basic template.
 
 - Integrated Solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-- Basic Template: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)
+- Basic Template: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
   :::
 
@@ -172,7 +172,7 @@ We have built-in models, standard components, mock data, hot module reloading, s
 <br/>
 
 ::: tip
-**Suggestion：** You can use `vue-element-admin` as a toolbox or as an integration solution repository, It is recommended to do secondary development on the basis of `vueAdmin-template`, if you need any additional feature, you can copy from `vue-element-admin`.
+**Suggestion：** You can use `vue-element-admin` as a toolbox or as an integration solution repository, It is recommended to do secondary development on the basis of `vue-admin-template`, if you need any additional feature, you can copy from `vue-element-admin`.
 :::
 
 ## Contribution
