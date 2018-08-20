@@ -11,6 +11,19 @@ Such as: my personal or project team is accustomed to using two spaces, but you 
 
 Enter the project of `.eslintrc.js`, find `indent`,and then set it to `4` 。There are a variety of configuration information, see details [ESLint Documention](https://eslint.org/docs/rules/)。
 
+After [v3.8.1](https://github.com/PanJiaChen/vue-element-admin/releases/tag/v3.8.1), [eslint-plugin-vue](https://github.Com/vuejs/eslint-plugin-vue) has been added to better verify vue related code.
+
+By default, the most restrictive config `plugin:vue/recommended` is used to verify the code. If you think it is too strict, you can modify it yourself.
+
+```js
+// https://github.com/PanJiaChen/vue-element-admin/blob/master/.eslintrc.js
+
+module.exports = {
+  extends: ['plugin:vue/recommended', 'eslint:recommended']
+  //You can change it to  extends: ['plugin:vue/essential', 'eslint:recommended']
+}
+```
+
 ## Cancel ESLint
 
 If you really don't want to use ESLint,you just find [config/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.base.conf.js).
@@ -30,17 +43,23 @@ First install the eslint plugin
 
 After we have installed ESLint, we back to VSCode to set up . Go to `Code` > `Preferences` > `Settings` and add the following configuration.
 
-```
-    "files.autoSave":"off",
-    "eslint.validate": [
-       "javascript",
-       "javascriptreact",
-       "html",
-       { "language": "vue", "autoFix": true }
-     ],
-     "eslint.options": {
-        "plugins": ["html"]
-     }
+```json
+{
+  "files.autoSave": "off",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue-html",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "eslint.options": {
+    "plugins": ["vue"]
+  },
+  "eslint.run": "onSave"
+}
 ```
 
 Everyone and the team have their own code specification, unification is good, to create their own eslint rules and upload it to the npm will be fun. Such as ElemeFE [config](https://www.npmjs.com/package/eslint-config-elemefe) or Vue official [config](https://github.com/vuejs/eslint-config-vue).
