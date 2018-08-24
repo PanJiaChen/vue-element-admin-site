@@ -184,3 +184,22 @@ overflow-y: scroll;
 ::: tip 代码地址
 [@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
 :::
+
+## 侧边栏 外链 <Badge text="v3.8.2+"/>
+
+你也可以在侧边栏中配置一个外链，只要你在 `path` 中填写了合法的 url 路径，当你点击侧边栏的时候就会帮你新开这个页面。
+
+例如：
+
+```json
+{
+  "path": "external-link",
+  "component": Layout,
+  "children": [
+    {
+      "path": "https://github.com/PanJiaChen/vue-element-admin",
+      "meta": { "title": "externalLink", "icon": "link" }
+    }
+  ]
+}
+```

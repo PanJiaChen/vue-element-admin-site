@@ -192,3 +192,22 @@ So the current version uses `el-scrollbar` to handle the sidebar scrolling probl
 ::: tip Code
 [@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
 :::
+
+## Sidebar external-link <Badge text="v3.8.2+"/>
+
+You can also configure an external-link in the sidebar. As long as you fill in the legal url path in `path`, you will be able to open this page when you click on the sidebar.
+
+E.g.
+
+```json
+{
+  "path": "external-link",
+  "component": Layout,
+  "children": [
+    {
+      "path": "https://github.com/PanJiaChen/vue-element-admin",
+      "meta": { "title": "externalLink", "icon": "link" }
+    }
+  ]
+}
+```
