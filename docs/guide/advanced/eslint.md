@@ -9,7 +9,7 @@ The basic eslint rules of this project is based on the official eslint rules of 
 
 Such as: my personal or project team is accustomed to using two spaces, but you may feel that the four spaces are more pleasing, and you can make the following changes.
 
-Enter the project of `.eslintrc.js`, find `indent`,and then set it to `4` 。There are a variety of configuration information, see details [ESLint Documention](https://eslint.org/docs/rules/)。
+Enter the project of `.eslintrc.js`, find `indent`,and then set it to `4` 。There are a variety of configuration information, see details [ESLint Document](https://eslint.org/docs/rules/)。
 
 After [v3.8.1](https://github.com/PanJiaChen/vue-element-admin/releases/tag/v3.8.1), [eslint-plugin-vue](https://github.Com/vuejs/eslint-plugin-vue) has been added to better verify vue related code.
 

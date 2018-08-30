@@ -41,7 +41,7 @@ vue-element-admin All global styles are set in the `@/src/styles` directory.
 │   ├── index.scss               # global common style
 │   ├── mixin.scss               # global sass mixin
 │   ├── sidebar.scss             # sidebar css
-│   ├── transition.scss          # vue transition snimation
+│   ├── transition.scss          # vue transition animation
 │   └── variables.scss           # global variables
 ```
 
@@ -62,7 +62,7 @@ The common workflow is that the global styles are written in the `src/styles` di
 Now let's talk about how to override the element-ui style. Because element-ui style we are import in the global, so you can't add `scoped` to a page if you want to overwrite it, but you want to override only the element style of this page, you can add a class in its parent, using the namespace to solve this problem.
 
 ```css
-.aritle-page {
+.article-page {
   /* you namespace*/
   .el-tag {
     /* element-ui element tag*/
@@ -111,7 +111,7 @@ Let's talk about the configuration of postcss. After the new version of the [vue
 //.postcssrc.js
 module.exports = {
   "plugins": {
-    // to edit target browsers: use "browserlist" field in package.json
+    // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {}
   }
 }
@@ -131,7 +131,7 @@ As described in the previous code, autoprefixer reads the configuration paramete
 
 More detail [browserslist](https://github.com/ai/browserslist)
 
-`postcss` has many other features [to explore by youself](https://www.postcss.parts/)
+`postcss` has many other features [to explore by yourself](https://www.postcss.parts/)
 
 ## Mixin
 

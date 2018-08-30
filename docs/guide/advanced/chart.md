@@ -2,14 +2,14 @@
 
 Managing background charts is also a common requirement. The chart here only recommends ECharts, full-featured, community demo is also rich [gallery](http://gallery.echartsjs.com/explore.html)。
 
-I still have that point of view. Most plug-ins recommend that use vue for packaging by youself. It's really simple. ECharts supports the import of webpack, you can import the whole ECharts `var echarts = require ('echarts')` However, ECharts is not small, if you use only a small part of the features or chart type, then recommend on-demand import.
+I still have that point of view. Most plug-ins recommend that use vue for packaging by yourself. It's really simple. ECharts supports the import of webpack, you can import the whole ECharts `var echarts = require ('echarts')` However, ECharts is not small, if you use only a small part of the features or chart type, then recommend on-demand import.
 
 ```js
 // Import on demand -- import ECharts main module
 var echarts = require('echarts/lib/echarts')
 // Import bar
 require('echarts/lib/chart/bar')
-// Import tooltop&title
+// Import tooltip&title
 require('echarts/lib/component/tooltip')
 require('echarts/lib/component/title')
 
@@ -82,6 +82,6 @@ In fact, they are all similar, or they must be combined with their own business.
 `@/views/dashboard/admin/components`
 :::
 
-## Ohters
+## Others
 
 Of course there are many other libraries in the community, such as [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js). The packaging methods are almost the same, and they are no longer here.

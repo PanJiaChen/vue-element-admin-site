@@ -25,7 +25,7 @@ redirect: noredirect
 // so that it will ignore the previously defined rules and always show the root route
 alwaysShow: true
 
-// set router name. It must be setted，in order to avoid problems with <keep-alive>.
+// set router name. It must be set，in order to avoid problems with <keep-alive>.
 name: 'router-name'
 
 meta: {
@@ -55,7 +55,7 @@ meta: {
   redirect: '/permission/index',
   hidden: true,
   alwaysShow: true,
-  meta: { roles: ['admin','ediotr'] }, // you can set roles in root nav
+  meta: { roles: ['admin','editor'] }, // you can set roles in root nav
   children: [{
     path: 'index',
     component: _import('permission/index'),
@@ -63,7 +63,7 @@ meta: {
     meta: {
       title: 'permission',
       icon: 'lock',
-      roles: ['admin','ediotr'], // or you can only set roles in sub nav
+      roles: ['admin','editor'], // or you can only set roles in sub nav
       noCache: true
     }
   }]

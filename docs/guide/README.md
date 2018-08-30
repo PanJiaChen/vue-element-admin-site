@@ -150,7 +150,7 @@ This project has built the following templates, and have built a scaffold based 
 ## Getting Started
 
 ```bash
-# clone the projice
+# clone the project
 git clone https://github.com/PanJiaChen/vue-element-admin.git
 
 # install dependency

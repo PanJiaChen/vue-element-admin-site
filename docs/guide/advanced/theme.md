@@ -10,7 +10,7 @@ Or use [Deep Selectors](https://vue-loader.vuejs.org/guide/scoped-css.html#deep-
 
 ```css
 /* Your namespace */
-.aritle-page {
+.article-page {
   /* element-ui tag */
   .el-tag {
     margin-right: 0px;

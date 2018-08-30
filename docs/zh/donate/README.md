@@ -10,6 +10,6 @@ sidebar: false
 
 ## Or
 
-[Paypal](https://www.paypal.me/panfree23)
+[PayPal](https://www.paypal.me/panfree23)
 
 [Buy me a coffee](https://www.buymeacoffee.com/Pan)
