@@ -24,7 +24,7 @@ Permission control is done in `@/permission.js`. All users who do not have permi
 
 All the requests in the project will go through the axios instance created in `@/utils/request.js`. [code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)。
 
-You can use the `service.interceptors.response`, the respone interceptor to harmonize different status codes according to your actual business or to perform error handling according to custom code. Such as:
+You can use the `service.interceptors.response`, the response interceptor to harmonize different status codes according to your actual business or to perform error handling according to custom code. Such as:
 
 ```js
 service.interceptors.response.use(

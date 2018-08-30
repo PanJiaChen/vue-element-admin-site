@@ -64,7 +64,7 @@ Currently cached solutions are not suitable for certain services, such as the ar
   To [@/layout/components/AppMain.vueAppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue) remove the `include` related code. Of course, using keep-alive directly also has disadvantages. He can't dynamically delete the cache. You can only help it to set a maximum cache instance limit.
   [issue](https://github.com/vuejs/vue/issues/6509)
 
-- Use a browser cache scheme such as localstorage, own to control the cache.
+- Use a browser cache scheme such as localStorage, own to control the cache.
 
 ## Remove
 

@@ -65,7 +65,7 @@ vue-element-admin 所有全局样式都在 `@/src/styles` 目录下设置
 现在我们来说说怎么覆盖 element-ui 样式。由于 element-ui 的样式我们是在全局引入的，所以你想在某个页面里面覆盖它的样式就不能加 scoped，但你又想只覆盖这个页面的 element 样式，你就可在它的父级加一个 class，用命名空间来解决问题。
 
 ```css
-.aritle-page {
+.article-page {
   /* 你的命名空间 */
   .el-tag {
     /* element-ui 元素*/
@@ -125,13 +125,13 @@ vue-cli 有一个小坑，它默认 autoprefixer 只会对通过 vue-loader 引�
 
 ## Postcss
 
-这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) inti 之后根目录下默认有一个`.postcssrc.js` 。vue-loader 的 postcss 会默认读取这个文件的里的配置项，所以在这里直接改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
+这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) init 之后根目录下默认有一个`.postcssrc.js` 。vue-loader 的 postcss 会默认读取这个文件的里的配置项，所以在这里直接改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
 
 ```javascript
 //.postcssrc.js
 module.exports = {
   "plugins": {
-    // to edit target browsers: use "browserlist" field in package.json
+    // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {}
   }
 }

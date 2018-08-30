@@ -10,7 +10,7 @@ Here is a brief introduction to the reasons why `tinymce` is recommended: `tinym
 
 Let me analyze some of the other rich texts on the market:
 
-- **[summernote](https://github.com/summernote/summernote)** Let me start with a rich text that I definitely would not recommend.It is inconsistent with many recognized default behaviors between others. And only for the use of a dialog feature, they import the boostrapp, A bunch of people protest. Formatting is also very bad. Do not use anyway! Do not use it! Do not use it!
+- **[summernote](https://github.com/summernote/summernote)** Let me start with a rich text that I definitely would not recommend.It is inconsistent with many recognized default behaviors between others. And only for the use of a dialog feature, they import the bootstrap, A bunch of people protest. Formatting is also very bad. Do not use anyway! Do not use it! Do not use it!
 
 - **[ckeditor](https://github.com/galetahub/ckeditor)** Ckeditor is also a veteran company to do rich text,
   I used to use it in company project.This year, the 5.0 version of the UI has also become more beautiful, quite good, and it has the richest plugins. It's recommended that you try it.
