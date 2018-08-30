@@ -8,7 +8,7 @@
 
 ```html
 <!-- icon-class 为 icon 的名字; class-name 为 icon 自定义 class-->
-<svg-icon icon-class="password"  class-name='custome-class' />
+<svg-icon icon-class="password"  class-name='custom-class' />
 ```
 
 ## 改变颜色

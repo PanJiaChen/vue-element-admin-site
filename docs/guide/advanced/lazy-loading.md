@@ -46,7 +46,7 @@ The user can measure whether to adopt this method according to the business situ
 ## New Plan
 
 Use `babel plugins` [babel-plugin-dynamic-import-node](https://github.com/airbnb/babel-plugin-dynamic-import-node).
-It only does one thing by converting all `import()` to `require()`, so that all asynchronous components can be import synchronously using this plugin. Combined with the bebel environment variable [BABEL_ENV](https://babeljs.io/docs/usage/babelrc/#env-option), let it only work in the development environment, in the development environment will convert all import () into require ().
+It only does one thing by converting all `import()` to `require()`, so that all asynchronous components can be import synchronously using this plugin. Combined with the babel environment variable [BABEL_ENV](https://babeljs.io/docs/usage/babelrc/#env-option), let it only work in the development environment, in the development environment will convert all import () into require ().
 
 This solution to solve the problem of repeated packaging before, while the invasiveness of the code is also very small, you usually write routing only need to follow the lazy loading method of the [official document](https://router.vuejs.org/guide/advanced/lazy-loading.html) routing on it, the other are handed to the handle of the cable, When you don't want to use this program, just remove it from Babel's plugins.
 

@@ -12,7 +12,7 @@ In my company project, the data is usually simulated by the backend using [swagg
 ## Easy-mock
 
 [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) uses [easy-mock](https://easy-mock.com/login) to simulate the data.
-It is a pure front-end visualization, and can quickly generate simulation data persistence services. It's very easy to use and can be combined with `swagger`, suporrt cors. It's worth a try for both the team and the individual project.
+It is a pure front-end visualization, and can quickly generate simulation data persistence services. It's very easy to use and can be combined with `swagger`, support cors. It's worth a try for both the team and the individual project.
 
 [Online Demo](https://easy-mock.com/)
 
@@ -48,7 +48,7 @@ We can use the [environment variables](/guide/essentials/deploy.html#environment
 ```js
 //dev.env.js
 module.exports = {
-  // Inject the base path of thie local
+  // Inject the base path of the local API
   BASE_API: '"https://api-dev"'
 }
 ```
@@ -56,7 +56,7 @@ module.exports = {
 ```js
 //prod.env.js
 module.exports = {
-  // Inject the base path of thie production
+  // Inject the base path of the production API
   BASE_API: '"https://api-prod"'
 }
 ```
@@ -67,7 +67,7 @@ Then create an `axios` instance based on the environment variable to have a diff
 ```js
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api的base_url
+  baseURL: process.env.BASE_API, // base_url of the API
   timeout: 5000 // request timeout
 })
 ```

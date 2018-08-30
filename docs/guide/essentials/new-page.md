@@ -111,7 +111,7 @@ Finally, under the [@/api](https://github.com/PanJiaChen/vue-element-admin/tree/
 
 ## Create Component
 
-Personally write vue project habits, the global `@/components` will only write some global components, such as rich text, various search components, packaged date components, etc. can be shared components. Each page or module-specific business component is written under the current views. Such as: `@/views/artivle/components/xxx.vue`. This split greatly reduces maintenance costs.
+Personally write vue project habits, the global `@/components` will only write some global components, such as rich text, various search components, packaged date components, etc. can be shared components. Each page or module-specific business component is written under the current views. Such as: `@/views/article/components/xxx.vue`. This split greatly reduces maintenance costs.
 
 **Remember that the biggest benefit of splitting components is not shared code but maintainability! **
 

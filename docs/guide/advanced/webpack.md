@@ -6,6 +6,6 @@ Recommended [survivejs](https://survivejs.com/webpack/foreword/)
 
 **No English translation**
 
-- [webpack 4 和单页应用入门](webpack-and-spa-guide)
+- [webpack 4 和单页应用入门](https://github.com/wallstreetcn/webpack-and-spa-guide)
 - [手摸手，带你用合理的姿势使用 webpack4（上）](https://juejin.im/post/5b56909a518825195f499806)
 - [手摸手，带你用合理的姿势使用 webpack4（下）](https://juejin.im/post/5b5d6d6f6fb9a04fea58aabc)

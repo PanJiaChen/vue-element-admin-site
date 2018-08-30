@@ -39,6 +39,10 @@ module.exports = {
                 link: '/component/rich-editor.md'
               },
               {
+                text: 'Svg Icon',
+                link: '/component/svg-icon.md'
+              },
+              {
                 text: 'Clipboard',
                 link: '/component/clipboard.md'
               }
@@ -72,6 +76,7 @@ module.exports = {
           ],
           '/component/': [
             '/component/rich-editor.md',
+            '/component/svg-icon.md',
             '/component/clipboard.md'
           ]
         }

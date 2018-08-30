@@ -55,7 +55,7 @@ methods: {
 就这样简单，ECharts 就配置完成了，这时候你想说我的 data 是远程获取的，或者说我动态改变 ECharts 的配置该怎么办呢？我们可以通过 watch 来触发 setOptions 方法
 
 ```js
-//第一种 watch options变化 利用vue的深度 watcher，options一有变化就重新setOption
+//第一种 watch options变化 利用vue的深度 watcher，options 一有变化就重新setOption
 watch: {
   options: {
     handler(options) {

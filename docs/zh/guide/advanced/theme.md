@@ -9,7 +9,7 @@ element-ui 的通用样式变量可能无法满足所有定制需求，你可以
 
 ```css
 /* 你的命名空间 */
-.aritle-page {
+.article-page {
   /* element-ui 元素 */
   .el-tag {
     margin-right: 0px;
