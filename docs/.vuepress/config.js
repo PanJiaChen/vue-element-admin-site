@@ -1,3 +1,9 @@
+var nav = require('./nav.js')
+var { EcosystemNav, ComponentNav } = nav
+
+var utils = require('./utils.js')
+var { genNav, deepClone } = utils
+
 module.exports = {
   title: 'vue-element-admin',
   description: 'A magical vue admin',
@@ -33,20 +39,11 @@ module.exports = {
           },
           {
             text: 'Component',
-            items: [
-              {
-                text: 'Rich Text Editor',
-                link: '/component/rich-editor.md'
-              },
-              {
-                text: 'Svg Icon',
-                link: '/component/svg-icon.md'
-              },
-              {
-                text: 'Clipboard',
-                link: '/component/clipboard.md'
-              }
-            ]
+            items: genNav(deepClone(ComponentNav), 'EN')
+          },
+          {
+            text: 'Ecosystem',
+            items: genNav(deepClone(EcosystemNav), 'EN')
           },
           {
             text: 'Donate',
@@ -92,46 +89,11 @@ module.exports = {
           },
           {
             text: '组件',
-            items: [
-              {
-                text: '富文本',
-                link: '/zh/component/rich-editor.md'
-              },
-              {
-                text: 'Svg Icon 图标',
-                link: '/zh/component/svg-icon.md'
-              },
-              {
-                text: '复制粘贴',
-                link: '/zh/component/clipboard.md'
-              }
-            ]
+            items: genNav(deepClone(ComponentNav), 'ZH')
           },
           {
-            text: '其它',
-            items: [
-              {
-                text: 'Gitter讨论组',
-                link: 'https://gitter.im/vue-element-admin/discuss'
-              },
-              {
-                text: '作者Blog',
-                link: 'https://jianshiapp.com/circles/1209'
-              },
-              {
-                text: '更新记录',
-                link: 'https://github.com/PanJiaChen/vue-element-admin/releases'
-              },
-              {
-                text: '常见问题',
-                link: '/zh/guide/other/faq.md'
-              },
-              {
-                text: 'QQ群',
-                link:
-                  'https://github.com/PanJiaChen/vue-element-admin/issues/602'
-              }
-            ]
+            text: '生态系统',
+            items: genNav(deepClone(EcosystemNav), 'ZH')
           },
           {
             text: '捐赠',
