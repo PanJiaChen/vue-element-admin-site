@@ -38,7 +38,7 @@ module.exports = {
             link: '/guide/'
           },
           {
-            text: 'Component',
+            text: 'Features',
             items: genNav(deepClone(ComponentNav), 'EN')
           },
           {
@@ -71,11 +71,12 @@ module.exports = {
               ]
             }
           ],
-          '/component/': [
-            '/component/rich-editor.md',
-            '/component/svg-icon.md',
-            '/component/clipboard.md'
-          ]
+          '/feature/component/': [
+            '/feature/component/rich-editor.md',
+            '/feature/component/svg-icon.md',
+            '/feature/component/clipboard.md'
+          ],
+          '/feature/script/': ['/feature/script/svgo.md']
         }
       },
       '/zh/': {
@@ -88,7 +89,7 @@ module.exports = {
             link: '/zh/guide/'
           },
           {
-            text: '组件',
+            text: '功能',
             items: genNav(deepClone(ComponentNav), 'ZH')
           },
           {
@@ -111,23 +112,14 @@ module.exports = {
               title: '进阶',
               collapsable: false,
               children: genAdvancedSidebar('/zh')
-            },
-            {
-              title: '其它',
-              collapsable: false,
-              children: [
-                '/zh/guide/other/gitter.md',
-                '/zh/guide/other/release-notes.md',
-                '/zh/guide/other/blog.md',
-                '/zh/guide/other/faq.md'
-              ]
             }
           ],
-          '/zh/component/': [
-            '/zh/component/rich-editor.md',
-            '/zh/component/svg-icon.md',
-            '/zh/component/clipboard.md'
-          ]
+          '/zh/feature/component/': [
+            '/zh/feature/component/rich-editor.md',
+            '/zh/feature/component/svg-icon.md',
+            '/zh/feature/component/clipboard.md'
+          ],
+          '/zh/feature/script/': ['/zh/feature/script/svgo.md']
         }
       }
     }

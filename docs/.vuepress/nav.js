@@ -26,6 +26,11 @@ var EcosystemNav = [
       {
         text: 'vue-split-pane',
         link: 'https://github.com/PanJiaChen/vue-split-pane'
+      },
+      {
+        text: 'awesome-bookmarks',
+        link: 'https://github.com/PanJiaChen/awesome-bookmarks',
+        type: 'ZH'
       }
     ]
   },
@@ -70,17 +75,17 @@ var ComponentNav = [
       {
         text: 'Rich Text Editor',
         textZH: '富文本',
-        link: '/component/rich-editor.md'
+        link: '/feature/component/rich-editor.md'
       },
       {
         text: 'Svg Icon',
         textZH: 'Svg Icon 图标',
-        link: '/component/svg-icon.md'
+        link: '/feature/component/svg-icon.md'
       },
       {
         text: 'Clipboard',
         textZH: '复制粘贴',
-        link: '/component/clipboard.md'
+        link: '/feature/component/clipboard.md'
       }
     ]
   },
@@ -89,7 +94,7 @@ var ComponentNav = [
     items: [
       {
         text: 'Svgo',
-        link: '/component/rich-editor.md'
+        link: '/feature/script/svgo.md'
       }
     ]
   }
