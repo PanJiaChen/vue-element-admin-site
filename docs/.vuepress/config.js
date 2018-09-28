@@ -2,7 +2,7 @@ var nav = require('./nav.js')
 var { EcosystemNav, ComponentNav } = nav
 
 var utils = require('./utils.js')
-var { genNav, deepClone } = utils
+var { genNav, getComponentSidebar, deepClone } = utils
 
 module.exports = {
   title: 'vue-element-admin',
@@ -71,11 +71,10 @@ module.exports = {
               ]
             }
           ],
-          '/feature/component/': [
-            '/feature/component/rich-editor.md',
-            '/feature/component/svg-icon.md',
-            '/feature/component/clipboard.md'
-          ],
+          '/feature/component/': getComponentSidebar(
+            deepClone(ComponentNav),
+            'EN'
+          ),
           '/feature/script/': ['/feature/script/svgo.md']
         }
       },
@@ -114,11 +113,10 @@ module.exports = {
               children: genAdvancedSidebar('/zh')
             }
           ],
-          '/zh/feature/component/': [
-            '/zh/feature/component/rich-editor.md',
-            '/zh/feature/component/svg-icon.md',
-            '/zh/feature/component/clipboard.md'
-          ],
+          '/zh/feature/component/': getComponentSidebar(
+            deepClone(ComponentNav),
+            'ZH'
+          ),
           '/zh/feature/script/': ['/zh/feature/script/svgo.md']
         }
       }
