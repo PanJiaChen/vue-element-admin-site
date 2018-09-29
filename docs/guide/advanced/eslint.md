@@ -55,9 +55,6 @@ After we have installed ESLint, we back to VSCode to set up . Go to `Code` > `Pr
       "autoFix": true
     }
   ],
-  "eslint.options": {
-    "plugins": ["vue"]
-  },
   "eslint.run": "onSave",
   "eslint.autoFixOnSave": true
 }

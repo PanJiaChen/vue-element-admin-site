@@ -54,9 +54,6 @@ module.exports = {
       "autoFix": true
     }
   ],
-  "eslint.options": {
-    "plugins": ["vue"]
-  },
   "eslint.run": "onSave",
   "eslint.autoFixOnSave": true
 }
