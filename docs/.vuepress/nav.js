@@ -86,6 +86,11 @@ var ComponentNav = [
         text: 'Clipboard',
         textZH: '复制粘贴',
         link: '/feature/component/clipboard.md'
+      },
+      {
+        text: 'Excel',
+        textZH: 'Excel',
+        link: '/feature/component/excel.md'
       }
     ]
   },

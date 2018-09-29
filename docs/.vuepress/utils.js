@@ -31,7 +31,17 @@ function isExternalLink(routePath) {
   return validateURL(routePath)
 }
 
+function getComponentSidebar(item, type = 'EN') {
+  return item[0].items.map(v => {
+    if (type != 'EN' && v.link && !isExternalLink(v.link)) {
+      v.link = `/${type.toLocaleLowerCase()}${v.link}`
+    }
+    return v.link
+  })
+}
+
 module.exports = {
   genNav,
+  getComponentSidebar,
   deepClone
 }
