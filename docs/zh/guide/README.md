@@ -84,9 +84,9 @@ pageClass: getting-started
 - 错误日志
 - Dashboard
 - 引导页
-- Echarts 图表
+- ECharts 图表
 - Clipboard(剪贴复制)
-- Markdown2html
+- Markdown to Html
 ```
 
 <br/>

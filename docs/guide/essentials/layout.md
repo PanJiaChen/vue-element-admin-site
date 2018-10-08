@@ -111,7 +111,7 @@ Code：[@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/maste
 
 >
 
-## mobile
+## Mobile
 
 The `element-ui` official position is the desktop-side framework, and for the management of such a complex project in the background, it is impossible to meet the desktop-side and mobile-side interactions through simple adaptation. Therefore, the interaction between the two ends must be different. Make a mobile version of the background, it is recommended to re-do a system.
 

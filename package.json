@@ -23,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "1.14.2",
-    "vuepress": "^0.14.2",
+    "vuepress": "0.14.4",
     "husky": "0.14.3",
     "lint-staged": "7.2.2"
   }

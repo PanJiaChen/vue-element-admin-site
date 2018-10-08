@@ -84,9 +84,9 @@ The project is positioned as a background integration solution and is not suitab
 - Error Log
 - Dashboard
 - Guide Page
-- Echarts
+- ECharts
 - Clipboard
-- Markdown to html
+- Markdown to Html
 ```
 
 <br/>
