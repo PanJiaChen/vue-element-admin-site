@@ -15,15 +15,20 @@ export default {
   components: { Layout },
   data() {
     return {
-      loadSuccess: true
+      loadSuccess: true,
+      hasLoaded: false
     }
   },
   watch: {
-    '$route.path': {
+    $route: {
       handler: function(val, oldVal) {
-        const path = val
+        const { path } = val
         if (path === '/zh/' || path === '/') return
-        this.addFundScript()
+        if (!this.hasLoaded) {
+          this.addFundScript()
+        } else {
+          window._codefund && window._codefund.serve()
+        }
       },
       immediate: true
     }
@@ -38,6 +43,7 @@ export default {
       script.onerror = this.loadError
       script.src = 'https://codefund.io/scripts/' + codefundId + '/embed.js'
       document.body.appendChild(script)
+      this.hasLoaded = true
     },
     isGitee() {
       const origin = window.location.origin
