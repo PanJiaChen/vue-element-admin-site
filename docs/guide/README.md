@@ -189,7 +189,7 @@ There may be some spelling or translation errors in the course of writing this d
 If you think this project is useful, you can buy a glass of juice for the author :heart:
 [Donate](/donate/)
 
-## Browsers support
+## Browsers Support
 
 Modern browsers and Internet Explorer 10+.
 
