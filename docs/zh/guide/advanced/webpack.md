@@ -1,4 +1,4 @@
-## webpack 指南
+## Webpack 指南
 
 这里分享 webpack 三部曲，基本看完也算入门 webpack 配置工程师这个领域了。
 

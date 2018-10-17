@@ -91,6 +91,11 @@ var ComponentNav = [
         text: 'Excel',
         textZH: 'Excel',
         link: '/feature/component/excel.md'
+      },
+      {
+        text: 'Pagination',
+        textZH: 'Pagination 分页',
+        link: '/feature/component/pagination.md'
       }
     ]
   },
