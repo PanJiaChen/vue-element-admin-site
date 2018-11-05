@@ -13,7 +13,7 @@
 hidden: true // (默认 false)
 
 //当设置 noredirect 的时候该路由在面包屑导航中不可被点击
-redirect: noredirect
+redirect: 'noredirect'
 
 //当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
 //只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
