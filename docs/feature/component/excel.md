@@ -13,7 +13,7 @@ Since `Export2Excel` depends not only on `js-xlsx` but also on `file-saver` and 
 So you first need to install the following command:
 
 ```bash
-npm install js-xlsx file-saver -S
+npm install xlsx file-saver -S
 npm install script-loader -S -D
 ```
 

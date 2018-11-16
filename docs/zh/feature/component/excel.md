@@ -13,7 +13,7 @@ Excel 的导入导出都是依赖于[js-xlsx](https://github.com/SheetJS/js-xlsx
 所以你先需要安装如下命令：
 
 ```bash
-npm install js-xlsx file-saver -S
+npm install xlsx file-saver -S
 npm install script-loader -S -D
 ```
 
