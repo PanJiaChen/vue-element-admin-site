@@ -78,6 +78,11 @@ var ComponentNav = [
         link: '/feature/component/rich-editor.md'
       },
       {
+        text: 'Markdown Editor',
+        textZH: 'Markdown 编辑器',
+        link: '/feature/component/markdown-editor.md'
+      },
+      {
         text: 'Svg Icon',
         textZH: 'Svg Icon 图标',
         link: '/feature/component/svg-icon.md'
