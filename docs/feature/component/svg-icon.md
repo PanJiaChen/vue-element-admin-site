@@ -19,7 +19,13 @@ By default, the Svg Icon component is registered in [@/icons](https://github.com
 
 By default, `svg-icon` reads its parent color `fill: currentColor;`
 
-You can change the parent ` color ` or directly ` fill ` color.
+You can change the parent `color` or directly `fill` color.
+
+## Size
+
+If you are downloading an icon from [iconfont](https://www.iconfont.cn/), remember to use a tool such as Sketch to specify the size of the icon. Otherwise, the size of the icons in the project may not be uniform. .
+
+The icons used in this project are all 128\*128 size specifications.
 
 :::tip
 If you encounter the wrong color of the icon, you can refer to the [issue](https://github.com/PanJiaChen/vue-element-admin/issues/330) for modification
