@@ -26,7 +26,8 @@ meta: {
   roles: ['admin', 'editor'] //设置该路由进入的权限，支持多个权限叠加
   title: 'title' //设置该路由在侧边栏和面包屑中展示的名字
   icon: 'svg-name' //设置该路由的图标
-  noCache: true //如果设置为true ,则不会被 <keep-alive> 缓存(默认 false)
+  noCache: true //如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
+  breadcrumb: false // 如果设置为false，则不会在breadcrumb面包屑中显示
 }
 ```
 
@@ -157,7 +158,7 @@ ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<route
 
 ## 面包屑
 
-本项目中也封装了一个面包屑导航，它也是通过 `watch $route` 变化动态生成的。它和 menu 也一样，也可以通过之前那些配置项控制一些路由在面包屑中的展现。大家也可以结合自己的业务需求增改这些自定义属性。
+本项目中也封装了一个面包屑导航，它也是通过 `watch $route` 变化动态生成的。它和 menu 也一样，也可以通过之前那些配置项控制一些路由在面包屑中的展现。大家也可以结合自己的业务需求增改这些自定义属性。比如可以在路由中声明`breadcrumb:false`，让其不在 breadcrumb 面包屑显示。
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
