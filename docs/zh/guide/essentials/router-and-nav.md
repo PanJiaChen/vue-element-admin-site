@@ -154,6 +154,38 @@ ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<route
 
 你可以从前面的 issue 中知道还有很多其它方案。我本人在公司项目中，现在采取的方案是判断当前点击的菜单路由和当前的路由是否一致，但一致的时候，会先跳转到一个专门 Redirect 的页面，它会将路由重定向到我想去的页面，这样就起到了刷新的效果了。
 
+**相关例子**
+
+![](https://wpimg.wallstcn.com/0dd7f78b-0fb5-4c7d-8236-cee78f960984.jpg)
+
+点击图片所示的全局 size 大小切换按钮，你会发现 页面 `app-main`区域进行了刷新。它就是运用了重定向到 `Redirect`页面之后再重定向回原始页面的方法。
+
+点击的时候重定向页面至 `/redirect`
+
+```js
+const { fullPath } = this.$route
+this.$router.replace({
+  path: '/redirect' + fullPath
+})
+```
+
+`redirect` 页面在重定向回原始页面
+
+```js
+// redirect.vue
+// https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/redirect/index.vue
+export default {
+  beforeCreate() {
+    const { params, query } = this.$route
+    const { path } = params
+    this.$router.replace({ path: '/' + path, query })
+  },
+  render: function(h) {
+    return h() // avoid warning message
+  }
+}
+```
+
 <br>
 
 ## 面包屑

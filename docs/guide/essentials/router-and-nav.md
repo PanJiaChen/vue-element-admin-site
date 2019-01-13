@@ -165,6 +165,38 @@ But there's also a drawback the ugly `query` suffix behind url, such as `xxx.com
 
 You can know from the previous issue that there are many other options. In my company project, the solution adopted is to determine whether the currently clicked menu route is consistent with the current route. However, when it is consistent, it will jump to a dedicated Redirect page, which will redirect the route to Go to the page, this will have a refresh effect.
 
+**Example**
+
+![](https://wpimg.wallstcn.com/0dd7f78b-0fb5-4c7d-8236-cee78f960984.jpg)
+
+Click on the global size switch button shown in the image and you will see that the page of `app-main` has been refreshed. It uses the method of redirecting to the `Redirect` page and then redirecting back to the original page.
+
+Redirect page to `/redirect` when clicking
+
+```js
+const { fullPath } = this.$route
+this.$router.replace({
+  path: '/redirect' + fullPath
+})
+```
+
+The `redirect` page is redirected back to the original page
+
+```js
+// redirect.vue
+// https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/redirect/index.vue
+export default {
+  beforeCreate() {
+    const { params, query } = this.$route
+    const { path } = params
+    this.$router.replace({ path: '/' + path, query })
+  },
+  render: function(h) {
+    return h() // avoid warning message
+  }
+}
+```
+
 <br>
 
 ## Breadcrumb
