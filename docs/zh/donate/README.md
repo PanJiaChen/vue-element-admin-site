@@ -14,6 +14,14 @@ sidebar: false
 
 [Buy me a coffee](https://www.buymeacoffee.com/Pan)
 
+## 支付宝扫码领红包
+
+::: tip
+或者你可以支付宝扫码领红包，来支持作者
+:::
+
+<img class="no-margin" src="https://wpimg.wallstcn.com/70cc0c6c-ff93-471f-a8bd-52d3e6b5bab4.jpg"  height="500px" >
+
 ## Monthly support
 
 Open source projects consume a lot of my rest time. And at the end of the day we all have to put a roof over our heads and food on the table, so this is why I have a patreon-page.
