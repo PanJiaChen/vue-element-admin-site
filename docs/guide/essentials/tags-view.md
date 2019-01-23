@@ -71,16 +71,16 @@ Currently cached solutions are not suitable for certain services, such as the ar
 In fact, keep-alive [source code](<(https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)>) is not complicated, but the logic is still quite around. Before the vue author himself fixed a bug, he was not careful, he made two versions to fix it, so if there is no user who needs the navigation bar, it is recommended Remove this feature.
 
 First find
-`@/layout/components/AppMain.vue` adn remove `keep-alive`
+`@/layout/components/AppMain.vue` and remove `keep-alive`
 
 ```html
 <template>
   <section class="app-main" style="min-height: 100%">
     <transition name="fade-transform" mode="out-in">
-      <router-view></router-view>
+      <router-view></router-view> <!-- or <router-view :key="key"/> -->
     </transition>
   </section>
 </template>
 ```
 
-Then remove the entire file `@/layout/components/TagsView.vue`, and `@/layout/components/index` \ 、 `@/layout/Layout.vue`。Finally remove `@/store/modules/tagsView`.
+Remove the entire file `@/layout/components/TagsView.vue`. Then, remove the reference to `TagsView` in `@/layout/components/index` and in  `@/layout/Layout.vue`. Finally, remove the file `@/store/modules/tagsView`.
