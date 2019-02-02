@@ -11,7 +11,7 @@ vue-admin-template 则是一个后台的基础模板脚手架，适合在它的�
 
 <br/>
 
-## 首先有任何报错，最简单的方法是把报错信息复制到浏览器里面搜索一下！
+## 首先有任何报错，最简单的方法是把报错信息复制到浏览器里面搜索一下！！！
 
 [google 点我](http://lmgtfy.com/?q=%E6%90%9C%E4%B8%80%E6%90%9C)
 
@@ -19,16 +19,39 @@ vue-admin-template 则是一个后台的基础模板脚手架，适合在它的�
 
 <br/>
 
+## 代码下载慢？
+
+npm 或者 github 有时候因为中国墙的原因，网速会不稳定。有如下三种解决方案：
+
+- 使用淘宝源
+
+  npm install --registry=https://registry.npm.taobao.org
+
+- Yarn
+
+  - [yarn 介绍](https://github.com/yarnpkg/yarn)
+  - [安装](https://yarn.bootcss.com/docs/install/#mac-stable)
+
+  `yarn install`
+
+- 自己科学上网
+
 ## vendor 过大问题?
 
 建议使用 gzip，使用之后体积会只有原先 1/3 左右。还可以使用懒加载或者 Code Splitting 建议参考[这篇文章](https://zhuanlan.zhihu.com/p/26710831)。打出来的 app.js 过大，查看一下是不是 Uglify 配置不正确或者 sourceMap 没弄对。
-优化相关请看该[文章](https://zhuanlan.zhihu.com/p/27710902)
+优化相关请看该[文章](https://zhuanlan.zhihu.com/p/27710902)。
+
+或者查看手摸手系列教程：
+
+- [手摸手，带你用合理的姿势使用 webpack4（上）](https://juejin.im/post/5b56909a518825195f499806)
+- [手摸手，带你用合理的姿势使用 webpack4（下）](https://juejin.im/post/5b5d6d6f6fb9a04fea58aabc)
+- [webpack 4 和单页应用入门](https://github.com/wallstreetcn/webpack-and-spa-guide)
 
 <br/>
 
 ## 我的 url 里怎么有 # 号？要如何去掉？
 
-请参考文档 [前端路由与服务端的结合](../essentials/deploy.md#前端路由与服务端的结合) 主要由于 `browserHistory` 和 `hashHistory` 。
+请参考文档 [前端路由与服务端的结合](../essentials/deploy.md#前端路由与服务端的结合) 主要由于 `browserHistory` 和 `hashHistory` 两种不同模式导致的。
 
 <br/>
 
@@ -44,6 +67,8 @@ npm install --registry=https://registry.npm.taobao.org
 
 ## node-sass 安装失败？
 
+请查看下面相关 issue：
+
 [issues/25](https://github.com/PanJiaChen/vue-element-admin/issues/25)
 
 [issues/24](https://github.com/PanJiaChen/vue-element-admin/issues/24)
@@ -55,6 +80,44 @@ npm install --registry=https://registry.npm.taobao.org
 请参考文档 [Mock 和联调](../essentials/mock-api.md)
 
 <br/>
+
+## 动态配置路由配置
+
+将路由表配置存储在后端方案
+
+相关 issue：[issues/293](https://github.com/PanJiaChen/vue-element-admin/issues/293)
+<br/>
+
+## 浏览器兼容性问题
+
+本项目暂时没有兼容性需求，如有兼容性需求可自行使用 babel-polyfill。
+
+```shell
+// 下载依赖
+npm install --save babel-polyfill
+```
+
+在入口文件中引入
+
+```js
+import 'babel-polyfill'
+// 或者
+require('babel-polyfill') //es6
+```
+
+在 webpack.config.js 中加入 babel-polyfill 到你的入口数组：
+
+```js
+module.exports = {
+  entry: ['babel-polyfill', './app/js']
+}
+```
+
+具体可参考 [link](https://babeljs.io/docs/en/babel-polyfill/)
+
+或者更简单暴力 [polyfill.io](https://cdn.polyfill.io/v3/) 使用它给的一个 cdn 地址，引入这段 js 之后它会自动判断游览器，加载缺少的那部分 polyfill,但国内速度肯能不行，大家可以自己搭 cdn。
+
+[更多相关内容](https://segmentfault.com/a/1190000010106158)
 
 ## 跨域问题 如：为什么发了一个 options 请求? Access-Control-Allow-Origin 报错等?
 

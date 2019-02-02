@@ -50,7 +50,7 @@ var EcosystemNav = [
       },
       {
         textZH: '常见问题',
-        link: '/zh/guide/other/faq.md',
+        link: '/guide/other/faq.md',
         type: 'ZH'
       },
       {

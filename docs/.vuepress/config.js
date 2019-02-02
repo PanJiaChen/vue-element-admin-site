@@ -111,6 +111,14 @@ module.exports = {
               title: '进阶',
               collapsable: false,
               children: genAdvancedSidebar('/zh')
+            },
+            {
+              title: '其它',
+              collapsable: false,
+              children: [
+                '/zh/guide/other/faq.md',
+                '/zh/guide/other/release-notes.md'
+              ]
             }
           ],
           '/zh/feature/component/': getComponentSidebar(
