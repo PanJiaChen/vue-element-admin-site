@@ -66,6 +66,33 @@ Currently cached solutions are not suitable for certain services, such as the ar
 
 - Use a browser cache scheme such as localStorage, own to control the cache.
 
+## Affix <Badge text="v3.10.0+"/>
+
+If the Affix attribute is added to the route, the current `tag` will be fixed in `tags-view` (cannot be deleted).
+
+![](https://user-images.githubusercontent.com/8121621/52840303-cd5c9280-3133-11e9-928f-e2825eaab51b.png)
+
+```js {14}
+ {
+    path: '',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Dashboard',
+        meta: {
+          title: 'dashboard',
+          icon: 'dashboard',
+          noCache: true,
+          affix: true
+        }
+      }
+    ]
+  }
+```
+
 ## Remove
 
 In fact, keep-alive [source code](<(https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)>) is not complicated, but the logic is still quite around. Before the vue author himself fixed a bug, he was not careful, he made two versions to fix it, so if there is no user who needs the navigation bar, it is recommended Remove this feature.
@@ -83,4 +110,4 @@ First find
 </template>
 ```
 
-Remove the entire file `@/layout/components/TagsView.vue`. Then, remove the reference to `TagsView` in `@/layout/components/index` and in  `@/layout/Layout.vue`. Finally, remove the file `@/store/modules/tagsView`.
+Remove the entire file `@/layout/components/TagsView.vue`. Then, remove the reference to `TagsView` in `@/layout/components/index` and in `@/layout/Layout.vue`. Finally, remove the file `@/store/modules/tagsView`.

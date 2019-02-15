@@ -58,6 +58,33 @@ export default {
 
 - 使用 localStorage 等浏览器缓存方案，自己进行缓存处理
 
+## Affix 固钉 <Badge text="v3.10.0+"/>
+
+当在声明路由是 添加了 Affix 属性，则当前`tag`会被固定在 `tags-view`中（不可被删除）。
+
+![](https://user-images.githubusercontent.com/8121621/52840303-cd5c9280-3133-11e9-928f-e2825eaab51b.png)
+
+```js {14}
+ {
+    path: '',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Dashboard',
+        meta: {
+          title: 'dashboard',
+          icon: 'dashboard',
+          noCache: true,
+          affix: true
+        }
+      }
+    ]
+  }
+```
+
 ## 移除
 
 其实 keep-alive [源码](https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)不复杂，但逻辑还是蛮绕的，之前尤大自己修复一个 bug 的时候也不小心搞错了，连发两个版本来修复，所以如果没有标签导航栏需求的用户，建议移除此功能。
