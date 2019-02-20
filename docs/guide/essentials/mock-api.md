@@ -16,6 +16,10 @@ It is a pure front-end visualization, and can quickly generate simulation data p
 
 [Online Demo](https://easy-mock.com/)
 
+::: warning
+Now the online version of `vue-admin-template` has used `mock.js` instead of `easy-mock`. Because the online free service provided by `easy-mock` is very unstable, it will often hang from time to time. If you need it, you can follow the tutorial and build your own service.
+:::
+
 ## Mockjs
 
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a purely front-end personal project, so all the data is generated locally by [mockjs](https://github.com/nuysoft/Mock). Its principle is: intercept all requests and proxy to local simulation data, so no network sends any request.
