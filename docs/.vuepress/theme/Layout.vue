@@ -5,12 +5,14 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
+    <div v-if="isHome" class="home-codefund" id="codefund"></div>
+
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
-        <div id="codefund" :key="$route.path"></div>
+        <div v-if="!isHome" id="codefund" :key="$route.path"></div>
       </div>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
@@ -39,7 +41,8 @@ import Page from '@default-theme/Page.vue'
 import Sidebar from '@default-theme/Sidebar.vue'
 import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
-import axios from 'axios'
+import { getCodefund } from './utils'
+
 export default {
   components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
   data() {
@@ -52,15 +55,27 @@ export default {
   watch: {
     $route: {
       handler: function(val, oldVal) {
+        if (this.$isServer) return
         const { path } = val
-        if (path === '/zh/' || path === '/') return
+        if (this.isHome) {
+          getCodefund('bottom-bar')
+        } else {
+          getCodefund()
+        }
         // if (this.isCN) return
-        this.getCodefund()
       },
       immediate: true
     }
   },
   computed: {
+    isHome() {
+      const page = this.$page
+      const { path } = page
+      if (path === '/zh/' || path === '/') {
+        return true
+      }
+      return false
+    },
     isCN() {
       return this.$lang === 'zh-CN'
     },
@@ -108,7 +123,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this)
     window.addEventListener('scroll', this.onScroll)
     // configure progress bar
     nprogress.configure({ showSpinner: false })
@@ -125,25 +139,6 @@ export default {
     this.$on('sw-updated', this.onSWUpdated)
   },
   methods: {
-    getCodefund() {
-      console.log('aa')
-      if (this.$isServer) return
-      const codefundId = this.isGitee() ? '79' : '116'
-      axios
-        .get(
-          `https://api.codefund.app/properties/${codefundId}/funder.html?template`
-        )
-        .then(function(response) {
-          document.getElementById('codefund').innerHTML = response.data
-        })
-    },
-    isGitee() {
-      const origin = window.location.origin
-      if (origin.includes('gitee.io')) {
-        return true
-      }
-      return false
-    },
     loadError(oError) {
       this.loadSuccess = false
     },

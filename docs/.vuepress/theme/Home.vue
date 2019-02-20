@@ -7,11 +7,11 @@
 
       <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
 
-      <p v-if="isCN"></p>
-
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
       </p>
+
+      <p v-if="isCN"></p>
     </div>
 
     <div class="features" v-if="data.features && data.features.length">
@@ -59,7 +59,7 @@ export default {
   .hero {
     text-align: center;
 
-    img {
+    >img {
       max-height: 280px;
       display: block;
       margin: 3rem auto 1.5rem;
