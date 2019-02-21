@@ -5,7 +5,7 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <div v-if="isHome" class="home-codefund" id="codefund"></div>
+    <div v-if="isHome&&!isCN" class="home-codefund" id="codefund"></div>
 
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
@@ -13,6 +13,18 @@
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
         <div v-if="!isHome" id="codefund" :key="$route.path"></div>
+
+        <a
+          href="https://e.coding.net/?utm_source=panjiachen"
+          target="_blank"
+          v-if="isCN"
+          style="display: block;"
+        >
+          <img
+            style="width:280px;display: block;margin: 10px auto!important;"
+            src="https://wpimg.wallstcn.com/899f911b-b8d2-4c99-982a-182b146766d3.png"
+          >
+        </a>
       </div>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
@@ -56,13 +68,13 @@ export default {
     $route: {
       handler: function(val, oldVal) {
         if (this.$isServer) return
+        if (this.isCN) return
         const { path } = val
         if (this.isHome) {
           getCodefund('bottom-bar')
         } else {
           getCodefund()
         }
-        // if (this.isCN) return
       },
       immediate: true
     }
