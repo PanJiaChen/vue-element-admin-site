@@ -11,7 +11,7 @@
         <NavLink class="action-button" :item="actionLink"/>
       </p>
 
-      <p v-if="isCN">
+      <p v-if="isCN" @click="clickCoding('home')">
         <a
           href="https://e.coding.net/?utm_source=panjiachen"
           target="_blank"
@@ -54,6 +54,11 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       }
+    }
+  },
+  methods: {
+    clickCoding(tag) {
+      ga('send', 'click', 'e.coding', 'Action', tag)
     }
   }
 }

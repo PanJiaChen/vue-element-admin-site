@@ -8,14 +8,6 @@ sidebar: false
 
 ![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
 
-## 支付宝扫码领红包
-
-::: tip
-或者你可以支付宝扫码领红包，来支持作者
-:::
-
-<img class="no-margin" src="https://wpimg.wallstcn.com/70cc0c6c-ff93-471f-a8bd-52d3e6b5bab4.jpg"  height="300px" >
-
 ## 微信打赏
 
 ::: tip

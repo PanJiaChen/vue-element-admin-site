@@ -18,6 +18,7 @@
           href="https://e.coding.net/?utm_source=panjiachen"
           target="_blank"
           v-if="isCN"
+          @click="clickCoding('sidebar')"
           style="display: block;"
         >
           <img
@@ -151,6 +152,9 @@ export default {
     this.$on('sw-updated', this.onSWUpdated)
   },
   methods: {
+    clickCoding(tag) {
+      ga('send', 'click', 'e.coding', 'Action', tag)
+    },
     loadError(oError) {
       this.loadSuccess = false
     },
