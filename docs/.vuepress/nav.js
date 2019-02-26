@@ -59,6 +59,11 @@ var EcosystemNav = [
         type: 'ZH'
       },
       {
+        textZH: '作者个人微博',
+        link: 'https://weibo.com/u/3423485724',
+        type: 'ZH'
+      },
+      {
         text: 'Changelog',
         textZH: '更新记录',
         link: 'https://github.com/PanJiaChen/vue-element-admin/releases'
