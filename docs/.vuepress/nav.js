@@ -106,6 +106,11 @@ var ComponentNav = [
         text: 'Pagination',
         textZH: 'Pagination 分页',
         link: '/feature/component/pagination.md'
+      },
+      {
+        text: 'Tree Table',
+        textZH: 'Tree Table 树形表格',
+        link: '/feature/component/tree-table.md'
       }
     ]
   },
