@@ -17,7 +17,7 @@ pageClass: getting-started
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 是基于 Vue2.0，配合使用 Element UI 组件库的一个前端管理后台集成解决方案。它使用了最新的前端技术栈，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。
 
 :::tip 建议
-本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。
+本项目的定位是后台集成方案，不适合当基础模板来进行二次开发。因为本项目集成了很多你可能用不到的功能，会造成不少的代码冗余。如果你的项目不关注这方面的问题，也可以直接基于它进行二次开发。
 
 - 集成方案: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 - 基础模板: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
@@ -165,6 +165,8 @@ npm run dev
 强烈建议不要用直接使用 cnpm 安装，会有各种诡异的 bug，可以通过重新指定 registry 来解决 npm 安装速度慢的问题。若还是不行，可使用 [yarn](https://github.com/yarnpkg/yarn) 替代 `npm`。
 
 Windows 用户若安装不成功，很大概率是`node-sass`安装失败，[解决方案](https://github.com/PanJiaChen/vue-element-admin/issues/24)。
+
+另外因为 `node-sass` 是依赖 `python`环境的，如果你之前没有安装和配置过的话，需要自行查看一下相关安装教程。
 :::
 
 ```bash

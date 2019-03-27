@@ -15,7 +15,7 @@ pageClass: getting-started
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a front-end management background integration solution based on Vue 2.0 that uses the Element UI component library. It uses the latest front-end technology stack, provides a typical business model, and provides various components that can help you quickly build enterprise-level back-office product prototypes.
 
 :::tip
-The project is positioned as a background integration solution and is not suitable for secondary development as a basic template.
+The project is positioned as a background integration solution and is not suitable for secondary development as a basic template. Because this project integrates a lot of features that you may not use, it will cause a lot of code redundancy. If your project does not pay attention to this issue, you can also directly develop it based on it.
 
 - Integrated Solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 - Basic Template: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
