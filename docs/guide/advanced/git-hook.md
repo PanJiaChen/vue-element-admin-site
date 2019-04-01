@@ -1,51 +1,53 @@
 # Git Hooks
 
-Programmers with basic engineering literacy will focus on coding specifications, and Code Linting (Lint) is an important means of ensuring code specification consistency.
+Programmers with engineering literacy will pay attention to coding standards, and Code Linting (Lint) is an important means to ensure code specification and consistency.
 
-What are the benefits of using Lint? In my opinion, it has at least the following three points:
+What are the benefits of using `Lint`? In my opinion, it has at least the following three points:
 
 - Fewer bugs
 - With higher development efficiency, Lint can easily find low-level, obvious errors.
-- Higher readability
+- Higher code readability
 
-Many times our `lint` check is placed in the continuous integration phase.
+Many times our `lint` check is placed in the continuous integration phase, the approximate process is as follows:
 
-> Push Code --> Run CI find problem(remote) --> Fixed in local --> Push Again --> Pass CI(remote)
+> Code Submission --> Run CI Found Problem (Remote) --> Local Fix Issue --> Resubmit --> Pass Check (Remote)
 
-But there is a problem with this. Our `CI` (continuous integration) often doesn't just do `Lint` work, it also has many other tasks, which leads to a special waste of time, often it may take a few minutes after you In order to know that there is a problem, or sometimes you have not found that your `CI` did not pass.
+But there is a problem with this. Our `CI` (continuous integration) often doesn't just do `Lint` work, it also has many other tasks (such as packaging files, static resources uploaded to CDN, etc.), which leads to It's a special waste of time, it may take a few minutes for you to find the problem, or sometimes you don't find your `CI` is failed.
 
-Common process: write the code locally, submit, start running lint, find the failure to pass, modify the code locally, submit again, wait for the result of CI, and repeat the previous operation if there are any problems.
+Common process: write the code locally, submit, start running lint, find that it does not pass, modify the code locally, submit it, wait for the result of CI, and repeat the previous operation if there are any problems.
 
 ## husky
 
-The most effective solution is to put the `Lint` check locally. The common practice is to use
-[husky](https://github.com/typicode/husky) or [pre-commit](https://github.com/observing/pre-commit) do `Lint` before committing locally. Here we use `husky`.
+The most effective solution is to put the `Lint` checksum locally. The common practice is to use [husky](https://github.com/typicode/husky) or [pre-commit](https://github.com /observing/pre-commit) Do a `Lint` check before committing locally.
+
+> Of course, if you use `vue-cli@3` when creating your project, you can also use its built-in [yorkie](https://github.com/yyx990803/yorkie), which is based on `husky`, but Changed the interface. But here we still use `husky` as an example.
 
 ```bash
+# Note: Our examples are all 1.3.1+ versions!
 npm install husky -D -S
 ```
 
-Then modify package.json to add configuration:
+Then modify `package.json` to add the configuration:
 
 ```json
-{
-  "scripts": {
-    "precommit": "eslint src/**/*.js"
+"husky": {
+    "hooks": {
+      "pre-commit": "eslint --ext .js,.vue src"
+    }
   }
-}
 ```
 
-Finally try Git commit and you will receive feedback soon:
+Finally try the `Git` submission and you will receive feedback soon:
 
 ```
 git commit -m "Keep calm and commit"
 ```
 
-But there is a problem. This is that I may only change one file for this commit. For example, I changed the file of `foo.js`, but it will still check all the `.js` files under `src`. Very unfriendly. The problem is that I submitted the code I wrote, but I need to solve the other people code problem before.
+But there is a problem. In my this git submission, I may have only modified one file. For example, I modified the content of `foo.js`, but it will still check all the '.js' files in `src`. It is very unfriendly. Every time I submit the code I wrote, I have to solve the other person's code lint problem first, then I can submit the code smoothly, and when the project is big, the inspection speed will become more and more slow.
 
 ## lint-staged
 
-To solve the above pain points, you need to use [lint-staged](https://github.com/okonet/lint-staged). It will only check the parts that you submitted or you modified.
+To solve the pain points above, you need to use [lint-staged](https://github.com/okonet/lint-staged). It will only check to check what you submitted or what you modified.
 
 ```bash
 npm install lint-staged -D -S
@@ -54,8 +56,11 @@ npm install lint-staged -D -S
 Then, modify the package.json configuration:
 
 ```json
-"precommit": "lint-staged"
-
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
 "lint-staged": {
     "src/**/*.{js,vue}": [
       "eslint --fix",
@@ -64,10 +69,10 @@ Then, modify the package.json configuration:
   }
 ```
 
-As configured above, Verify that the code you submitted matches the `eslint`( [ESLint](eslint.md) ) rule of your local configuration, before your local `commit`. If it is met, the submission is successful. If it doesn't match, it will automatically execute `eslint --fix` to try to help you fix it automatically. If the repair is successful, it will help you to submit the repaired code. If it fails, it will prompt you have an error, and you will be able to submit the code after you fix it.
+As configured above, each time it will only check your local configuration for the `eslint` rule (this see the document [ESLint](eslint.md)) before your local `commit`, if it meets the rules, it will be submitted successfully. If it does not match, it will automatically execute `eslint --fix` to try to help you fix it automatically. If the repair is successful, it will help you to submit the repaired code. If it fails, you will be prompted with an error, and you will be allowed to submit the code only after you fix it.
 
-## SumUp
+## To sum up
 
-The best `lint` specification process is to recommend team members to configure `eslint` in their own editor, configure and enable the `eslint-loader` error in webpack, so the editor can help you fix some simple formatting errors and remind you of some places that don't meet the `lint` specification. And prompt you for errors on the command line. See the details [ESLint](eslint.md)。
+The best `lint` specification process is to recommend team members to configure `eslint` in their own editor, and turn on the `eslint-loader` error in webpack, so the editor can help you automatically fixed some simple errors when you write. At the same time, it can obviously remind you of the code that does not meet the `lint` specification. See [ESLint](eslint.md) for details on this.
 
-But this is not mandatory. Some team members or newly arrived interns are not configured in the editor or ignore the error in the command line. In this case, you need to configure the mandatory checker of `precommit` to ensure that All code submitted to the remote repository is team compliant.
+But this is not mandatory. Some team members or newly arrived interns have not configured the lint rule in the editor or ignored the error in the command line. In this case, you need to configure the mandatory pre-commit. Check that everything submitted to the remote repository is in compliance with the team's specifications.
