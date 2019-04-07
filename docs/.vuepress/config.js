@@ -75,7 +75,10 @@ module.exports = {
             deepClone(ComponentNav),
             'EN'
           ),
-          '/feature/script/': ['/feature/script/svgo.md']
+          '/feature/script/': [
+            '/feature/script/svgo.md',
+            '/feature/script/new.md'
+          ]
         }
       },
       '/zh/': {
@@ -125,7 +128,10 @@ module.exports = {
             deepClone(ComponentNav),
             'ZH'
           ),
-          '/zh/feature/script/': ['/zh/feature/script/svgo.md']
+          '/zh/feature/script/': [
+            '/zh/feature/script/svgo.md',
+            '/zh/feature/script/new.md'
+          ]
         }
       }
     }
