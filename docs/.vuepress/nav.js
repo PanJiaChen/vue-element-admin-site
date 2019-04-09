@@ -39,6 +39,10 @@ var EcosystemNav = [
     textZH: '帮助',
     items: [
       {
+        textZH: '国内文档(解决Github.io访问慢的问题)',
+        link: 'https://panjiachen.gitee.io/vue-element-admin-site/zh'
+      },
+      {
         text: 'Gitter',
         textZH: 'Gitter讨论组',
         link: 'https://gitter.im/vue-element-admin/discuss'
