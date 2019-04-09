@@ -65,7 +65,7 @@ meta: {
 
 **constantRouterMap：** 代表那些不需要动态判断权限的路由，如登录页、404、等通用页面。
 
-**asyncRouterMap：** 代表那些需求动态判断权限并通过 `addRouters` 动态添加的页面。
+**asyncRouterMap：** 代表那些需求动态判断权限并通过 `addRoutes` 动态添加的页面。
 
 具体的会在 [权限验证](permission.md) 页面介绍。
 
