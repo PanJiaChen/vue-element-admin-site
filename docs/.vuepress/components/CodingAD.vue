@@ -5,7 +5,7 @@
     @click="clickCoding('readme')"
     style="display: block;"
   >
-    <img src="https://wpimg.wallstcn.com/51f387d0-58a8-4145-afb2-bd9b6c97e97c.png">
+    <img src="https://wpimg.wallstcn.com/6d9dfe00-f253-446b-9e0c-436f94284f63.png">
   </a>
 </template>
 

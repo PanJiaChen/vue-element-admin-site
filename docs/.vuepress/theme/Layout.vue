@@ -23,7 +23,7 @@
         >
           <img
             style="width:280px;display: block;margin: 10px auto!important;"
-            src="https://wpimg.wallstcn.com/899f911b-b8d2-4c99-982a-182b146766d3.png"
+            src="https://wpimg.wallstcn.com/42920a6e-06d7-4480-9e2b-c1a178a78853.jpg"
           >
         </a>
       </div>

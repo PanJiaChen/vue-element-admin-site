@@ -19,7 +19,7 @@
         >
           <img
             style="width:960px;display: block;"
-            src="https://wpimg.wallstcn.com/08297468-d957-4ed7-a93d-14a12f8849dc.png"
+            src="https://wpimg.wallstcn.com/10ca186a-14e5-4833-8cdd-d2f41f304241.png"
           >
         </a>
       </p>
