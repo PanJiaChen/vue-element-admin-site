@@ -7,33 +7,33 @@
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 ::: tip 对应代码
-[@/views/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/layout)
+[@/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout)
 :::
 
 `@` 是 webpack 的 [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) 不懂得请自行研究
 
 <br>
 
-`vue-element-admin` 中大部分页面都是基于这个 `layout` 的，除了个别页面如： `login` , `404`, `401` 等页面没有使用该`layout`。如果你想在一个项目中有多种不同的`layout`也是很方便的，只要在一级路由那里选择不同的`layout`组件就行。
+`vue-element-admin` 中大部分页面都是基于这个 `layout` 的，除了个别页面如：`login` , `404`, `401` 等页面没有使用该`layout`。如果你想在一个项目中有多种不同的`layout`也是很方便的，只要在一级路由那里选择不同的`layout`组件就行。
 
 ```js
-//No layout
+// No layout
 {
   path: '/401',
-  component: _import('errorPage/401')
+  component: () => import('errorPage/401')
 }
 
-//Has layout
+// Has layout
 {
   path: '/documentation',
 
-  //你可以选择不同的layout组件
+  // 你可以选择不同的layout组件
   component: Layout,
 
-  //这里开始对应的路由都会显示在app-main中 如上图所示
+  // 这里开始对应的路由都会显示在app-main中 如上图所示
   children: [{
     path: 'index',
-    component: _import('documentation/index'),
+    component: () => import('documentation/index'),
     name: 'documentation'
   }]
 }
@@ -59,30 +59,30 @@
 ## app-main
 
 ::: tip 对应代码
-[@/views/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue)
+[@/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue)
 :::
 
 这里在 `app-main` 外部包了一层 `keep-alive` 主要是为了缓存 `<router-view>` 的，配合页面的 `tabs-view` 标签导航使用，如不需要可自行[去除](tags-view.md)。
 
-其中`transition` 定义了页面之间切换动画，可以根据自己的需求，自行修改转场动画。
+其中`transition` 定义了页面之间切换动画，可以根据自己的需求，自行修改转场动画。相关[文档](https://cn.vuejs.org/v2/guide/transitions.html)
 
 <br>
 
 ## router-view
 
-**Different router the same component vue。** 真实的业务场景中，这种情况很多。比如
+**Different router the same component vue** 真实的业务场景中，这种情况很多。比如：
 
 ![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
-我创建和编辑的页面使用的是同一个 component，默认情况下当这两个页面切换时并不会触发 vue 的 created 或者 mounted 钩子，官方说你可以通过 watch $route 的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view 上加上一个唯一的 key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
+我`创建`和`编辑`的页面使用的是同一个 component，默认情况下这两个页面切换时并不会触发 vue 的 created 或者 mounted 钩子，[官方说](https://router.vuejs.org/zh/guide/advanced/data-fetching.html#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96)你可以通过 watch $route 的变化来进行处理，但说真的还是蛮麻烦的。后来发现其实可以简单的在 `router-view` 上加上一个唯一的 key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。
 
 ```js
 <router-view :key="key"></router-view>
 
 computed: {
   key() {
-    // 或者 :key="route.fullPath" 只要保证key唯一就可以了
-    return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()
+    // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
+    return this.$route.fullPath
   }
  }
 ```
@@ -90,7 +90,7 @@ computed: {
 ::: tip
 **或者** 可以像本项目中 `editForm` 和 `createForm` 声明两个不同的 view 但引入同一个 component。
 
-示例代码：[@/views/form](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/form)
+示例代码：[@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/example)
 :::
 
 ```html
@@ -117,4 +117,4 @@ computed: {
 
 `element-ui` 官方对自己的定位是桌面端后台框架，而且对于管理后台这种重交互的项目来说是不能通过简单的适配来满足桌面端和移动端两端不同的交互，所以真要做移动版后台，建议重新做一套系统。
 
-所以本项目也不会适配移动端，只是做了一点简单的响应式配置，有需求请自行修改。
+所以本项目也不会适配移动端，只是 yong`media query`做了一点简单的响应式布局，有需求请自行修改。

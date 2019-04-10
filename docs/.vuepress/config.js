@@ -168,7 +168,8 @@ function genEssentialsSidebar(type = '') {
     '/guide/essentials/server.md',
     '/guide/essentials/mock-api.md',
     '/guide/essentials/import.md',
-    '/guide/essentials/deploy.md'
+    '/guide/essentials/deploy.md',
+    '/guide/essentials/env.md'
   ]
   return mapArr.map(i => {
     return type + i
