@@ -124,6 +124,10 @@ var ComponentNav = [
       {
         text: 'Svgo',
         link: '/feature/script/svgo.md'
+      },
+      {
+        text: 'New',
+        link: '/feature/script/new.md'
       }
     ]
   }
