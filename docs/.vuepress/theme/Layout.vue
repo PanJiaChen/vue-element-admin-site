@@ -15,7 +15,7 @@
         <div v-if="!isHome" id="codefund" :key="$route.path"></div>
 
         <a
-          href="https://e.coding.net/?utm_source=panjiachen"
+          href="https://coding.net/?utm_source=panjiachen"
           target="_blank"
           v-if="isCN"
           @click="clickCoding('sidebar')"

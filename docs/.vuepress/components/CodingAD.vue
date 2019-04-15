@@ -1,6 +1,6 @@
 <template>
   <a
-    href="https://e.coding.net/?utm_source=panjiachen"
+    href="https://coding.net/?utm_source=panjiachen"
     target="_blank"
     @click="clickCoding('readme')"
     style="display: block;"
