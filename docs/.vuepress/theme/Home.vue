@@ -12,14 +12,10 @@
       </p>
 
       <p v-if="isCN" @click="clickCoding('home')">
-        <a
-          href="https://coding.net/?utm_source=panjiachen"
-          target="_blank"
-          style="display: block;"
-        >
+        <a href="https://coding.net/?utm_source=panjiachen" target="_blank" style="display: block;">
           <img
             style="width:960px;display: block;"
-            src="https://wpimg.wallstcn.com/10ca186a-14e5-4833-8cdd-d2f41f304241.png"
+            src="https://wpimg.wallstcn.com/a5212eb4-55e8-49a3-a3f6-aded35041251.png"
           >
         </a>
       </p>
