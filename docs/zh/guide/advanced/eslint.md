@@ -1,6 +1,6 @@
 # ESLint
 
-不管是多人合作还是个人项目，代码规范是很重要的。这样做不仅可以很大程度地避免基本语法错误，也保证了代码的可读性。
+不管是多人合作还是个人项目，代码规范都是很重要的。这样做不仅可以很大程度地避免基本语法错误，也保证了代码的可读性。
 
 ## 配置项
 
@@ -25,8 +25,8 @@ module.exports = {
 
 ## 取消 ESLint 校验
 
-如果你实在是不想使用 ESLint 校验，只要找到 [config/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.base.conf.js) 文件。
-将 `useEslint: true` 设置为 `useEslint: false` 即可
+如果你不想使用 ESLint 校验（不推荐取消），只要找到 [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) 文件。
+进行如下设置 `lintOnSave: false` 即可。
 
 ## vscode 配置 ESLint
 
@@ -63,29 +63,14 @@ module.exports = {
 
 [vscode 插件和配置推荐](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
-## webpack
+## 更多配置
 
-你还可以通过配置 `eslint-loader` 让你有不符合 `eslint`的时候在命令行或者界面里提示你有什么错误。
-
-```js
-{
- test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
-}
-```
-
-:::tip
-[showEslintErrorsInOverlay](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js) 这个变量可以控制错误提示是否需要在浏览器界面中提示。
-:::
+由于本项目是基于`vue-cli`进行构建，所以更多配置可参考官方[文档](https://cli.vuejs.org/zh/config/#lintonsave)
 
 ## 自动修复
 
 ```bash
 npm run lint -- --fix
 ```
+
+运行如上命令，eslint 会自动修复一些简单的错误。

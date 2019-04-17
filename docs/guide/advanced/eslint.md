@@ -1,6 +1,6 @@
 # ESLint
 
-Whether it's a multi-person collaboration or personal projects, code specifications are important. It can not only largely avoids basic syntax errors, but also ensures the readability of the code.
+Whether it's a multi-person collaboration or personal projects, code specifications are important. It can not only avoids basic syntax errors, but also ensures the readability of the code.
 
 ## Config
 
@@ -26,8 +26,8 @@ module.exports = {
 
 ## Cancel ESLint
 
-If you really don't want to use ESLint,you just find [config/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.base.conf.js).
-And then set `useEslint: true` to `useEslint: false` .
+If you don't want to use ESLint (not recommended for cancellation), just find the [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) file.
+Make the following settings `lintOnSave: false`.
 
 ## Configure ESLint in vscode
 
@@ -64,30 +64,14 @@ Everyone and the team have their own code specification, unification is good, to
 
 [vscode plugin and configuration recommendations](https://github.com/varHarrie/Dawn-Blossoms/issues/10)
 
-## webpack
+## More configuration
 
-You can also configure `eslint-loader` to let you know if you have any errors in the command line or interface when you don't match `eslint` config.
-
-```js
-{
- test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
-}
-```
-
-:::tip
-[showEslintErrorsInOverlay](https://github.com/PanJiaChen/vue-element-admin/blob/master/config/index.js) This variable can control whether the error prompt needs to be prompted in the browser interface.
-
-:::
+Since this project is built based on `vue-cli`, more configuration can be found in the official [documentation](https://cli.vuejs.org/en/config/#lintonsave)
 
 ## Auto fix
 
 ```bash
 npm run lint -- --fix
 ```
+
+Running the above command, eslint will automatically fix some simple errors.

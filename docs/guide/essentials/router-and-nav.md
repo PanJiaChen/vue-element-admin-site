@@ -138,6 +138,10 @@ The sidebar has already helped you to make a judgment. When you route a children
 }
 ```
 
+::: tip unique-opened
+You can set `unique-opened` in [Sidebar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue). To control the sidebar, whether to keep only one submenu expanded.
+:::
+
 ## Click the sidebar to refresh the current route
 
 Before using the development model of spa(single page application), each time the user clicks the sidebar will request this page again, the user gradually developed the habit of clicking the current route in the sidebar to refresh the view. But now the spa is not the same, the user clicks the currently highlighted route and does not refresh the view, because the vue-router will intercept your routing, it determines your url does not change, so it will not trigger any hook or view changes.[Related issue](https://github.com/vuejs/vue-router/issues/296), the community has also heated discussions on the issue.
