@@ -185,6 +185,7 @@ function genAdvancedSidebar(type = '') {
     '/guide/advanced/lazy-loading.md',
     '/guide/advanced/chart.md',
     '/guide/advanced/icon.md',
+    '/guide/advanced/cdn.md',
     '/guide/advanced/theme.md',
     '/guide/advanced/i18n.md',
     '/guide/advanced/error.md',
