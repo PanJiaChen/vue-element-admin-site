@@ -16,22 +16,7 @@ There is no problem with the temporary build speed, and there is no need to stri
 
 ## Way of use
 
-First find `public/index.html`.
-Introducing css and js of `ElementUI` and introducing `vue`. Because `ElementUI` is dependent on `vue`, it must be introduced before it `vue`.
-
-```html
-<head>
-  <!-- style -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-</head>
-
-<!-- Vue -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- Other -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-```
-
-Then find `vue.config.js` and add `externals` to make `webpack` not package `vue` and `element`
+First find `vue.config.js`, add `externals` to make `webpack` not package `vue` and `element`
 
 ```js
 externals: {
@@ -40,14 +25,56 @@ externals: {
 }
 ```
 
+Then configure the `CDN` of those third-party resources, please pay attention to the order.
+
+```js
+const cdn = {
+  css: [
+    // element-ui css
+    'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+  ],
+  js: [
+    // vue must at first!
+    'https://unpkg.com/vue/dist/vue.js',
+    // element-ui js
+    'https://unpkg.com/element-ui/lib/index.js'
+  ]
+}
+```
+
+Then inject it into `index.html` via `html-webpack-plugin`:
+
+```js
+config.plugin('html').tap(args => {
+  args[0].cdn = cdn
+  return args
+})
+```
+
+Find `public/index.html`. Inject css and js in turn through your configured `CND Config`.
+
+```html
+<head>
+  <!-- inject css-->
+  <% for(var css of htmlWebpackPlugin.options.cdn.css) { %>
+    <link rel="stylesheet" href="<%=css%>">
+  <% } %>
+</head>
+
+<!-- inject js -->
+<% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+  <script src="<%=js%>"></script>
+<% } %>
+```
+
 There is also a small detail. If you use the global object method to introduce vue, you don't need to manually Vue.use(Vuex), it will be mounted automatically. [issue](https://github.com/vuejs/vuex/issues/731)
 
-Complete [code modification](https://github.com/PanJiaChen/vue-admin-template/commit/0e6a5c72fa1905d0a51b1a1cbf4fb1e9ac1a6f7e)
+Complete [code modification](https://github.com/PanJiaChen/vue-admin-template/commit/eaaa3c1ddadd114451a1a83e042f1fc56a9809a1)
 
 Finally you can use `npm run preview -- --report` to see the effect as shown:
 
 ![](https://camo.githubusercontent.com/0c5bdc47aeaecc340b9a5a88325b49885538bf90/68747470733a2f2f70616e6a69616368656e2e6769746875622e696f2f696d616765732f656c656d656e742d63646e2e706e67)
 
 ::: tip
-By the same token, other third-party dependencies can be handled in the same way. Of course, you can also choose to use [DLLPlugin](https://webpack.docschina.org/plugins/dll-plugin/) to handle third-party dependencies to optimize the build.
+By the same token, other third-party dependencies can be handled in the same way(such as `vuex`, `vue-router`, etc.). Of course, you can also choose to use [DLLPlugin](https://webpack.docschina.org/plugins/dll-plugin/) to handle third-party dependencies to optimize the build.
 :::
