@@ -28,6 +28,10 @@ var EcosystemNav = [
         link: 'https://github.com/PanJiaChen/vue-split-pane'
       },
       {
+        text: '中文站(gitee)',
+        link: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/'
+      },
+      {
         text: 'awesome-bookmarks',
         link: 'https://github.com/PanJiaChen/awesome-bookmarks',
         type: 'ZH'

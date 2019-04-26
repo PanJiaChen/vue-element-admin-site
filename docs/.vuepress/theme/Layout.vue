@@ -5,14 +5,14 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <div v-if="isHome&&!isCN" class="home-codefund" id="codefund"></div>
+    <div v-if="isHome" class="home-codefund" id="codefund"></div>
 
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
-        <div v-if="!isHome" id="codefund" :key="$route.path"></div>
+        <div v-if="!isHome&&!isCN" id="codefund" :key="$route.path"></div>
 
         <a
           href="https://coding.net/?utm_source=panjiachen"
@@ -69,7 +69,7 @@ export default {
     $route: {
       handler: function(val, oldVal) {
         if (this.$isServer) return
-        if (this.isCN) return
+        if (this.isCN && !this.isHome) return
         const { path } = val
         if (this.isHome) {
           getCodefund('bottom-bar')
