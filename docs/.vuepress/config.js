@@ -48,6 +48,10 @@ module.exports = {
           {
             text: 'Donate',
             link: '/donate/'
+          },
+          {
+            text: '中文站点(gitee)',
+            link: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/'
           }
         ],
         sidebar: {
@@ -101,6 +105,10 @@ module.exports = {
           {
             text: '捐赠',
             link: '/zh/donate/'
+          },
+          {
+            text: '中文站点(gitee)',
+            link: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/'
           }
         ],
         sidebar: {
