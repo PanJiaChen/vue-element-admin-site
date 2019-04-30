@@ -32,7 +32,13 @@
 
 这里来简单讲一下在自己项目中使用 `Tinymce` 的方法。
 
-目前采用全局引用的方式。代码地址：`static/tinymce` (static 目录下的文件不会被打包), 在 index.html 中引入。并确保它的引入顺序在你的`app.js`之前！
+:::warning 已废弃
+目前采用全局引用的方式。代码地址：`static/tinymce` (static 目录下的文件不会被打包), 在 `index.html` 中引入。并确保它的引入顺序在你的`app.js`之前！
+:::
+
+<Badge text="v4.1.0+"/> 之后改用了 CDN 引入的方式。
+
+如果想修改 cdn 地址或者 tinymce 的版本只需在 [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) 中找到 tinymce 的 cdn 地址进行修改就可以了。它会通过`html-webpack-plugin`自动注入的 `index.html` 中。
 
 > 由于目前使用 npm 安装 `Tinymce` 方法比较复杂而且还有一些问题(日后可能会采用该模式)且会大大增加编译的时间所以暂时不准备采用。:space_invader:
 
@@ -49,13 +55,14 @@
 
 目前提供了如下几个属性，有需求可自行添加，或者提 issue。
 
-| Property |         Description         |  Type  |                 Default                  |
-| :------: | :-------------------------: | :----: | :--------------------------------------: |
-|    id    | Component unique identifier | String | Default to help you generate a unique id |
-|  value   |      Rich text content      | String |        Only monitor changes once         |
-| toolbar  |      Rich text toolbar      | Array  |                    []                    |
-| menubar  |      Rich text menubar      | String |   'file edit insert view format table'   |
-|  height  |      Rich text height       | Number |                   360                    |
+| Property |         Description         |      Type      |                 Default                  |
+| :------: | :-------------------------: | :------------: | :--------------------------------------: |
+|    id    | Component unique identifier |     String     | Default to help you generate a unique id |
+|  value   |      Rich text content      |     String     |        Only monitor changes once         |
+| toolbar  |      Rich text toolbar      |     Array      |                    []                    |
+| menubar  |      Rich text menubar      |     String     |   'file edit insert view format table'   |
+|  height  |      Rich text height       |     Number     |                   360                    |
+|  width   |       Rich text width       | Number, String |                    /                     |
 
 ## tinymce-vue
 

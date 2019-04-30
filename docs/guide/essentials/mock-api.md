@@ -129,6 +129,14 @@ export function getRoles() {
   },
 ```
 
+## Multiple servers
+
+Currently the project only starts a `mock-server`, of course you can also have your own other `mock-server` or proxy interface. Some api can take this service, others can take another service. Just set them to a different `baseURL`. [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+
+Then configure multiple `proxy` according to the set url rules in [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
+
+[相关文档](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy)
+
 ## Enable pure front end Mock
 
 Now in [mock/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/index.js#L19) also encapsulates a pure front-end mock method, you only Need to be in [src/main.js](https://github.com/PanJiaChen/vue-element-admin/tree/master/src):

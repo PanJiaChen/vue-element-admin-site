@@ -125,6 +125,14 @@ export function getRoles() {
   },
 ```
 
+## 多个 server
+
+目前项目只启动了一个`mock-server`，当然你也可以有自己其它的`mock-server`或者代理接口。可以一部分接口走这个服务，另一些接口走另一个服务。只需要将它们分别设置不同的的`baseURL`即可。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+
+之后根据设置的 url 规则在 [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) 中配置多个 `proxy` 。
+
+[相关文档](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy)
+
 ## 启用纯前端 Mock
 
 现在在[mock/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/index.js#L19)也封装了一个纯前端 mock 的方法，你只需要在[src/main.js](https://github.com/PanJiaChen/vue-element-admin/tree/master/src)中：

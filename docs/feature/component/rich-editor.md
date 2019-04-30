@@ -1,7 +1,3 @@
----
-sidebarDepth: 3
----
-
 # Rich text editor
 
 Rich text editor is a core part of management system, but at the same time is a place with lots of problems. In the process of selecting rich texts, I also walked a lot of detours. The common rich text editors in the market are basically used, and the finally chose [Tinymce](https://github.com/tinymce/tinymce).
@@ -34,7 +30,13 @@ Of course, you can also choose some paid rich text editor, the author's own comp
 
 Here to briefly talk about the use of Tinymce in you own projects.
 
+:::warning Deprecated
 The current method of using the global reference. Code in: `static/tinymce` (The files in the static directory will not be build by webpack), import in index.html .And make sure it's in the order before your `app.js`!
+:::
+
+After <Badge text="v4.1.0+"/> import tinymce by `CDN` .
+
+If you want to change the cdn address or the version of tinymce, just find tinymce cdn in [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) then modified it. It will be automatically injected into `index.html` via `html-webpack-plugin`.
 
 > The current use of the npm installation 'Tinymce' method is more complex and has some problems (which may be used in the future). :space_invader:
 
@@ -46,3 +48,18 @@ The source code is also very simple, any other needs can be modified in `@/compo
 ```html
 <tinymce :height="300" v-model="content" id='tinymce'></tinymce>
 ```
+
+At present, the following attributes are provided, and there are requirements that can be added by themselves or an issue.
+
+| Property |         Description         |     Type      |                 Default                  |
+| :------: | :-------------------------: | :-----------: | :--------------------------------------: |
+|    id    | Component unique identifier |    String     | Default to help you generate a unique id |
+|  value   |      Rich text content      |    String     |        Only monitor changes once         |
+| toolbar  |      Rich text toolbar      |     Array     |                    []                    |
+| menubar  |      Rich text menubar      |    String     |   'file edit insert view format table'   |
+|  height  |      Rich text height       |    Number     |                   360                    |
+|  width   |       Rich text width       | Number String |                    /                     |
+
+## tinymce-vue
+
+The tinymce official also released the vue version of [tinymce-vue](https://github.com/tinymce/tinymce-vue), which has helped you package a lot of things, but at the same time it has reduced flexibility. If you are interested, you can study it by yourself.
