@@ -23,7 +23,7 @@ After the download is complete, the downloaded .svg file is automatically import
 ## How to use
 
 ```js
-<svg-icon icon-class="password" /> //Icon-class is the icon's name usage
+<svg-icon icon-class="password" /> // icon-class is the icon's name usage
 ```
 
 [Component](/component/svg-icon.md)
@@ -41,3 +41,9 @@ If you encounter an incorrect icon color, you can refer to this[issue](https://g
 ## Detailed articles
 
 [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
+
+## Currently available icons
+
+[src/icons/svg](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/icons/svg)
+
+Online [Preview Address](https://panjiachen.github.io/vue-element-admin/#/icon/index)

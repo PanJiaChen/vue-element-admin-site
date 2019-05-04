@@ -23,7 +23,7 @@
 ## 使用方式
 
 ```js
-<svg-icon icon-class="password" /> //icon-class 为 icon 的名字
+<svg-icon icon-class="password" /> // icon-class 为 icon 的名字
 ```
 
 [组件介绍](/zh/component/svg-icon.md)
@@ -41,3 +41,9 @@
 ## 详细文章
 
 更多详细内容 可阅读该文: [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
+
+## 目前可用图标
+
+[src/icons/svg](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/icons/svg)
+
+线上[预览地址](https://panjiachen.github.io/vue-element-admin/#/icon/index)
