@@ -15,7 +15,7 @@ In `evel.js`, the `addAttrs` method adds several properties to the data, and `tr
 |       data       | original display data                                        |  Array  |    []    |
 |     columns      | column attribute                                             |  Array  |    []    |
 | defaultExpandAll | whether to expand all nodes by default                       | Boolean |  false   |
-| defaultChildren  | specify which node object is used as the node's subtree      | String  | children |  |
+| defaultChildren  | specify which node object is used as the node's subtree      | String  | children |
 |      indent      | horizontal indentation of nodes in adjacent levels in pixels | Number  |    50    |
 
 > Any of the `el-table` properties are supported, such as `border`, `fit`, `size` or `@select`, `@cell-click`. See the ʻel-table` documentation for details.

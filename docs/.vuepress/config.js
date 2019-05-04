@@ -85,6 +85,59 @@ module.exports = {
           ]
         }
       },
+      '/es/': {
+        label: 'Español',
+        selectText: 'Idiomas',
+        editLinkText: 'Editar esta página en GitHub',
+        nav: [
+          {
+            text: 'Guía',
+            link: '/es/guide/'
+          },
+          {
+            text: 'Caracteristicas',
+            items: genNav(deepClone(ComponentNav), 'ES')
+          },
+          {
+            text: 'Ecosistema',
+            items: genNav(deepClone(EcosystemNav), 'ES')
+          },
+          {
+            text: 'Donar',
+            link: '/es/donate/'
+          }
+        ],
+        sidebar: {
+          '/es/guide/': [
+            {
+              title: 'Esenciales',
+              collapsable: false,
+              children: genEssentialsSidebar('/es')
+            },
+            {
+              title: 'Avanzado',
+              collapsable: false,
+              children: genAdvancedSidebar('/es')
+            },
+            {
+              title: 'Otro',
+              collapsable: false,
+              children: [
+                '/es/guide/other/gitter.md',
+                '/es/guide/other/release-notes.md'
+              ]
+            }
+          ],
+          '/es/feature/component/': getComponentSidebar(
+            deepClone(ComponentNav),
+            'ES'
+          ),
+          '/es/feature/script/': [
+            '/es/feature/script/svgo.md',
+            '/es/feature/script/new.md'
+          ]
+        }
+      },
       '/zh/': {
         label: '简体中文',
         selectText: '选择语言',
@@ -148,6 +201,10 @@ module.exports = {
     '/': {
       lang: 'en-US',
       description: 'A magical vue admin'
+    },
+    '/es/': {
+      lang: 'es-ES',
+      description: 'Un administrador mágico de vue'
     },
     '/zh/': {
       lang: 'zh-CN',
