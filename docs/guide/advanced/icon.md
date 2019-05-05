@@ -26,7 +26,7 @@ After the download is complete, the downloaded .svg file is automatically import
 <svg-icon icon-class="password" /> // icon-class is the icon's name usage
 ```
 
-[Component](/component/svg-icon.md)
+[Component](/feature/component/svg-icon.md)
 
 ## Change color
 

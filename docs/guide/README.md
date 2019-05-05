@@ -208,3 +208,23 @@ Modern browsers and Internet Explorer 10+.
 | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | --------- | --------- | --------- | --------- |
 | IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
+
+## Vue Ecosystem
+
+**First understanding the things in these vue ecosystems will help you get started with this project.**
+
+1. [Vue Router](https://router.vuejs.org/) Vue Router is the official router for Vue.js. It deeply integrates with Vue.js core to make building Single Page Applications with Vue.js a breeze.
+
+2. [Vuex](https://vuex.vuejs.org/) Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+
+3. [Vue Loader](https://vue-loader.vuejs.org) Vue-loader is a loader for webpack that allows you to author Vue components in a format called Single-File Components (SFCs). The combination of webpack and vue-loader gives you a modern, flexible and extremely powerful front-end workflow for authoring Vue.js applications.
+
+4. [Vue Server Renderer](https://ssr.vuejs.org/) Vue-server-renderer facilitates building of isomorphic or universal JavaScript applications which runs both on server and client side where majority of the application code is shared and reused.
+
+5. [Vue Test Utils](https://vue-test-utils.vuejs.org/) Vue Test Utils is the official unit testing utility library for Vue.js.
+
+6. [Vue Dev-Tools](https://github.com/vuejs/vue-devtools) Browser devtools extension for debugging Vue.js applications.
+
+7. [Vue CLI](https://cli.vuejs.org/) Vue CLI is a full system for rapid Vue.js development. It aims to be the standard tooling baseline for the Vue ecosystem. It ensures the various build tools work smoothly together with sensible defaults so you can focus on writing your app instead of spending days wrangling with configurations.
+
+8. [Vetur](https://github.com/vuejs/vetur) Vue tooling for VS Code. Write vue essential plugins under VS Code.

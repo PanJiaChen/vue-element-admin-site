@@ -26,7 +26,7 @@
 <svg-icon icon-class="password" /> // icon-class 为 icon 的名字
 ```
 
-[组件介绍](/zh/component/svg-icon.md)
+[组件介绍](/zh/feature/component/svg-icon.md)
 
 ## 改变颜色
 
