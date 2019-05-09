@@ -15,7 +15,7 @@
         <a href="https://coding.net/?utm_source=panjiachen" target="_blank" style="display: block;">
           <img
             style="width:960px;display: block;"
-            src="https://wpimg.wallstcn.com/a5212eb4-55e8-49a3-a3f6-aded35041251.png"
+            src="https://wpimg.wallstcn.com/078586f3-eb33-44da-b63d-f0256d992a6f.png"
           >
         </a>
       </p>
