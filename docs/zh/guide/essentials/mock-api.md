@@ -142,7 +142,7 @@ import { mockXHR } from '../mock'
 mockXHR()
 ```
 
-这样就会变成纯前端 mock 数据了和`v4.0`版本之前的 mock 方案是一样的，原理见上文。目前你看到的线上[demo](https://panjiachen.github.io/vue-element-admin)就是才用该种方式。
+这样就会变成纯前端 mock 数据了和`v4.0`版本之前的 mock 方案是一样的，原理见上文。目前你看到的线上[demo](https://panjiachen.github.io/vue-element-admin)就是采用该种方式。
 
 ## 本地 Mock 数据与线上数据切换
 
