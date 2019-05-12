@@ -43,7 +43,7 @@ export default {
 |    total    | total item count                                            |  Number   |        /        |
 |    page     | current page number, supports the .sync modifier            |  Number   |        1        |
 |    limit    | item count of each page, supports the .sync modifier        |  Number   |       20        |
-| page-sizes  | options of item count per page                              | Number [] | 10, 20, 30, 50] |  |
+| page-sizes  | options of item count per page                              | Number [] | 10, 20, 30, 50] |
 |   hidden    | whether to hide                                             |  Boolean  |      false      |
 | auto-scroll | whether to automatically scroll to the top after pagination |  Boolean  |      true       |
 

@@ -23,7 +23,7 @@ You can change the parent `color` or directly `fill` color.
 
 ## Size
 
-If you are downloading an icon from [iconfont](https://www.iconfont.cn/), remember to use a tool such as Sketch to specify the size of the icon. Otherwise, the size of the icons in the project may not be uniform. .
+If you are downloading an icon from [iconfont](https://www.iconfont.cn/), remember to use a tool such as Sketch to specify the size of the icon. Otherwise, the size of the icons in the project may not be uniform.
 
 The icons used in this project are all 128\*128 size specifications.
 

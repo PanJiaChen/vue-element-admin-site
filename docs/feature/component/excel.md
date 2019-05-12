@@ -40,7 +40,7 @@ The compatibility code for Bolb has been removed in the later versions of `v3.9.
 | Params    | Description                 | Type    | Accepted Values                                                                     | Default    |
 | --------- | --------------------------- | ------- | ----------------------------------------------------------------------------------- | ---------- |
 | header    | Export header of data       | Array   | /                                                                                   | []         |
-| data      | Exported specific data      | Array   | /                                                                                   | []]        |
+| data      | Exported specific data      | Array   | /                                                                                   | []         |
 | filename  | Export file name            | String  | /                                                                                   | excel-list |
 | autoWidth | Whether the cell auto width | Boolean | true / false                                                                        | true       |
 | bookType  | Export file type            | String  | xlsx, csv, txt, [more](https://github.com/SheetJS/js-xlsx#supported-output-formats) | xlsx       |
@@ -74,30 +74,30 @@ It provides two callback functions:
 
   You can make some special judgments before uploading. For example, if the size of the file is greater than 1 megabyte? If it is greater than 1 megabyte, it stops parsing and prompts an error message.
 
-  ```js
+```js
   beforeUpload(file) {
-      const isLt1M = file.size / 1024 / 1024 < 1
+    const isLt1M = file.size / 1024 / 1024 < 1
 
-      if (isLt1M) {
-        return true
-      }
-
-      this.$message({
-        message: 'Please do not upload files larger than 1m in size.',
-        type: 'warning'
-      })
-      return false
+    if (isLt1M) {
+      return true
     }
-  ```
+
+    this.$message({
+      message: 'Please do not upload files larger than 1m in size.',
+      type: 'warning'
+    })
+    return false
+  }
+```
 
 - onSuccess
   A callback function that fires when parsing succeeds, which returns the header and content of the table.
 
 ```js
- handleSuccess({ results, header }) {
-      this.tableData = results
-      this.tableHeader = header
-    }
+  handleSuccess({ results, header }) {
+    this.tableData = results
+    this.tableHeader = header
+  }
 ```
 
 - [Online Demo](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
