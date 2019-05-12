@@ -3,7 +3,7 @@ home: true
 heroImage: /home.png
 title: a
 actionText: Comienza →
-actionLink: /guide/
+actionLink: /es/guide/
 features:
   - title: Rico en características
     details: Plantillas típicas para aplicaciones empresariales y varios componentes
