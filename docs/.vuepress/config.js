@@ -202,13 +202,13 @@ module.exports = {
       lang: 'en-US',
       description: 'A magical vue admin'
     },
-    '/es/': {
-      lang: 'es-ES',
-      description: 'Un administrador mágico de vue'
-    },
     '/zh/': {
       lang: 'zh-CN',
       description: 'A magical vue admin'
+    },
+    '/es/': {
+      lang: 'es-ES',
+      description: 'Un administrador mágico de vue'
     }
   },
   configureWebpack: {
