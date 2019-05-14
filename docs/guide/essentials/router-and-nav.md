@@ -75,11 +75,11 @@ meta: {
 
 ## Router
 
-There are two types of routes here , `constantRouterMap` and `asyncRouterMap`.
+There are two types of routes here , `constantRoutes` and `asyncRoutes`.
 
-**constantRouterMap:** represents routes that do not require dynamic access, such as login page, 404, general page, and so on.
+**constantRoutes:** represents routes that do not require dynamic access, such as login page, 404, general page, and so on.
 
-**asyncRouterMap:** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission](permission.md).
+**asyncRoutes:** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission](permission.md).
 
 ::: tip
 All routing pages here use the `router lazy loading`, as described in [document](/guide/advanced/lazy-loading.md)
@@ -90,7 +90,7 @@ If you want to know more about browserHistory and hashHistory, please refer to [
 The other configurations are no different from the [vue-router](https://router.vuejs.org/en/) official, so check the documentation for yourself.
 
 ::: warning
-There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRouterMap. Later declared pages will be blocked to 404, see the details of the problem: [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRoutes. Later declared pages will be blocked to 404, see the details of the problem: [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 :::
 
 ## Sidebar
@@ -141,6 +141,19 @@ The sidebar has already helped you to make a judgment. When you route a children
 ::: tip unique-opened
 You can set `unique-opened` in [Sidebar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue). To control the sidebar, whether to keep only one submenu expanded.
 :::
+
+## Nested Routes
+
+If you have a nested Route, such as [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
+Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
+
+Such as: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
+
+**Note:** As many `<router-view>` as the level of routes nested.
+
+![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
+
+<br/>
 
 ## Click the sidebar to refresh the current route
 

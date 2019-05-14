@@ -17,7 +17,7 @@ const map={
 const serviceMap=[
  { path: '/login', component: 'login', hidden: true }
 ]
-// After traversing this map, dynamically generate asyncRouterMap
+// After traversing this map, dynamically generate asyncRoutes
 And replace component with map[component]
 ```
 

@@ -58,6 +58,44 @@ export default {
 }
 ```
 
+## Set multiple baseURLs
+
+We can request multiple api addresses by setting multiple `baseURL`s through [environment variables](/guide/essentials/deploy.html).
+
+```bash
+# .env.development
+VUE_APP_BASE_API = '/dev-api' #Inject the root path of the api
+VUE_APP_BASE_API2 = '/dev-api2' #Inject the root path of the api
+```
+
+Then create an `axios` instance based on the environment variable, giving it a different `baseURL` [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+
+```js
+// create an axios instance
+const service = axios.create({
+  baseURL: process.env.BASE_API, // api base_url
+  timeout: 5000 // request timeout
+})
+
+const service2 = axios.create({
+  baseURL: process.env.BASE_API2, // api base_url
+  timeout: 5000 // request timeout
+})
+```
+
+Or
+
+```js
+export function fetchList(query) {
+  return request({
+    url: '/article/list',
+    method: 'get',
+    params: query,
+    baseURL: 'xxxx' // direct coverage
+  })
+}
+```
+
 ## Switch from mock directly to server request
 
 See [Mock Data](mock-api.md)

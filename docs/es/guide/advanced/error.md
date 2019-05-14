@@ -11,7 +11,7 @@ Page-level error handling is handled uniformly by the `vue-router`. All pages th
 ```
 
 ::: warning
-One thing that needs special attention here is that the `404` page must be loaded last. If you put `404` in the constantRouterMap , then the following page will be blocked to `404`. See the problem for details [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+One thing that needs special attention here is that the `404` page must be loaded last. If you put `404` in the constantRoutes , then the following page will be blocked to `404`. See the problem for details [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 :::
 
 **401**

@@ -61,11 +61,11 @@ meta: {
 
 ## 路由
 
-这里的路由分为两种，`constantRouterMap` 和 `asyncRouterMap`。
+这里的路由分为两种，`constantRoutes` 和 `asyncRoutes`。
 
-**constantRouterMap：** 代表那些不需要动态判断权限的路由，如登录页、404、等通用页面。
+**constantRoutes：** 代表那些不需要动态判断权限的路由，如登录页、404、等通用页面。
 
-**asyncRouterMap：** 代表那些需求动态判断权限并通过 `addRoutes` 动态添加的页面。
+**asyncRoutes：** 代表那些需求动态判断权限并通过 `addRoutes` 动态添加的页面。
 
 具体的会在 [权限验证](permission.md) 页面介绍。
 
@@ -78,7 +78,7 @@ meta: {
 其它的配置和 [vue-router](https://router.vuejs.org/zh-cn/) 官方并没有区别，自行查看文档。
 
 ::: warning 注意事项
-如果这里有一个需要非常注意的地方就是 `404` 页面一定要最后加载，如果放在 constantRouterMap 一同声明了 `404` ，后面的所以页面都会被拦截到`404` ，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+如果这里有一个需要非常注意的地方就是 `404` 页面一定要最后加载，如果放在 constantRoutes 一同声明了 `404` ，后面的所以页面都会被拦截到`404` ，详细的问题见 [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
 :::
 
 <br>
@@ -133,6 +133,16 @@ meta: {
 ::: tip unique-opened
 你可以在[Sidebar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue)中设置`unique-opened`来控制侧边栏，是否只保持一个子菜单的展开。
 :::
+
+## 多级目录(嵌套路由)
+
+如果你的路由是多级目录，如本项目 [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested) 那样， 有三级路由嵌套的情况下，不要忘记还要手动在二级目录的根文件下添加一个 `<router-view>`。
+
+如：[@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue)，原则上有多少级路由嵌套就需要多少个`<router-view>`。
+
+![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
+
+<br/>
 
 ## 点击侧边栏 刷新当前路由
 

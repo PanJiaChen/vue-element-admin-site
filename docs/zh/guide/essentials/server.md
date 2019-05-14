@@ -58,6 +58,44 @@ export default {
 }
 ```
 
+## 设置多个 baseURL
+
+我们可以通过[环境变量](/zh/guide/essentials/deploy.html#环境变量)设置多个`baseURL`，从而请求不同的 api 地址。
+
+```bash
+# .env.development
+VUE_APP_BASE_API = '/dev-api' #注入本地 api 的根路径
+VUE_APP_BASE_API2 = '/dev-api2' #注入本地 api 的根路径
+```
+
+之后根据环境变量创建`axios`实例，让它具有不同的`baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+
+```js
+// create an axios instance
+const service = axios.create({
+  baseURL: process.env.BASE_API, // api 的 base_url
+  timeout: 5000 // request timeout
+})
+
+const service2 = axios.create({
+  baseURL: process.env.BASE_API2, // api 的 base_url
+  timeout: 5000 // request timeout
+})
+```
+
+或者
+
+```js
+export function fetchList(query) {
+  return request({
+    url: '/article/list',
+    method: 'get',
+    params: query,
+    baseURL: 'xxxx' // 直接通过覆盖的方式
+  })
+}
+```
+
 ## 从 mock 直接切换到服务端请求
 
 见[ Mock 和联调](mock-api.md)

@@ -17,7 +17,7 @@ const map={
 const serviceMap=[
  { path: '/login', component: 'login', hidden: true }
 ]
-//之后遍历这个map，动态生成asyncRouterMap
+//之后遍历这个map，动态生成asyncRoutes
 并将 component 替换为 map[component]
 ```
 
