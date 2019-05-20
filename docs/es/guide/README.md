@@ -125,7 +125,6 @@ Este proyecto ha incorporado las siguientes plantillas, y han construido un anda
 ├── mock                       # datos simulados
 ├── plop-templates             # plantilla básica
 ├── public                     # activos estáticos puros (directamente copiados)
-│   │── Tinymce                # editor de texto enriquecido
 │   │── favicon.ico            # favicon
 │   └── index.html             # plantilla index.html
 ├── src                        # código fuente principal
@@ -152,6 +151,7 @@ Este proyecto ha incorporado las siguientes plantillas, y han construido un anda
 ├── .babelrc                   # configuración babel
 ├── .travis.yml                # configuración automatizada de CI
 ├── vue.config.js              # configuración vue-cli
+├── postcss.config.js          # configuración postcss
 └── package.json               # package.json
 ```
 
@@ -204,7 +204,7 @@ Si crees que este proyecto es útil, puedes comprar un vaso de jugo para el auto
 
 Los navegadores modernos e Internet Explorer 10+.
 
-<!-- más-bonito-ignorar -->
+<!-- prettier-ignore -->
 | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img class="no-margin" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
 | --------- | --------- | --------- | --------- |
 | IE10, IE11, Edge| últimas 2 versiones | últimas 2 versiones | últimas 2 versiones

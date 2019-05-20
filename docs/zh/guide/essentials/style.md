@@ -125,17 +125,17 @@ vue-cli 有一个小坑，它默认 autoprefixer 只会对通过 vue-loader 引�
 
 ## Postcss
 
-这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) init 之后根目录下默认有一个`.postcssrc.js` 。vue-loader 的 postcss 会默认读取这个文件的里的配置项，所以在这里直接改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
+这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) init 之后根目录下默认有一个`postcss.config.js` 。vue-loader 的 postcss 会默认读取这个文件的里的配置项，所以在这里直接改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
 
 ```javascript
-//.postcssrc.js
+// postcss.config.js
 module.exports = {
-  "plugins": {
-    // to edit target browsers: use "browserslist" field in package.json
-    "autoprefixer": {}
+  plugins: {
+    autoprefixer: {}
   }
 }
-//package.json
+
+// package.json
 "browserslist": [
     "> 1%",
     "last 2 versions",

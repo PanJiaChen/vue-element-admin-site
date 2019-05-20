@@ -105,17 +105,17 @@ Some pre-processors, such as SASS, may not be able to parse >>> properly. In tho
 
 ## Postcss
 
-Let's talk about the configuration of postcss. After the new version of the [vue-cli webpack template](https://github.com/vuejs-templates/webpack) initialization, there is a default `.postcssrc.js` in the root directory. By default, `vue-loader` will read the configuration of postcss from it, so here directly to change the configuration file on it. The configuration is the same as [postcss](https://github.com/postcss/postcss).
+Let's talk about the configuration of postcss. After the new version of the [vue-cli webpack template](https://github.com/vuejs-templates/webpack) initialization, there is a default `postcss.config.js` in the root directory. By default, `vue-loader` will read the configuration of postcss from it, so here directly to change the configuration file on it. The configuration is the same as [postcss](https://github.com/postcss/postcss).
 
 ```javascript
-//.postcssrc.js
+// postcss.config.js
 module.exports = {
-  "plugins": {
-    // to edit target browsers: use "browserslist" field in package.json
-    "autoprefixer": {}
+  plugins: {
+    autoprefixer: {}
   }
 }
-//package.json
+
+// package.json
 "browserslist": [
     "> 1%",
     "last 2 versions",

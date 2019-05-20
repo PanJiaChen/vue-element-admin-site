@@ -126,7 +126,6 @@ This project has built the following templates, and have built a scaffold based 
 ├── mock                       # mock data
 ├── plop-templates             # basic template
 ├── public                     # pure static assets (directly copied)
-│   │── Tinymce                # rich text editor
 │   │── favicon.ico            # favicon
 │   └── index.html             # index.html template
 ├── src                        # main source code
@@ -153,6 +152,7 @@ This project has built the following templates, and have built a scaffold based 
 ├── .babelrc                   # babel config
 ├── .travis.yml                # automated CI configuration
 ├── vue.config.js              # vue-cli config
+├── postcss.config.js          # postcss config
 └── package.json               # package.json
 ```
 

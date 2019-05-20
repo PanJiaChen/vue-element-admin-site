@@ -122,7 +122,6 @@ pageClass: getting-started
 ├── mock                       # 项目mock 模拟数据
 ├── plop-templates             # 基本模板
 ├── public                     # 静态资源
-│   │── Tinymce                # 富文本
 │   │── favicon.ico            # favicon图标
 │   └── index.html             # html模板
 ├── src                        # 源代码
@@ -149,6 +148,7 @@ pageClass: getting-started
 ├── .babelrc                   # babel-loader 配置
 ├── .travis.yml                # 自动化CI配置
 ├── vue.config.js              # vue-cli 配置
+├── postcss.config.js          # postcss 配置
 └── package.json               # package.json
 ```
 

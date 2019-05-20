@@ -21,6 +21,12 @@ Por defecto, `svg-icon` lee su color primario `fill: currentColor;`
 
 Puedes cambiar el `color` del padre o directamente el color del `fill` (o relleno).
 
+## Import from url <Badge text="v4.2.0+"/>
+
+Support import `svg` from external url. E.g:
+
+`<svg-icon icon-class="https://xxxx.svg />`
+
 ## Tamaño
 
 Si está descargando un ícono de [iconfont](https://www.iconfont.cn/), recuerde usar una herramienta como Sketch para especificar el tamaño del ícono. De lo contrario, el tamaño de los iconos en el proyecto puede no ser uniforme.

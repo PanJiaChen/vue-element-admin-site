@@ -21,6 +21,12 @@
 如果你遇到图标颜色不对，可以参照本[issue](https://github.com/PanJiaChen/vue-element-admin/issues/330)进行修改
 :::
 
+## 使用外链 <Badge text="v4.1.1+"/>
+
+支持使用外链的形式引入 `svg`。例如：
+
+`<svg-icon icon-class="https://xxxx.svg />`
+
 ## 大小
 
 如果你是从 [iconfont](https://www.iconfont.cn/)下载的图标，记得使用如 Sketch 等工具规范一下图标的大小问题，不然可能会造成项目中的图标大小尺寸不统一的问题。
