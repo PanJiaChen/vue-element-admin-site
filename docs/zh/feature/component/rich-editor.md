@@ -36,9 +36,9 @@
 目前采用全局引用的方式。代码地址：`static/tinymce` (static 目录下的文件不会被打包), 在 `index.html` 中引入。并确保它的引入顺序在你的`app.js`之前！
 :::
 
-<Badge text="v4.1.0+"/> 之后改用了 CDN 引入的方式。
+<Badge text="v4.2.0+"/> 之后改用了异步加载 CDN 的引入方式。
 
-如果想修改 cdn 地址或者 tinymce 的版本只需在 [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) 中找到 tinymce 的 cdn 地址进行修改就可以了。它会通过`html-webpack-plugin`自动注入的 `index.html` 中。
+如果想修改 cdn 地址或者 tinymce 的版本只需在 [@/components/Tinymce](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce/index.vue) 中找到 tinymce 的 cdn 地址进行修改就可以了。它会通过`dynamicLoadScript`自动注入的 `index.html` 中。
 
 > 由于目前使用 npm 安装 `Tinymce` 方法比较复杂而且还有一些问题(日后可能会采用该模式)且会大大增加编译的时间所以暂时不准备采用。:space_invader:
 

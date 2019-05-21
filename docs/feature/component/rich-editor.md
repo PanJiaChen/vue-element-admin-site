@@ -34,9 +34,9 @@ Here to briefly talk about the use of Tinymce in you own projects.
 The current method of using the global reference. Code in: `static/tinymce` (The files in the static directory will not be build by webpack), import in index.html .And make sure it's in the order before your `app.js`!
 :::
 
-After <Badge text="v4.1.0+"/> import tinymce by `CDN` .
+After <Badge text="v4.2.0+"/> will dynamic import tinymce by `CDN` .
 
-If you want to change the cdn address or the version of tinymce, just find tinymce cdn in [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js) then modified it. It will be automatically injected into `index.html` via `html-webpack-plugin`.
+If you want to change the cdn address or the version of tinymce, just find tinymce cdn in [@/components/Tinymce](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce/index.vue) then modified it. It will be automatically injected into `index.html` via `dynamicLoadScript`.
 
 > The current use of the npm installation 'Tinymce' method is more complex and has some problems (which may be used in the future). :space_invader:
 

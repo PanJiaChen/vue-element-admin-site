@@ -33,7 +33,9 @@ Por supuesto, también puede elegir algún editor de texto enriquecido pagado, l
 
 Aquí para hablar brevemente sobre el uso de Tinymce en sus propios proyectos.
 
-El método actual de uso de la referencia global. Codifique en: `static/tinymce` (los archivos en el directorio estático no se compilarán con el paquete web), importe en index.html. ¡Y asegúrese de que esté en el orden antes de su `app.js`!
+After <Badge text="v4.2.0+"/> will dynamic import tinymce by `CDN` .
+
+If you want to change the cdn address or the version of tinymce, just find tinymce cdn in [@/components/Tinymce](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Tinymce/index.vue) then modified it. It will be automatically injected into `index.html` via `dynamicLoadScript`.
 
 > El uso actual del método 'Tinymce' de la instalación de npm es más complejo y tiene algunos problemas (que pueden usarse en el futuro). :space_invader:
 
