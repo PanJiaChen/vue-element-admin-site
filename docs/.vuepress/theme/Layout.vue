@@ -54,7 +54,7 @@ import Page from '@default-theme/Page.vue'
 import Sidebar from '@default-theme/Sidebar.vue'
 import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
-import { getCodefund } from './utils'
+import { getCodefund, loadGitter } from './utils'
 
 export default {
   components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
@@ -136,6 +136,7 @@ export default {
     }
   },
   mounted() {
+    loadGitter()
     window.addEventListener('scroll', this.onScroll)
     // configure progress bar
     nprogress.configure({ showSpinner: false })
@@ -190,6 +191,9 @@ export default {
 <style src="@default-theme/styles/theme.styl" lang="stylus"></style>
 
 <style>
+.cf-wrapper {
+  z-index: 101;
+}
 .cf-wrapper a {
   display: block;
 }
