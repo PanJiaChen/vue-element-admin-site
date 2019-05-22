@@ -192,7 +192,7 @@ export default {
 
 <style>
 .cf-wrapper {
-  z-index: 101;
+  z-index: 101 !important;
 }
 .cf-wrapper a {
   display: block;
