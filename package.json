@@ -10,7 +10,7 @@
     "lint": "prettier --write 'docs/**/*.md'"
   },
   "lint-staged": {
-    "*.{js,json,css,md.vue}": [
+    "*.{js,json,css,md,vue}": [
       "prettier --write",
       "git add"
     ]
