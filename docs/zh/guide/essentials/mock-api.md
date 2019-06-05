@@ -35,7 +35,7 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 
 ## 移除
 
-如果你不想使用`mock-server`的话只要在[vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js)中移除`webpack-dev-server`中`after`这个`Middleware`就可以了。
+如果你不想使用`mock-server`的话只要在[vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js)中移除`webpack-dev-server`中`proxy`和`after`这个`Middleware`就可以了。
 
 现在默认情况下本地的请求会代理到`http://localhost:${port}/mock`下，如果你想调整为自己的 mock 地址可以修改 `proxy`
 
@@ -54,7 +54,18 @@ proxy: {
 after: require('./mock/mock-server.js')
 ```
 
+:::tip
 **请注意：该操作需要重启服务**
+:::
+
+`mock-server`只会在开发环境中使用，线上生产环境目前使用`MockJs`进行模拟。如果不需要请移除。具体代码：[main.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/main.js)
+
+```js
+import { mockXHR } from '../mock'
+if (process.env.NODE_ENV === 'production') {
+  mockXHR()
+}
+```
 
 ## 新增
 
