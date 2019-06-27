@@ -10,15 +10,6 @@
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
       </p>
-
-      <p v-if="isCN" @click="clickCoding('home')">
-        <a href="https://coding.net/?utm_source=panjiachen" target="_blank" style="display: block;">
-          <img
-            style="width:960px;display: block;"
-            src="https://wpimg.wallstcn.com/078586f3-eb33-44da-b63d-f0256d992a6f.png"
-          >
-        </a>
-      </p>
     </div>
 
     <div class="features" :class="{isCN:isCN}" v-if="data.features && data.features.length">

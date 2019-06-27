@@ -12,20 +12,7 @@
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
-        <div v-if="!isHome&&!isCN" id="codefund" :key="$route.path"></div>
-
-        <a
-          href="https://coding.net/?utm_source=panjiachen"
-          target="_blank"
-          v-if="isCN"
-          @click="clickCoding('sidebar')"
-          style="display: block;"
-        >
-          <img
-            style="width:280px;display: block;margin: 10px auto!important;"
-            src="https://wpimg.wallstcn.com/d8332dc1-ec6c-47bc-9d5d-8cabb1afe417.png"
-          >
-        </a>
+        <div v-if="!isHome" id="codefund" :key="$route.path">apple</div>
       </div>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
@@ -69,8 +56,9 @@ export default {
     $route: {
       handler: function(val, oldVal) {
         if (this.$isServer) return
-        if (this.isCN && !this.isHome) return
+
         const { path } = val
+
         if (this.isHome) {
           getCodefund('bottom-bar')
         } else {
@@ -187,7 +175,8 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
+<style src="prismjs/themes/prism-tomorrow.css">
+</style>
 <style src="@default-theme/styles/theme.styl" lang="stylus"></style>
 
 <style>
