@@ -60,7 +60,8 @@ This uses vue-router [routing nesting](https://router.vuejs.org/guide/essentials
 
 Here is a layer of `keep-alive` outside the `app-main` is mainly to cache `<router-view>`, with the `tabs-view` tab navigation of the page, if you do not need to [remove](tags-view.md) it.
 
-The `transition` defines the switching animation between pages, you can modify the transition animation according to your own needs. Related [documentation](https://vuejs.org/v2/guide/transitions.html)
+The `transition` defines the switching animation between pages, you can modify the transition animation according to your own needs. Related [documentation](https://vuejs.org/v2/guide/transitions.html).
+Two transition animations of `fade` and `fade-transform` are provided by default. For specific css implementation, see [transition.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src /styles/transition.scss). If you need to adjust, you can adjust the `name` of `transition` in [AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue).
 
 <br>
 

@@ -64,7 +64,7 @@
 
 这里在 `app-main` 外部包了一层 `keep-alive` 主要是为了缓存 `<router-view>` 的，配合页面的 `tabs-view` 标签导航使用，如不需要可自行[去除](tags-view.md)。
 
-其中`transition` 定义了页面之间切换动画，可以根据自己的需求，自行修改转场动画。相关[文档](https://cn.vuejs.org/v2/guide/transitions.html)
+其中`transition` 定义了页面之间切换动画，可以根据自己的需求，自行修改转场动画。相关[文档](https://cn.vuejs.org/v2/guide/transitions.html)。默认提供了`fade`和`fade-transform`两个转场动画，具体 css 实现见[transition.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/transition.scss)。如果需要调整可在[AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue)中调整`transition` 的 `name`。
 
 <br>
 
