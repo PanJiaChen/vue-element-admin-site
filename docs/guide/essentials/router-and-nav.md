@@ -13,8 +13,8 @@ First let us know what configuration items are provided config route.
 // e.g. login or 401 page or as some editing pages /edit/1 (Default: false)
 hidden: true
 
-// this route cannot be clicked in breadcrumb navigation when noredirect is set
-redirect: noredirect
+// this route cannot be clicked in breadcrumb navigation when noRedirect is set
+redirect: noRedirect
 
 // when you route a children below the declaration of more than one route,
 // it will automatically become a nested mode - such as the component page
