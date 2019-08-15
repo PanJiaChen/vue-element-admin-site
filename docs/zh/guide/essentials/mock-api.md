@@ -11,7 +11,7 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 ## Easy-Mock
 
 [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) 之前使用的是 [easy-mock](https://easy-mock.com/login) 来模拟数据。
-它是一个纯前端可视化，并且能快速生成模拟数据的持久化服务。非常的简单易用还能结合 `swagger`，天热支持跨域 ，不管团队还是个人项目都值得一试。
+它是一个纯前端可视化，并且能快速生成模拟数据的持久化服务。非常的简单易用还能结合 `swagger`，天然支持跨域 ，不管团队还是个人项目都值得一试。
 
 ::: warning
 现在线上版本的`vue-admin-template` 已经不使用`easy-mock`。因为`easy-mock`提供的线上免费服务很不稳定，时不时的就会挂掉，如果有需要的可以自己按照它的教程，搭建自己的服务。
