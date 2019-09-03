@@ -5,14 +5,14 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <div v-if="isHome" class="home-codefund" id="codefund"></div>
+    <div v-if="isHome||isDonate" class="home-codefund" id="codefund"></div>
 
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
-        <div v-if="!isHome" id="codefund" :key="$route.path">apple</div>
+        <div v-if="!isHome" id="codefund" :key="$route.path"></div>
       </div>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
@@ -59,7 +59,7 @@ export default {
 
         const { path } = val
 
-        if (this.isHome) {
+        if (this.isHome || this.isDonate) {
           getCodefund('bottom-bar')
         } else {
           getCodefund()
@@ -76,6 +76,11 @@ export default {
         return true
       }
       return false
+    },
+    isDonate() {
+      const page = this.$page
+      const { path } = page
+      return path.includes('donate')
     },
     isCN() {
       return this.$lang === 'zh-CN'
