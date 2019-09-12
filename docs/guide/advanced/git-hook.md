@@ -18,7 +18,7 @@ Common process: write the code locally, submit, start running lint, find that it
 
 ## husky
 
-The most effective solution is to put the `Lint` checksum locally. The common practice is to use [husky](https://github.com/typicode/husky) or [pre-commit](https://github.com /observing/pre-commit) Do a `Lint` check before committing locally.
+The most effective solution is to put the `Lint` checksum locally. The common practice is to use [husky](https://github.com/typicode/husky) or [pre-commit](https://github.com/observing/pre-commit) Do a `Lint` check before committing locally.
 
 > Of course, if you use `vue-cli@3` when creating your project, you can also use its built-in [yorkie](https://github.com/yyx990803/yorkie), which is based on `husky`, but Changed the interface. But here we still use `husky` as an example.
 
