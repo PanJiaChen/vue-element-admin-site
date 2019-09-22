@@ -23,6 +23,7 @@ pageClass: getting-started
 - 基础模板: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 - 桌面终端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 - Typescript 版: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (鸣谢: [@Armour](https://github.com/Armour))
+- Others: [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
   :::
 
 <br/>

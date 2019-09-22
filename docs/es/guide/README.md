@@ -24,6 +24,7 @@ De lo contrario, puede utilizar [vue-admin-template](https://github.com/PanJiaCh
 - Plantilla Básica: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 - Typescript: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
+- Others: [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
   :::
 
 <br/>

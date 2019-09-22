@@ -21,6 +21,10 @@ var EcosystemNav = [
         link: 'https://github.com/Armour/vue-typescript-admin-template'
       },
       {
+        text: 'awesome-project',
+        link: 'https://github.com/PanJiaChen/vue-element-admin/issues/2312'
+      },
+      {
         text: 'vue-countTo',
         link: 'https://github.com/PanJiaChen/vue-countTo'
       },
