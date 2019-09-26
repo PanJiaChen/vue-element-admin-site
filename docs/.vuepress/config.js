@@ -162,6 +162,10 @@ module.exports = {
           {
             text: '中文站点(gitee)',
             link: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/'
+          },
+          {
+            text: '招聘',
+            link: '/zh/job/'
           }
         ],
         sidebar: {
