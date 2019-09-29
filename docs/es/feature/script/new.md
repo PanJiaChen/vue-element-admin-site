@@ -1,6 +1,6 @@
 # Nuevo <Badge text="v4.0.0+"/>
 
-En el trabajo diario, lo más común es escribir módulos y componentes empresariales. Cuando abres un nuevo `vista` o `componente` cada vez que necesites crear manualmente un nuevo `.vue`, crea un `<template>`, `<script>`, `<style>`, o algún problema. 
+En el trabajo diario, lo más común es escribir módulos y componentes empresariales. Cuando abres un nuevo `vista` o `componente` cada vez que necesites crear manualmente un nuevo `.vue`, crea un `<template>`, `<script>`, `<style>`, o algún problema.
 
 Así que en la nueva versión, basada en [plop](https://github.com/amwmedia/plop), se proporcionan varias plantillas básicas para facilitar la creación de la nueva `vista` o `componente`.
 

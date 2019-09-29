@@ -2,7 +2,7 @@
 
 In daily work, the most common is to write modules and business components. When you open a new `view` or `component` every time you need to manually create a new `.vue`, create a `<template>`, `<script>`, `<style>`, or some problem.
 
-So in the new version, based on [plop](https://github.com/amwmedia/plop), several basic templates are provided to facilitate the creation of the new `view` or` component`.
+So in the new version, based on [plop](https://github.com/amwmedia/plop), several basic templates are provided to facilitate the creation of the new `view` or`component`.
 
 Execute the following command:
 
