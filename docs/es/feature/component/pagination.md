@@ -1,6 +1,6 @@
 # Paginación <Badge text="v3.9.2+"/>
 
-El componente de paginación se basa principalmente en el elemento 'el-pagination' para el empaquetado secundario, y expandió la función de desplazamiento automático.
+El componente de paginación se basa principalmente en el elemento 'el-pagination' para el empaquetado secundario, y expandió la función de desplazamiento automático (auto-scroll).
 
 ## Uso básico
 
@@ -39,7 +39,7 @@ El componente de paginación se basa principalmente en el elemento 'el-paginatio
 ## Atributos
 
 |  Atributo   | Descripción                                                                 |   Tipo    | Predeterminado  |
-| :---------: | :----------------------------------------------------------                 | :-------: | :-------------: |
+| :---------: | :-------------------------------------------------------------------------- | :-------: | :-------------: |
 |    total    | recuento total de artículos                                                 |  Number   |        /        |
 |    page     | número de página actual, soporta el modificador .sync                       |  Number   |        1        |
 |    limit    | Recuento de elementos de cada página, admite el modificador .sync           |  Number   |       20        |
@@ -47,13 +47,13 @@ El componente de paginación se basa principalmente en el elemento 'el-paginatio
 |   hidden    | si ocultar                                                                  |  Boolean  |      false      |
 | auto-scroll | Si se desplaza automáticamente a la parte superior después de la paginación |  Boolean  |      true       |
 
-También se admiten otros atributos del soporte de `el-pagination` del elemento. Consulte la [Documentación](http://element.eleme.io/#/zh-CN/component/pagination) para obtener más detalles..
+También se admite soporte de otros atributos del elemento `el-pagination`. Consulte la [Documentación](http://element.eleme.io/#/zh-CN/component/pagination) para obtener más detalles.
 
 ## Eventos
 
-| Nombre del evento | Descripción                                       | Parámetros            |
-| ----------        | ----------------------------------------          | ------------          |
-| paginación        | Se dispara cuando cambia el límite o la página    | {paginación, límite}  |
+| Nombre del evento | Descripción                                    | Parámetros       |
+| ----------------- | ---------------------------------------------- | ---------------- |
+| pagination        | Se dispara cuando cambia el límite o la página | {pagina, límite} |
 
 ## Código fuente y Demo
 

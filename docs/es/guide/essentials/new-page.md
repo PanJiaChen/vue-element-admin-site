@@ -1,10 +1,10 @@
-# New Page
+# Nueva Página
 
-If you are familiar with the `vue-router` then it will be very simple.
+Si estás familiarizado con `vue-router`, entonces será muy simple.
 
-First add the route to the `@/router/index.js`.
+Primero agrega la ruta a `@/router/index.js`.
 
-**Such as: add an excel page**
+**Por ejemplo: agregar una página de Excel**
 
 ```js
 {
@@ -20,7 +20,7 @@ First add the route to the `@/router/index.js`.
 ```
 
 ::: tip
-It just creates a blank route based on 'layout', and you also need to add a route to the 'children' below it.
+Simplemente crea una ruta en blanco basada en 'layout', y agrega una ruta debajo de 'children'.
 :::
 
 ```js
@@ -44,16 +44,16 @@ It just creates a blank route based on 'layout', and you also need to add a rout
 }
 ```
 
-**This sidebar will appear the menu-item**
+**En esta barra lateral aparecerá el menu-item**
 
 ![](https://wpimg.wallstcn.com/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
 
 <br/>
 
 :::tip
-Since `children` only declares one route below, there will be no expansion arrow. If the number of routes under `children` is greater than 1, there will be an expansion arrow, as shown below.
+Cuando en `children` se declare solo una ruta, no habrá flecha de expansión. Si el número de rutas en `children` es mayor que 1, habrá una flecha de expansión, como se muestra a continuación.
 
-If you want to ignore this automatic decision, you can use `alwaysShow: true`, so that it will ignore the previously defined rule and display the root route. See the [Router and Nav](router-and-nav.md) for details.
+Si deseas ignorar esta decisión automática, puedes usar `alwaysShow: true`, para que ignore la regla previamente definida y muestre la ruta raíz. Consulta [Enrutador y Navegación](router-and-nav.md) para más detalles..
 
 :::
 
@@ -77,55 +77,54 @@ If you want to ignore this automatic decision, you can use `alwaysShow: true`, s
 
 ![](https://wpimg.wallstcn.com/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
 
-**The sidebar will appear the `submenu`.**
+**En la barra lateral aparecerá el `submenu`.**
 
 <br/>
 
-## Nested Routes
+## Rutas anidadas
 
-If you have a nested Route, such as [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
-Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
+Si tienes una Ruta anidada, como [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
+no olvides agregar manualmente `< router-view >` al archivo raíz del directorio secundario.
 
-Such as: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
+Por ejemplo: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
 
-**Note:** As many `<router-view>` as the level of routes nested.
+**NOTA:** Agrega tantos `<ruter-view>` como nivel de rutas anidadas.
 
 ![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
-## Create View
+## Crear vista
 
-After adding the route, create a view under the `@/views`. As usual, a router correspond
-a view.
+Después de agregar la ruta, crea una vista debajo de `@/views`. Como de costumbre, un enrutador corresponde a una vista.
 
-Suggestion if a component or utils function only used in this view, just create a component folder under this view, lt is more convenient for each module to maintain its own `utils` or `components`.
+Sugerencia: si un componente o una función de utilidades solo se usa en esta vista, simplemente crea una carpeta de componentes en esta vista, es más conveniente para cada módulo mantener sus propios `utils` o `components`.
 
 ![](https://wpimg.wallstcn.com/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
 
 <br/>
 
-## Create Api
+## Crear API
 
-Finally, under the [@/api](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/api) folder, create the corresponding api service for this module.
+Finalmente, bajo la carpeta [@/api](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/api) crea el servicio api correspondiente para este módulo.
 
-## Create Component
+## Crear componente
 
-Personally write vue project habits, the global `@/components` will only write some global components, such as rich text, various search components, packaged date components, etc. can be shared components. Each page or module-specific business component is written under the current views. Such as: `@/views/article/components/xxx.vue`. This split greatly reduces maintenance costs.
+Escribe personalmente hábitos de proyecto vue, el `@/components` global solo escribirá algunos componentes globales, como texto enriquecido, varios componentes de búsqueda, componentes de fecha empaquetada, etc., pueden ser componentes compartidos. Cada página o componente comercial específico del módulo se escribe bajo las vistas actuales. Por ejemplo: `@/views/article/components/xxx.vue`. Esta división reduce en gran medida los costos de mantenimiento.
 
-**Remember that the biggest benefit of splitting components is not shared code but maintainability! **
+** ¡Recuerda que el mayor beneficio de dividir componentes no es el código compartido sino la mantenibilidad! **
 
-## Create Style
+## Crear estilo
 
-The page's style and components are the same. The global `@/style` writes a global common style. The style of each page is written under the current `views`. Please remember to add `scoped` or namespace to avoid Causes global style pollution.
+El estilo y los componentes de la página son los mismos. `@/style` global escribe un estilo común global. El estilo de cada página está escrito bajo el `views` actual. Recuerda agregar `scoped` o espacio de nombres para evitar Causas de contaminación de estilo global.
 
 ```css
 <style>
-/* global styles */
+/* estilos globales */
 </style>
 
 <style scoped>
-/* local styles */
+/* estilos locales */
 .xxx-container{
   /* name scoped */
   xxx

@@ -1,34 +1,34 @@
-# Layout
+# Diseño
 
-The overall layout of the page is the outermost frame structure of a product and often includes navigation, sidebars, breadcrumbs, and content. To understand a admin project, first understand its basic layout.
+El diseño general de la página es la estructura de un producto y a menudo incluye navegación, barras laterales, breadcrumbs y contenido. Para comprender un proyecto de administración, primero comprende su diseño básico.
 
 ![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
-::: tip Code
+::: tip Código
 [@/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout)
 :::
 
-`@` is webpack's [alias](https://webpack.js.org/configuration/resolve/#resolve-alias). If don't understand please study it yourself.
+`@` es el [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) de webpack. Si no lo entiendes por favor estudíalo por tu cuenta.
 
 <br>
 
-Most of the pages in `vue-element-admin` are based on this `layout`, except that individual pages such as: `login` , `404`, `401` , etc., do not use this layout. It is also easy if you want to have multiple layouts in a project, as long as you choose different layout component in the first-level routing.
+La mayoría de las páginas en `vue-element-admin` se basan en este `layout`, excepto las páginas individuales como: `login`, `404`, `401`, etc., las cuales no utilizan este diseño. También es fácil si se quiere tener varios diseños en un proyecto, simplemente hay que elegir un componente de diseño diferente en el enrutamiento de primer nivel.
 
 ```js
-// No layout
+// Sin diseño
 {
   path: '/401',
   component: () => import('errorPage/401')
 }
 
-// Has layout
+// Con diseño
 {
   path: '/documentation',
 
-  // You can choose different layout components
+  // Puedes elegir diferentes componentes de diseño
   component: Layout,
 
-  // Here the route is displayed in app-main
+  // Aquí la ruta se muestra en app-main
   children: [{
     path: 'index',
     component: () => import('documentation/index'),
@@ -37,7 +37,7 @@ Most of the pages in `vue-element-admin` are based on this `layout`, except that
 }
 ```
 
-This uses vue-router [routing nesting](https://router.vuejs.org/guide/essentials/nested-routes.html), so in general, adding or modifying a page will only affect the main body of app-main. Other content in the layout, such as: the sidebar or navigation bar will not change with your main page.
+Esto utiliza vue-router [anidación de enrutamiento](https://router.vuejs.org/guide/essentials/nested-routes.html), por lo que, en general, agregar o modificar una página solo afectará el cuerpo principal de app-main. Otro contenido en el diseño, como: la barra lateral o la barra de navegación no cambiará con tu página principal.
 
 ```
 /foo                                  /bar
@@ -54,46 +54,47 @@ This uses vue-router [routing nesting](https://router.vuejs.org/guide/essentials
 
 ## app-main
 
-::: tip Code
+::: tip Código
 [@/layout/components/AppMain](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue)
 :::
 
-Here is a layer of `keep-alive` outside the `app-main` is mainly to cache `<router-view>`, with the `tabs-view` tab navigation of the page, if you do not need to [remove](tags-view.md) it.
+Aquí hay una capa de `keep-alive`, afuera `app-main` es principalmente para almacenar en caché `<router-view>`, con la navegación de la pestaña `tabs-view` de la página, si no lo necesitas [eliminalo](tags-view.md).
 
-The `transition` defines the switching animation between pages, you can modify the transition animation according to your own needs. Related [documentation](https://vuejs.org/v2/guide/transitions.html).
-Two transition animations of `fade` and `fade-transform` are provided by default. For specific css implementation, see [transition.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src /styles/transition.scss). If you need to adjust, you can adjust the `name` of `transition` in [AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue).
+`transition` define la animación de cambio entre páginas, puedes modificar la animación de transición según tus propias necesidades. [Documentación](https://vuejs.org/v2/guide/transitions.html) relacionada.
+
+Se proporcionan dos animaciones de transición de forma predeterminada `fade` y `fade-transform`. Para la implementación específica de CSS, consulta [transition.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/transition.scss). Si necesitas cambiarla, puedes modificar `name` de `transition` en [AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue).
 
 <br>
 
 ## router-view
 
-**Different router the same component vue** In a real work, there are many situations. such as:
+**Diferente enrutador, el mismo componente vue** En un trabajo real, hay muchas situaciones como:
 
 ![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
-The same component is used to create pages and edit pages. By default, when these two pages are switched, it will not trigger the created or mounted hooks of vue. [Officials say](https://router.vuejs.org/guide/advanced/data-fetching.html#data-fetching) that you can do this through the change of watch `$route`. To tell the truth it's still very troublesome. Later I discovered that I could simply add a unique key to the router-view to ensure that the routing hooks are re-rendered when the route is switched. This is much simpler.
+El mismo componente se utiliza para crear y editar páginas. Por defecto, cuando se cambien estas dos páginas, no se activarán los hooks creados o montados de vue. [Oficialmente dice](https://router.vuejs.org/guide/advanced/data-fetching.html#data-fetching) que puedes hacer esto a través del cambio de reloj `$route`. A decir verdad, sigue siendo muy problemático. Más tarde descubrí que simplemente podía agregar una clave única a router-view para asegurar que los hooks de enrutamiento se vuelvan a representar cuando se cambia la ruta. Es mucho más simple.
 
 ```js
 <router-view :key="key"></router-view>
 
 computed: {
   key() {
-    // just make sure the key is the unique
+    // solo asegúrate de que la clave (key) sea única
     return this.$route.fullPath
   }
  }
 ```
 
 ::: tip
-**Or** You can declare two different views like the `editForm` and `createForm` in this project but introduce the same component.
+**O** Puedes declarar dos vistas diferentes, como `editForm` y `createForm` en este proyecto, pero introducirlo en el mismo componente.
 
-Code: [@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/example)
+Código: [@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/example)
 :::
 
 ```html
 <!-- create.vue -->
 <template>
-  <article-detail :is-edit='false'></article-detail> //create
+  <article-detail :is-edit='false'></article-detail> //crear
 </template>
 <script>
   import ArticleDetail from './components/ArticleDetail'
@@ -101,15 +102,15 @@ Code: [@/views/example](https://github.com/PanJiaChen/vue-element-admin/tree/mas
 
 <!-- edit.vue -->
 <template>
-   <article-detail :is-edit='true'></article-detail> //edit
+   <article-detail :is-edit='true'></article-detail> //editar
 </template>
 <script>
   import ArticleDetail from './components/ArticleDetail'
 </script>
 ```
 
-## Mobile
+## Móvil
 
-The `element-ui` official position is the desktop-side framework, and most of admin project is complex, it is impossible to meet the desktop-side and mobile-side interactions through simple adaptation. Therefore, the interaction between the two ends must be different. it is recommended to re-do a system for mobile.
+La posición oficial de `element-ui` es de framework del lado del escritorio, y la mayoría de los proyectos de administración son complejos, es imposible cumplir con las interacciones del lado del escritorio y del lado del móvil a través de una simple adaptación. Por lo tanto, la interacción entre los dos extremos debe ser diferente. Se recomienda volver a hacer un sistema para dispositivos móviles.
 
-So, this project will not adapt to the mobile. It just does a simple response and you can modify it yourself.
+En pocas palabras, este proyecto no se adaptará a móvil. Es una respuesta simple y puedes modificarlo tu mismo.

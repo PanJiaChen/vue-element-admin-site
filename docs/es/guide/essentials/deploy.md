@@ -1,81 +1,81 @@
-# Build & Deploy
+# Compilar y Desplegar
 
-## Build
+## Compilar
 
-When projects are completed, you can build your application only run one command:
+Cuando se completan los proyectos, puedes compilar tu aplicación con solo ejecutar un comando:
 
 ```bash
-# build for production environment
+# compilar para el entorno de producción
 npm run build:prod
 
-# build for stage environment
+# compilar para el entorno de pruebas
 npm run build:stage
 ```
 
-After the build package is successful, the `dist` folder will be generated in the root directory, which is to build a packaged file, usually static files such as `***.js`, `***.css`, `index.html`, etc. .
+Después de que el paquete de compilación sea exitoso, la carpeta `dist` se generará en el directorio raíz, que es la construcción de un archivo empaquetado, generalmente archivos estáticos como `***. js`, `***. css`, `index.html`, etc.
 
-If you need a custom build, such as specifying the dist directory, you need to configure it through `outputDir` in [config](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
+Si necesitas una compilación personalizada, como especificar el directorio dist, debes configurarlo a través de `outputDir` en [config](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
 
-### Environmental variables
+### Variables de entorno
 
-The configuration of all test environments or formal environment variables is in the `.env.xxxx` file such as [.env.development](https://github.com/PanJiaChen/vue-element-admin/blob/master/.env.development).
+La configuración de todos los entornos de prueba o variables de entorno formales se encuentra en el archivo `.env.xxxx` como [.env.development](https://github.com/PanJiaChen/vue-element-admin/blob/master/.env.development).
 
-They all inject into the global context via the `webpack.DefinePlugin` plug-ins.
+Todos se inyectan en el contexto global a través de los complementos `webpack.DefinePlugin`.
 
-::: tip note! ! !
-Environment variables must start with `VUE_APP_`. Such as: `VUE_APP_API`, `VUE_APP_TITLE`
+::: tip ¡NOTA!
+Las variables de entorno deben comenzar con `VUE_APP_`. Tales como: `VUE_APP_API`, `VUE_APP_TITLE`
 
-You can access them in your application code:
+Puedes acceder a ellas en el código de tu aplicación:
 
 ```js
 console.log(process.env.VUE_APP_xxxx)
 ```
 
-### Analyze the build file size
+### Analizar el tamaño del archivo de compilación
 
-If your build file is large, you can optimize your code by building and analyzing the size distribution of dependent modules using the `webpack-bundle-analyzer`.
+Si tu archivo de compilación es grande, puedes optimizar tu código compilando y analizando la distribución del tamaño de los módulos dependientes utilizando `webpack-bundle-analyzer`.
 
 ```bash
 npm run preview -- --report
 ```
 
-After running you can see the specific size distribution at [http://localhost:9526/report.html](http://localhost:9526/report.html)
+Después de ejecutar, puedes ver la distribución de tamaño específico en [http://localhost:9526/report.html](http://localhost:9526/report.html)
 
 ![](https://wpimg.wallstcn.com/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
 
 ::: tip
-It is recommended to use gzip, after using the volume will be only the original 1/3 or so. You can also use lazy loading or Code Splitting.
+Se recomienda utilizar gzip, después de usarlo, el volumen será solo el 1/3 del original más o menos. También puedes usar Lazy Loading o Code Splitting.
 :::
 
-## Publish
+## Publicar
 
-For publishing, you only have to publish the resulting static file after build, which is usually the static file in the `dist` folder, to your cdn or static server. Note that the `index.html` usually will be an entry page for your backend service. You may need to change the page's import path after determining static for JS and css.
+Para la publicación, solo tienes que publicar el archivo estático resultante después de la compilación, que generalmente es el archivo estático en la carpeta `dist`, en tu cdn o servidor estático. Ten en cuenta que `index.html` generalmente será una página de entrada para tu servicio de back-end. Es posible que debas cambiar la ruta de importación de la página después de determinar la estática para JS y CSS.
 
 ::: tip
-In deployment may find that the resource path is wrong, just modify the `@/config/index.js` file resource path.
+En el despliegue puedes encontrar que la ruta del recurso es incorrecta, simplemente modifica la ruta del archivo de recurso `@/config/index.js`.
 :::
 
 ```js
-// changes configure depending on your own path
+// los cambios se configuran según tu propia ruta
 publicPath: './'
 ```
 
-### Router & Server
+### Enrutador y servidor
 
-In vue-element-admin, the front-end routing uses `vue-router`, so you have two options:`browserHistory` and `hashHistory`.
+En vue-element-admin, el enrutamiento front-end usa `vue-router`, por lo que tienes dos opciones: `browserHistory` y `hashHistory`.
 
-Simply speaking, the difference between them is the deal with routing. `hashHistory` is processed by the path following `#`, front-end routing management through [HTML 5 History](https://developer.mozilla.org/en-US/docs/Web/API/History_API), and `browserHistory` is similar to our usual page access path, and with not `#`, but must through the server's configuration.
+Simplemente hablando, la diferencia entre ellos es el trato con el enrutamiento. `hashHistory` es procesado por la ruta que sigue de `#`, la gestión de enrutamiento de front-end a través de [HTML 5 History](https://developer.mozilla.org/en-US/docs/Web/API/History_API), y `browserHistory` es similar a nuestra ruta de acceso de página habitual, y no con `#`, pero debe a través de la configuración del servidor.
 
-This project uses `hashHistory` by default, so if you have`#`in your url and you want to get rid of it, you need to switch to`browserHistory`.
+Este proyecto utiliza `hashHistory` de forma predeterminada, por lo que, si tienes `#` en tu URL y deseas deshacerte de él, debes cambiar a `browserHistory`.
 
-Modify `src/router/index.js` mode。
+Modificar el modo en `src/router/index.js`
 
 ```js
 export default new Router({
-  // mode: 'history' // Need backend support
+  // mode: 'history' // Necesita soporte de backend
 })
 ```
 
 ::: tip
-Detail see [vue-router document](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+Ver detalles [vue-router document](https://router.vuejs.org/guide/essentials/history-mode.html)
 :::

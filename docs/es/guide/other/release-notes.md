@@ -1,6 +1,6 @@
-# Notas de lanzamiento
+# Notas de la versión
 
-[Notas de lanzamiento](https://github.com/PanJiaChen/vue-element-admin/releases)
+[Notas de la versión](https://github.com/PanJiaChen/vue-element-admin/releases)
 
 <script>
 export default {

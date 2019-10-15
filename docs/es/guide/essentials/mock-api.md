@@ -1,52 +1,52 @@
-# Mock Data
+# Datos simulados
 
-Mock data is an integral part of the front-end development, the key link to separate the front and back-end development. By pre-agreed with the server-side interface, analog request data and even logic, can make the front-end development independent, will not be blocked by the development of the server.
+Los datos simulados son una parte integral del desarrollo front-end, el enlace clave para separar el desarrollo front-end y el back-end. Como acordamos anteriormente, la interfaz del lado del servidor, los datos de solicitud analógica e incluso la lógica pueden hacer que el desarrollo front-end sea independiente, no será bloqueado por el desarrollo del servidor.
 
 ## Swagger
 
-In my company project, the data is usually simulated by the backend using [swagger](https://swagger.io/).
+En el proyecto de mi empresa, el backend simula los datos mediante [swagger](https://swagger.io/).
 
-**swagger** is a REST APIs document generation tool that automatically generates documentation from code comments. It can be cross-platform, open source, supports most languages, community is good, in short, very good, highly recommended.
+**swagger** es una herramienta de generación de documentos API REST que genera automáticamente documentación a partir de comentarios en el código. Puede ser multiplataforma, de código abierto, admite la mayoría de los idiomas, la comunidad es buena, en resumen, muy buena y recomendable.
 
-[Online Demo](http://petstore.swagger.io/?_ga=2.222649619.983598878.1509960455-2044209180.1509960455#/pet/addPet)
+[Demo en línea](http://petstore.swagger.io/?_ga=2.222649619.983598878.1509960455-2044209180.1509960455#/pet/addPet)
 
 ## Easy-mock
 
-[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) previously used [easy-mock](https://easy-mock.com/login) to simulate data.
-It is a pure front-end visualization and can quickly generate persistence services for analog data. Very easy to use and can also be combined with `swagger`, support for cross-domain, whether it is a team or a personal project is worth a try.
+[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) anteriormente utilizó [easy-mock](https://easy-mock.com/login) para simular datos.
+Es una visualización pura de front-end y puede generar rápidamente servicios de persistencia para datos analógicos. Muy fácil de usar y también se puede combinar con `swagger`, tiene soporte para cross-domain, ya sea un equipo o un proyecto personal, vale la pena intentarlo.
 
-[Online Demo](https://easy-mock.com/)
+[Demo en línea](https://easy-mock.com/)
 
 ::: warning
-The online version of `vue-admin-template` is no longer using `easy-mock`. Because the online free service provided by `easy-mock` is very unstable, it will hang from time to time. If you need it, you can build your own service according to its tutorial.
+La versión en línea de `vue-admin-template` ya no usa `easy-mock`. Debido a que el servicio gratuito en línea es muy inestable, se colgará de vez en cuando. Si lo necesitas, puede crear tu propio servicio de acuerdo con su tutorial.
 :::
 
 ## Mockjs
 
-Since [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) is a pure front-end personal project, all data is [mockjs] (https://github.com/ Nuysoft/Mock) Simulation generation. Its principle is: Intercept all requests and proxy to the local, and then mock data, so you will find that no requests are issued in `network`.
+Como [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) es un proyecto personal de front-end puro, todos los datos de simulación son generados por [mockjs](https://github.com/Nuysoft/Mock). Su principio es: interceptar todas las solicitudes y proxy al local, y luego simular datos, por lo que descubrirás que no se emiten solicitudes en `red`.
 
-But its biggest problem is its implementation mechanism. It overrides the browser's `XMLHttpRequest` object to intercept all requests and proxy to the local. In most cases it is quite convenient to use, but because it rewrites the `XMLHttpRequest` object, so for example, the `progress` method, or some third-party libraries that rely on `XMLHttpRequest` will be incompatible with it. Looking at my project's [issues](https://github.com/PanJiaChen/vue-element-admin/issues?utf8=%E2%9C%93&q=mock), you will know how many people have problems.
+Pero su mayor problema es el mecanismo de implementación. Sobrescribe el objeto `XMLHttpRequest` del navegador para interceptar todas las solicitudes y el proxy al local. En la mayoría de los casos es bastante conveniente de usar, pero debido a que reescribe el objeto `XMLHttpRequest`, por ejemplo, el método `progress` o algunas bibliotecas de terceros que dependen de `XMLHttpRequest` serán incompatibles. Mirando los [issues](https://github.com/PanJiaChen/vue-element-admin/issues?utf8=%E2%9C%93&q=mock) de mi proyecto, sabrás cuántas personas tienen problemas.
 
-It also has a problem because it is data that is simulated locally and does not actually take any network requests. Therefore, local debugging is very troublesome and can only be debugged by `console.log`. Take the example of `vue-element-admin`. If you want to find out what data is returned by the `getInfo()` api, you can only know it by looking at the source code or manually `Debug`.
+También tiene un problema porque son datos que se simulan localmente y en realidad no realizan ninguna solicitud de red. Por lo tanto, la depuración local es muy problemática y solo se puede depurar mediante `console.log`. Toma el ejemplo de `vue-element-admin`. Si deseas averiguar qué datos devuelve la api `getInfo()`, solo puedes saberlo mirando el código fuente o manualmente `Debug`.
 
-## New way <Badge text="v4.0.0+"/>
+## Nueva manera <Badge text="v4.0.0+"/>
 
-After the `v4.0` version, a `mock-server` will be launched locally to simulate the data, and the online environment will continue to use `mockjs` for simulation.(Because this project is a pure front-end project, you can also build an online server to provide data.)
+Después de la versión `v4.0`, se lanzará un `mock-server` localmente para simular los datos, y el entorno en línea continuará utilizando `mockjs` para la simulación. (Debido a que este proyecto es un proyecto front-end puro, también puedes construir un servidor en línea para proporcionar datos).
 
-The advantage of this way is to solve the previous pain points while preserving the advantages of `mockjs`. Since our mock is implemented entirely based on `webpack-dev-serve`, `mock-server` will start automatically when you start the project, and it will also pass [chokidar](https://github.com/paulmillr/chokidar) to observe the changes in the contents of the `mock` folder. When a change occurs, the previously registered `mock-api` interface is cleared and the new interface is dynamically remounted to support hot updates. If you are interested, you can look at the code [mock-server.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/mock-server.js). Since it is a real `server`, you can clearly know the data structure returned by the interface through `network` of Chrome. At the same time, it solves the problem that the previous `mockjs` will rewrite the `XMLHttpRequest` object, which causes many third-party libraries to fail.
+La ventaja de esta manera es resolver los puntos críticos anteriores mientras se conservan las ventajas de 'mockjs'. Dado que nuestro simulacro se implementa completamente basado en `webpack-dev-serve`, `mock-server` se iniciará automáticamente junto con el proyecto, y también pasará [chokidar](https://github.com/paulmillr/chokidar) para observar los cambios en el contenido de la carpeta `mock`. Cuando se produce un cambio, la interfaz `mock-api` registrada previamente se borra y la nueva interfaz se vuelve a montar dinámicamente para admitir actualizaciones. Si estás interesado, puedes mirar el código [mock-server.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/mock-server.js). Dado que es un verdadero "servidor", puedes conocer claramente la estructura de datos devuelta por la interfaz a través de la sección "red" de Chrome. Al mismo tiempo, resuelves el problema de que los `mockjs` anteriores rescriben el objeto`XMLHttpRequest`, lo que hace que muchas bibliotecas de terceros fallen.
 
-All requests for this project are sent via the packaged [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js) by reading The source code can find that all requests are set to a `baseURL`, and this `baseURL` is dynamically set by reading the `process.env.VUE_APP_BASE_API` environment variable, so that we can use different environments for different environments. Api` address
+Todas las solicitudes para este proyecto se envían a través del paquete [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js), mediante la lectura del código fuente puedes encontrar que todas las solicitudes están configuradas en `baseURL`, y este se configura dinámicamente al leer la variable de entorno `process.env.VUE_APP_BASE_API`, para que podamos usar diferentes entornos.
 
-## Remove
+## Eliminar
 
-If you don't want to use `mock-server`, just the `after` Middleware of `webpack-dev-server` from [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
+Si no deseas usar `mock-server`, solo el middleware `after` de `webpack-dev-server` desde [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
 
-By default, local requests are proxy to `http://localhost:${port}/mock`, and you can modify `proxy` if you want to adjust to your own mock address.
+Por defecto, las solicitudes locales son proxy para `http://localhost:${port}/mock`, y puedes modificar 'proxy' si deseas ajustar a tu propia dirección simulada.
 
 ```js
 proxy: {
-  // change xxx-api/login => mock/login
-  // detail: https://cli.vuejs.org/config/#devserver-proxy
+  // cambiar xxx-api/login => mock/login
+  // detalles: https://cli.vuejs.org/config/#devserver-proxy
   [process.env.VUE_APP_BASE_API]: {
     target: `http://localhost:${port}/mock`,
     changeOrigin: true,
@@ -58,13 +58,13 @@ proxy: {
 after: require('./mock/mock-server.js')
 ```
 
-**Please note: this operation requires a restart of the server.**
+**Tenga en cuenta: esta operación requiere un reinicio del servidor.**
 
-## Add
+## Agregar
 
-If you want to add mock data, just find the `mock` file in the root folder, add the corresponding route, intercept it and simulate the data.
+Si deseas agregar datos simulados, solo busca el archivo `mock` en la carpeta raíz, agrega la ruta correspondiente, intercepta y simula los datos.
 
-For example, I need to add an api to get the number of comments below an article in [src/api/article](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/api/article.js) through `fetchComments`. First create a new api:
+Por ejemplo, necesito agregar una API para obtener la cantidad de comentarios debajo de un artículo en [src/api/article](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/api/article.js) a través de `fetchComments`. Primero crea una nueva api:
 
 ```js
 export function fetchComments(id) {
@@ -75,21 +75,21 @@ export function fetchComments(id) {
 }
 ```
 
-After declaring the api, we need to find the corresponding mock folder [mock/article.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/article.js), below Create a mock api that intercepts routes.
+Después de declarar la API, necesitamos encontrar la carpeta simulada correspondiente [mock/article.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/article.js), debajo Creamos una API simulada que intercepte las rutas.
 
-**Please note that the mock interception is based on routing. Please make sure that the mock data path will match your api route path(support regular)**
+**Ten en cuenta que la intercepción simulada se basa en el enrutamiento. Asegúrate de que la ruta de datos simulados coincida con tu ruta de la API (soporte regular)**
 
 ```js
-// fetchComments 的 mock
+// fetchComments mock
 {
-  // uUrl must match your api route
-  // For example, the route of fetchComments may be /article/1/comments or /article/2/comments
-  // So you need to match by regular
+  // url debe coincidir con la ruta de tu api
+  // Por ejemplo, la ruta de fetchComments puede ser /article/1/comments or /article/2/comments
+  // Por lo que necesitas que coincida con regularidad
   url: '/article/[A-Za-z0-9]/comments',
-  type: 'get', // Must be the same type as your interface defines
+  type: 'get', // Debe ser del mismo tipo que tu interfaz define
   response: (req, res) => {
     // return result
-    // req and res detail see
+    // req y res ver detalles
     // https://expressjs.com/zh-cn/api.html#req
     return {
       code: 20000,
@@ -101,14 +101,14 @@ After declaring the api, we need to find the corresponding mock folder [mock/art
 }
 ```
 
-## Change
+## Cambiar
 
-The most common operation is: You have simulated some data locally, and after the backend completes the api, it gradually replaces the api of the original mock.
+La operación más común es: has simulado algunos datos localmente, y una vez que el backend completa la API, reemplaza gradualmente la API del simulacro original.
 
-Let's take the `getRoles` api in [src/api/role.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/api/role.js) as an example. It was originally mocked in [mock/role/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/role/index.js). Now we need to switch it to real backend data, as long as it is in [mock/role/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/role/index.js) Find the corresponding route, then delete it. At this time you can view the real data in `network`.
+Tomemos como ejemplo la API `getRoles` en [src/api/role.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/api/role.js). Originalmente se simuló de [mock/role/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/role/index.js). Ahora necesitamos cambiarlo a datos reales de back-end, siempre que esté en [mock/role/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/role/index.js). Encuentra la ruta correspondiente y luego elimínala. En este momento puedes ver los datos reales en `network`.
 
 ```js
-// The declared in the api
+// Lo declarado en la api
 export function getRoles() {
   return request({
     url: '/roles',
@@ -116,7 +116,7 @@ export function getRoles() {
   })
 }
 
-// Find the corresponding route and delete
+// Encuentra la ruta correspondiente y elimina
 {
     url: '/roles',
     type: 'get',
@@ -129,74 +129,74 @@ export function getRoles() {
   },
 ```
 
-## Multiple servers
+## Servidores múltiples
 
-Currently the project only starts a `mock-server`, of course you can also have your own other `mock-server` or proxy interface. Some api can take this service, others can take another service. Just set them to a different `baseURL`. [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+Actualmente, el proyecto solo inicia un `mock-server`, por supuesto, también puedes tener tu propia interfaz `mock-server` o proxy. Algunas API pueden soportar este servicio, otras pueden soportar otros. Simplemente configúralos en un `baseURL` diferente. [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
 
-Then configure multiple `proxy` according to the set url rules in [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
+A continuación, configura múltiples `proxy` de acuerdo con las reglas de url establecidas en [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js).
 
-[相关文档](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy)
+[Documentos relacionados](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy)
 
-## Enable pure front end Mock
+## Habilitar simulación de front end puro
 
-Now in [mock/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/index.js#L19) also encapsulates a pure front-end mock method, you only Need to be in [src/main.js](https://github.com/PanJiaChen/vue-element-admin/tree/master/src):
+Ahora en [mock/index.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/index.js#L19) también se encapsula un método simulado de front-end puro, solo necesita estar en [src/main.js](https://github.com/PanJiaChen/vue-element-admin/tree/master/src):
 
 ```js
 import { mockXHR } from '../mock'
 mockXHR()
 ```
 
-This will become pure front-end mock data and the same as the mock way before the `v4.0` version, the principle is as above. The online [demo](https://panjiachen.github.io/vue-element-admin) that you are currently seeing is just that way.
+Esto se convertirá en pura información simulada de front-end y al igual que la versión anterior a la `v4.0`, el principio es el anterior. La [demo](https://panjiachen.github.io/vue-element-admin) en línea que estás viendo actualmente es así.
 
-## Switch local and online Mock data
+## Cambiar datos simulados locales y en línea
 
-There are many times when we encounter local use of mock data, online environments that use real data, or different environments that use different data.
+En muchas ocasiones, encontramos un uso local de datos simulados, entornos en línea que utilizan datos reales o entornos diferentes que utilizan datos diferentes.
 
 - **Easy-Mock**
 
-You need to ensure that your local simulated api is consistent with all other addresses except the root path. such as:
+Debes asegurarte de que tu API simulada local sea coherente con todas las demás direcciones, excepto la ruta raíz. como:
 
 ```
-https://api-dev/login   // Local request
+https://api-dev/login   // Solicitud local
 
-https://api-prod/login  // Online request
+https://api-prod/login  // Solicitud en línea
 ```
 
-We can use the [environment variables](/guide/essentials/deploy.html#environmental-variables) to do different environments and request different api base path.
+Podemos usar las [variables de entorno](/guide/essentials/deploy.html#environmental-variables) para hacer diferentes entornos y solicitar diferentes rutas base de la API.
 
 ```bash
 # .env.development
-VUE_APP_BASE_API = '/dev-api' #Inject the root path of the local api
+VUE_APP_BASE_API = '/dev-api' #Inyecta la ruta raíz de la API local
 ```
 
 ```bash
 # .env.production
-VUE_APP_BASE_API = '/prod-api' #Inject the root path of the production api
+VUE_APP_BASE_API = '/prod-api' #Inyecta la ruta raíz de la API de producción
 ```
 
-Then create an `axios` instance based on the environment variable to have a different `baseURL`.
+Luego crea una instancia de `axios` basada en la variable de entorno para tener una `baseURL` diferente.
 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
 
 ```js
-// create an axios instance
+// crear una instancia de axios
 const service = axios.create({
-  baseURL: process.env.BASE_API, // base_url of the API
-  timeout: 5000 // request timeout
+  baseURL: process.env.BASE_API, // base_url de la API
+  timeout: 5000 // tiempo de espera de la solicitud
 })
 ```
 
-In this way we can automatically switched local and online apis based on environment variables.
+De esta manera, podemos cambiar automáticamente las APIs locales y en línea en función de las variables de entorno.
 
 - **Mock.js**
 
-When we use `Mock.js` to simulate data locally, the real-world api method is used online. This is similar to the easy-mock method above. We mainly judge that when it is an online environment, we use real-world api. We only import `Mock.js` locally.
+Cuando usamos `Mock.js` para simular datos localmente, el método de la API del mundo real se usa en línea. Esto es similar al método de easy-mock anterior. Principalmente damos por hecho que cuando se trata de un entorno en línea, usamos la API del mundo real. Solo importamos `Mock.js` localmente.
 
 ```js
 // main.js
-// use environment variables to determine is required
+// se requiere usar variables de entorno para determinarlo
 if (process.env.NODE_ENV === 'development') {
-  require('./mock') // simulation data
+  require('./mock') // datos de simulación
 }
 ```
 
-Mock data is only import in the local environment.
+Los datos simulados solo se importan en el entorno local.

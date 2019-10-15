@@ -6,7 +6,7 @@ sidebarDepth: 3
 
 Aquí está el copiar y pegar basado en [portapapeles](https://github.com/zenorocha/clipboard.js)
 
-Este proyecto proporciona dos formas de uso.
+Este proyecto ofrece dos maneras de usarlo.
 
 ## Usar directamente
 
@@ -24,9 +24,9 @@ methods: {
 }
 ```
 
-En primer lugar, importe `clipboard.js` y configure la función `click`.
+En primer lugar, importa `clipboard.js` y configura la función `click`.
 
-`clip()` El primer parámetro es el contenido de copiar, el segundo parámetro es el evento de evento. Ambos parámetros son necesarios.
+`clip()` El primer parámetro es el contenido a copiar, el segundo parámetro es el evento event. Ambos parámetros son necesarios.
 
 <br/>
 <br/>
@@ -52,7 +52,7 @@ directives: {
 methods: {
   clipboardSuccess() {
     this.$message({
-      message: 'Copia exitosa',
+      message: 'Copiado exitosamente',
       type: 'success',
       duration: 1500
     })
@@ -62,4 +62,4 @@ methods: {
 
 `v-clipboard:copy`: La copia del contenido.
 
-`v-clipboard:success`: Función de devolución de llamada de éxito.
+`v-clipboard:success`: Función de devolución de llamada de éxito (callback).

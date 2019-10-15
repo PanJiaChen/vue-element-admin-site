@@ -95,7 +95,7 @@ module.exports = {
             link: '/es/guide/'
           },
           {
-            text: 'Caracteristicas',
+            text: 'Características',
             items: genNav(deepClone(ComponentNav), 'ES')
           },
           {

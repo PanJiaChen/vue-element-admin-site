@@ -1,55 +1,55 @@
-# Router and Nav
+# Enrutador y Navegación
 
-Router and Nav are the key skeleton for organizing a management system.
+El enrutador y la navegación son el esqueleto clave para organizar un sistema de gestión.
 
-This project router and nav are bound together, so you only have to configure the route under `@/router/index.js` and the sidebar nav will be dynamically generated automatically. This greatly reduces the workload of manually editing the sidebar nav. Of course, so you need to follow many conventions in configuring the route.
+El enrutador de este proyecto y la navegación están unidos, por lo que solo debes configurar la ruta en `@/router/index.js` y la navegación de la barra lateral se generará de manera dinámica automáticamente. Esto reduce en gran medida la carga de trabajo al no editar manualmente la barra lateral de navegación. Por supuesto, debes seguir muchos convenios al configurar la ruta.
 
-## Config
+## Configuración
 
-First let us know what configuration items are provided config route.
+En primer lugar, vamos a conocer la configuración que se le proporciona a una ruta.
 
 ```js
-// if set to true, lt will not appear in sidebar nav.
-// e.g. login or 401 page or as some editing pages /edit/1 (Default: false)
+// si es true, no aparecerá en la barra lateral de navegación.
+// p.ej. inicio de sesión, página 401 o como algunas de edición /edit/1 (Predeterminado: false)
 hidden: true
 
-// this route cannot be clicked in breadcrumb navigation when noRedirect is set
+// No se puede hacer clic en esta ruta en breadcrumb cuando se establece noRedirect
 redirect: noRedirect
 
-// when you route a children below the declaration of more than one route,
-// it will automatically become a nested mode - such as the component page
-// when there is only one, the child route will be displayed as the root route
-// if you want to display your root route
-// regardless of the number of children declarations under the route
-// you can set alwaysShow: true
-// so that it will ignore the previously defined rules and always show the root route
+// cuando agregas más de un hijo a un elemento ruta, automáticamente se
+// convierte en modo anidado, cuando solo hay un hijo se muestra como ruta
+// raíz de forma predeterminada, pero si deseas mostrarla en modo anidado,
+// aunque solo sea una puedes establecer:
+// alwaysShow: true
+// para que ignore las reglas definidas previamente y siempre se muestre
+// en modo anidado
 alwaysShow: true
 
-// set router name. It must be set，in order to avoid problems with <keep-alive>.
+// establece el nombre del enrutador. Debe configurarse para evitar problemas con <keep-alive>.
 name: 'router-name'
 
 meta: {
-  // required roles to navigate to this route. Support multiple permissions stacking.
-  // if not set means it doesn't need any permission.
+  // roles requeridos para navegar a esta ruta. Admite múltiples permisos de apilamiento.
+  // si no se establece significa que no necesita ningún permiso.
   roles: ['admin', 'editor']
 
-  // the title of the route to show in various components (e.g. sidebar, breadcrumbs).
+  // El título de la ruta para mostrar en varios componentes (por ejemplo, barra lateral, breadcrumbs).
   title: 'title'
 
-  // svg icon class
+  // clase de icono SVG
   icon: 'svg-name'
 
-  // when set true, the route will not be cached by <keep-alive>. Default false
+  // si es true, la ruta no será almacenada en caché por <keep-alive> (Predeterminado: false)
   noCache: true
 
-  // if false, the item will hidden in breadcrumb(default is true)
+  // si es false, el elemento estará oculto en el breadcrumb (Predeterminado: true)
   breadcrumb: false
 }
 ```
 
 <br/>
 
-**Example：**
+**Ejemplo**
 
 ```js
 {
@@ -58,7 +58,7 @@ meta: {
   redirect: '/permission/index',
   hidden: true,
   alwaysShow: true,
-  meta: { roles: ['admin','editor'] }, // you can set roles in root nav
+  meta: { roles: ['admin','editor'] }, // puedes establecer roles en la navegación raíz
   children: [{
     path: 'index',
     component: _import('permission/index'),
@@ -66,51 +66,51 @@ meta: {
     meta: {
       title: 'permission',
       icon: 'lock',
-      roles: ['admin','editor'], // or you can only set roles in sub nav
+      roles: ['admin','editor'], // o puedes establecer roles solamente en la subnavegación
       noCache: true
     }
   }]
 }
 ```
 
-## Router
+## Enrutador
 
-There are two types of routes here , `constantRoutes` and `asyncRoutes`.
+Hay dos tipos de rutas aquí, `constantRoutes` y `asyncRoutes`.
 
-**constantRoutes:** represents routes that do not require dynamic access, such as login page, 404, general page, and so on.
+**constantRoutes:** representa rutas que no requieren acceso dinámico, como la página de inicio de sesión, 404, página general, etc.
 
-**asyncRoutes:** represents pages that require dynamic judgment permissions and are dynamically added through `addRouters`. The details will be introduced on the [permission](permission.md).
+**asyncRoutes:** representa las páginas que requieren permisos de juicio dinámico y se agregan dinámicamente a través de `addRouters`. Los detalles se introducirán en [Permisos](permission.md).
 
 ::: tip
-All routing pages here use the `router lazy loading`, as described in [document](/guide/advanced/lazy-loading.md)
+Todas las páginas de enrutamiento aquí usan la `carga diferida del enrutador`, como se describe en el [documento](/guide/advanced/lazy-loading.md).
 
-If you want to know more about browserHistory and hashHistory, please refer to [Build & Deploy](deploy.md).
+Si deseas saber más sobre browserHistory y hashHistory, consulta [Compilar y Desplegar](deploy.md).
 :::
 
-The other configurations are no different from the [vue-router](https://router.vuejs.org/en/) official, so check the documentation for yourself.
+Las otras configuraciones no son diferentes a las de [vue-router](https://router.vuejs.org/en/) oficial, así que consulta la documentación tú mismo.
 
-::: warning
-There is one thing to be careful about is that the 404 page must be the last to load, if it is declared in constantRoutes. Later declared pages will be blocked to 404, see the details of the problem: [addRoutes when you've got a wildcard route for 404s does not work](https://github.com/vuejs/vue-router/issues/1176)
+::: warning ADVERTENCIA
+Hay algo en lo que debes tener cuidado, la página 404 debe ser la última en cargarse, si se declara en constantRoutes. Las páginas declaradas posteriormente se bloquearán en 404, consulta los detalles del problema: [cuando addRoutes tiene una ruta comodín para 404 no funciona](https://github.com/vuejs/vue-router/issues/1176)
 :::
 
-## Sidebar
+## Barra lateral
 
-The project sidebar is mainly based on the `el-menu` of element-ui.
+La barra lateral del proyecto se basa principalmente en `el-menu` de element-ui.
 
-Also introduced in the front, the sidebar is generated dynamically by reading the route and combined with the permission judge, but also need to support the infinite nesting of routes, so here is also used to the recursive components.
+Se introdujo en el front, la barra lateral se genera dinámicamente al leer la ruta y se combina con el juez de permisos, pero también debe soportar la anidación infinita de rutas, por lo que aquí también se usa para los componentes recursivos.
 
-> Code: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
+> Código: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
 
-This also modify many default sidebar styles of `element-ui`. All css can be found in [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) and can be modified to suit your needs.
+Es posible modificar el estilo predeterminado de la barra lateral de `element-ui`. Todo el CSS lo puedes encontrar en [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) y modificarlo para satisfacer tus necesidades.
 
-**Here need to pay attention**. The general sidebar has two forms, `submenu` and`el-menu-item`. One is a nested submenu, the other is a direct link. As shown below:
+**Aquí hay que prestar atención**. La barra lateral general tiene dos formas, `submenu` y `el-menu-item`. Uno es un submenú anidado, el otro es un enlace directo. Como se muestra abajo:
 
 ![](https://wpimg.wallstcn.com/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
-The sidebar has already helped you to make a judgment. When you route a children below the declaration of more than >1 routes, it will automatically become a nested mode. If the sub-route is exactly equal to one, the sub-route is displayed as a root route in the sidebar by default. If you do not want to, you can disable this feature by setting `alwaysShow: true` in the root route. Such as:
+La barra lateral ya te ha ayudado a hacer un juicio. Cuando agregas más de un hijo a un elemento, automáticamente se convierte en modo anidado. Si la ruta hijo es exactamente igual a 1, esta se muestra como ruta raíz en la barra lateral de forma predeterminada. Si no quieres que esto suceda, puedes desactivar esta función configurando `alwaysShow: true` en la ruta raíz. Como:
 
 ```js
-// no submenu, because children.length===1
+// sin submenu, porque children.length === 1
 {
   path: '/icon',
   component: Layout,
@@ -122,7 +122,7 @@ The sidebar has already helped you to make a judgment. When you route a children
   }]
 },
 
-// has submenu, because children.length>=1
+// con submenu, porque children.length >= 1
 {
   path: '/components',
   component: Layout,
@@ -139,56 +139,56 @@ The sidebar has already helped you to make a judgment. When you route a children
 ```
 
 ::: tip unique-opened
-You can set `unique-opened` in [Sidebar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue). To control the sidebar, whether to keep only one submenu expanded.
+Puedes configurar `unique-opened` en [Sidebar/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue). Para controlar la barra lateral, si deseas mantener solo un submenú expandido.
 :::
 
-## Nested Routes
+## Rutas anidadas
 
-If you have a nested Route, such as [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
-Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
+Si tienes una ruta anidada, como [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
+No olvides agregar manualmente `<router-view>` al archivo raíz del directorio secundario.
 
-Such as: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
+Tal como: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
 
-**Note:** As many `<router-view>` as the level of routes nested.
+**NOTA:** Tantos `<router-view>` como nivel de rutas anidadas.
 
 ![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
-## Click the sidebar to refresh the current route
+## Clic en la barra lateral para actualizar la ruta actual
 
-Before using the development model of spa(single page application), each time the user clicks the sidebar will request this page again, the user gradually developed the habit of clicking the current route in the sidebar to refresh the view. But now the spa is not the same, the user clicks the currently highlighted route and does not refresh the view, because the vue-router will intercept your routing, it determines your url does not change, so it will not trigger any hook or view changes.[Related issue](https://github.com/vuejs/vue-router/issues/296), the community has also heated discussions on the issue.
+Antes de utilizar el modelo de desarrollo spa (aplicación de página única), cada vez que el usuario hace clic en la barra lateral solicitará nuevamente esta página, el usuario gradualmente desarrolló el hábito de hacer clic en la ruta actual en la barra lateral para actualizar la vista. Pero ahora en el spa no es lo mismo, el usuario hace clic en la ruta resaltada actualmente y no actualiza la vista, porque el vue-router interceptará tu ruta, determina que la url no cambia, por lo que no activará ningún hook o cambios en la vista. [Problema relacionado](https://github.com/vuejs/vue-router/issues/296), la comunidad también ha discutido sobre el tema.
 
 ![](https://wpimg.wallstcn.com/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
 
-`yyx990803`also said that he wanted to add a way to brighten the view, but later he changed his mind again/(ㄒ o ㄒ)/~~ But demand is here, what should we do? He said it would not trigger anything without changing the current URL, so can I force the trigger? The hack is simple. By changing the url query to trigger the view changes。We listen to each link's click event on the sidebar, each click will push a different query for the router to ensure that the view is refreshed.
+`yyx990803` también dijo que quería agregar una forma de actualizar la vista, y luego cambió de opinión nuevamente /(ㄒ o ㄒ)/~~ Pero la cuestión es la siguiente, ¿qué debemos hacer? Dijo que no activaría nada sin cambiar la URL actual, así que ¿puedo forzar al activador? El truco es simple. Al cambiar la consulta de la URL para activar los cambios de vista: escuchamos el evento clic de cada enlace en la barra lateral, cada clic realizará una consulta diferente en el enrutador para garantizar que la vista se actualice.
 
 ```js
 clickLink(path) {
   this.$router.push({
     path,
     query: {
-      //Ensure that each click, query is not the same
-      //to ensure that refresh the view
+      //Asegúrate de que, en cada clic, query no sea el mismo
+      //para garantizar que se actualice la vista
       t: +new Date()
     }
   })
 }
 ```
 
-ps: Don't forget to add a unique `key` to `router-view`, such as `<router-view :key="$route.path"></router-view>`.
+ps: No olvides agregar una `key` única a `router-view`, como `<router-view :key="$route.path"></router-view>`.
 
-But there's also a drawback the ugly `query` suffix behind url, such as `xxx.com/article/list?t=1496832345025`
+También hay un inconveniente con el feo sufijo `query` al final de la URL, como `xxx.com/article/list?t=1496832345025`
 
-You can know from the previous issue that there are many other options. In my company project, the solution adopted is to determine whether the currently clicked menu route is consistent with the current route. However, when it is consistent, it will jump to a dedicated Redirect page, which will redirect the route to Go to the page, this will have a refresh effect.
+Puedes saber del problema anterior que hay muchas otras opciones. En el proyecto de mi empresa, la solución adoptada es determinar si la ruta del menú en la que se hace clic actualmente es coherente con la ruta actual. Sin embargo, cuando sea coherente, saltará a una página de redireccionamiento dedicada, que a su vez Redirigirá la ruta para Ir a la página, esto tendrá un efecto de actualización.
 
-**Example**
+**Ejemplo**
 
 ![](https://wpimg.wallstcn.com/0dd7f78b-0fb5-4c7d-8236-cee78f960984.jpg)
 
-Click on the global size switch button shown in the image and you will see that the page of `app-main` has been refreshed. It uses the method of redirecting to the `Redirect` page and then redirecting back to the original page.
+Haz clic en el botón de cambio de tamaño global que se muestra en la imagen y verás que la página `app-main` se ha actualizado. Se utiliza el método de redireccionamiento a la página `Redirect` y luego redirecciona de nuevo a la página original.
 
-Redirect page to `/redirect` when clicking
+Redireccionar la página a `/redirect` al hacer clic
 
 ```js
 const { fullPath } = this.$route
@@ -197,7 +197,7 @@ this.$router.replace({
 })
 ```
 
-The `redirect` page is redirected back to the original page
+La página `redirect` se redirige de nuevo a la página original
 
 ```js
 // redirect.vue
@@ -209,7 +209,7 @@ export default {
     this.$router.replace({ path: '/' + path, query })
   },
   render: function(h) {
-    return h() // avoid warning message
+    return h() // evitar mensaje de advertencia
   }
 }
 ```
@@ -218,15 +218,15 @@ export default {
 
 ## Breadcrumb
 
-This project also packages a breadcrumb navigation, which is also dynamically generated by the watch $route change. It is the same with the menu, you can also config it in the routing. You can also add some custom attributes to your business needs in route.meta attr. For example, you can declare `breadcrumb:false` in the route so that it is not displayed in breadcrumb.
+Este proyecto también incluye una navegación con breadcrumb, que también se genera dinámicamente por el cambio de ruta al observar $route. Es lo mismo con el menú, también puedes configurarlo en el enrutamiento y agregar algunos atributos personalizados a las necesidades de tu negocio en route.meta attr. Por ejemplo, puedes declarar `breadcrumb:false` en la ruta para que no se muestre en la sección breadcrumb.
 
 ![](https://wpimg.wallstcn.com/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
-> Corresponding code: [@/components/Breadcrumb](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Breadcrumb/index.vue)
+> Código correspondiente: [@/components/Breadcrumb](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Breadcrumb/index.vue)
 
-## Sidebar scroll problem
+## Problema de desplazamiento de la barra lateral
 
-Previous versions of scroll were handled with css
+Las versiones anteriores de scroll se manejaban con css
 
 ```css
 overflow-y: scroll;
@@ -236,20 +236,20 @@ overflow-y: scroll;
 }
 ```
 
-But hack by css has some problems, in Firefox or other lower versions of the browser will be less beautiful.
-Second, in the case of sidebar collapses, limited to `menu` of`element-ui`, can not be handled in this way.
+Pero usar algún hack de CSS tiene algunos problemas, en Firefox u otras versiones inferiores del navegador serán menos hermosas.
+En segundo lugar, en el caso de colapsos de la barra lateral, limitados al `menu` de `element-ui`, no se pueden manejar de esta manera.
 
-So the current version uses `el-scrollbar` to handle the sidebar scrolling problem.
+Entonces, la versión actual usa `el-scrollbar` para encargarse del problema de desplazamiento de la barra lateral.
 
-::: tip Code
+::: tip Código
 [@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
 :::
 
-## Sidebar external-link <Badge text="v3.8.2+"/>
+## Enlace externo en la barra lateral <Badge text="v3.8.2+"/>
 
-You can also configure an external-link in the sidebar. As long as you fill in the legal url path in `path`, you will be able to open this page when you click on the sidebar.
+También puedes configurar un enlace externo en la barra lateral. Siempre y cuando coloques una dirección URL correcta en `path`, podrás abrir esta página cuando hagas clic en la barra lateral.
 
-E.g.
+P.ej.
 
 ```json
 {
