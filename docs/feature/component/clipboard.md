@@ -28,6 +28,27 @@ First of all, import `clipboard.js` and set `click` function.
 
 `clip()` The first parameter is the contents of the copy, the second parameter is the event event. Both parameters are required.
 
+### New way of use <Badge text="v4.3.0+"/>
+
+In order to support the async setting of text, the original method is reconstructed. In the new version, `clip` will return a promise, and the params will be changed to an object, and it is no longer necessary to manually pass the $event.
+
+```html
+<el-button @click='handleCopy(inputData,$event)'>copy</el-button>
+```
+
+```js
+import clip from '@/utils/clipboard' // use clipboard directly
+
+methods: {
+  handleCopy(text) {
+    // return a promise
+    clip({ text, container, successText, errorText }).then(()=>{
+      console.log('success)
+    })
+  }
+}
+```
+
 <br/>
 <br/>
 

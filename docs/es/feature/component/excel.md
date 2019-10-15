@@ -4,7 +4,7 @@
 
 La importación y exportación de Excel se implementa confiando en [js-xlsx](https://github.com/SheetJS/js-xlsx).
 
-[Export2Excel.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/vendor/Export2Excel.js) está empaquetado en el `js-xlsx` para facilitar la exportación de datos. 
+[Export2Excel.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/vendor/Export2Excel.js) está empaquetado en el `js-xlsx` para facilitar la exportación de datos.
 
 ### Utilizar
 
@@ -35,15 +35,15 @@ import('@/vendor/Export2Excel').then(excel => {
 El código de compatibilidad para Bolb se ha eliminado en las versiones posteriores de `v3.9.1 +`. Si necesita ser compatible con navegadores de muy bajo nivel, puede introducir manualmente [blob-polyfill](https://www.npmjs.com/package/blob-polyfill) .
 :::
 
-### Parámetros 
+### Parámetros
 
-| Parámetros    | Descripción                       | Tipo      | Valores Aceptados | Predeterminado    |
-| ---------     | ---------------------------       | -------   | ------------      | ----------        |
-| header        |  Exportar encabezado de datos     | Array     | /                 | []                |
-| data          |  Datos específicos exportados     | Array     | /                 | []                |
-| filename      | Nombre de archivo de exportación  | String    | /                 | excel-list        |
-| autoWidth     | Si la celda de ancho automático   | Boolean   | true / false      | true              |
-| bookType      | Tipo de archivo de exportación    | String    | xlsx, csv, txt, [more](https://github.com/SheetJS/js-xlsx#supported-output-formats)   | xlsx  |
+| Parámetros | Descripción                      | Tipo    | Valores Aceptados                                                                   | Predeterminado |
+| ---------- | -------------------------------- | ------- | ----------------------------------------------------------------------------------- | -------------- |
+| header     | Exportar encabezado de datos     | Array   | /                                                                                   | []             |
+| data       | Datos específicos exportados     | Array   | /                                                                                   | []             |
+| filename   | Nombre de archivo de exportación | String  | /                                                                                   | excel-list     |
+| autoWidth  | Si la celda de ancho automático  | Boolean | true / false                                                                        | true           |
+| bookType   | Tipo de archivo de exportación   | String  | xlsx, csv, txt, [more](https://github.com/SheetJS/js-xlsx#supported-output-formats) | xlsx           |
 
 ### Ejemplo
 

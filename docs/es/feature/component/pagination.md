@@ -39,7 +39,7 @@ El componente de paginación se basa principalmente en el elemento 'el-paginatio
 ## Atributos
 
 |  Atributo   | Descripción                                                                 |   Tipo    | Predeterminado  |
-| :---------: | :----------------------------------------------------------                 | :-------: | :-------------: |
+| :---------: | :-------------------------------------------------------------------------- | :-------: | :-------------: |
 |    total    | recuento total de artículos                                                 |  Number   |        /        |
 |    page     | número de página actual, soporta el modificador .sync                       |  Number   |        1        |
 |    limit    | Recuento de elementos de cada página, admite el modificador .sync           |  Number   |       20        |
@@ -51,9 +51,9 @@ También se admiten otros atributos del soporte de `el-pagination` del elemento.
 
 ## Eventos
 
-| Nombre del evento | Descripción                                       | Parámetros            |
-| ----------        | ----------------------------------------          | ------------          |
-| paginación        | Se dispara cuando cambia el límite o la página    | {paginación, límite}  |
+| Nombre del evento | Descripción                                    | Parámetros           |
+| ----------------- | ---------------------------------------------- | -------------------- |
+| paginación        | Se dispara cuando cambia el límite o la página | {paginación, límite} |
 
 ## Código fuente y Demo
 

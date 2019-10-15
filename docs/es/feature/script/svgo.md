@@ -7,7 +7,7 @@ npm run svgo
 ```
 
 Muchas descargas en línea o svg exportados por `Sketch` tendrán una gran cantidad de información redundante e inútil, aumentando considerablemente el tamaño de svg. Podemos optimizarlo con `svgo`. Por ejemplo, la siguiente figura es un svg exportado por `Sketch`
-![] (https://wpimg.wallstcn.com/333edb6b-4b95-42f8-aa60-b8f42e516b52.jpg)
+![](https://wpimg.wallstcn.com/333edb6b-4b95-42f8-aa60-b8f42e516b52.jpg)
 
 Podemos ejecutar `npm run svgo`
 

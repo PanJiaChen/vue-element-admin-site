@@ -24,6 +24,27 @@ methods: {
 
 `clip()` 函数第一个参数为复制的内容，第二个参数为 `event` 事件。两个参数均为必填项。
 
+### 新使用方式 <Badge text="v4.3.0+"/>
+
+为了支持能异步设置 text，重构了原有方法。在新版中`clip`会返回一个 promise，并且传参方式更改为对象，也不再需要手动传入$event 参数了。
+
+```html
+<el-button @click='handleCopy(inputData,$event)'>copy</el-button>
+```
+
+```js
+import clip from '@/utils/clipboard' // use clipboard directly
+
+methods: {
+  handleCopy(text) {
+    // return a promise
+    clip({ text, container, successText, errorText }).then(()=>{
+      console.log('success)
+    })
+  }
+}
+```
+
 <br/>
 <br/>
 
