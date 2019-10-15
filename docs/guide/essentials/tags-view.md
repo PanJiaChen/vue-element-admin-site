@@ -61,7 +61,7 @@ For details, see
 Currently cached solutions are not suitable for certain services, such as the article details page such as `/article/1`、`/article/2`, their routes are different but the corresponding components are the same, so their component name is the same, As mentioned earlier, the `keep-alive` include can only be cached based on the component name, so this is a problem. There are currently two solutions:
 
 - Instead of using keep-alive's include, keep-alive caches all components directly. This way, it supports the aforementioned business situation.
-  To [@/layout/components/AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/AppMain.vue) remove the `include` related code. Of course, using keep-alive directly also has disadvantages. He can't dynamically delete the cache. You can only help it to set a maximum cache instance limit.
+  To [@/layout/components/AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue) remove the `include` related code. Of course, using keep-alive directly also has disadvantages. He can't dynamically delete the cache. You can only help it to set a maximum cache instance limit.
   [issue](https://github.com/vuejs/vue/issues/6509)
 
 - Use a browser cache scheme such as localStorage, own to control the cache.
