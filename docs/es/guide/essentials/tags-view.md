@@ -1,14 +1,14 @@
-# Tags View
+# Etiquetas View
 
-This feature is to respond to people's needs. In fact, I do not use this feature in company projects or personal projects. In the past, those traditional back-end frameworks often included this feature. Since most of the previous back-end projects were in the form of multiple pages, the navigation feature of the tags view still has some basic meaning. Most of them are based on the iframe.
+Esta característica es para responder a las necesidades de las personas. De hecho, no utilizo esta característica en proyectos de la empresa o proyectos personales. En el pasado, esos frameworks tradicionales de back-end a menudo incluían esta característica. Dado que la mayoría de los proyectos de back-end anteriores tenían varias páginas, la característica de navegación Etiquetas View todavía tiene un significado básico. La mayoría de ellos se basan en el iframe.
 
-However, with the development of the times, the background projects are almost all spa (single page web application single page development), and it is obviously not appropriate to use the previous way to implement the navigation of the tags.
+Sin embargo, con el paso del tiempo, los proyectos en back-end son casi todos spa (desarrollo de una aplicación web de una sola página), y obviamente no es apropiado usar la forma anterior para implementar la navegación con etiquetas.
 
-So the current plan is:
+Entonces el plan actual es:
 
-Use a combination of `keep-alive` and `router-view` .
+Usar una combinación de `keep-alive` y `router-view`.
 
-Code: `@/layout/components/AppMain.vue`
+Código: `@/layout/components/AppMain.vue`
 
 ```html
 <keep-alive :include="cachedViews">
@@ -16,26 +16,25 @@ Code: `@/layout/components/AppMain.vue`
 </keep-alive>
 ```
 
-The actual action of the tags view navigation is equivalent to another nav display mode. In fact, it is a router-link, and click to jump to the corresponding page. Then we are listening to changes in the route `$route` to determine if the current page needs to be reloaded or cached.
+La acción real de las etiquetas de navegación view es equivalente a otro modo de visualización de navegación. De hecho, es un router-link, y al hacer clic salta a la página correspondiente. Luego estamos escuchando los cambios en la ruta `$route` para determinar si la página actual necesita ser recargada o almacenada en caché.
 
 ## visitedViews && cachedViews
 
-The current tag-view maintains two arrays.
+La etiqueta view actual mantiene dos matrices.
 
-- visitedViews : The page the user has visited is a collection of tag arrays displayed in the tags bar navigation.
-- cachedViews : The actual keep-alive route. You can set whether or not you want to cache the route by configuring the route with `meta.noCache`.
-  [Configuration Document](router-and-nav.md)
+- visitedViews : La página que el usuario ha visitado es una colección de matrices de etiquetas que se muestran en la barra de navegación de etiquetas.
+- cachedViews : La ruta actual keep-alive. Puedes establecer si deseas o no almacenar en caché la ruta, configurandola con `meta.noCache`. [Documento de configuración](router-and-nav.md)
 
-## Precautions
+## Precauciones
 
-Because keep-alive and router-view are strongly coupled, and it is not difficult to find the keep-alive include default is to match the component's name, it is necessary to look at the document and source code when writing the routing component corresponding to the routing router and route.
+Debido a que keep-alive y router-view están fuertemente acoplados, y no es difícil encontrar que keep-alive incluye el nombre predeterminado del componente, es necesario mirar el documento y el código fuente al escribir el componente de enrutamiento correspondiente al enrutador y la ruta de enrutamiento.
 
-Make sure the name of both is exactly the same. (Keep in mind that the naming of the name is as unique as possible. Remember not to duplicate the naming of some components, or to refer to the last memory overflow issue recursively.)
+Asegúrate de que el nombre de ambos sea exactamente el mismo. (Ten en cuenta que el nombre debe ser tan único como sea posible. Recuerda no duplicar el nombre de algunos componentes o hacer referencia al último problema de desbordamiento de memoria de forma recursiva).
 
 **DEMO:**
 
 ```js
-//Define routes
+//Definir rutas
 {
   path: 'create-form',
   component: ()=>import('@/views/form/create'),
@@ -45,30 +44,29 @@ Make sure the name of both is exactly the same. (Keep in mind that the naming of
 ```
 
 ```js
-//The corresponding view of the route. such as: form/create
+//La vista correspondiente de la ruta. tales como: form/create
 export default {
   name: 'createForm'
 }
 ```
 
-Make sure that the two names are the same. Remember not to write duplicates or mistakes. By default, if you do not write name, it will not be cached.
+Asegúrate de que los dos nombres sean iguales. Recuerda no escribir duplicados o errores. De forma predeterminada, si no escribes el nombre, no se almacenará en caché.
 
-For details, see
-[issue](https://github.com/vuejs/vue/issues/6938#issuecomment-345728620).
+Para más detalles, ver [issue](https://github.com/vuejs/vue/issues/6938#issuecomment-345728620).
 
-## Cache is not suitable for the scene
+## Cuando la caché no es adecuada para la situación
 
-Currently cached solutions are not suitable for certain services, such as the article details page such as `/article/1`、`/article/2`, their routes are different but the corresponding components are the same, so their component name is the same, As mentioned earlier, the `keep-alive` include can only be cached based on the component name, so this is a problem. There are currently two solutions:
+Las soluciones actualmente en caché no son adecuadas para ciertos servicios, como la página de detalles del artículo, por ejemplo `/article/1`, `/article/2`, sus rutas son diferentes pero los componentes correspondientes son los mismos, por lo que el nombre de su componente es igual, como se mencionó anteriormente, con la inclusión de `keep-alive` solo se puede almacenar en caché basándose en el nombre del componente, por lo que esto es un problema. Actualmente hay dos soluciones:
 
-- Instead of using keep-alive's include, keep-alive caches all components directly. This way, it supports the aforementioned business situation.
-  To [@/layout/components/AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue) remove the `include` related code. Of course, using keep-alive directly also has disadvantages. He can't dynamically delete the cache. You can only help it to set a maximum cache instance limit.
+- En lugar de utilizar la inclusión de keep-alive, este almacenará directamente todos los componentes en caché. De esta manera, se ayudara a la situación antes mencionada.
+  En [@/layout/components/AppMain.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/AppMain.vue) elimina el código relacionado con `include`. Por supuesto, usar keep-alive directamente también tiene desventajas. No puedes eliminar dinámicamente la caché. Solo puedes ayudar estableciendo un límite máximo de instancia de caché.
   [issue](https://github.com/vuejs/vue/issues/6509)
 
-- Use a browser cache scheme such as localStorage, own to control the cache.
+- Utiliza un esquema de caché del navegador como localStorage, para controlar la caché.
 
 ## Affix <Badge text="v3.10.0+"/>
 
-If the Affix attribute is added to the route, the current `tag` will be fixed in `tags-view` (cannot be deleted).
+Si el atributo Affix se agrega a la ruta, `tag` quedará fija en `tags-view` (no se podrá quitar).
 
 ![](https://user-images.githubusercontent.com/8121621/52840303-cd5c9280-3133-11e9-928f-e2825eaab51b.png)
 
@@ -93,21 +91,21 @@ If the Affix attribute is added to the route, the current `tag` will be fixed in
   }
 ```
 
-## Remove
+## Eliminar
 
-In fact, keep-alive [source code](<(https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)>) is not complicated, but the logic is still quite around. Before the vue author himself fixed a bug, he was not careful, he made two versions to fix it, so if there is no user who needs the navigation bar, it is recommended Remove this feature.
+De hecho, el [código fuente](<(https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)>) de keep-alive no es complicado, y la lógica sigue siendo bastante clara. Antes de que el autor de `vue` corrigiera un error, no tuvo cuidado e hizo dos versiones para solucionarlo, por lo que si no hay ningún usuario que necesite la barra de navegación, se recomienda Eliminar esta función.
 
-First find
-`@/layout/components/AppMain.vue` and remove `keep-alive`
+Primero encuentra
+`@/layout/components/AppMain.vue` y elimina `keep-alive`
 
 ```html
 <template>
   <section class="app-main" style="min-height: 100%">
     <transition name="fade-transform" mode="out-in">
-      <router-view></router-view> <!-- or <router-view :key="key"/> -->
+      <router-view></router-view> <!-- o también <router-view :key="key"/> -->
     </transition>
   </section>
 </template>
 ```
 
-Remove the entire file `@/layout/components/TagsView.vue`. Then, remove the reference to `TagsView` in `@/layout/components/index` and in `@/layout/Layout.vue`. Finally, remove the file `@/store/modules/tagsView`.
+Elimina el archivo `@/layout/components/TagsView.vue`. Luego, elimina la referencia a `TagsView` en los archivos `@/layout/components/index` y `@/layout/Layout.vue`. Finalmente, elimina el archivo `@/store/modules/tagsView`.

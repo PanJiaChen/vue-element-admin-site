@@ -1,83 +1,83 @@
-# Style
+# Estilo
 
-## CSS Modules
+## Módulos CSS
 
-In the code of stylIn the style development process, there are two issues are more prominent:
+En el proceso de desarrollo del estilo, hay dos cuestiones más destacadas:
 
-- Global pollution —— The selector in the CSS file is global. The same name selector in different files, according to the order in the build generation file, the styles generated later will overwrite the previous ones.
+- Contaminación global —— El selector en el archivo CSS es global. Si el mismo nombre del selector esta en diferentes archivos, de acuerdo con el orden en el archivo de generación de compilación, los estilos generados más adelante sobrescribirán los anteriores.
 
-- Selector complex —— In order to avoid the above problems, we have to be careful when writing styles, the name of the class will be marked with a range of restrictions, multi-person development is also very easy to lead to the chaos of the naming style. The classnames getting longer and longer. Eventually, it's hard to maintain.
+- Selector complejo —— Para evitar los problemas anteriores, debemos tener cuidado al escribir estilos, el nombre de la clase estará marcado con una serie de restricciones, el desarrollo entre varias personas también es muy fácil de conducir al caos con los nombres de los estilos. Los nombres de las clases son cada vez más largos. Eventualmente, es difícil de mantener.
 
-Fortunately vue provides us with [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles) can easily solve the above problem. As the name suggests, it adds a scoped concept to css.
+Afortunadamente, vue nos proporciona [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles) el cual puede resolver fácilmente el problema anterior. Como su nombre indica, agrega un concepto de alcance (scoped) al css.
 
 ```css
-/* Compile before */
+/* Antes de compilar */
 .example {
   color: red;
 }
 
-/* Compile after */
+/* Despues de compilar */
 .example[_v-f3f3eg9] {
   color: red;
 }
 ```
 
-If you add `<style scoped>` the css will only effect in the current component。For detailed documentation, see [vue-loader](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles)
+Si agregas `<style scoped>` el css solo tendrá efecto en el componente actual. Para obtener documentación detallada, consulta [vue-loader](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles)
 
 ::: tip
-With scoped, the parent component's styles will not leak into child components. However, a child component's root node will be affected by both the parent's scoped CSS and the child's scoped CSS. This is by design so that the parent can style the child root element for layout purposes.
+Con scoped, los estilos del componente principal no se filtrarán a los componentes secundarios. Sin embargo, el nodo raíz de un componente secundario se verá afectado tanto por el CSS con scoped del padre como por el CSS con scoped del hijo. Esto es así para que el padre pueda aplicar estilo al elemento raíz hijo con fines de diseño.
 :::
 
 <br/>
 
-## Project Structure
+## Estructura del proyecto
 
-vue-element-admin All global styles are set in the `@/src/styles` directory.
+Todos los estilos globales de vue-element-admin se configuran en el directorio `@/src/styles`.
 
 ```bash
 ├── styles
-│   ├── btn.scss                 # button css
-│   ├── element-ui.scss          # global custom element-ui style
-│   ├── index.scss               # global common style
+│   ├── btn.scss                 # botones css
+│   ├── element-ui.scss          # estilo global personalizado de element-ui
+│   ├── index.scss               # estilo global común
 │   ├── mixin.scss               # global sass mixin
-│   ├── sidebar.scss             # sidebar css
-│   ├── transition.scss          # vue transition animation
-│   └── variables.scss           # global variables
+│   ├── sidebar.scss             # barra lateral css
+│   ├── transition.scss          # animación de transición de vue
+│   └── variables.scss           # variables globales
 ```
 
-The common workflow is that the global styles are written in the `src/styles` directory and each page's own style is written in its own `.vue` file.
+El flujo de trabajo común es que los estilos globales se escriban en el directorio `src/styles` y el estilo propio de cada página se escriba en su propio archivo `.vue`.
 
 ```css
 <style>
-/* global styles */
+/* estilos globales */
 </style>
 
 <style scoped>
-/* local styles */
+/* estilos locales */
 </style>
 ```
 
-## Custom element-ui style
+## Estilo de element-ui personalizado
 
-Now let's talk about how to override the element-ui style. Because element-ui style we are import in the global, so you can't add `scoped` to a page if you want to overwrite it, but you want to override only the element style of this page, you can add a class in its parent, using the namespace to solve this problem.
+Ahora hablemos sobre cómo sobrescribir el estilo de element-ui. Debido a que el estilo de element-ui esta importado de manera global, no puedes agregar `scoped` a una página para sobrescribirlo, en caso de que quieras sobrescribir el estilo de element solamente en esa página, puedes agregar una clase en su padre, utilizando espacio de nombres para resolver este problema.
 
 ```css
 .article-page {
-  /* you namespace*/
+  /* tu espacio de nombres */
   .el-tag {
-    /* element-ui element tag*/
+    /* etiqueta del elemento de element-ui */
     margin-right: 0px;
   }
 }
 ```
 
-**Of course, you can also use the deep selectors as described below.**
+**Por supuesto, también puedes usar los selectores profundos como se describe a continuación.**
 
-## Deep Selectors
+## Selectores profundos
 
-**Parent component changes child component style.**
+**El componente principal cambia el estilo del componente secundario.**
 
-If you want a selector in scoped styles to be "deep", i.e. affecting child components, you can use the >>> combinator:
+Si quieres que un selector en estilos con scoped sea "profundo", es decir, que afecte a los componentes secundarios, puedes usar el combinador `>>>`:
 
 ```css
 <style scoped>
@@ -85,7 +85,7 @@ If you want a selector in scoped styles to be "deep", i.e. affecting child compo
 </style>
 ```
 
-Will be compiled into
+Se compilará como:
 
 ```css
 .a[data-v-f3f3eg9] .b {
@@ -93,7 +93,7 @@ Will be compiled into
 }
 ```
 
-Some pre-processors, such as SASS, may not be able to parse >>> properly. In those cases you can use the /deep/ combinator instead - it's an alias for >>> and works exactly the same.
+Es posible que algunos preprocesadores, como SASS, no puedan analizar `>>>` correctamente. En esos casos, puedes usar el combinador /deep/ en su lugar, es un alias para `>>>` y funciona exactamente igual.
 
 ```css
 .xxx-container >>> .el-button{
@@ -101,11 +101,11 @@ Some pre-processors, such as SASS, may not be able to parse >>> properly. In tho
 }
 ```
 
-[Official document](https://vue-loader.vuejs.org/en/features/scoped-css.html)
+[Documentación oficial](https://vue-loader.vuejs.org/en/features/scoped-css.html)
 
 ## Postcss
 
-Let's talk about the configuration of postcss. After the new version of the [vue-cli webpack template](https://github.com/vuejs-templates/webpack) initialization, there is a default `postcss.config.js` in the root directory. By default, `vue-loader` will read the configuration of postcss from it, so here directly to change the configuration file on it. The configuration is the same as [postcss](https://github.com/postcss/postcss).
+Hablemos de la configuración de postcss. Después de la nueva versión de la inicialización [plantilla vue-cli de webpack](https://github.com/vuejs-templates/webpack), hay un `postcss.config.js` predeterminado en el directorio raíz. Por defecto, `vue-loader` leerá la configuración de postcss, así que aquí puede cambiar la configuración directamente. La configuración es la misma que [postcss](https://github.com/postcss/postcss).
 
 ```javascript
 // postcss.config.js
@@ -123,19 +123,19 @@ module.exports = {
   ]
 ```
 
-As described in the previous code, autoprefixer reads the configuration parameters of browserslist under package.json.
+Como se describe en el código anterior, el corrector automático lee los parámetros de configuración de browserslist en package.json.
 
-- `> 1%` Compatible with browser with global usage above 1%
-- `last 2 versions` Compatible with the last two versions of each browser
-- `not ie <= 8` Not compatible ie8 and below
+- `> 1%` Compatible con navegadores con uso global superior al 1%
+- `last 2 versions` Compatible con las dos últimas versiones de cada navegador
+- `not ie <= 8` No compatible con ie8 e inferiores
 
-More detail [browserslist](https://github.com/ai/browserslist)
+Más detalles [browserslist](https://github.com/ai/browserslist)
 
-`postcss` has many other features [to explore by yourself](https://www.postcss.parts/)
+`postcss` tiene muchas otras características [para explorar por tu cuenta](https://www.postcss.parts/)
 
 ## Mixin
 
-This project does not set to automatically inject sass mixin to the global, so you need to manually introduce the mixin.
+Este proyecto no está configurado para inyectar automáticamente sass mixin en el estilo global, por lo que debes insertarlo manualmente.
 
 ```scss
 <style rel="stylesheet/scss" lang="scss">
@@ -143,5 +143,4 @@ This project does not set to automatically inject sass mixin to the global, so y
 </style>
 ```
 
-If you need to automatically inject mixin global, you can use
-[sass-resources-loader](https://github.com/shakacode/sass-resources-loader).
+Si necesitas inyectar automáticamente mixin global, puedes usar [sass-resources-loader](https://github.com/shakacode/sass-resources-loader).

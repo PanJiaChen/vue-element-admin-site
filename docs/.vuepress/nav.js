@@ -126,7 +126,7 @@ var ComponentNav = [
       },
       {
         text: 'Tree Table',
-        textES: 'Tabla de Arbol',
+        textES: 'Tabla de Árbol',
         textZH: 'Tree Table 树形表格',
         link: '/feature/component/tree-table.md'
       }
@@ -141,6 +141,7 @@ var ComponentNav = [
       },
       {
         text: 'New',
+        textES: 'Nuevo',
         link: '/feature/script/new.md'
       }
     ]

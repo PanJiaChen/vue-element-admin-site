@@ -1,25 +1,25 @@
-## Environment Variables
+# Variables de Entorno
 
-`vue-element-admin` 4.0+ is built o `vue-cli`, so all environment variables are controlled based on `vue-cli`.
+`vue-element-admin` 4.0+ está construido en `vue-cli`, por lo que todas las variables de entorno se controlan en función de `vue-cli`.
 
-[Official document](https://cli.vuejs.org/guide/mode-and-env.html)
+[Documento oficial](https://cli.vuejs.org/guide/mode-and-env.html)
 
 ```
-.env                # loaded in all cases
-.env.[mode]         # only loaded in specified mode
+.env                # cargado en todos los casos
+.env.[mode]         # solo cargado en el modo especificado
 ```
 
-An env file simply contains key=value pairs of environment variables:
+Un archivo env simplemente contiene pares de variables de entorno key=value:
 
 ```
 FOO=bar
 VUE_APP_SECRET=secret
 ```
 
-::: tip note! ! !
-Environment variables must start with `VUE_APP_`. Such as: `VUE_APP_API`, `VUE_APP_TITLE`
+::: tip ¡NOTA!
+Las variables de entorno deben comenzar con `VUE_APP_`. Tales como: `VUE_APP_API`, `VUE_APP_TITLE`
 
-You can access them in your application code:
+Puedes acceder a ellas en el código de tu aplicación:
 
 ```js
 console.log(process.env.VUE_APP_xxxx)
@@ -27,15 +27,15 @@ console.log(process.env.VUE_APP_xxxx)
 
 :::
 
-In addition to `VUE_APP_*` variables, there are also two special variables that will always be available in your app code:
+Además de las variables `VUE_APP_*`, también hay dos variables especiales que siempre estarán disponibles en el código de tu aplicación:
 
-- `NODE_ENV` - this will be one of "development"、"production" or "test" depending on the mode the app is running in.
-- `BASE_URL` - this corresponds to the `publicPath` option in `vue.config.js` and is the base path your app is deployed at.
+- `NODE_ENV` - este será uno de "development, "production" o "test" dependiendo del modo en que se ejecute la aplicación.
+- `BASE_URL` - esto corresponde a la opción `publicPath` en `vue.config.js` y es la ruta base en la que se implementa tu aplicación.
 
-### Build related
+## Relacionado con la compilación
 
-In addition to some environment variables written in `.env`, there are some build and deployment related variables that need to be configured in `vue.config.js`.
+Además de algunas variables de entorno escritas en `.env`, hay algunas variables relacionadas con la compilación y la implementación que deben configurarse en `vue.config.js`.
 
-You can set the different parameters by executing the judgment environment with `process.env.NODE_ENV`.
+Puedes establecer los diferentes parámetros ejecutando el entorno de juicio con `process.env.NODE_ENV`.
 
-Specific code can learn from [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js)
+El código específico lo puedes aprender de [vue.config.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/vue.config.js)

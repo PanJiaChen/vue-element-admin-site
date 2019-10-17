@@ -1,52 +1,52 @@
-# Permission
+# Permisos
 
-It has been introduced in detail in this article--[手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac).
+Se ha introducido en detalle en este artículo--[手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac).
 
-The implementation of this project's permission is: compare the routing table by obtaining the current user's permission, and generate the routing table accessible by the current user with the permission, and dynamically mount it to `router` through `router.addRoutes`.
+La implementación de permisos de este proyecto es: comparar la tabla de enrutamiento obteniendo con el permiso del usuario actual, generar la tabla de enrutamiento accesible por el usuario, y montarla dinámicamente en `router` a través de `router.addRoutes`.
 
-But in fact, the business logic of many companies may not be the case. For example, the requirement of many companies is that the permissions of each page are dynamically configured, unlike the default settings in this project. But in fact the principle is the same. For example, you can dynamically configure permissions for each page through a tree control or other presentation, and then store this routing table to the back end. When the user logs in to get `roles`, the front end requests the accessible routing table to the backend according to `roles`, so that the accessible pages are dynamically generated. After that, the router.addRoutes is dynamically mounted to the router. You will find the same. , never change their case.
+Pero, en realidad, la lógica empresarial de muchas organizaciones puede no ser el caso. Por ejemplo, el requisito de muchas empresas es que los permisos de cada página se configuren dinámicamente, a diferencia de la configuración predeterminada en este proyecto. Pero, de hecho, el principio es el mismo. Por ejemplo, puedes configurar dinámicamente los permisos para cada página a través de un control de árbol u otra representación, y luego almacenar esta tabla de enrutamiento en el back-end. Cuando el usuario inicia sesión para obtener 'roles', el front-end solicita la tabla de enrutamiento accesible al back-end de acuerdo con 'roles', de modo que las páginas accesibles se generan dinámicamente. Después de eso, router.addRoutes se monta dinámicamente en el enrutador. Encontrarás lo mismo, nunca cambian su caso.
 
-Just one more step to map the back-end return routing table with the local components. [issue](https://github.com/PanJiaChen/vue-element-admin/issues/293)
+Solo un paso más para mapear la tabla de enrutamiento de retorno del back-end con los componentes locales. [issue](https://github.com/PanJiaChen/vue-element-admin/issues/293)
 
 ```js
 const map={
- login:require('login/index').default // sync
- login:()=>import('login/index')      // async
+ login:require('login/index').default // síncrono
+ login:()=>import('login/index')      // asíncrono
 }
-// The map on which you have a server is similar with
+// El mapa en el que tienes un servidor es similar a
 const serviceMap=[
  { path: '/login', component: 'login', hidden: true }
 ]
-// After traversing this map, dynamically generate asyncRoutes
-And replace component with map[component]
+// Después de recorrer este mapa, genera dinámicamente asyncRoutes
+// y reemplaza el componente con map[component]
 ```
 
-Ps: Do not rule out this project will increase the permissions control panel to support true dynamic configuration permissions.
+Ps: No descartes que este proyecto aumente el panel de control para admitir permisos de configuración dinámica real.
 
-## Logical modification
+## Modificación lógica
 
-The control code of the routing level right now is in `@/permission.js`. If you want to change the logic, you can release the hook `next()` directly in the appropriate judgment logic.
+El código de control del nivel de enrutamiento ahora está en `@/permission.js`. Si deseas cambiar la lógica, puedes utilizar el hook `next()` directamente en la lógica de juicio apropiada.
 
-## Permission directive
+## Directiva de permiso
 
-Write a permission directive, and can easily and quickly implement button-level permission judgment. [v-permission](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/directive/permission)
+Escribe una directiva de permisos, y podrás implementar fácil y rápidamente el juicio de permisos a nivel de botón. [v-permission](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/directive/permission)
 
-**Use**
+**Uso**
 
 ```html
 <template>
-  <!-- Admin can see this -->
+  <!-- Admin puede ver esto -->
   <el-tag v-permission="['admin']">admin</el-tag>
 
-  <!-- Editor can see this -->
+  <!-- Editor puede ver esto -->
   <el-tag v-permission="['editor']">editor</el-tag>
 
-  <!-- Editor can see this -->
-  <el-tag v-permission="['admin','editor']">Both admin or editor can see this</el-tag>
+  <!-- Editor puede ver esto -->
+  <el-tag v-permission="['admin','editor']">Tanto admin como editor pueden ver esto</el-tag>
 </template>
 
 <script>
-// Of course you can also register it for the sake of convenience.
+// Por supuesto, también puedes registrarlo por conveniencia.
 import permission from '@/directive/permission/index.js'
 export default{
   directives: { permission }
@@ -54,17 +54,17 @@ export default{
 </script>
 ```
 
-**Limitations**
+**Limitaciones**
 
-In some cases it is not suitable to use v-permission, such as element Tab component which can only be achieved by manually setting the v-if.
+En algunos casos, no es adecuado usar v-permission, como en el componente de element 'Tab', que solo se puede lograr configurando manualmente v-if.
 
-You can use the global permission judgment function. The usage is similar to the instruction `v-permission`.
+Puedes usar la función de juicio de permiso global. El uso es similar a la instrucción `v-permission`.
 
 ```html
 <template>
-  <el-tab-pane v-if="checkPermission(['admin'])" label="Admin">Admin can see this</el-tab-pane>
-  <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">Editor can see this</el-tab-pane>
-  <el-tab-pane v-if="checkPermission(['admin','editor'])" label="Admin-OR-Editor">Both admin or editor can see this</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['admin'])" label="Admin">Admin puede ver esto</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">Editor puede ver esto</el-tab-pane>
+  <el-tab-pane v-if="checkPermission(['admin','editor'])" label="Admin-OR-Editor">Tanto admin como editor pueden ver esto</el-tab-pane>
 </template>
 
 <script>

@@ -4,13 +4,13 @@
 
 La importación y exportación de Excel se implementa confiando en [js-xlsx](https://github.com/SheetJS/js-xlsx).
 
-[Export2Excel.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/vendor/Export2Excel.js) está empaquetado en el `js-xlsx` para facilitar la exportación de datos. 
+[Export2Excel.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/vendor/Export2Excel.js) está empaquetado en el `js-xlsx` para facilitar la exportación de datos.
 
-### Utilizar
+### Uso
 
-Ya que `Export2Excel` depende no solo de `js-xlsx` sino también de `file-saver` y `script-loader`.
+Dado que `Export2Excel` depende no solo de `js-xlsx` sino también de `file-saver` y `script-loader`.
 
-Así que primero necesitas instalar el siguiente comando:
+Primero debes instalar el siguiente comando:
 
 ```bash
 npm install xlsx file-saver -S
@@ -32,18 +32,18 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 :::warning Advertencia <Badge text="v3.9.1+"/>
-El código de compatibilidad para Bolb se ha eliminado en las versiones posteriores de `v3.9.1 +`. Si necesita ser compatible con navegadores de muy bajo nivel, puede introducir manualmente [blob-polyfill](https://www.npmjs.com/package/blob-polyfill) .
+El código de compatibilidad para Bolb se ha eliminado en las versiones posteriores a `v3.9.1 +`. Si necesita ser compatible con navegadores de muy bajo nivel, puedes introducir manualmente [blob-polyfill](https://www.npmjs.com/package/blob-polyfill).
 :::
 
-### Parámetros 
+### Parámetros
 
-| Parámetros    | Descripción                       | Tipo      | Valores Aceptados | Predeterminado    |
-| ---------     | ---------------------------       | -------   | ------------      | ----------        |
-| header        |  Exportar encabezado de datos     | Array     | /                 | []                |
-| data          |  Datos específicos exportados     | Array     | /                 | []                |
-| filename      | Nombre de archivo de exportación  | String    | /                 | excel-list        |
-| autoWidth     | Si la celda de ancho automático   | Boolean   | true / false      | true              |
-| bookType      | Tipo de archivo de exportación    | String    | xlsx, csv, txt, [more](https://github.com/SheetJS/js-xlsx#supported-output-formats)   | xlsx  |
+| Parámetros | Descripción                      | Tipo    | Valores Aceptados                                                                   | Predeterminado |
+| ---------- | -------------------------------- | ------- | ----------------------------------------------------------------------------------- | -------------- |
+| header     | Exportar encabezado de datos     | Array   | /                                                                                   | []             |
+| data       | Datos específicos exportados     | Array   | /                                                                                   | []             |
+| filename   | Nombre de archivo de exportación | String  | /                                                                                   | excel-list     |
+| autoWidth  | Si la celda de ancho automático  | Boolean | true / false                                                                        | true           |
+| bookType   | Tipo de archivo de exportación   | String  | xlsx, csv, txt, [more](https://github.com/SheetJS/js-xlsx#supported-output-formats) | xlsx           |
 
 ### Ejemplo
 
@@ -61,18 +61,18 @@ import('@/vendor/Export2Excel').then(excel => {
 })
 ```
 
-- [Demo, en línea](https://panjiachen.github.io/vue-element-admin/#/excel/export-excel)
-- [Código, en línea](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/exportExcel.vue)
+- [Demo en línea](https://panjiachen.github.io/vue-element-admin/#/excel/export-excel)
+- [Código en línea](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/exportExcel.vue)
 
 ## Importación de Excel
 
-Encapsulado [UploadExcel](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/UploadExcel/index.vue) Componente de importación de Excel, haga clic en el soporte y arrastre la carga, también es dependiente en `js-xlsx`.
+El componente encapsulado de importación de Excel [UploadExcel](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/UploadExcel/index.vue), soporta clic, arrastrar y cargar, también depende de `js-xlsx`.
 
-Proporciona dos funciones de devolución de llamada:
+Proporciona dos funciones de devolución de llamada (callback):
 
 - beforeUpload
 
-  Puedes hacer algunos juicios especiales antes de subir. Por ejemplo, si el tamaño del archivo es mayor que 1 megabyte? Si es superior a 1 megabyte, deja de analizar y muestra un mensaje de error.
+  Puedes hacer algunos juicios especiales antes de subir. Por ejemplo, si el tamaño del archivo es mayor que 1 megabyte? Si es superior a 1 megabyte, deja de analizarlo y muestra un mensaje de error.
 
 ```js
   beforeUpload(file) {
@@ -91,7 +91,7 @@ Proporciona dos funciones de devolución de llamada:
 ```
 
 - onSuccess
-  Una función de devolución de llamada que se activa cuando el análisis se realiza correctamente, que devuelve el encabezado y el contenido de la tabla.
+  Una función de devolución de llamada (callback) que se activa cuando el análisis se realiza correctamente, que devuelve el encabezado y el contenido de la tabla.
 
 ```js
   handleSuccess({ results, header }) {
@@ -101,4 +101,4 @@ Proporciona dos funciones de devolución de llamada:
 ```
 
 - [Demo en línea](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
-- [Código fuente](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/uploadExcel.vue)
+- [Código en línea](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/uploadExcel.vue)

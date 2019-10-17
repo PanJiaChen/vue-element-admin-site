@@ -1,24 +1,24 @@
-# Import Third-party Modules
+# Importar Módulos de Terceros
 
-In addition to the element-ui components and the business components built into the scaffolding, sometimes we also need to import other external components.
+Además de los componentes de element-ui y los componentes comerciales integrados en el andamio, a veces también necesitamos importar otros componentes externos.
 
-Here to import [vue-count-to](https://github.com/PanJiaChen/vue-countTo) as an example to introduce.
+Aquí para importar [vue-count-to](https://github.com/PanJiaChen/vue-countTo) como ejemplo para introducir.
 
-## Install dependence
+## Instalar dependencia
 
-Enter the following command in the terminal to complete the installation:
+Ingresa el siguiente comando en la terminal para completar la instalación:
 
 ```bash
 $ npm install vue-count-to --save
 ```
 
-> add `--save` will automatically add dependencies to package.json.
+> al añadir `--save` se agregarán automáticamente las dependencias a package.json.
 
 <br/>
 
-## Usage
+## Uso
 
-### Global Registration
+### Registro global
 
 **main.js**
 
@@ -33,7 +33,7 @@ Vue.component('countTo', countTo)
 </template>
 ```
 
-### Local Registration
+### Registro local
 
 ```html
 <template>
@@ -58,6 +58,6 @@ export default {
 
 <br/>
 
-## Use Any Javascript Library With Vue.js
+## Utiliza cualquier biblioteca de Javascript con Vue.js
 
-[Use Any Javascript Library With Vue.js](https://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)
+[Utiliza cualquier biblioteca de Javascript con Vue.js](https://vuejsdevelopers.com/2017/04/22/vue-js-libraries-plugins/)

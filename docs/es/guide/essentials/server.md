@@ -1,16 +1,16 @@
-# Work with Server
+# Trabajar con el Servidor
 
-## Front-end request flow
+## Flujo de solicitudes de front-end
 
-In `vue-element-admin` , a complete front-end UI interacts to the server-side processing flow as follows:
+En `vue-element-admin`, una interfaz de usuario completa interactúa con el flujo de procesamiento del lado del servidor de la siguiente manera:
 
-1.  UI component interaction;
-2.  Call unified management API service request function;
-3.  Send requests using encapsulated request.js;
-4.  Get server return;
-5.  Update data;
+1.  Interacción de componentes UI;
+2.  Llamar a la función de solicitud de servicio API de gestión unificada;
+3.  Enviar solicitudes utilizando request.js;
+4.  Obtener respuesta del servidor;
+5.  Actualizar datos;
 
-As you can see from the above flow, in order to facilitate management and maintenance, unified request processing is placed in the `src/api` folder and the files are generally split according to the model latitude,such as:
+Como puedes ver en el flujo anterior, para facilitar la administración y el mantenimiento, el procesamiento de solicitudes unificadas se coloca en la carpeta `src/api` y los archivos generalmente se dividen de acuerdo con la latitud del modelo, como:
 
 ```
 api/
@@ -22,11 +22,11 @@ api/
 
 ## request.js
 
-`@/src/utils/request.js` is based on the [axios](https://github.com/axios/axios), to facilitate the uniform handling of POST, GET and other request parameters, request headers, and error messages。Specific can see [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js).
+`@/src/utils/request.js` se basa en [axios](https://github.com/axios/axios), para facilitar el manejo uniforme de POST, GET y otros parámetros de solicitud, encabezados de solicitud y mensajes de error. Para ver mas específico vea [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js).
 
-It encapsulates the global `request interceptor`, `response interceptor`,`unified error handling`, `unified timeout, baseURL settings, etc.`
+Encapsula el 'interceptor de solicitud' global, el 'interceptor de respuesta', el 'manejo unificado de errores', el 'tiempo de espera unificado, la configuración de baseURL, etc.'
 
-## An example of a request article list:
+## Un ejemplo de solicitud de una lista de artículos:
 
 ```js
 // api/article.js
@@ -58,32 +58,32 @@ export default {
 }
 ```
 
-## Set multiple baseURLs
+## Establecer múltiples baseURLs
 
-We can request multiple api addresses by setting multiple `baseURL`s through [environment variables](/guide/essentials/deploy.html).
+Podemos solicitar múltiples direcciones api configurando múltiples `baseURL`s a través de [variables de entorno](/guide/essentials/deploy.html).
 
 ```bash
 # .env.development
-VUE_APP_BASE_API = '/dev-api' #Inject the root path of the api
-VUE_APP_BASE_API2 = '/dev-api2' #Inject the root path of the api
+VUE_APP_BASE_API = '/dev-api' #Inyecta la ruta raíz de la api
+VUE_APP_BASE_API2 = '/dev-api2' #Inyecta la ruta raíz de la api
 ```
 
-Then create an `axios` instance based on the environment variable, giving it a different `baseURL` [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
+Luego crea una instancia `axios` basada en la variable de entorno, dándole una `baseURL` [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js) diferente.
 
 ```js
-// create an axios instance
+// crear una instancia de axios
 const service = axios.create({
   baseURL: process.env.BASE_API, // api base_url
-  timeout: 5000 // request timeout
+  timeout: 5000 //  tiempo de espera agotado
 })
 
 const service2 = axios.create({
   baseURL: process.env.BASE_API2, // api base_url
-  timeout: 5000 // request timeout
+  timeout: 5000 // tiempo de espera agotado
 })
 ```
 
-Or
+O
 
 ```js
 export function fetchList(query) {
@@ -91,11 +91,11 @@ export function fetchList(query) {
     url: '/article/list',
     method: 'get',
     params: query,
-    baseURL: 'xxxx' // direct coverage
+    baseURL: 'xxxx' // cobertura directa
   })
 }
 ```
 
-## Switch from mock directly to server request
+## Cambiar de Mock directamente a la solicitud del servidor
 
-See [Mock Data](mock-api.md)
+Ver [Mock Data](mock-api.md)

@@ -1,6 +1,6 @@
-# Cuadrícula
+# Gitter
 
-[Cuadrícula](https://gitter.im/vue-element-admin/discuss)
+[Gitter](https://gitter.im/vue-element-admin/discuss)
 
 <script>
 export default {
