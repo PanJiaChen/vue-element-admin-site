@@ -27,7 +27,7 @@ Mock 数据是前端开发过程中必不可少的一环，是分离前后端开
 
 ## 新方案 <Badge text="v4.0.0+"/>
 
-在`v4.0`版本之后，在本地会启动一个`mock-server`来模拟数据，线上环境还是继续使用`mockjs`来进行模拟(因为本项目是一个纯前端项目，你也可以自己搭建一个线上 server 来提供数据)。不管是本地还是线上所以的数据模拟都是基于`mockjs`生成的，所以只要写一套 mock 数据，就可以在多环境中使用。
+在`v4.0`版本之后，在本地会启动一个`mock-server`来模拟数据，线上环境还是继续使用`mockjs`来进行模拟(因为本项目是一个纯前端项目，你也可以自己搭建一个线上 server 来提供数据)。不管是本地还是线上所有的数据模拟都是基于`mockjs`生成的，所以只要写一套 mock 数据，就可以在多环境中使用。
 
 该方案的好处是，在保留 `mockjs`的优势的同时，解决之前的痛点。由于我们的 mock 是完全基于`webpack-dev-serve`来实现的，所以在你启动前端服务的同时，`mock-server`就会自动启动，而且这里还通过 [chokidar](https://github.com/paulmillr/chokidar) 来观察 `mock` 文件夹内容的变化。在发生变化时会清除之前注册的`mock-api`接口，重新动态挂载新的接口，从而支持热更新。有兴趣的可以自己看一下代码[mock-server.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/mock-server.js)。由于是一个真正的`server`，所以你可以通过控制台中的`network`，清楚的知道接口返回的数据结构。并且同时解决了之前`mockjs`会重写 `XMLHttpRequest`对象，导致很多第三方库失效的问题。
 
