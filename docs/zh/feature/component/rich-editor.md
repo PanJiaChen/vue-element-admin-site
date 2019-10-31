@@ -14,7 +14,7 @@
 
 - **[quill](https://github.com/quilljs/quill)** 也是一个非常火的富文本，长相很不错。基于它写插件也很简单，api 设计也很简单。楼主不选择它的原因是它对图片的各种操作不友善，而且很难改。如果对图片没什么操作的用户，推荐使用。
 
-- **[medium-_editor_](https://github.com/yabwe/medium-editor)** 大名鼎鼎的 medium 的富文本(非官方出品)，但完成度还是不很不错，拓展性也不错。不过我觉得大部分用户还是会不习惯 medium 这种写作方式的。
+- **[medium-_editor_](https://github.com/yabwe/medium-editor)** 大名鼎鼎的 medium 的富文本(非官方出品)，但完成度还是很不错，拓展性也不错。不过我觉得大部分用户还是会不习惯 medium 这种写作方式的。
 
 - **[squire](https://github.com/neilj/Squire)** 一个比较轻量的富文本，压缩完才 11.5kb，相对于其它的富文本来说是非常的小了，推荐功能不复杂的建议使用。
 
