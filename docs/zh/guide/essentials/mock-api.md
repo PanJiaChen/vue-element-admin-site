@@ -69,7 +69,7 @@ if (process.env.NODE_ENV === 'production') {
 
 ## 新增
 
-如果你想添加 mock 数据，只要在根本录下找到`mock`文件，添加对应的路由，对其进行拦截和模拟数据即可。
+如果你想添加 mock 数据，只要在根目录下找到`mock`文件，添加对应的路由，对其进行拦截和模拟数据即可。
 
 比如我现在在[src/api/article](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/api/article.js)中需要添加一个查询某篇文章下面评论数的接口`fetchComments`，首先新建接口：
 
