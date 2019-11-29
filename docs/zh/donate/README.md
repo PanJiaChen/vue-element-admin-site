@@ -38,7 +38,7 @@ Open source projects consume a lot of my rest time. And at the end of the day we
 [前端 JD](https://job.toutiao.com/s/CnXWyP)
 [后端 JD](https://job.toutiao.com/s/CnGTAQ)
 [测试 JD](https://job.bytedance.com/referral/pc/position/detail/?token=MTsxNTc1MDE0ODA1MjkwOzY3MjMwNjcxMzQ4ODYyODI3NjQ7NjcwNDQ4ODIyMjk2MzAwOTgwNg)
-[校招](https://job.bytedance.com/campus/position?summary=873&city=125&q1=&position_type=)
+[校招](https://job.toutiao.com/campus/) 内推码: PWJXNZD
 
 JD 看看就可以了，大同小异，年限不限，具体评级按照面试表现来定。和 HR 沟通过后，目前简历最低下限是本科，头条在简历部分卡的还是蛮严格的，所以希望你能在简历中突出自己的亮点。
 
