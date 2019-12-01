@@ -1,11 +1,15 @@
+import axios from 'axios'
 import dynamicLoadScript from './dynamic-load-script'
-import load from './load'
 
 export function getCodefund(template = 'default') {
   const codefundId = isGitee() ? '79' : '116'
-  load(
-    `https://app.codefund.io/properties/${codefundId}/funder.js?template=${template}`
-  )
+  axios
+    .get(
+      `https://codefund.io/properties/${codefundId}/funder.html?template=${template}`
+    )
+    .then(function(response) {
+      document.getElementById('codefund').innerHTML = response.data
+    })
 }
 
 export function isGitee() {
