@@ -188,10 +188,18 @@ export default {
 .cf-wrapper {
   z-index: 101 !important;
 }
+
 .cf-wrapper a {
   display: block;
 }
+
 .sidebar .sidebar-links {
   padding-top: 10px;
+}
+
+.load-success {
+  position: sticky;
+  top: 0px;
+  background: #fff;
 }
 </style>
