@@ -2,19 +2,27 @@
 sidebar: false
 ---
 
-## 招聘（长期有效）
+## 字节跳动招聘（长期有效，急缺人）
 
-本人目前在字节跳动担任前端工程师，坐标：上海 Data-广告系统-商业平台。
+本人目前在字节跳动担任前端工程师，坐标：上海 Data-广告系统-广告创意中心。
+个人 Github: [https://github.com/PanJiaChen](https://github.com/PanJiaChen)
 
-项目组目前非常缺前端、后端、测试。欢迎有兴趣的同学找我内推。
+项目组目前非常缺前端、后端、测试。欢迎有兴趣的同学找我内推。我可以帮你优化简历，实时查看面试状态，简历一定不会石沉大海。
+
 [前端 JD](https://job.toutiao.com/s/CnXWyP)
 [后端 JD](https://job.toutiao.com/s/CnGTAQ)
 [测试 JD](https://job.bytedance.com/referral/pc/position/detail/?token=MTsxNTc1MDE0ODA1MjkwOzY3MjMwNjcxMzQ4ODYyODI3NjQ7NjcwNDQ4ODIyMjk2MzAwOTgwNg)
 [校招](https://job.toutiao.com/campus/) 内推码: PWJXNZD
 
-JD 看看就可以了，大同小异，年限不限，具体评级按照面试表现来定。和 HR 沟通过后，目前简历最低下限是本科，头条在简历部分卡的还是蛮严格的，所以希望你能在简历中突出自己的亮点。
+JD 看看就可以了，大同小异，年限不限，具体评级按照面试表现来定。
 
-若发现感兴趣的职位或者有什么想了解一下的，欢迎发送邮件至 `panfree23@gmail.com`找我交流沟通，请备注内推-xxx-职位。
+### 部门介绍
+
+字节广告系统，作为支撑今日头条、抖音、西瓜视频、火山小视频与穿山甲等多款海内外产品的商业化变现能力，是整个公司的核心收入部门，拥有复杂的算法，精湛的业务，巨量的并发。截止到目前, 广告系统团队已经集聚了数百名研发工程师，打造出了海内外领先的商业化变现系统。和优秀的人做有挑战的事，欢迎加入，一起构建全球创作与交流平台！
+
+### 投递简历
+
+若发现感兴趣的职位或者有什么想了解一下的，欢迎发送邮件至 `panjiachen@bytedance.com` 找我交流沟通，请备注内推-xxx-职位。或者可以加我微信：charisma23 备注来源牛客网
 
 ### 公司福利待遇：
 
