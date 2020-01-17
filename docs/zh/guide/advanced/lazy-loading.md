@@ -78,7 +78,7 @@ module.exports = file => () => import('@/views/' + file + '.vue')
 
 `vue-element-admin@4` 在新版本中已修改为基于 `vue-cli`来进行构建。所以在新版本中你只要在`.env.development`环境变量配置文件中设置`VUE_CLI_BABEL_TRANSPILE_MODULES:true`就可以了，具体[代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/.env.development)。
 
-它的实现逻辑和原理与之前还是一样的，还是基于`babel-plugin-dynamic-import-node`来实现的。之所以在`vue-cli`中只需要设置一个变量就可以了，是借用了`vue-cli`它的默认配置，它帮你代码都写好了。通过阅读[源码](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/babel-preset-app/index.js)可知，`vue-cli`会通过`VUE_CLI_BABEL_TRANSPILE_MODULES`这个环境变量来区分是否使用`babel-plugin-dynamic-import-node`，所以我们只要开其它就可以。虽然它的初衷是为了单元测试的，但正好满足了我们的需求。
+它的实现逻辑和原理与之前还是一样的，还是基于`babel-plugin-dynamic-import-node`来实现的。之所以在`vue-cli`中只需要设置一个变量就可以了，是借用了`vue-cli`它的默认配置，它帮你代码都写好了。通过阅读[源码](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/babel-preset-app/index.js)可知，`vue-cli`会通过`VUE_CLI_BABEL_TRANSPILE_MODULES`这个环境变量来区分是否使用`babel-plugin-dynamic-import-node`，所以我们只要开启它就可以。虽然它的初衷是为了单元测试的，但正好满足了我们的需求。
 
 ## 改进
 
