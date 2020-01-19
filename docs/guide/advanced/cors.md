@@ -8,7 +8,7 @@ The recommended reason is: as long as the first time is configured, no matter ho
 
 But there are always some back-end developers who think `cors` is too much `trouble`, they don't want to help the front end to solve cross-domain issues. That pure front-end is also has solutions.
 
-In `dev` environment, you can use webpack `proxy`, it is also very easy to use。 It's recommended that you look at the [document](https://doc.webpack-china.org/configuration/dev-server/#devserver-proxy) and we're not going to discuss it here. Some of the author's personal projects use this method
+In `dev` environment, you can use webpack `proxy`, it is also very easy to use。 It's recommended that you look at the [document](https://www.webpackjs.com/configuration/dev-server/#devserver-proxy) and we're not going to discuss it here. Some of the author's personal projects use this method
 
 But this method can not used in the `production` environment. In `production` environment, you need to use `nginx` reverse proxy. Whether `proxy` or `nginx`, the principle is the same. Solve the cross-domain issues by building a transit server to forward requests.
 
