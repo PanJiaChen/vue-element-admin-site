@@ -101,4 +101,4 @@ Proporciona dos funciones de devolución de llamada (callback):
 ```
 
 - [Demo en línea](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
-- [Código en línea](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/uploadExcel.vue)
+- [Código en línea](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/upload-excel.vue)

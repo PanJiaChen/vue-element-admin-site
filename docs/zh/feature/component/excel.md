@@ -101,4 +101,4 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 - [在线 DEMO](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
-- [在线 代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/uploadExcel.vue)
+- [在线 代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/upload-excel.vue)
