@@ -101,4 +101,4 @@ It provides two callback functions:
 ```
 
 - [Online Demo](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
-- [Online Code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/uploadExcel.vue)
+- [Online Code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/upload-excel.vue)
