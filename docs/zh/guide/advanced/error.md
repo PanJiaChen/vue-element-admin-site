@@ -86,10 +86,10 @@ getInfo()
 ## 代码
 
 本项目也做了代码层面的错误处理，如果你开启了`eslint`在编写代码的时候就会提示错误。如：
-![](https://wpimg.wallstcn.com/b037f47c-1f7b-487f-bb05-32e7300767d2.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/b037f47c-1f7b-487f-bb05-32e7300767d2.png)
 
 当然还有很多不能被`eslint`检查出来的错误，vue 也提供了全局错误处理钩子[errorHandler](https://vuejs.org/v2/api/#errorHandler)，所以本项目也做了相对应的错误收集。
-![](https://wpimg.wallstcn.com/360e4842-4db5-42d0-b078-f9a84a825546.gif)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/360e4842-4db5-42d0-b078-f9a84a825546.gif)
 
 ::: tip
 监听错误：[@/errorLog.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/errorLog.js)

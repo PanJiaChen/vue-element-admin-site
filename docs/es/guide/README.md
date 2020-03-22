@@ -178,7 +178,7 @@ Esto se abrirá automáticamente [http://localhost:9527](http://localhost:9527).
 
 Si ves la siguiente página, entonces has tenido éxito.
 
-![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
 Tenemos modelos integrados, componentes estándar, datos simulados, recarga módulos hot, administración de estado, i18n, enrutador global, etc. Puedes continuar explorando otros documentos para obtener más detalles sobre esos temas.
 

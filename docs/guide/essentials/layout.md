@@ -2,7 +2,7 @@
 
 The overall layout of the page is the outermost frame structure of a product and often includes navigation, sidebars, breadcrumbs, and content. To understand a admin project, first understand its basic layout.
 
-![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 ::: tip Code
 [@/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout)
@@ -69,7 +69,7 @@ Two transition animations of `fade` and `fade-transform` are provided by default
 
 **Different router the same component vue** In a real work, there are many situations. such as:
 
-![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
 The same component is used to create pages and edit pages. By default, when these two pages are switched, it will not trigger the created or mounted hooks of vue. [Officials say](https://router.vuejs.org/guide/advanced/data-fetching.html#data-fetching) that you can do this through the change of watch `$route`. To tell the truth it's still very troublesome. Later I discovered that I could simply add a unique key to the router-view to ensure that the routing hooks are re-rendered when the route is switched. This is much simpler.
 

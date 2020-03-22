@@ -186,7 +186,7 @@ Windows 用户若安装不成功，很大概率是`node-sass`安装失败，[解
 
 启动完成后会自动打开浏览器访问 [http://localhost:9527](http://localhost:9527)， 你看到下面的页面就代表操作成功了。
 
-![](https://wpimg.wallstcn.com/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
 接下来你可以修改代码进行业务开发了，本项目内建了典型业务模板、常用业务组件、模拟数据、HMR 实时预览、状态管理、国际化、全局路由等等各种实用的功能来辅助开发，你可以继续阅读和探索左侧的其它文档。
 

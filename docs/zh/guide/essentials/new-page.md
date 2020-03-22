@@ -46,7 +46,7 @@
 
 **这样侧边栏就会出现如图所示的 `menu-item` 了**
 
-![](https://wpimg.wallstcn.com/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
 
 <br/>
 
@@ -73,7 +73,7 @@
 }
 ```
 
-![](https://wpimg.wallstcn.com/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
 
 **侧边栏就会出现如图所示的 `submenu` 了**
 
@@ -86,7 +86,7 @@
 
 如：[@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue)，原则上有多少级路由嵌套就需要多少个`<router-view>`。
 
-![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
@@ -94,7 +94,7 @@
 
 新增完路由之后不要忘记在 `@/views` 文件下 创建对应的文件夹，一般性一个路由对应一个文件，该模块下的功能组件或者方法就建议在本文件夹下创建一个`utils`或`components`文件夹，各个功能模块维护自己的`utils`或`components`组件。如：
 
-![](https://wpimg.wallstcn.com/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
 
 <br/>
 <br/>

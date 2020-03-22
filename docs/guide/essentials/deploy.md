@@ -41,7 +41,7 @@ npm run preview -- --report
 
 After running you can see the specific size distribution at [http://localhost:9526/report.html](http://localhost:9526/report.html)
 
-![](https://wpimg.wallstcn.com/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
 
 ::: tip
 It is recommended to use gzip, after using the volume will be only the original 1/3 or so. You can also use lazy loading or Code Splitting.

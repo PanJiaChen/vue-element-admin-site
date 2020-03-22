@@ -32,14 +32,14 @@ Make the following settings `lintOnSave: false`.
 ## Configure ESLint in vscode
 
 Sharp tools make good work! Personally recommend eslint+vscode to write VUE, there is definitely a very cool
-![eslintGif.gif](https://wpimg.wallstcn.com/e94a76df-6dc0-4c15-9785-28b553a163e9.png)
+![eslintGif.gif](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/e94a76df-6dc0-4c15-9785-28b553a163e9.png)
 
 <br/>
 
 Every time you save your code, vscode will be able to mark red areas that do not conform to the eslint rules, and make some simple self-fixes at the same time. The installation steps are as follows:
 
 First install the eslint plugin
-![eslint1.png](https://wpimg.wallstcn.com/72f126cb-09eb-4b27-b02e-65e79eb76220.png)
+![eslint1.png](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/72f126cb-09eb-4b27-b02e-65e79eb76220.png)
 
 After we have installed ESLint, we back to VSCode to set up . Go to `Code` > `Preferences` > `Settings` and add the following configuration.
 

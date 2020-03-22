@@ -76,7 +76,7 @@ watch: {
 
 ## Demo
 
-![](https://wpimg.wallstcn.com/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
 
 ::: tip
 具体实例可参照 `@/views/dashboard/admin/components/` 文件下几个 chart 文件

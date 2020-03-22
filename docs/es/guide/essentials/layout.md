@@ -2,7 +2,7 @@
 
 El diseño general de la página es la estructura de un producto y a menudo incluye navegación, barras laterales, breadcrumbs y contenido. Para comprender un proyecto de administración, primero comprende su diseño básico.
 
-![](https://wpimg.wallstcn.com/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/7066d74f-12c5-47d6-b6ad-f22b43fec917.png)
 
 ::: tip Código
 [@/layout](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout)
@@ -70,7 +70,7 @@ Se proporcionan dos animaciones de transición de forma predeterminada `fade` y 
 
 **Diferente enrutador, el mismo componente vue** En un trabajo real, hay muchas situaciones como:
 
-![](https://wpimg.wallstcn.com/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/ac5047c9-cb75-4415-89e3-9386c42f3ef9.jpeg)
 
 El mismo componente se utiliza para crear y editar páginas. Por defecto, cuando se cambien estas dos páginas, no se activarán los hooks creados o montados de vue. [Oficialmente dice](https://router.vuejs.org/guide/advanced/data-fetching.html#data-fetching) que puedes hacer esto a través del cambio de reloj `$route`. A decir verdad, sigue siendo muy problemático. Más tarde descubrí que simplemente podía agregar una clave única a router-view para asegurar que los hooks de enrutamiento se vuelvan a representar cuando se cambia la ruta. Es mucho más simple.
 

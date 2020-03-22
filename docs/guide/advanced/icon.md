@@ -14,7 +14,7 @@ First, search for and find the icon you need, and collect it into your shopping 
 
 ** This project now supports and recommends separate export of svg usage. Download method as shown below:**
 
-<img width="600" src="https://wpimg.wallstcn.com/1f8b1e56-cfd9-4ef7-a0aa-dfb0c2883aa3.gif" />
+<img width="600" src="https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/1f8b1e56-cfd9-4ef7-a0aa-dfb0c2883aa3.gif" />
 
 <br />
 

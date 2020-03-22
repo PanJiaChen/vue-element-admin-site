@@ -46,7 +46,7 @@ It just creates a blank route based on 'layout', and you also need to add a rout
 
 **This sidebar will appear the menu-item**
 
-![](https://wpimg.wallstcn.com/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
 
 <br/>
 
@@ -75,7 +75,7 @@ If you want to ignore this automatic decision, you can use `alwaysShow: true`, s
 }
 ```
 
-![](https://wpimg.wallstcn.com/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
 
 **The sidebar will appear the `submenu`.**
 
@@ -90,7 +90,7 @@ Such as: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-elem
 
 **Note:** As many `<router-view>` as the level of routes nested.
 
-![](https://wpimg.wallstcn.com/9459de62-64d0-4819-9730-daf3f9889018.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
@@ -101,7 +101,7 @@ a view.
 
 Suggestion if a component or utils function only used in this view, just create a component folder under this view, lt is more convenient for each module to maintain its own `utils` or `components`.
 
-![](https://wpimg.wallstcn.com/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
+![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
 
 <br/>
 

@@ -14,7 +14,7 @@
 
 **现在本项目支持和推荐单独导出 svg 的引入使用方式。下载方式如下图：**
 
-<img width="600" src="https://wpimg.wallstcn.com/1f8b1e56-cfd9-4ef7-a0aa-dfb0c2883aa3.gif" />
+<img width="600" src="https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/1f8b1e56-cfd9-4ef7-a0aa-dfb0c2883aa3.gif" />
 
 <br />
 
