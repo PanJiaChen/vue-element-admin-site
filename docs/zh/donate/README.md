@@ -22,6 +22,10 @@ sidebar: false
 
 [Buy me a coffee](https://www.buymeacoffee.com/Pan)
 
+## 购买贴纸
+
+你也可以通过 购买[官方授权的贴纸](https://smallsticker.com/product/vue-element-admin) 的方式来支持 vue-element-admin - 每售出一张贴纸，我们将获得 2 元的捐赠。
+
 ## Monthly support
 
 Open source projects consume a lot of my rest time. And at the end of the day we all have to put a roof over our heads and food on the table, so this is why I have a patreon-page.
