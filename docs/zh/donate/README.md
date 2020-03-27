@@ -18,7 +18,7 @@ sidebar: false
 
 ## 购买贴纸
 
-你也可以通过 购买[官方授权的贴纸](https://smallsticker.com/product/vue-element-admin) 的方式来支持 vue-element-admin - 每售出一张贴纸，我们将获得 2 元的捐赠。
+你也可以通过 购买[官方授权的贴纸](https://smallsticker.com/product/vue-element-admin) 的方式来支持 vue-element-admin - 每售出一张贴纸，本项目将获得 2 元的捐赠。
 
 ## Or
 
