@@ -42,7 +42,6 @@ import Page from '@default-theme/Page.vue'
 import Sidebar from '@default-theme/Sidebar.vue'
 import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
-import 'blockadblock'
 import Swal from 'sweetalert2'
 import { getCodefund, loadGitter } from './utils'
 
@@ -172,11 +171,10 @@ export default {
         allowEscapeKey: false,
         showConfirmButton: false,
         backdrop: `
-    rgba(0,0,123,0.4)
-    url("${this.$withBase('/nyan-cat.gif')}")
-    left top
-    no-repeat
-  `
+            rgba(0,0,123,0.4)
+            url("${this.$withBase('/nyan-cat.gif')}")
+            left top
+            no-repeat`
       })
 
       this.sendGa(true)
@@ -185,13 +183,15 @@ export default {
       this.sendGa(false)
     },
     checkAdBlock() {
-      const blockAdBlock = window.blockAdBlock
-      if (typeof blockAdBlock === 'undefined') {
-        this.adBlockDetected()
-      } else {
-        blockAdBlock.onDetected(this.adBlockDetected)
-        blockAdBlock.onNotDetected(this.adBlockNotDetected)
-      }
+      import('blockadblock').then(() => {
+        const blockAdBlock = window.blockAdBlock
+        if (typeof blockAdBlock === 'undefined') {
+          this.adBlockDetected()
+        } else {
+          blockAdBlock.onDetected(this.adBlockDetected)
+          blockAdBlock.onNotDetected(this.adBlockNotDetected)
+        }
+      })
     },
     sendGa(tag) {
       window.ga &&
