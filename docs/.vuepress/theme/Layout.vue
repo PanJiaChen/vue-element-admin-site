@@ -254,8 +254,8 @@ export default {
   background: #fff;
 }
 .swal2-title {
-  font-size: 20px;
-  text-align: left;
-  line-height: 30px;
+  font-size: 20px !important;
+  text-align: left !important;
+  line-height: 30px !important;
 }
 </style>
