@@ -186,7 +186,6 @@ export default {
     },
     checkAdBlock() {
       const blockAdBlock = window.blockAdBlock
-      console.log(window.blockAdBlock)
       if (typeof blockAdBlock === 'undefined') {
         this.adBlockDetected()
       } else {
@@ -195,10 +194,11 @@ export default {
       }
     },
     sendGa(tag) {
-      window.ga('send', 'event', {
-        eventCategory: 'adblock',
-        eventAction: tag
-      })
+      window.ga &&
+        window.ga('send', 'event', {
+          eventCategory: 'adblock',
+          eventAction: tag
+        })
     },
     loadError(oError) {
       this.loadSuccess = false
