@@ -5,30 +5,31 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <div v-if="isHome||isDonate" class="home-codefund" id="codefund"></div>
 
-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
+    <div v-if="isHome||isDonate" id="codefund" class="home-codefund" />
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
+
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
-        <div v-if="!isHome" id="codefund" :key="$route.path"></div>
+        <div v-if="!isHome" id="codefund" :key="$route.path" />
       </div>
-      <slot name="sidebar-bottom" slot="bottom"/>
+      <slot slot="bottom" name="sidebar-bottom" />
     </Sidebar>
 
-    <div class="custom-layout" v-if="$page.frontmatter.layout">
-      <component :is="$page.frontmatter.layout"/>
+    <div v-if="$page.frontmatter.layout" class="custom-layout">
+      <component :is="$page.frontmatter.layout" />
     </div>
 
-    <Home v-else-if="$page.frontmatter.home"/>
+    <Home v-else-if="$page.frontmatter.home" />
 
     <Page v-else :sidebar-items="sidebarItems">
-      <slot name="page-top" slot="top"/>
-      <slot name="page-bottom" slot="bottom"/>
+      <slot slot="top" name="page-top" />
+      <slot slot="bottom" name="page-bottom" />
     </Page>
 
-    <SWUpdatePopup :updateEvent="swUpdateEvent"/>
+    <SWUpdatePopup :update-event="swUpdateEvent" />
   </div>
 </template>
 
@@ -41,6 +42,8 @@ import Page from '@default-theme/Page.vue'
 import Sidebar from '@default-theme/Sidebar.vue'
 import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
+import 'blockadblock'
+import Swal from 'sweetalert2'
 import { getCodefund, loadGitter } from './utils'
 
 export default {
@@ -50,22 +53,6 @@ export default {
       isSidebarOpen: false,
       swUpdateEvent: null,
       loadSuccess: true
-    }
-  },
-  watch: {
-    $route: {
-      handler: function(val, oldVal) {
-        if (this.$isServer) return
-
-        const { path } = val
-
-        if (this.isHome || this.isDonate) {
-          getCodefund('bottom-bar')
-        } else {
-          getCodefund()
-        }
-      },
-      immediate: true
     }
   },
   computed: {
@@ -128,6 +115,20 @@ export default {
       ]
     }
   },
+  watch: {
+    $route: {
+      handler: function(val, oldVal) {
+        if (this.$isServer) return
+
+        if (this.isHome || this.isDonate) {
+          getCodefund('bottom-bar')
+        } else {
+          getCodefund()
+        }
+      },
+      immediate: true
+    }
+  },
   mounted() {
     loadGitter()
     window.addEventListener('scroll', this.onScroll)
@@ -144,10 +145,60 @@ export default {
       this.isSidebarOpen = false
     })
     this.$on('sw-updated', this.onSWUpdated)
+
+    this.checkAdBlock()
   },
   methods: {
-    clickCoding(tag) {
-      ga('send', 'click', 'e.coding', 'Action', tag)
+    checkLang() {
+      var lang = navigator.language || navigator.userLanguage // 常规浏览器语言和IE浏览器
+      lang = lang.substr(0, 2) // 截取lang前2位字符
+      if (lang === 'zh') {
+        return 'cn'
+      } else {
+        return 'en'
+      }
+    },
+    adBlockDetected() {
+      const cn =
+        '检测到你使用了例如：AdBlock之类的广告屏蔽插件，请将本项目加入白名单中。因为广告收入对于一个开源项目来说真的很重要。拜托了🙏'
+      const en =
+        'It is detected that you have used an ad blocking plug-in such as AdBlock, etc. to replace this item and add it to the whitelist. Because advertising revenue is really important for an open source project. Please, 🙏'
+
+      Swal.fire({
+        title: this.checkLang() === 'cn' ? cn : en,
+        width: 600,
+        padding: '3em',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        showConfirmButton: false,
+        backdrop: `
+    rgba(0,0,123,0.4)
+    url("${this.$withBase('/nyan-cat.gif')}")
+    left top
+    no-repeat
+  `
+      })
+
+      this.sendGa(true)
+    },
+    adBlockNotDetected() {
+      this.sendGa(false)
+    },
+    checkAdBlock() {
+      const blockAdBlock = window.blockAdBlock
+      console.log(window.blockAdBlock)
+      if (typeof blockAdBlock === 'undefined') {
+        this.adBlockDetected()
+      } else {
+        blockAdBlock.onDetected(this.adBlockDetected)
+        blockAdBlock.onNotDetected(this.adBlockNotDetected)
+      }
+    },
+    sendGa(tag) {
+      window.ga('send', 'event', {
+        eventCategory: 'adblock',
+        eventAction: tag
+      })
     },
     loadError(oError) {
       this.loadSuccess = false
@@ -201,5 +252,10 @@ export default {
   position: sticky;
   top: 0px;
   background: #fff;
+}
+.swal2-title {
+  font-size: 20px;
+  text-align: left;
+  line-height: 30px;
 }
 </style>
