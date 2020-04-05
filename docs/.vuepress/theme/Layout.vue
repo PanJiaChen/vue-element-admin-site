@@ -145,7 +145,7 @@ export default {
     })
     this.$on('sw-updated', this.onSWUpdated)
 
-    this.checkAdBlock()
+    // this.checkAdBlock()
   },
   methods: {
     checkLang() {
