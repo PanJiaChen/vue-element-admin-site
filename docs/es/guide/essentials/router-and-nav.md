@@ -242,7 +242,7 @@ En segundo lugar, en el caso de colapsos de la barra lateral, limitados al `menu
 Entonces, la versión actual usa `el-scrollbar` para encargarse del problema de desplazamiento de la barra lateral.
 
 ::: tip Código
-[@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
+[@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue)
 :::
 
 ## Enlace externo en la barra lateral <Badge text="v3.8.2+"/>

@@ -242,7 +242,7 @@ Second, in the case of sidebar collapses, limited to `menu` of`element-ui`, can 
 So the current version uses `el-scrollbar` to handle the sidebar scrolling problem.
 
 ::: tip Code
-[@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
+[@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue)
 :::
 
 ## Sidebar external-link <Badge text="v3.8.2+"/>
