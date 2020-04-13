@@ -99,7 +99,7 @@ La barra lateral del proyecto se basa principalmente en `el-menu` de element-ui.
 
 Se introdujo en el front, la barra lateral se genera dinámicamente al leer la ruta y se combina con el juez de permisos, pero también debe soportar la anidación infinita de rutas, por lo que aquí también se usa para los componentes recursivos.
 
-> Código: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
+> Código: [@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
 
 Es posible modificar el estilo predeterminado de la barra lateral de `element-ui`. Todo el CSS lo puedes encontrar en [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) y modificarlo para satisfacer tus necesidades.
 
