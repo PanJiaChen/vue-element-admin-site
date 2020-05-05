@@ -39,11 +39,20 @@ meta: {
   // svg icon class
   icon: 'svg-name'
 
-  // when set true, the route will not be cached by <keep-alive>. Default false
+  // when set true, the route will not be cached by <keep-alive> (default false)
   noCache: true
 
   // if false, the item will hidden in breadcrumb(default is true)
   breadcrumb: false
+
+  // if set to true, it can be fixed in tags-view (default false)
+  affix: true // this is very useful in some scenarios, // click on the article to enter the article details page,
+
+  // When you set, the related item in the sidebar will be highlighted
+  // for example: a list page route of an article is: /article/list
+  // at this time the route is /article/1, but you want to highlight the route of the article list in the sidebar,
+  // you can set the following
+  activeMenu: '/article/list'
 }
 ```
 
