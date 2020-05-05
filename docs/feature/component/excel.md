@@ -62,7 +62,7 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 - [Online Demo](https://panjiachen.github.io/vue-element-admin/#/excel/export-excel)
-- [Online Code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/exportExcel.vue)
+- [Online Code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/export-excel.vue)
 
 ## Excel Import
 

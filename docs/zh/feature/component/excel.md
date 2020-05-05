@@ -62,7 +62,7 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 - [在线 DEMO](https://panjiachen.github.io/vue-element-admin/#/excel/export-excel)
-- [在线 代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/exportExcel.vue)
+- [在线代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/export-excel.vue)
 
 ## Excel 导入
 
@@ -101,4 +101,4 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 - [在线 DEMO](https://panjiachen.github.io/vue-element-admin/#/excel/upload-excel)
-- [在线 代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/upload-excel.vue)
+- [在线代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/excel/upload-excel.vue)
