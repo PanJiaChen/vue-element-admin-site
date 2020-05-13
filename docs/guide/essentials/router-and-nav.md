@@ -272,3 +272,29 @@ E.g.
   ]
 }
 ```
+
+## Sidebar expands by default
+
+In some scenarios, users need to expand some of the `sub-menu` in the sidebar by default, as shown below:
+
+<img :src="$withBase('/images/default-openeds.jpg')" alt="default-openeds.jpg" width="250px">
+
+Can be set through `default-openeds`, first find [Sidebar Code](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue)
+
+```html
+ <el-menu
+        :default-openeds="['/example','/nested']" // Add this line of code
+        :default-active="activeMenu"
+        :collapse="isCollapse"
+        :background-color="variables.menuBg"
+        :text-color="variables.menuText"
+        :unique-opened="false"
+        :active-text-color="variables.menuActiveText"
+        :collapse-transition="false"
+        mode="vertical"
+      >
+        <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
+      </el-menu>
+```
+
+**Note: default-openeds = "['example', 'nested']" is filled with route-path of submenu**
