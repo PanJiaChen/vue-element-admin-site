@@ -154,7 +154,17 @@ Puedes configurar `unique-opened` en [Sidebar/index.vue](https://github.com/PanJ
 ## Rutas anidadas
 
 Si tienes una ruta anidada, como [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
-No olvides agregar manualmente `<router-view>` al archivo raíz del directorio secundario.
+**No olvides agregar manualmente `<router-view>` al archivo raíz del directorio secundario**.
+
+```html
+ <!-- parent view  -->
+<template>
+  <div>
+    <!-- xxx html dom  -->
+    <router-view />
+  </div>
+</template>
+```
 
 Tal como: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
 

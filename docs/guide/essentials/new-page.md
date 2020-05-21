@@ -84,7 +84,17 @@ If you want to ignore this automatic decision, you can use `alwaysShow: true`, s
 ## Nested Routes
 
 If you have a nested Route, such as [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
-Don't forget to manually add an `< router-view >` to the root file of the secondary directory.
+**Don't forget to manually add an `< router-view >` to the root file of the secondary directory**.
+
+```html
+ <!-- parent view  -->
+<template>
+  <div>
+    <!-- xxx html dom  -->
+    <router-view />
+  </div>
+</template>
+```
 
 Such as: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
 

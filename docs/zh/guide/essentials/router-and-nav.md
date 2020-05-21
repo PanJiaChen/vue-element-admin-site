@@ -142,7 +142,17 @@ meta: {
 
 ## 多级目录(嵌套路由)
 
-如果你的路由是多级目录，如本项目 [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested) 那样， 有三级路由嵌套的情况下，不要忘记还要手动在二级目录的根文件下添加一个 `<router-view>`。
+如果你的路由是多级目录，如本项目 [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested) 那样， 有三级路由嵌套的情况下，**不要忘记还要手动在二级目录的根文件下添加一个 `<router-view>`**。
+
+```html
+ <!-- 父级路由组件  -->
+<template>
+  <div>
+    <!-- xxx html 内容  -->
+    <router-view />
+  </div>
+</template>
+```
 
 如：[@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue)，原则上有多少级路由嵌套就需要多少个`<router-view>`。
 

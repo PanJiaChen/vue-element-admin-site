@@ -84,7 +84,17 @@ Si deseas ignorar esta decisión automática, puedes usar `alwaysShow: true`, pa
 ## Rutas anidadas
 
 Si tienes una Ruta anidada, como [@/views/nested](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/views/nested),
-no olvides agregar manualmente `< router-view >` al archivo raíz del directorio secundario.
+**no olvides agregar manualmente `< router-view >` al archivo raíz del directorio secundario**.
+
+```html
+ <!-- parent view  -->
+<template>
+  <div>
+    <!-- xxx html dom  -->
+    <router-view />
+  </div>
+</template>
+```
 
 Por ejemplo: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/nested/menu1/index.vue).
 
