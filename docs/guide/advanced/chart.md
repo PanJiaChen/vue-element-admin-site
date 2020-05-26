@@ -82,6 +82,52 @@ In fact, they are all similar, or they must be combined with their own business.
 `@/views/dashboard/admin/components`
 :::
 
+## ECharts chart width is displayed incorrectly?
+
+Sometimes you put ECharts in `el-tab` or`el-dialog`, and you will find that the width of the chart will be displayed incorrectly. As shown below:
+
+<img :src="$withBase('/images/ECharts-width.png')" alt="ECharts-width.png" width="500px">
+
+Because ECharts itself is not adaptive, you need to manually call its `.resize ()` method when the width of your parent container changes.
+For example, `el-tab`, you can listen to the`change` event, and call the `.resize ()` method after finding the chart when the change occurs.
+
+```html
+<template>
+  <el-tabs v-model="active" @tab-click="handleClick">
+    <el-tab-pane label="用户管理" name="first">
+      <Chart ref="Chart" />
+    </el-tab-pane>
+    <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+  </el-tabs>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        active: 'second'
+      };
+    },
+    watch: {
+      active(val) {
+        this.$nextTick(() => {
+          this.$refs.Chart.resize();
+        }
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+```
+
+It is relatively simple to put the chart in the `el-dialog`, as long as the init chart is displayed after the dialog appears.
+
 ## Others
 
 Of course there are many other libraries in the community, such as [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js). The packaging methods are almost the same, and they are no longer here.

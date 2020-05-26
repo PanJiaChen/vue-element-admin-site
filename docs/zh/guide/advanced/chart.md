@@ -82,6 +82,52 @@ watch: {
 具体实例可参照 `@/views/dashboard/admin/components/` 文件下几个 chart 文件
 :::
 
+## ECharts 图表宽度显示不正确？
+
+有的时候你将 ECharts 放到 `el-tab`或者 `el-dialog`之中，会发现图表的宽度会显示的不那么正确。如下图：
+
+<img :src="$withBase('/images/ECharts-width.png')" alt="ECharts-width.png" width="500px">
+
+因为 ECharts 本身并不是自适应的，当你父级容器的宽度发生变化的时候需要手动调用它的 `.resize()` 方法。
+所有比如 `el-tab`，你可以监听 `change` 事件，当变化时找到这个图表之后调用它的 `.resize()` 方法。
+
+```html
+<template>
+  <el-tabs v-model="active" @tab-click="handleClick">
+    <el-tab-pane label="用户管理" name="first">
+      <Chart ref="Chart" />
+    </el-tab-pane>
+    <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+  </el-tabs>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        active: 'second'
+      };
+    },
+    watch: {
+      active(val) {
+        this.$nextTick(() => {
+          this.$refs.Chart.resize();
+        }
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+```
+
+如果是 `el-dialog`之中放图表就比较简单了，只要在 dialog 出现之后再 init 图表就可以了。
+
 ## 其它
 
 当然社区里的其它图表如 [d3](https://github.com/d3/d3) , [Chart.js](https://github.com/chartjs/Chart.js) , [chartist-js](https://github.com/gionkunz/chartist-js) 等封装方法都是大同小异差不多的，这里就不再展开了。
