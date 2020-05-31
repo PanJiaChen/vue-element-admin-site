@@ -96,7 +96,7 @@ meta: {
 前面也介绍了，侧边栏是通过读取路由并结合权限判断而动态生成的，而且还需要支持路由无限嵌套，所以这里还使用到了递归组件。
 
 ::: tip 代码地址
-[@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
+[@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
 :::
 
 这里同时也改造了 `element-ui` 默认侧边栏不少的样式，所有的 css 都可以在 [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) 中找到，你也可以根据自己的需求进行修改。
