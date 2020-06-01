@@ -6,7 +6,7 @@
 
 ## 配置项
 
-首先我们了解一些本项目配置路由时提供了哪些配置项。
+首先我们了解一下本项目配置路由时提供了哪些配置项。
 
 ```js
 // 当设置 true 的时候该路由不会在侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
@@ -96,7 +96,7 @@ meta: {
 前面也介绍了，侧边栏是通过读取路由并结合权限判断而动态生成的，而且还需要支持路由无限嵌套，所以这里还使用到了递归组件。
 
 ::: tip 代码地址
-[@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
+[@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
 :::
 
 这里同时也改造了 `element-ui` 默认侧边栏不少的样式，所有的 css 都可以在 [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) 中找到，你也可以根据自己的需求进行修改。
@@ -162,7 +162,7 @@ meta: {
 
 ## 点击侧边栏 刷新当前路由
 
-在用 spa(单页面应用) 这种开发模式的之前，用户每次点击侧边栏都会重新请求这个页面，用户渐渐养成了点击侧边栏当前路由来刷新 view 的习惯。但现在 spa 就不一样了，用户点击当前高亮的路由并不会刷新 view，因为 vue-router 会拦截你的路由，它判断你的 url 并没有任何变化，所以它不会触发任何钩子或者是 view 的变化。[issue](https://github.com/vuejs/vue-router/issues/296) 地址，社区也对该问题展开了激烈讨论。
+在用 spa(单页面应用) 这种开发模式之前，用户每次点击侧边栏都会重新请求这个页面，用户渐渐养成了点击侧边栏当前路由来刷新 view 的习惯。但现在 spa 就不一样了，用户点击当前高亮的路由并不会刷新 view，因为 vue-router 会拦截你的路由，它判断你的 url 并没有任何变化，所以它不会触发任何钩子或者是 view 的变化。[issue](https://github.com/vuejs/vue-router/issues/296) 地址，社区也对该问题展开了激烈讨论。
 
 ![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
 
