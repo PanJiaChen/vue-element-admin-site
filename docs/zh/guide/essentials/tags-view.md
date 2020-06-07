@@ -58,9 +58,9 @@ export default {
 
 - 使用 localStorage 等浏览器缓存方案，自己进行缓存处理
 
-## Affix 固钉 <Badge text="v3.10.0+"/>
+## Affix 固定 <Badge text="v3.10.0+"/>
 
-当在声明路由是 添加了 Affix 属性，则当前`tag`会被固定在 `tags-view`中（不可被删除）。
+当在声明路由时 添加了 Affix 属性，则当前`tag`会被固定在 `tags-view`中（不可被删除）。
 
 ![](https://user-images.githubusercontent.com/8121621/52840303-cd5c9280-3133-11e9-928f-e2825eaab51b.png)
 
