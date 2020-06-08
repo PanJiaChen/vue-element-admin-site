@@ -258,7 +258,8 @@ function genAdvancedSidebar(type = '') {
     '/guide/advanced/theme.md',
     '/guide/advanced/i18n.md',
     '/guide/advanced/error.md',
-    '/guide/advanced/webpack.md'
+    '/guide/advanced/webpack.md',
+    '/guide/advanced/sass.md'
   ]
   return mapArr.map(i => {
     return type + i
