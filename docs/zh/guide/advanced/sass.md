@@ -19,7 +19,7 @@
 ```bash
 npm uninstall node-sass
 
-npm install sass -S
+npm install sass -S -D
 ```
 
 具体可见该： [Pull Request](https://github.com/PanJiaChen/vue-element-admin/pull/3040)

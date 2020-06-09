@@ -19,7 +19,7 @@ The upgrade is also very simple, requiring only two steps
 ```bash
 npm uninstall node-sass
 
-npm install sass -S
+npm install sass -S -D
 ```
 
 The upgrade can also be seen in detail: [Pull Request](https://github.com/PanJiaChen/vue-element-admin/pull/3040) is simple and only requires two steps
