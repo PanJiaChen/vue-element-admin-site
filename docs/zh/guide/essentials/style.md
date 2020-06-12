@@ -33,7 +33,7 @@
 
 ## 目录结构
 
-vue-element-admin 所有全局样式都在 `@/styles 下设置
+vue-element-admin 所有全局样式都在 `@/styles` 下设置
 
 ```bash
 ├── styles
