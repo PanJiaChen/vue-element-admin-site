@@ -17,7 +17,7 @@ element-ui 的通用样式变量可能无法满足所有定制需求，你可以
 }
 ```
 
-一些全局的 element-ui 样式修改可以在 [@/src/styles/element-ui.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-ui.scss) 中进行设置。
+一些全局的 element-ui 样式修改可以在 [@/styles/element-ui.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-ui.scss) 中进行设置。
 
 <br/>
 
