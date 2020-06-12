@@ -18,7 +18,7 @@ Or use [Deep Selectors](https://vue-loader.vuejs.org/guide/scoped-css.html#deep-
 }
 ```
 
-Some global element-ui style modifications can be set in [@/src/styles/element-ui.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-ui.scss).
+Some global element-ui style modifications can be set in [@/styles/element-ui.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/element-ui.scss).
 
 <br/>
 

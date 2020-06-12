@@ -32,7 +32,7 @@ With scoped, the parent component's styles will not leak into child components. 
 
 ## Project Structure
 
-vue-element-admin All global styles are set in the `@/src/styles` directory.
+vue-element-admin All global styles are set in the `@/styles` directory.
 
 ```bash
 ├── styles

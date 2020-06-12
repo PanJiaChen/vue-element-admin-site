@@ -32,7 +32,7 @@ Con scoped, los estilos del componente principal no se filtrarán a los componen
 
 ## Estructura del proyecto
 
-Todos los estilos globales de vue-element-admin se configuran en el directorio `@/src/styles`.
+Todos los estilos globales de vue-element-admin se configuran en el directorio `@/styles`.
 
 ```bash
 ├── styles
