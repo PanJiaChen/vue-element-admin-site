@@ -108,7 +108,7 @@ The project sidebar is mainly based on the `el-menu` of element-ui.
 
 Also introduced in the front, the sidebar is generated dynamically by reading the route and combined with the permission judge, but also need to support the infinite nesting of routes, so here is also used to the recursive components.
 
-> Code: [@/views/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
+> Code: [@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/tree/master/src/layout/components/Sidebar)
 
 This also modify many default sidebar styles of `element-ui`. All css can be found in [@/styles/sidebar.scss](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/styles/sidebar.scss) and can be modified to suit your needs.
 
@@ -261,7 +261,7 @@ Second, in the case of sidebar collapses, limited to `menu` of`element-ui`, can 
 So the current version uses `el-scrollbar` to handle the sidebar scrolling problem.
 
 ::: tip Code
-[@/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/layout/components/Sidebar/index.vue)
+[@/layout/components/Sidebar](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/layout/components/Sidebar/index.vue)
 :::
 
 ## Sidebar external-link <Badge text="v3.8.2+"/>
