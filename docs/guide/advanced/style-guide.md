@@ -12,9 +12,9 @@ But except for `index.vue`.
 
 Example:
 
-- `@/src/components/BackToTop/index.vue`
-- `@/src/components/Charts/Line.vue`
-- `@/src/views/example/components/Button.vue`
+- `@/components/BackToTop/index.vue`
+- `@/components/Charts/Line.vue`
+- `@/views/example/components/Button.vue`
 
 ## JS files
 
@@ -22,9 +22,9 @@ All `.js` files follow `kebab-case`.
 
 Example:
 
-- `@/src/utils/open-window.js`
-- `@/src/views/svg-icons/require-icons.js`
-- `@/src/components/MarkdownEditor/default-options.js`
+- `@/utils/open-window.js`
+- `@/views/svg-icons/require-icons.js`
+- `@/components/MarkdownEditor/default-options.js`
 
 ## Views
 
@@ -32,8 +32,8 @@ Under the `views` file, the `.vue` files representing the routes path all use `k
 
 Example:
 
-- `@/src/views/svg-icons/index.vue`
-- `@/src/views/svg-icons/require-icons.js`
+- `@/views/svg-icons/index.vue`
+- `@/views/svg-icons/require-icons.js`
 
 The use of a kebab-case to name `views` is mainly due to the following considerations.
 

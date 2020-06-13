@@ -12,9 +12,9 @@
 
 例子：
 
-- `@/src/components/BackToTop/index.vue`
-- `@/src/components/Charts/Line.vue`
-- `@/src/views/example/components/Button.vue`
+- `@/components/BackToTop/index.vue`
+- `@/components/Charts/Line.vue`
+- `@/views/example/components/Button.vue`
 
 ## JS 文件
 
@@ -22,9 +22,9 @@
 
 例子：
 
-- `@/src/utils/open-window.js`
-- `@/src/views/svg-icons/require-icons.js`
-- `@/src/components/MarkdownEditor/default-options.js`
+- `@/utils/open-window.js`
+- `@/views/svg-icons/require-icons.js`
+- `@/components/MarkdownEditor/default-options.js`
 
 ## Views
 
@@ -32,8 +32,8 @@
 
 例子：
 
-- `@/src/views/svg-icons/index.vue`
-- `@/src/views/svg-icons/require-icons.js`
+- `@/views/svg-icons/index.vue`
+- `@/views/svg-icons/require-icons.js`
 
 使用横线连接 (kebab-case)来命名`views`主要是出于以下几个考虑。
 

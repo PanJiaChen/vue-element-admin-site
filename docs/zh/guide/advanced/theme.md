@@ -28,7 +28,7 @@ element-ui 的通用样式变量可能无法满足所有定制需求，你可以
 ### element-ui 官方文档页面 换肤方式
 
 element-ui 升级为 2.0 之后官方文档的右上角提供了动态换肤的功能，本项目也提供了该功能。
-代码地址：[@/src/components/ThemePicker](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ThemePicker/index.vue)。
+代码地址：[@/components/ThemePicker](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ThemePicker/index.vue)。
 
 **简单说明一下它的原理：**
 element-ui 2.0 版本之后所有的样式都是基于 SCSS 编写的，所有的颜色都是基于几个基础颜色[变量](https://github.com/PanJiaChen/custom-element-theme/blob/master/element-variables.scss)来设置的，所以就不难实现动态换肤了，只要找到那几个颜色变量修改它就可以了。

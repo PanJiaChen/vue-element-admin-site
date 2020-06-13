@@ -30,7 +30,7 @@ This project provides two kinds of dynamic skinning functions, each has its own 
 
 After the element-ui is upgraded to 2.0, the dynamic peel function is provided in the upper right corner of the official document. This project also provides a change function.
 
-Code: [@/src/components/ThemePicker](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ThemePicker/index.vue)。
+Code: [@/components/ThemePicker](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/ThemePicker/index.vue)。
 
 **Briefly explain its principle:** All styles after element-ui version 2.0 are based on SCSS, all colors are set based on a few basic color [variables](https://github.com/PanJiaChen/custom-element-theme/blob/master/element-variables.scss), so it is not difficult to achieve dynamic skinning, as long as find a few color variables to modify it. First, we need to get the version number of element-ui through `package.json` and request the corresponding style according to the version number. After you get the style, you will change the color, replace it with the color variable you want, and then dynamically add the `style` tag to override the original CSS style.
 

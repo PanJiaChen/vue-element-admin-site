@@ -22,7 +22,7 @@ api/
 
 ## request.js
 
-`@/src/utils/request.js` se basa en [axios](https://github.com/axios/axios), para facilitar el manejo uniforme de POST, GET y otros parámetros de solicitud, encabezados de solicitud y mensajes de error. Para ver mas específico vea [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js).
+`@/utils/request.js` se basa en [axios](https://github.com/axios/axios), para facilitar el manejo uniforme de POST, GET y otros parámetros de solicitud, encabezados de solicitud y mensajes de error. Para ver mas específico vea [request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js).
 
 Encapsula el 'interceptor de solicitud' global, el 'interceptor de respuesta', el 'manejo unificado de errores', el 'tiempo de espera unificado, la configuración de baseURL, etc.'
 
