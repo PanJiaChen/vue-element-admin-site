@@ -67,14 +67,14 @@ import moment from 'moment'
 Object.defineProperty(Vue.prototype, '$moment', { value: moment })
 ```
 
-由于所有的组件都会从 Vue 的原型对象上继承它们的方法, 因此在所有组件/实例中都可以通过 this.$moment: 的方式访问 Moment 而不需要定义全局变量或者手动的引入.
+由于所有的组件都会从 Vue 的原型对象上继承它们的方法, 因此在所有组件/实例中都可以通过 this.$moment. 的方式访问 Moment 而不需要定义全局变量或者手动的引入:
 
 **MyNewComponent.vue**
 
 ```js
 export default {
   created() {
-    console.log('The time is '.this.$moment().format('HH:mm'))
+    console.log('The time is ', this.$moment().format('HH:mm'))
   }
 }
 ```
