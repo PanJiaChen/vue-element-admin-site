@@ -84,7 +84,7 @@ export function fetchComments(id) {
 
 声明完接口之后，我们需要找到对应的 mock 文件夹[mock/article.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/article.js)，在下面创建一个能拦截路由的 mock 接口
 
-**请注意，mock 拦截是基于路由来做的，请确 mock 数据一定能匹配你的 api 保路由，支持正则**
+**请注意，mock 拦截是基于路由来做的，请确保 mock 数据一定能匹配你的 api 路由，支持正则**
 
 ```js
 // fetchComments 的 mock
