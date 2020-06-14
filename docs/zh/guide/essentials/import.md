@@ -74,7 +74,7 @@ Object.defineProperty(Vue.prototype, '$moment', { value: moment })
 ```js
 export default {
   created() {
-    console.log('The time is '.this.$moment().format('HH:mm'))
+    console.log('The time is ', this.$moment().format('HH:mm'))
   }
 }
 ```
