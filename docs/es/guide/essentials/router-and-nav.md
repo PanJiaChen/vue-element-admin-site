@@ -37,7 +37,7 @@ meta: {
   title: 'title'
 
   // clase de icono SVG
-  icon: 'svg-name'
+  icon: 'svg-name' // or el-icon-x
 
   // si es true, la ruta no será almacenada en caché por <keep-alive> (Predeterminado: false)
   noCache: true

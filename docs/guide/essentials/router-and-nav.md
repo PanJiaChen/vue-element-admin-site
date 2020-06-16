@@ -37,7 +37,7 @@ meta: {
   title: 'title'
 
   // svg icon class
-  icon: 'svg-name'
+  icon: 'svg-name' // or el-icon-x
 
   // when set true, the route will not be cached by <keep-alive> (default false)
   noCache: true
