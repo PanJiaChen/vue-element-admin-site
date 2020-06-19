@@ -78,11 +78,34 @@ After that, you're done. Routing can be written as usual.
 
 [Related code changes](https://github.com/PanJiaChen/vue-element-admin/pull/727)
 
-## vue-cli@3
+## vue-cli@3 [The plan has been eliminated]
 
 `vue-element-admin@4` has been modified to build based on `vue-cli` in the new version. So in the new version you just need to set `VUE_CLI_BABEL_TRANSPILE_MODULES:true` in the `.env.development` environment variable configuration file, specifically [code](https://github.com/PanJiaChen/vue-element-admin/blob/master/.env.development).
 
 Its implementation logic and principle are the same as before, it based on `babel-plugin-dynamic-import-node`.The only thing you need to set a variable in `vue-cli` is to borrow the default configuration of `vue-cli`. By reading [source code](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/babel-preset-app/index.js), `vue-cli` will pass `VUE_CLI_BABEL_TRANSPILE_MODULES`,this environment variable to distinguish whether to use `babel-plugin-dynamic-import-node`, so we only need to set it to true. Although its original intention was for unit testing, it just met our needs.
+
+### Elimination reason
+
+In the era of `vue-cli@3`, using `VUE_CLI_BABEL_TRANSPILE_MODULES` is ok, but it is actually fragile, as in `vue-cli@4`, vue-cli introduces `babel-plugin-dynamic-import-node The logic of`has changed, it needs to be `VUE_CLI_BABEL_TRANSPILE_MODULES` and `VUE_CLI_BABEL_TARGET_NODE` to be true at the same time, so as long as the judgment logic of vue-cli changes, we need to make corresponding changes, or be very passive and coupled . So in the `vue-cli@4` version, we no longer set it by `VUE_CLI_BABEL_TRANSPILE_MODULES: true`, but by manually introducing `'babel-plugin-dynamic-import-node'`, see the next section for details.
+
+## vue-cli@4
+
+1. No need to configure `VUE_CLI_BABEL_TRANSPILE_MODULES = true` in the `.env.development` file, just delete it.
+
+2. Run `npm install babel-plugin-dynamic-import-node -S -D`
+
+3. The way to add the dynamic-import-node plugin in `babel.config.js`, see the next section for details.
+
+```js
+module.exports = {
+  presets: ['@vue/cli-plugin-babel/preset'],
+  env: {
+    development: {
+      plugins: ['dynamic-import-node']
+    }
+  }
+}
+```
 
 ## Improve
 

@@ -34,7 +34,7 @@ module.exports = file => () => import('@/views/' + file + '.vue')
 
 当然这样写会有一些副作用。由于
 
-> Every module that could potentially be requested on an import() call is included. For example, import(./locale/${language}.json) will cause every .json file in the ./locale directory to be bundled into the new chunk. At run time, when the variable language has been computed, any file like english.json or german.json will be available for consumption.
+> Every module that could potentially be requested on an import() call is included. For example, import(./locale/\${language}.json) will cause every .json file in the ./locale directory to be bundled into the new chunk. At run time, when the variable language has been computed, any file like english.json or german.json will be available for consumption.
 
 `@/views/下的 .vue` 文件都会被打包。不管你是否被依赖。所以这样就产生了一个副作用，就是会多打包一些可能永远都用不到 js 代码。当然这只会增加 dist 文件的大小，但不会对线上代码产生任何的副作用。[相关 issue](https://github.com/PanJiaChen/vue-element-admin/issues/292)
 
@@ -74,11 +74,34 @@ module.exports = file => () => import('@/views/' + file + '.vue')
 
 [相关代码改动](https://github.com/PanJiaChen/vue-element-admin/pull/727)
 
-## vue-cli@3
+## vue-cli@3 [该方案已淘汰]
 
 `vue-element-admin@4` 在新版本中已修改为基于 `vue-cli`来进行构建。所以在新版本中你只要在`.env.development`环境变量配置文件中设置`VUE_CLI_BABEL_TRANSPILE_MODULES:true`就可以了，具体[代码](https://github.com/PanJiaChen/vue-element-admin/blob/master/.env.development)。
 
 它的实现逻辑和原理与之前还是一样的，还是基于`babel-plugin-dynamic-import-node`来实现的。之所以在`vue-cli`中只需要设置一个变量就可以了，是借用了`vue-cli`它的默认配置，它帮你代码都写好了。通过阅读[源码](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/babel-preset-app/index.js)可知，`vue-cli`会通过`VUE_CLI_BABEL_TRANSPILE_MODULES`这个环境变量来区分是否使用`babel-plugin-dynamic-import-node`，所以我们只要开启它就可以。虽然它的初衷是为了单元测试的，但正好满足了我们的需求。
+
+### 废弃原因
+
+在`vue-cli@3`时代，使用`VUE_CLI_BABEL_TRANSPILE_MODULES`是 ok 的，但其实也是脆弱的，就比如在`vue-cli@4`时，vue-cli 引入`babel-plugin-dynamic-import-node`的逻辑就发生了变化，需要`VUE_CLI_BABEL_TRANSPILE_MODULES`和`VUE_CLI_BABEL_TARGET_NODE`同时为 true 时才会生效，所以只要 vue-cli 的判断逻辑发生了变化，我们都需要做相对应的改动，或非常被动和耦合。所以我们在`vue-cli@4`版本中，不再通过`VUE_CLI_BABEL_TRANSPILE_MODULES:true`来设置，而是通过手动引入`'babel-plugin-dynamic-import-node'`的方式，具体见下一部分。
+
+## vue-cli@4
+
+1. 在 `.env.development`文件中不在需要配置`VUE_CLI_BABEL_TRANSPILE_MODULES = true`，删除即可。
+
+2. 在命令行执行 `npm install babel-plugin-dynamic-import-node -S -D`
+
+3. 在`babel.config.js` 中添加插件
+
+```js
+module.exports = {
+  presets: ['@vue/cli-plugin-babel/preset'],
+  env: {
+    development: {
+      plugins: ['dynamic-import-node']
+    }
+  }
+}
+```
 
 ## 改进
 
