@@ -36,17 +36,23 @@
 <script>
 import Vue from 'vue'
 import nprogress from 'nprogress'
-import Home from './Home.vue'
 import Navbar from '@default-theme/Navbar.vue'
 import Page from '@default-theme/Page.vue'
 import Sidebar from '@default-theme/Sidebar.vue'
 import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
 import Swal from 'sweetalert2'
+import Home from './Home.vue'
 import { getCodefund, loadGitter } from './utils'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
+  components: {
+    Home,
+    Page,
+    Sidebar,
+    Navbar,
+    SWUpdatePopup
+  },
   data() {
     return {
       isSidebarOpen: false,
@@ -58,14 +64,17 @@ export default {
     isHome() {
       const page = this.$page
       const { path } = page
+
       if (path === '/zh/' || path === '/') {
         return true
       }
+
       return false
     },
     isDonate() {
       const page = this.$page
       const { path } = page
+
       return path.includes('donate')
     },
     isCN() {
@@ -74,9 +83,11 @@ export default {
     shouldShowNavbar() {
       const { themeConfig } = this.$site
       const { frontmatter } = this.$page
+
       if (frontmatter.navbar === false || themeConfig.navbar === false) {
         return false
       }
+
       return (
         this.$title ||
         themeConfig.logo ||
@@ -87,6 +98,7 @@ export default {
     },
     shouldShowSidebar() {
       const { frontmatter } = this.$page
+
       return (
         !frontmatter.layout &&
         !frontmatter.home &&
@@ -104,6 +116,7 @@ export default {
     },
     pageClasses() {
       const userPageClass = this.$page.frontmatter.pageClass
+
       return [
         {
           'no-navbar': !this.shouldShowNavbar,
@@ -116,14 +129,16 @@ export default {
   },
   watch: {
     $route: {
-      handler: function(val, oldVal) {
+      handler(val, oldVal) {
         if (this.$isServer) return
 
-        if (this.isHome || this.isDonate) {
-          getCodefund('bottom-bar')
-        } else {
-          getCodefund()
-        }
+        this.$nextTick(() => {
+          if (this.isHome || this.isDonate) {
+            getCodefund('bottom-bar')
+          } else {
+            getCodefund()
+          }
+        })
       },
       immediate: true
     }
@@ -149,13 +164,14 @@ export default {
   },
   methods: {
     checkLang() {
-      var lang = navigator.language || navigator.userLanguage // 常规浏览器语言和IE浏览器
+      let lang = navigator.language || navigator.userLanguage // 常规浏览器语言和IE浏览器
+
       lang = lang.substr(0, 2) // 截取lang前2位字符
       if (lang === 'zh') {
         return 'cn'
-      } else {
-        return 'en'
       }
+
+      return 'en'
     },
     adBlockDetected() {
       const cn =
@@ -184,7 +200,8 @@ export default {
     },
     checkAdBlock() {
       import('blockadblock').then(() => {
-        const blockAdBlock = window.blockAdBlock
+        const { blockAdBlock } = window
+
         if (typeof blockAdBlock === 'undefined') {
           this.adBlockDetected()
         } else {
@@ -216,6 +233,7 @@ export default {
     onTouchEnd(e) {
       const dx = e.changedTouches[0].clientX - this.touchStart.x
       const dy = e.changedTouches[0].clientY - this.touchStart.y
+
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
         if (dx > 0 && this.touchStart.x <= 80) {
           this.toggleSidebar(true)
@@ -250,12 +268,13 @@ export default {
 
 .load-success {
   position: sticky;
-  top: 0px;
+  top: 0;
   background: #fff;
 }
+
 .swal2-title {
   font-size: 20px !important;
-  text-align: left !important;
   line-height: 30px !important;
+  text-align: left !important;
 }
 </style>
