@@ -25,7 +25,7 @@ You can change the parent `color` or directly `fill` color.
 
 Support import `svg` from external url. E.g:
 
-`<svg-icon icon-class="https://xxxx.svg />`
+`<svg-icon icon-class="https://xxxx.svg" />`
 
 ## Size
 
