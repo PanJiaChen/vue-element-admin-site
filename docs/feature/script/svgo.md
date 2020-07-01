@@ -17,4 +17,4 @@ We can execute `npm run svgo`
 
 Useless information is processed.
 
-More detailed configuration can be configured in `/scr/icons/svgo.yml`.
+More detailed configuration can be configured in `/src/icons/svgo.yml`.
