@@ -6,7 +6,7 @@
 npm run svgo
 ```
 
-我们很多网上下载或者 `Sketch` 导出的 svg 会有很多冗余无用的信息，大大的增加了 svg 的尺寸，我们可以使用 `svgo` 对它进行优化。比如下图是有 `Sketch` 导出的一个 svg
+我们很多网上下载或者 `Sketch` 导出的 svg 会有很多冗余无用的信息，大大的增加了 svg 的尺寸，我们可以使用 `svgo` 对它进行优化。比如下图是用 `Sketch` 导出的一个 svg
 
 ![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/333edb6b-4b95-42f8-aa60-b8f42e516b52.jpg)
 
@@ -18,4 +18,4 @@ npm run svgo
 
 无用的信息都被处理掉了。
 
-更多详细的配置 可以在 `/scr/icons/svgo.yml`中进行配置。
+更多详细的配置 可以在 `/src/icons/svgo.yml`中进行配置。
