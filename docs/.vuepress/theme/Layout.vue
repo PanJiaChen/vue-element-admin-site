@@ -6,7 +6,7 @@
     @touchend="onTouchEnd"
   >
 
-    <div v-if="isHome||isDonate" id="codefund" class="home-codefund" />
+    <!-- <div v-if="isHome||isDonate" id="codefund" class="home-codefund" /> -->
 
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
@@ -43,7 +43,7 @@ import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
 import Swal from 'sweetalert2'
 import Home from './Home.vue'
-import { getCodefund, loadGitter } from './utils'
+import { loadGitter } from './utils'
 
 export default {
   components: {
@@ -127,22 +127,22 @@ export default {
       ]
     }
   },
-  watch: {
-    $route: {
-      handler(val, oldVal) {
-        if (this.$isServer) return
+  // watch: {
+  //   $route: {
+  //     handler(val, oldVal) {
+  //       if (this.$isServer) return
 
-        this.$nextTick(() => {
-          if (this.isHome || this.isDonate) {
-            getCodefund('bottom-bar')
-          } else {
-            getCodefund()
-          }
-        })
-      },
-      immediate: true
-    }
-  },
+  //       this.$nextTick(() => {
+  //         if (this.isHome || this.isDonate) {
+  //           getCodefund('bottom-bar')
+  //         } else {
+  //           getCodefund()
+  //         }
+  //       })
+  //     },
+  //     immediate: true
+  //   }
+  // },
   mounted() {
     loadGitter()
     window.addEventListener('scroll', this.onScroll)
