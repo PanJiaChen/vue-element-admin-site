@@ -20,6 +20,20 @@ export function isGitee() {
   return false
 }
 
+export function loadCarbon() {
+  const id = '_carbonads_js'
+  const existingScript = document.getElementById(id)
+  if (existingScript) return
+  const script = document.createElement('script')
+
+  document.body.appendChild(script)
+  dynamicLoadScript(
+    'https://cdn.carbonads.com/carbon.js?serve=CE7IK5QY&placement=panjiachengithubio',
+    () => {},
+    id
+  )
+}
+
 export function loadGitter() {
   const id = 'vue-element-admin/discuss'
   const existingScript = document.getElementById(id)

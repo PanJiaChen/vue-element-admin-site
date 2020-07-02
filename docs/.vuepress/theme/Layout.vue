@@ -43,7 +43,7 @@ import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
 import Swal from 'sweetalert2'
 import Home from './Home.vue'
-import { loadGitter } from './utils'
+import { loadGitter, loadCarbon } from './utils'
 
 export default {
   components: {
@@ -127,24 +127,18 @@ export default {
       ]
     }
   },
-  // watch: {
-  //   $route: {
-  //     handler(val, oldVal) {
-  //       if (this.$isServer) return
-
-  //       this.$nextTick(() => {
-  //         if (this.isHome || this.isDonate) {
-  //           getCodefund('bottom-bar')
-  //         } else {
-  //           getCodefund()
-  //         }
-  //       })
-  //     },
-  //     immediate: true
-  //   }
-  // },
+  watch: {
+    $route: {
+      handler(val, oldVal) {
+        if (this.$isServer) return
+        window._carbonads && window._carbonads.refresh()
+      },
+      immediate: true
+    }
+  },
   mounted() {
     loadGitter()
+    loadCarbon()
     window.addEventListener('scroll', this.onScroll)
     // configure progress bar
     nprogress.configure({ showSpinner: false })
@@ -276,5 +270,79 @@ export default {
   font-size: 20px !important;
   line-height: 30px !important;
   text-align: left !important;
+}
+</style>
+
+<style>
+#carbonads {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+}
+
+#carbonads {
+  display: flex;
+  max-width: 270px;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  bottom: 60px;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+#carbonads .carbon-wrap {
+  display: flex;
+}
+
+.carbon-img {
+  display: block;
+  margin: 0;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+}
+
+.carbon-text {
+  font-size: 13px;
+  padding: 10px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 10px;
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      hsla(0, 0%, 0%, 0.025) 5px,
+      hsla(0, 0%, 0%, 0.025) 10px
+    )
+    hsla(203, 11%, 95%, 0.4);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
 }
 </style>
