@@ -32,7 +32,7 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 :::warning Advertencia <Badge text="v3.9.1+"/>
-El código de compatibilidad para Bolb se ha eliminado en las versiones posteriores a `v3.9.1 +`. Si necesita ser compatible con navegadores de muy bajo nivel, puedes introducir manualmente [blob-polyfill](https://www.npmjs.com/package/blob-polyfill).
+El código de compatibilidad para Blob se ha eliminado en las versiones posteriores a `v3.9.1 +`. Si necesita ser compatible con navegadores de muy bajo nivel, puedes introducir manualmente [blob-polyfill](https://www.npmjs.com/package/blob-polyfill).
 :::
 
 ### Parámetros
