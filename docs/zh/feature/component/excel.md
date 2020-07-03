@@ -32,7 +32,7 @@ import('@/vendor/Export2Excel').then(excel => {
 ```
 
 :::warning 注意 <Badge text="v3.9.1+"/>
-在`v3.9.1+`以后的版本中移除了对 Bolb 的兼容性代码，如果你还需要兼容很低版本的浏览器可以手动引入[blob-polyfill](https://www.npmjs.com/package/blob-polyfill)进行兼容。
+在`v3.9.1+`以后的版本中移除了对 Blob 的兼容性代码，如果你还需要兼容很低版本的浏览器可以手动引入[blob-polyfill](https://www.npmjs.com/package/blob-polyfill)进行兼容。
 :::
 
 ### 参数
