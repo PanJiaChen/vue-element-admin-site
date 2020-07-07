@@ -131,7 +131,10 @@ export default {
     $route: {
       handler(val, oldVal) {
         if (this.$isServer) return
-        window._carbonads && window._carbonads.refresh()
+
+        if (document.getElementById('carbonads')) {
+          window._carbonads && window._carbonads.refresh()
+        }
       },
       immediate: true
     }
@@ -275,14 +278,8 @@ export default {
 
 <style>
 #carbonads {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
-    sans-serif;
-}
-
-#carbonads {
   display: flex;
-  max-width: 270px;
+  max-width: 280px;
   background-color: hsl(0, 0%, 98%);
   box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
   z-index: 2;
@@ -323,7 +320,7 @@ export default {
 .carbon-text {
   font-size: 13px;
   padding: 10px;
-  line-height: 1.5;
+  line-height: 1.4;
   text-align: left;
 }
 
