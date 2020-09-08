@@ -1,5 +1,5 @@
 var nav = require('./nav.js')
-var { EcosystemNav, ComponentNav } = nav
+var { EcosystemNav, ComponentNav, BackendNav } = nav
 
 var utils = require('./utils.js')
 var { genNav, getComponentSidebar, deepClone } = utils
@@ -39,7 +39,7 @@ module.exports = {
           },
           {
             text: 'Features',
-            items: genNav(deepClone(ComponentNav), 'EN')
+            items: genNav([...BackendNav, ...deepClone(ComponentNav)], 'EN')
           },
           {
             text: 'Ecosystem',
@@ -96,7 +96,7 @@ module.exports = {
           },
           {
             text: 'Características',
-            items: genNav(deepClone(ComponentNav), 'ES')
+            items: genNav([...BackendNav, ...deepClone(ComponentNav)], 'ES')
           },
           {
             text: 'Ecosistema',
@@ -149,7 +149,7 @@ module.exports = {
           },
           {
             text: '功能',
-            items: genNav(deepClone(ComponentNav), 'ZH')
+            items: genNav([...BackendNav, ...deepClone(ComponentNav)], 'ZH')
           },
           {
             text: '生态系统',

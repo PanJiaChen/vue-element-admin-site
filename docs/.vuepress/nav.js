@@ -83,7 +83,7 @@ var EcosystemNav = [
   }
 ]
 
-var ComponentNav = [
+var BackendNav = [
   {
     text: 'Backend',
     textES: 'Backend',
@@ -97,7 +97,10 @@ var ComponentNav = [
           'https://store.akveo.com/products/vue-java-admin-dashboard-spring?utm_campaign=akveo_store-Vue-Vue_demo%2Fgithub&utm_source=vue_admin&utm_medium=referral&utm_content=vue_featires'
       }
     ]
-  },
+  }
+]
+
+var ComponentNav = [
   {
     text: 'Component',
     textES: 'Componente',
@@ -164,5 +167,6 @@ var ComponentNav = [
 
 module.exports = {
   EcosystemNav,
-  ComponentNav
+  ComponentNav,
+  BackendNav
 }
