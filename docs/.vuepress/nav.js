@@ -85,6 +85,20 @@ var EcosystemNav = [
 
 var ComponentNav = [
   {
+    text: 'Backend',
+    textES: 'Backend',
+    textZH: '后端整合',
+    items: [
+      {
+        text: 'Java backend integration',
+        textES: 'Java backend integration',
+        textZH: 'Java 后端整合',
+        link:
+          'https://store.akveo.com/products/vue-java-admin-dashboard-spring?utm_campaign=akveo_store-Vue-Vue_demo%2Fgithub&utm_source=vue_admin&utm_medium=referral&utm_content=vue_featires'
+      }
+    ]
+  },
+  {
     text: 'Component',
     textES: 'Componente',
     textZH: '组件',
