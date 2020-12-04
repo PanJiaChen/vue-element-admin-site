@@ -1,7 +1,10 @@
 # vue-element-admin-site
+
 The documentation source of [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
 [Online](https://panjiachen.github.io/vue-element-admin-site)
+
+[Gitee Online](https://panjiachen.gitee.io/vue-element-admin-site/zh/)
 
 ## Development
 
