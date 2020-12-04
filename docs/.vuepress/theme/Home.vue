@@ -7,21 +7,64 @@
 
       <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
 
-      <p class="action" v-if="data.actionText && data.actionLink">
-        <NavLink class="action-button" :item="actionLink"/>
+      <p v-if="data.actionText && data.actionLink" class="action">
+        <NavLink class="action-button" :item="actionLink" />
       </p>
     </div>
 
-    <div class="features" :class="{isCN:isCN}" v-if="data.features && data.features.length">
-      <div class="feature" v-for="(feature, index) in data.features" :key="index">
+    <div style="border-top: 1px solid #eaecef; text-align: center">
+      <h4>赞助商</h4>
+      <div
+        style="
+      display: flex;
+      justify-content: space-around;
+      width: 60%;
+      margin: 0 auto;
+      font-size: 14px;
+    "
+      >
+        <div style="width: 300px">
+          <a
+            href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_index"
+            title="多会"
+            target="_blank"
+          >
+            <img
+              height="50px"
+              src="https://qiniu.cdn.duohui.co/brand/duohui.png"
+              title="多会 - 活动服务销售平台"
+            >
+            <div style="color: #282828">活动服务销售平台</div>
+          </a>
+        </div>
+
+        <div style="width: 300px">
+          <a
+            href="https://youke.co/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_index"
+            title="有客"
+            target="_blank"
+          >
+            <img
+              height="50px"
+              src="https://qiniu.cdn.duohui.co/brand/youke.png"
+              title="有客 - 客户消息直达工作群"
+            >
+            <div style="color: #2e6aa9">客户消息直达工作群</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="data.features && data.features.length" class="features" :class="{isCN:isCN}">
+      <div v-for="(feature, index) in data.features" :key="index" class="feature">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
     </div>
 
-    <Content custom/>
+    <Content custom />
 
-    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
+    <div v-if="data.footer" class="footer">{{ data.footer }}</div>
   </div>
 </template>
 
