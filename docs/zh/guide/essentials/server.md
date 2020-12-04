@@ -65,7 +65,7 @@ export default {
 ```bash
 # .env.development
 VUE_APP_BASE_API = '/dev-api' #注入本地 api 的根路径
-VUE_APP_BASE_API2 = '/dev-api2' #注入本地 api 的根路径
+VUE_APP_BASE_API2 = '/dev-api2' #注入本地 api2 的根路径
 ```
 
 之后根据环境变量创建`axios`实例，让它具有不同的`baseURL`。 [@/utils/request.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js)
@@ -78,7 +78,7 @@ const service = axios.create({
 })
 
 const service2 = axios.create({
-  baseURL: process.env.BASE_API2, // api 的 base_url
+  baseURL: process.env.BASE_API2, // api2 的 base_url
   timeout: 5000 // request timeout
 })
 ```

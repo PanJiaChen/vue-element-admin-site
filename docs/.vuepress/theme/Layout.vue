@@ -14,6 +14,60 @@
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
         <div v-if="!isHome" id="codefund" :key="$route.path" />
+        <div class="sidebar-heading" style="color:auto;padding-top:8px;margin-bottom:-8px">
+          <span>赞助商</span>
+          <div>
+            <ul
+              class="pure-menu-list sub-nav"
+              style="height: auto; display: flex; align-content: space-between"
+            >
+              <li
+                class="nav-item"
+                style="
+          display: inline-block;
+          font-size: 12px;
+          text-align: center;
+          margin-right: 2em;
+        "
+              >
+                <a
+                  href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_sidebar"
+                  title="多会"
+                  target="_blank"
+                  style="text-align: center; line-height: 10px"
+                >
+                  <img
+                    height="50px"
+                    src="https://qiniu.cdn.duohui.co/brand/duohui-icon.svg"
+                    title="多会 - 活动服务销售平台"
+                    style="margin-right: 0px !important"
+                  >
+                  <div style="color: #3a88fd">多会活动</div>
+                </a>
+              </li>
+              <li
+                class="nav-item"
+                style="display: inline-block; font-size: 12px; line-height: 10px"
+              >
+                <a
+                  href="https://youke.co/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_sidebar"
+                  title="有客"
+                  target="_blank"
+                  style="color: #184676"
+                >
+                  <img
+                    height="50px"
+                    src="https://qiniu.cdn.duohui.co/brand/youke-icon.svg"
+                    title="有客 - 客户消息直达工作群"
+                    style="margin-right: 0px !important"
+                  >
+                  <div>有客客服</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
       <slot slot="bottom" name="sidebar-bottom" />
     </Sidebar>
