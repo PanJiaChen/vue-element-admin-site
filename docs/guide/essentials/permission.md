@@ -41,7 +41,7 @@ Write a permission directive, and can easily and quickly implement button-level 
   <!-- Editor can see this -->
   <el-tag v-permission="['editor']">editor</el-tag>
 
-  <!-- Editor can see this -->
+  <!-- Both admin or editor can see this -->
   <el-tag v-permission="['admin','editor']">Both admin or editor can see this</el-tag>
 </template>
 
