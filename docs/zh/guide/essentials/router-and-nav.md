@@ -28,7 +28,7 @@ meta: {
   icon: 'svg-name' // 设置该路由的图标，支持 svg-class，也支持 el-icon-x element-ui 的 icon
   noCache: true // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)
   breadcrumb: false //  如果设置为false，则不会在breadcrumb面包屑中显示(默认 true)
-  affix: true // 若果设置为true，它则会固定在tags-view中(默认 false)
+  affix: true // 如果设置为true，它则会固定在tags-view中(默认 false)
 
   // 当路由设置了该属性，则会高亮相对应的侧边栏。
   // 这在某些场景非常有用，比如：一个文章的列表页路由为：/article/list
@@ -48,7 +48,7 @@ meta: {
   redirect: '/permission/index', //重定向地址，在面包屑中点击会重定向去的地址
   hidden: true, // 不在侧边栏线上
   alwaysShow: true, //一直显示根路由
-  meta: { roles: ['admin','editor'] }, //你可以在根路由设置权限，这样它下面所以的子路由都继承了这个权限
+  meta: { roles: ['admin','editor'] }, //你可以在根路由设置权限，这样它下面所有的子路由都继承了这个权限
   children: [{
     path: 'index',
     component: ()=>import('permission/index'),
@@ -182,7 +182,7 @@ clickLink(path) {
 ps:不要忘了在 `router-view` 加上一个特定唯一的 `key`，如 `<router-view :key="$route.path"></router-view>`，
 但这也有一个弊端就是 url 后面有一个很难看的 `query` 后缀如 `xxx.com/article/list?t=1496832345025`
 
-你可以从前面的 issue 中知道还有很多其它方案。我本人在公司项目中，现在采取的方案是判断当前点击的菜单路由和当前的路由是否一致，但一致的时候，会先跳转到一个专门 Redirect 的页面，它会将路由重定向到我想去的页面，这样就起到了刷新的效果了。
+你可以从前面的 issue 中知道还有很多其它方案。我本人在公司项目中，现在采取的方案是判断当前点击的菜单路由和当前的路由是否一致，若一致的时候，会先跳转到一个专门 Redirect 的页面，它会将路由重定向到我想去的页面，这样就起到了刷新的效果了。
 
 **相关例子**
 
