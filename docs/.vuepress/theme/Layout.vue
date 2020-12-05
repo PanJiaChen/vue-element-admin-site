@@ -23,12 +23,7 @@
             >
               <li
                 class="nav-item"
-                style="
-          display: inline-block;
-          font-size: 12px;
-          text-align: center;
-          margin-right: 2em;
-        "
+                style="display: inline-block;font-size: 12px;text-align: center;margin-right: 2em;"
               >
                 <a
                   href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_sidebar"

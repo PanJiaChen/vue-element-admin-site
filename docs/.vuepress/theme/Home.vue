@@ -14,15 +14,7 @@
 
     <div style="border-top: 1px solid #eaecef; text-align: center">
       <h4>赞助商</h4>
-      <div
-        style="
-      display: flex;
-      justify-content: space-around;
-      width: 60%;
-      margin: 0 auto;
-      font-size: 14px;
-    "
-      >
+      <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
         <div style="width: 300px">
           <a
             href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_index"
