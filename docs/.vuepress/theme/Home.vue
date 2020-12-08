@@ -71,6 +71,7 @@ export default {
       return this.$lang === 'zh-CN'
     },
     isGitee() {
+      if (this.$isServer) return
       return isGitee()
     },
     data() {

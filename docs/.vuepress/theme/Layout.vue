@@ -127,6 +127,7 @@ export default {
       return path.includes('donate')
     },
     isGitee() {
+      if (this.$isServer) return
       return isGitee()
     },
     isCN() {
