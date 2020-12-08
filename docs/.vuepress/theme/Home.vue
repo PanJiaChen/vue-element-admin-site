@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <div style="border-top: 1px solid #eaecef; text-align: center">
+    <div v-if="isCN||isGitee" style="border-top: 1px solid #eaecef; text-align: center">
       <h4>赞助商</h4>
       <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
         <div style="width: 300px">
@@ -62,11 +62,16 @@
 
 <script>
 import NavLink from '@default-theme/NavLink.vue'
+import { isGitee } from './utils'
+
 export default {
   components: { NavLink },
   computed: {
     isCN() {
       return this.$lang === 'zh-CN'
+    },
+    isGitee() {
+      return isGitee()
     },
     data() {
       return this.$page.frontmatter

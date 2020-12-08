@@ -14,7 +14,7 @@
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
         <div v-if="!isHome" id="codefund" :key="$route.path" />
-        <div class="sidebar-heading" style="color:auto;padding-top:8px;margin-bottom:-8px">
+        <div class="sidebar-heading" v-if="isCN||isGitee" style="color:auto;padding-top:8px;margin-bottom:-8px">
           <span>赞助商</span>
           <div>
             <ul
@@ -92,7 +92,7 @@ import SWUpdatePopup from '@default-theme/SWUpdatePopup.vue'
 import { resolveSidebarItems } from '@default-theme/util'
 import Swal from 'sweetalert2'
 import Home from './Home.vue'
-import { loadGitter, loadCarbon } from './utils'
+import { loadGitter, loadCarbon, isGitee } from './utils'
 
 export default {
   components: {
@@ -125,6 +125,9 @@ export default {
       const { path } = page
 
       return path.includes('donate')
+    },
+    isGitee() {
+      return isGitee()
     },
     isCN() {
       return this.$lang === 'zh-CN'
