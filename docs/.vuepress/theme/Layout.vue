@@ -14,7 +14,7 @@
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <div slot="top" :class="{'load-success':loadSuccess}">
         <div v-if="!isHome" id="codefund" :key="$route.path" />
-        <div class="sidebar-heading" v-if="isCN||isGitee" style="color:auto;padding-top:8px;margin-bottom:-8px">
+        <div v-if="isCN||isGitee" class="sidebar-heading" style="color:auto;padding-top:8px;margin-bottom:-8px">
           <span>赞助商</span>
           <div>
             <ul
@@ -184,17 +184,24 @@ export default {
     $route: {
       handler(val, oldVal) {
         if (this.$isServer) return
-
-        if (document.getElementById('carbonads')) {
+        if (document.getElementById('carbonads') && !this.isCN) {
           window._carbonads && window._carbonads.refresh()
         }
       },
       immediate: true
+    },
+    $lang(val) {
+      if (val !== 'zh-CN') {
+        loadCarbon()
+      }
     }
   },
   mounted() {
     loadGitter()
-    loadCarbon()
+    if (!this.isCN) {
+      loadCarbon()
+    }
+
     window.addEventListener('scroll', this.onScroll)
     // configure progress bar
     nprogress.configure({ showSpinner: false })
@@ -394,5 +401,9 @@ export default {
   font-weight: 600;
   font-size: 9px;
   line-height: 1;
+}
+
+#carbonads :lang(zh-CN) {
+  display: none;
 }
 </style>
