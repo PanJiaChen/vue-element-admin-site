@@ -12,36 +12,12 @@
       </p>
     </div>
 
-    <div v-if="isCN||isGitee" style="border-top: 1px solid #eaecef; text-align: center">
+    <div style="border-top: 1px solid #eaecef; text-align: center">
       <h4>赞助商</h4>
       <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
         <div style="width: 300px">
-          <a
-            href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_index"
-            title="多会"
-            target="_blank"
-          >
-            <img
-              height="50px"
-              src="https://qiniu.cdn.duohui.co/brand/duohui.png"
-              title="多会 - 活动服务销售平台"
-            >
-            <div style="color: #282828">活动服务销售平台</div>
-          </a>
-        </div>
-
-        <div style="width: 300px">
-          <a
-            href="https://youke.co/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_index"
-            title="有客"
-            target="_blank"
-          >
-            <img
-              height="50px"
-              src="https://qiniu.cdn.duohui.co/brand/youke.png"
-              title="有客 - 客户消息直达工作群"
-            >
-            <div style="color: #2e6aa9">客户消息直达工作群</div>
+          <a href="https://finclip.com?from=vue_element" title="FinClip" target="_blank">
+            <img height="200px" src="https://gitee.com/panjiachen/gitee-cdn/raw/master/vue%E8%B5%9E%E5%8A%A9.png" title="FinClip">
           </a>
         </div>
       </div>
