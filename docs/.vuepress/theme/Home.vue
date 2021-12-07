@@ -16,7 +16,7 @@
       <h4>赞助商</h4>
       <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
         <div style="width: 300px;display: flex;justify-content: space-around;">
-           <a style="display:inline-block" href="https://www.vform666.com/" title="variantForm" target="_blank">
+           <a style="display:inline-block;margin-right:30px;" href="https://www.vform666.com/" title="variantForm" target="_blank">
             <img height="200px" src="https://gitee.com/panjiachen/gitee-cdn/raw/master/vue%E8%B5%9E%E5%8A%A92.png" title="variantForm">
           </a>
           <a style="display:inline-block" href="https://finclip.com?from=vue_element" title="FinClip" target="_blank">
