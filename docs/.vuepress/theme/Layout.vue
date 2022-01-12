@@ -23,40 +23,20 @@
             >
               <li
                 class="nav-item"
-                style="display: inline-block;font-size: 12px;text-align: center;margin-right: 2em;"
+                style="display: inline-block;font-size: 12px;text-align: center;margin-right: 2em;padding-top:2px;"
               >
                 <a
-                  href="https://www.duohui.cn/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_sidebar"
-                  title="多会"
+                  href="https://www.vform666.com/"
+                  title="可视化表单"
                   target="_blank"
                   style="text-align: center; line-height: 10px"
                 >
                   <img
                     height="50px"
-                    src="https://qiniu.cdn.duohui.co/brand/duohui-icon.svg"
-                    title="多会 - 活动服务销售平台"
-                    style="margin-right: 0px !important"
+                    src="https://gitee.com/panjiachen/gitee-cdn/raw/master/ad3.png"
+                    title="可视化表单"
                   >
-                  <div style="color: #3a88fd">多会活动</div>
-                </a>
-              </li>
-              <li
-                class="nav-item"
-                style="display: inline-block; font-size: 12px; line-height: 10px"
-              >
-                <a
-                  href="https://youke.co/?utm_source=vue-element-admin&utm_medium=web&utm_campaign=vue-element-admin_sidebar"
-                  title="有客"
-                  target="_blank"
-                  style="color: #184676"
-                >
-                  <img
-                    height="50px"
-                    src="https://qiniu.cdn.duohui.co/brand/youke-icon.svg"
-                    title="有客 - 客户消息直达工作群"
-                    style="margin-right: 0px !important"
-                  >
-                  <div>有客客服</div>
+                  <div style="padding-top: 4px;color:#409eff">可视化表单</div>
                 </a>
               </li>
             </ul>
