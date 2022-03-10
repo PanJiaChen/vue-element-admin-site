@@ -33,10 +33,11 @@
                 >
                   <img
                     height="50px"
-                    src="https://gitee.com/panjiachen/gitee-cdn/raw/master/ad3.png"
+                    style="margin-right:0 !important"
+                    src="https://gitee.com/panjiachen/gitee-cdn/raw/master/banner-2022.png"
                     title="可视化表单"
                   >
-                  <div style="padding-top: 4px;color:#409eff">可视化表单</div>
+                  <!-- <div style="padding-top: 4px;color:#409eff">可视化表单</div> -->
                 </a>
               </li>
             </ul>
