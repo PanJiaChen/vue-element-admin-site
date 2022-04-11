@@ -34,7 +34,7 @@
                   <img
                     height="50px"
                     style="margin-right:0 !important"
-                    src="https://gitee.com/panjiachen/gitee-cdn/raw/master/banner-2022.png"
+                    src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-6f00c918-7a62-47b5-8e8a-9578acfb171c/fb4314d7-63ed-45c1-a122-b386cb903b2b.png"
                     title="可视化表单"
                   >
                   <!-- <div style="padding-top: 4px;color:#409eff">可视化表单</div> -->
