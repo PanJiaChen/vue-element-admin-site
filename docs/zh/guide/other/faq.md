@@ -127,9 +127,11 @@ module.exports = {
 
 ## 图片 background url() 引用问题？
 
-https://github.com/vuejs/vue-loader/issues/481
+请查看下面相关 issue：
 
-https://github.com/vuejs/vue-cli/issues/112
+[vuejs/vue-loader#481](https://github.com/vuejs/vue-loader/issues/481)
+
+[vuejs/vue-cli#112](https://github.com/vuejs/vue-cli/issues/112)
 
 <br/>
 
