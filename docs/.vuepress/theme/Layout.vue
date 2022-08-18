@@ -32,7 +32,7 @@
                   style="text-align: center; line-height: 10px"
                 >
                   <img
-                    height="50px"
+                    height="70px"
                     style="margin-right:0 !important"
                     src="https://s3.bmp.ovh/imgs/2022/07/12/20a03e767cf1d636.jpeg"
                     title="可视化表单"
