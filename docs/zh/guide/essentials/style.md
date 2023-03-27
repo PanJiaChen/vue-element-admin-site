@@ -94,7 +94,7 @@ vue-element-admin 所有全局样式都在 `@/styles` 下设置
 }
 ```
 
-如果你使用了一些预处理的东西，如 `sass` 你可以通过 `/deep/` 来代替 `>>>` 实现想要的效果。
+如果你使用了一些预处理的东西，如 `sass` 你可以通过 `/deep/` 或 `::v-deep` 来代替 `>>>` 实现想要的效果。
 
 所以你想覆盖某个特定页面 `element` 的 button 的样式，你可以这样做：
 
@@ -110,7 +110,7 @@ vue-element-admin 所有全局样式都在 `@/styles` 下设置
 
 ## Autoprefixer [新版本已无该问题]
 
-vue-cli 有一个小坑，它默认 autoprefixer 只会对通过 vue-loader 引入的样式才会有有作用，换而言之也就是 .vue 文件里面的 css autoprefixer 才会效果。相关问题 [issues/544](https://github.com/vuejs-templates/webpack/issues/544) , [issues/600](https://github.com/vuejs-templates/webpack/issues/600) 。解决方案也很简单粗暴
+vue-cli 有一个小坑，它默认 autoprefixer 只会对通过 vue-loader 引入的样式才会有作用，换而言之也就是 .vue 文件里面的 css autoprefixer 才会有效果。相关问题 [issues/544](https://github.com/vuejs-templates/webpack/issues/544) , [issues/600](https://github.com/vuejs-templates/webpack/issues/600) 。解决方案也很简单粗暴
 
 ```html
 //app.vue
@@ -119,13 +119,13 @@ vue-cli 有一个小坑，它默认 autoprefixer 只会对通过 vue-loader 引�
 </style>
 ```
 
-你在 .vue 文件中引入你要的样式就可以了，或者你可以改变 vue-cli 的文件在 css-loader 前面在加一个 postcss-loader，在前面的 issue 地址中已经给出了解决方案。不过新版本已经默认解决处理了这个问题。
+你在 .vue 文件中引入你要的样式就可以了，或者你可以改变 vue-cli 的文件在 css-loader 前面在加一个 postcss-loader，在前面的 issue 地址中已经给出了解决方案。不过新版本已经解决了这个问题。
 
 <br>
 
 ## Postcss
 
-这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) init 之后根目录下默认有一个`postcss.config.js` 。vue-loader 的 postcss 会默认读取这个文件的里的配置项，所以在这里直接改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
+这里再来说一下 postcss 的配置问题，新版的 [vue-cli webpack 模板](https://github.com/vuejs-templates/webpack) init 之后根目录下默认有一个`postcss.config.js` 。vue-loader 的 postcss 会默认读取这个文件里的配置项，所以在这里直接修改配置文件就可以了。配置和 [postcss](https://github.com/postcss/postcss)是一样的。
 
 ```javascript
 // postcss.config.js
