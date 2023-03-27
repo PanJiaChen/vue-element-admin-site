@@ -114,7 +114,7 @@ Es posible modificar el estilo predeterminado de la barra lateral de `element-ui
 
 **Aquí hay que prestar atención**. La barra lateral general tiene dos formas, `submenu` y `el-menu-item`. Uno es un submenú anidado, el otro es un enlace directo. Como se muestra abajo:
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/e94739d6-d701-45c8-8c6e-0f4bb10c3b46.png)
 
 La barra lateral ya te ha ayudado a hacer un juicio. Cuando agregas más de un hijo a un elemento, automáticamente se convierte en modo anidado. Si la ruta hijo es exactamente igual a 1, esta se muestra como ruta raíz en la barra lateral de forma predeterminada. Si no quieres que esto suceda, puedes desactivar esta función configurando `alwaysShow: true` en la ruta raíz. Como:
 
@@ -170,7 +170,7 @@ Tal como: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-ele
 
 **NOTA:** Tantos `<router-view>` como nivel de rutas anidadas.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
@@ -178,7 +178,7 @@ Tal como: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-ele
 
 Antes de utilizar el modelo de desarrollo spa (aplicación de página única), cada vez que el usuario hace clic en la barra lateral solicitará nuevamente esta página, el usuario gradualmente desarrolló el hábito de hacer clic en la ruta actual en la barra lateral para actualizar la vista. Pero ahora en el spa no es lo mismo, el usuario hace clic en la ruta resaltada actualmente y no actualiza la vista, porque el vue-router interceptará tu ruta, determina que la url no cambia, por lo que no activará ningún hook o cambios en la vista. [Problema relacionado](https://github.com/vuejs/vue-router/issues/296), la comunidad también ha discutido sobre el tema.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/5d0b0391-ea6a-45f2-943e-aff5dbe74d12.png)
 
 `yyx990803` también dijo que quería agregar una forma de actualizar la vista, y luego cambió de opinión nuevamente /(ㄒ o ㄒ)/~~ Pero la cuestión es la siguiente, ¿qué debemos hacer? Dijo que no activaría nada sin cambiar la URL actual, así que ¿puedo forzar al activador? El truco es simple. Al cambiar la consulta de la URL para activar los cambios de vista: escuchamos el evento clic de cada enlace en la barra lateral, cada clic realizará una consulta diferente en el enrutador para garantizar que la vista se actualice.
 
@@ -203,7 +203,7 @@ Puedes saber del problema anterior que hay muchas otras opciones. En el proyecto
 
 **Ejemplo**
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/0dd7f78b-0fb5-4c7d-8236-cee78f960984.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/0dd7f78b-0fb5-4c7d-8236-cee78f960984.jpg)
 
 Haz clic en el botón de cambio de tamaño global que se muestra en la imagen y verás que la página `app-main` se ha actualizado. Se utiliza el método de redireccionamiento a la página `Redirect` y luego redirecciona de nuevo a la página original.
 
@@ -239,7 +239,7 @@ export default {
 
 Este proyecto también incluye una navegación con breadcrumb, que también se genera dinámicamente por el cambio de ruta al observar $route. Es lo mismo con el menú, también puedes configurarlo en el enrutamiento y agregar algunos atributos personalizados a las necesidades de tu negocio en route.meta attr. Por ejemplo, puedes declarar `breadcrumb:false` en la ruta para que no se muestre en la sección breadcrumb.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/4c60b3fc-febd-4e22-9150-724dcbd25a8e.gif)
 
 > Código correspondiente: [@/components/Breadcrumb](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/components/Breadcrumb/index.vue)
 

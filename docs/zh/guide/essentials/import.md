@@ -52,7 +52,7 @@ export default {
 </script>
 ```
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/8b95fac0-6691-4ad6-ba6c-e5d84527da06.gif)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/8b95fac0-6691-4ad6-ba6c-e5d84527da06.gif)
 
 <br/>
 

@@ -179,7 +179,7 @@ This will automatically open [http://localhost:9527](http://localhost:9527).
 
 If you see the following page then you have succeeded.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/1bc334a6-32a8-4f29-a037-ac3f5ce32588.png)
 
 We have built-in models, standard components, mock data, hot module reloading, state management, i18n, global router, etc. You can continue exploring other documents for more details on those topics.
 

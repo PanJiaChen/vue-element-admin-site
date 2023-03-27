@@ -8,13 +8,13 @@ npm run svgo
 
 Muchas descargas en línea o svg exportados por `Sketch` tendrán una gran cantidad de información redundante e inútil, aumentando considerablemente el tamaño del svg. Podemos optimizarlo con `svgo`. Por ejemplo, la siguiente figura es un svg exportado por `Sketch`
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/333edb6b-4b95-42f8-aa60-b8f42e516b52.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/333edb6b-4b95-42f8-aa60-b8f42e516b52.jpg)
 
 Podemos ejecutar `npm run svgo`
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/e7b1324e-cd67-4306-aebf-f659bcc433cf.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/e7b1324e-cd67-4306-aebf-f659bcc433cf.jpg)
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/006c4bb5-b2d1-447d-a1c9-a912cf5dee47.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/006c4bb5-b2d1-447d-a1c9-a912cf5dee47.jpg)
 
 Se procesa información inútil.
 

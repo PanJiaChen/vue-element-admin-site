@@ -10,7 +10,7 @@ Ejecuta el siguiente comando:
 npm run new
 ```
 
-![plop](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
+![plop](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
 
 Como se muestra en el gif anterior, es fácil generar el fragmento de código básico que quiero simplemente presionando Enter varias veces. Esto es solo una demostración, puedes personalizar la plantilla según tus necesidades.
 

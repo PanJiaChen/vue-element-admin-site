@@ -46,7 +46,7 @@ Simplemente crea una ruta en blanco basada en 'layout', y agrega una ruta debajo
 
 **En esta barra lateral aparecerá el menu-item**
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/2ab6921d-f9bb-4fbb-a151-0e6027e23a6e.png)
 
 <br/>
 
@@ -75,7 +75,7 @@ Si deseas ignorar esta decisión automática, puedes usar `alwaysShow: true`, pa
 }
 ```
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/89d6a0b8-5cf7-4a19-9afd-7267ec454066.png)
 
 **En la barra lateral aparecerá el `submenu`.**
 
@@ -100,7 +100,7 @@ Por ejemplo: [@/views/nested/menu1/index.vue](https://github.com/PanJiaChen/vue-
 
 **NOTA:** Agrega tantos `<ruter-view>` como nivel de rutas anidadas.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/9459de62-64d0-4819-9730-daf3f9889018.png)
 
 <br/>
 
@@ -110,7 +110,7 @@ Después de agregar la ruta, crea una vista debajo de `@/views`. Como de costumb
 
 Sugerencia: si un componente o una función de utilidades solo se usa en esta vista, simplemente crea una carpeta de componentes en esta vista, es más conveniente para cada módulo mantener sus propios `utils` o `components`.
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/8ca55a30-c22c-4143-aa8d-2a0d3e04fc33.png)
 
 <br/>
 

@@ -105,4 +105,4 @@ First execute `et -i` to generate `element-variables.scss` file that stores styl
 If you need to modify the name of the package generation style namespace, just modify the [variable](https://github.com/PanJiaChen/custom-element-theme/blob/master/gulpfile.js#L6).
 :::
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/0726b472-90f4-4fe9-a665-26fb8f9795c3.gif)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/0726b472-90f4-4fe9-a665-26fb8f9795c3.gif)

@@ -76,7 +76,7 @@ In fact, they are all similar, or they must be combined with their own business.
 
 ## Demo
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/137aeadd-ad0e-4b21-badd-c53f96b7482b.gif)
 
 ::: tip Code
 `@/views/dashboard/admin/components`

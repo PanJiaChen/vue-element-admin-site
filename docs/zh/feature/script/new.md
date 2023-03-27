@@ -10,7 +10,7 @@
 npm run new
 ```
 
-![plop](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
+![plop](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
 
 如上面 gif 所示，现在只要轻松的点几次回车就可以轻松生成我要的基础代码片段。这里只是一个 demo，你可以按照自己需求定制模板。
 

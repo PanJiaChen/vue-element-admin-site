@@ -47,7 +47,7 @@ npm run preview -- --report
 
 运行之后你就可以在 [http://localhost:9526/report.html](http://localhost:9526/report.html) 页面看到具体的体积分布
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
 
 具体的优化可以参考 [Webpack 大法之 Code Splitting](https://zhuanlan.zhihu.com/p/26710831)
 

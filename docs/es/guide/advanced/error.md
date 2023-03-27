@@ -86,10 +86,10 @@ getInfo()
 ## Coding
 
 This project also does code-level error handling. If you enable `eslint`, you will be prompted for errors when writing code. Such as:
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/b037f47c-1f7b-487f-bb05-32e7300767d2.png)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/b037f47c-1f7b-487f-bb05-32e7300767d2.png)
 
 Of course there are many errors that cannot be checked by `eslint`, vue also provides global error handling hooks[errorHandler](https://vuejs.org/v2/api/#errorHandler). The project also made a corresponding error collection.
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/360e4842-4db5-42d0-b078-f9a84a825546.gif)
+![aaaa](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/360e4842-4db5-42d0-b078-f9a84a825546.gif)
 
 ::: tip
 Listening error: [@/errorLog.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/errorLog.js)

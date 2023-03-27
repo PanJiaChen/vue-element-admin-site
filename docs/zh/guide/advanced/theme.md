@@ -105,6 +105,6 @@ npm install
 如果需要修改打包生成样式命名空间的名字 只要修改该[变量](https://github.com/PanJiaChen/custom-element-theme/blob/master/gulpfile.js#L6)即可
 :::
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/0726b472-90f4-4fe9-a665-26fb8f9795c3.gif)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/0726b472-90f4-4fe9-a665-26fb8f9795c3.gif)
 
 [更多动态换肤文章](https://segmentfault.com/a/1190000009762198#articleHeader2)

@@ -31,14 +31,14 @@ module.exports = {
 ## vscode 配置 ESLint
 
 这所谓工欲善其事，必先利其器，个人推荐 eslint+vscode 来写 vue，绝对有种飞一般的感觉。效果如图：
-![eslintGif.gif](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/e94a76df-6dc0-4c15-9785-28b553a163e9.png)
+![eslintGif.gif](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/e94a76df-6dc0-4c15-9785-28b553a163e9.png)
 
 <br/>
 
 每次保存，vscode 就能标红不符合 eslint 规则的地方，同时还会做一些简单的自我修正。安装步骤如下：
 
 首先安装 eslint 插件
-![eslint1.png](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/72f126cb-09eb-4b27-b02e-65e79eb76220.png)
+![eslint1.png](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/72f126cb-09eb-4b27-b02e-65e79eb76220.png)
 
 安装并配置完成 ESLint 后，我们继续回到 VSCode 进行扩展设置，依次点击 文件 > 首选项 > 设置 打开 VSCode 配置文件,添加如下配置
 

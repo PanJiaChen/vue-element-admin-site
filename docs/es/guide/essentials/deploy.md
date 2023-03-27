@@ -41,7 +41,7 @@ npm run preview -- --report
 
 Después de ejecutar, puedes ver la distribución de tamaño específico en [http://localhost:9526/report.html](http://localhost:9526/report.html)
 
-![](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
+![](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/3fddf034-2b38-4299-b0d2-b748fb2abef0.jpg)
 
 ::: tip
 Se recomienda utilizar gzip, después de usarlo, el volumen será solo el 1/3 del original más o menos. También puedes usar Lazy Loading o Code Splitting.

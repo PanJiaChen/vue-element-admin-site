@@ -10,7 +10,7 @@ Execute the following command:
 npm run new
 ```
 
-![plop](https://panjiachen.gitee.io/gitee-cdn/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
+![plop](https://gitee.com/panjiachen/gitee-cdn/raw/master/vue-element-admin-site/5f8ea239-aaa5-4e91-9d09-ed56b33a110d.gif)
 
 As shown in the previous gif, it is easy to generate the basic code snippet I want by simply pressing Enter several times. This is just a demonstration, you can customize the template according to your needs.
 
