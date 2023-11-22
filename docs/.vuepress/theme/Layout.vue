@@ -19,11 +19,29 @@
           <div>
             <ul
               class="pure-menu-list sub-nav"
-              style="height: auto; display: flex; align-content: space-between"
+              style="height: auto; align-content: space-between"
             >
+            <li
+                class="nav-item"
+                style="display: block;font-size: 12px;text-align: center;margin-right: 2em;padding-top:2px;"
+              >
+                <a
+                  href="https://melecode.com/"
+                  title="低代码开发平台"
+                  target="_blank"
+                  style="text-align: center; line-height: 10px"
+                >
+                  <img
+                    height="70px"
+                    style="margin-right:0 !important"
+                    src="https://s1.locimg.com/2023/11/22/d83c8d0122194.png"
+                    title="低代码开发平台"
+                  >
+                </a>
+              </li>
               <li
                 class="nav-item"
-                style="display: inline-block;font-size: 12px;text-align: center;margin-right: 2em;padding-top:2px;"
+                style="display: block;font-size: 12px;text-align: center;margin-right: 2em;padding-top:2px;"
               >
                 <a
                   href="https://www.vform666.com/"
@@ -37,7 +55,6 @@
                     src="https://s3.bmp.ovh/imgs/2022/07/12/20a03e767cf1d636.jpeg"
                     title="可视化表单"
                   >
-                  <!-- <div style="padding-top: 4px;color:#409eff">可视化表单</div> -->
                 </a>
               </li>
             </ul>

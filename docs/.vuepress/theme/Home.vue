@@ -15,7 +15,10 @@
     <div style="border-top: 1px solid #eaecef; text-align: center">
       <h4>赞助商</h4>
       <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
-        <div style="width: 300px;display: flex;justify-content: space-around;">
+        <div style="width: 300px;display: flex;justify-content: space-around;flex-direction:row;">
+          <a style="display:block;margin-right:30px;" href="https://melecode.com/" title="低代码平台" target="_blank">
+            <img height="200px" src="https://s1.locimg.com/2023/11/22/83e32f26a290b.png" title="低代码平台">
+          </a>
            <a style="display:inline-block;margin-right:30px;" href="https://www.vform666.com/" title="variantForm" target="_blank">
             <img height="200px" src="https://s1.ax1x.com/2023/03/27/ppsh4df.png" title="variantForm">
           </a>
