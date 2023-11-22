@@ -25,7 +25,7 @@
 
 支持使用外链的形式引入 `svg`。例如：
 
-`<svg-icon icon-class="https://xxxx.svg />`
+`<svg-icon icon-class="https://xxxx.svg" />`
 
 ## 大小
 
