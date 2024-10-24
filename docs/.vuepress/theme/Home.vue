@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <div style="border-top: 1px solid #eaecef; text-align: center">
+    <!-- <div style="border-top: 1px solid #eaecef; text-align: center">
       <h4>赞助商</h4>
       <div style="display: flex;justify-content: space-around;width: 60%;margin: 0 auto;font-size: 14px;">
         <div style="width: 300px;display: flex;justify-content: space-around;flex-direction:row;">
@@ -24,7 +24,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div v-if="data.features && data.features.length" class="features" :class="{isCN:isCN}">
       <div v-for="(feature, index) in data.features" :key="index" class="feature">
